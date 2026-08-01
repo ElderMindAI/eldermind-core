@@ -1,0 +1,1819 @@
+{
+  "bazi": {
+    "da_yun": [
+      {
+        "branch": {
+          "animal": "Rat",
+          "element": "Water",
+          "hanzi": "子",
+          "polarity": "Yang"
+        },
+        "end_age": 13,
+        "hanzi": "戊子",
+        "start_age": 4,
+        "stem": {
+          "element": "Earth",
+          "english": "Wu",
+          "hanzi": "戊",
+          "polarity": "Yang"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Water",
+                "english": "Gui",
+                "hanzi": "癸",
+                "polarity": "Yin"
+              },
+              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+            }
+          ],
+          "stem_ten_god": "Częściowa Pieczęć (Pian Yin)"
+        }
+      },
+      {
+        "branch": {
+          "animal": "Pig",
+          "element": "Water",
+          "hanzi": "亥",
+          "polarity": "Yin"
+        },
+        "end_age": 23,
+        "hanzi": "丁亥",
+        "start_age": 14,
+        "stem": {
+          "element": "Fire",
+          "english": "Ding",
+          "hanzi": "丁",
+          "polarity": "Yin"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Water",
+                "english": "Ren",
+                "hanzi": "壬",
+                "polarity": "Yang"
+              },
+              "ten_god": "Siedem Zabójców (Qi Sha)"
+            },
+            {
+              "stem": {
+                "element": "Wood",
+                "english": "Jia",
+                "hanzi": "甲",
+                "polarity": "Yang"
+              },
+              "ten_god": "Bóg Jedzenia (Shi Shen)"
+            }
+          ],
+          "stem_ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
+        }
+      },
+      {
+        "branch": {
+          "animal": "Dog",
+          "element": "Earth",
+          "hanzi": "戌",
+          "polarity": "Yang"
+        },
+        "end_age": 33,
+        "hanzi": "丙戌",
+        "start_age": 24,
+        "stem": {
+          "element": "Fire",
+          "english": "Bing",
+          "hanzi": "丙",
+          "polarity": "Yang"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Earth",
+                "english": "Wu",
+                "hanzi": "戊",
+                "polarity": "Yang"
+              },
+              "ten_god": "Częściowa Pieczęć (Pian Yin)"
+            },
+            {
+              "stem": {
+                "element": "Metal",
+                "english": "Xin",
+                "hanzi": "辛",
+                "polarity": "Yin"
+              },
+              "ten_god": "Grabieżca Bogactwa (Jie Cai)"
+            },
+            {
+              "stem": {
+                "element": "Fire",
+                "english": "Ding",
+                "hanzi": "丁",
+                "polarity": "Yin"
+              },
+              "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
+            }
+          ],
+          "stem_ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
+        }
+      },
+      {
+        "branch": {
+          "animal": "Rooster",
+          "element": "Metal",
+          "hanzi": "酉",
+          "polarity": "Yin"
+        },
+        "end_age": 43,
+        "hanzi": "乙酉",
+        "start_age": 34,
+        "stem": {
+          "element": "Wood",
+          "english": "Yi",
+          "hanzi": "乙",
+          "polarity": "Yin"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Metal",
+                "english": "Xin",
+                "hanzi": "辛",
+                "polarity": "Yin"
+              },
+              "ten_god": "Grabieżca Bogactwa (Jie Cai)"
+            }
+          ],
+          "stem_ten_god": "Ranny Urzędnik (Shang Guan)"
+        }
+      },
+      {
+        "branch": {
+          "animal": "Monkey",
+          "element": "Metal",
+          "hanzi": "申",
+          "polarity": "Yang"
+        },
+        "end_age": 53,
+        "hanzi": "甲申",
+        "start_age": 44,
+        "stem": {
+          "element": "Wood",
+          "english": "Jia",
+          "hanzi": "甲",
+          "polarity": "Yang"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Metal",
+                "english": "Geng",
+                "hanzi": "庚",
+                "polarity": "Yang"
+              },
+              "ten_god": "Równy Brat (Bi Jian)"
+            },
+            {
+              "stem": {
+                "element": "Water",
+                "english": "Ren",
+                "hanzi": "壬",
+                "polarity": "Yang"
+              },
+              "ten_god": "Siedem Zabójców (Qi Sha)"
+            },
+            {
+              "stem": {
+                "element": "Earth",
+                "english": "Wu",
+                "hanzi": "戊",
+                "polarity": "Yang"
+              },
+              "ten_god": "Częściowa Pieczęć (Pian Yin)"
+            }
+          ],
+          "stem_ten_god": "Bóg Jedzenia (Shi Shen)"
+        }
+      },
+      {
+        "branch": {
+          "animal": "Goat",
+          "element": "Earth",
+          "hanzi": "未",
+          "polarity": "Yin"
+        },
+        "end_age": 63,
+        "hanzi": "癸未",
+        "start_age": 54,
+        "stem": {
+          "element": "Water",
+          "english": "Gui",
+          "hanzi": "癸",
+          "polarity": "Yin"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Earth",
+                "english": "Ji",
+                "hanzi": "己",
+                "polarity": "Yin"
+              },
+              "ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
+            },
+            {
+              "stem": {
+                "element": "Fire",
+                "english": "Ding",
+                "hanzi": "丁",
+                "polarity": "Yin"
+              },
+              "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
+            },
+            {
+              "stem": {
+                "element": "Wood",
+                "english": "Yi",
+                "hanzi": "乙",
+                "polarity": "Yin"
+              },
+              "ten_god": "Ranny Urzędnik (Shang Guan)"
+            }
+          ],
+          "stem_ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+        }
+      },
+      {
+        "branch": {
+          "animal": "Horse",
+          "element": "Fire",
+          "hanzi": "午",
+          "polarity": "Yang"
+        },
+        "end_age": 73,
+        "hanzi": "壬午",
+        "start_age": 64,
+        "stem": {
+          "element": "Water",
+          "english": "Ren",
+          "hanzi": "壬",
+          "polarity": "Yang"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Fire",
+                "english": "Ding",
+                "hanzi": "丁",
+                "polarity": "Yin"
+              },
+              "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
+            },
+            {
+              "stem": {
+                "element": "Earth",
+                "english": "Ji",
+                "hanzi": "己",
+                "polarity": "Yin"
+              },
+              "ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
+            }
+          ],
+          "stem_ten_god": "Siedem Zabójców (Qi Sha)"
+        }
+      },
+      {
+        "branch": {
+          "animal": "Snake",
+          "element": "Fire",
+          "hanzi": "巳",
+          "polarity": "Yin"
+        },
+        "end_age": 83,
+        "hanzi": "辛巳",
+        "start_age": 74,
+        "stem": {
+          "element": "Metal",
+          "english": "Xin",
+          "hanzi": "辛",
+          "polarity": "Yin"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Fire",
+                "english": "Bing",
+                "hanzi": "丙",
+                "polarity": "Yang"
+              },
+              "ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
+            },
+            {
+              "stem": {
+                "element": "Metal",
+                "english": "Geng",
+                "hanzi": "庚",
+                "polarity": "Yang"
+              },
+              "ten_god": "Równy Brat (Bi Jian)"
+            },
+            {
+              "stem": {
+                "element": "Earth",
+                "english": "Wu",
+                "hanzi": "戊",
+                "polarity": "Yang"
+              },
+              "ten_god": "Częściowa Pieczęć (Pian Yin)"
+            }
+          ],
+          "stem_ten_god": "Grabieżca Bogactwa (Jie Cai)"
+        }
+      }
+    ],
+    "da_yun_direction": "backward",
+    "da_yun_direction_assumed": false,
+    "da_yun_start_age": 4,
+    "day_master": {
+      "element": "Metal",
+      "english": "Geng",
+      "hanzi": "庚",
+      "polarity": "Yang"
+    },
+    "day_pillar": {
+      "branch": {
+        "animal": "Monkey",
+        "element": "Metal",
+        "hanzi": "申",
+        "polarity": "Yang"
+      },
+      "hanzi": "庚申",
+      "stem": {
+        "element": "Metal",
+        "english": "Geng",
+        "hanzi": "庚",
+        "polarity": "Yang"
+      },
+      "ten_gods": {
+        "hidden_stems_ten_gods": [
+          {
+            "stem": {
+              "element": "Metal",
+              "english": "Geng",
+              "hanzi": "庚",
+              "polarity": "Yang"
+            },
+            "ten_god": "Równy Brat (Bi Jian)"
+          },
+          {
+            "stem": {
+              "element": "Water",
+              "english": "Ren",
+              "hanzi": "壬",
+              "polarity": "Yang"
+            },
+            "ten_god": "Siedem Zabójców (Qi Sha)"
+          },
+          {
+            "stem": {
+              "element": "Earth",
+              "english": "Wu",
+              "hanzi": "戊",
+              "polarity": "Yang"
+            },
+            "ten_god": "Częściowa Pieczęć (Pian Yin)"
+          }
+        ],
+        "stem_ten_god": "Równy Brat (Bi Jian)"
+      }
+    },
+    "element_count": {
+      "Earth": 1,
+      "Fire": 2,
+      "Metal": 3,
+      "Water": 2,
+      "Wood": 0
+    },
+    "hour_pillar": {
+      "branch": {
+        "animal": "Horse",
+        "element": "Fire",
+        "hanzi": "午",
+        "polarity": "Yang"
+      },
+      "hanzi": "壬午",
+      "stem": {
+        "element": "Water",
+        "english": "Ren",
+        "hanzi": "壬",
+        "polarity": "Yang"
+      },
+      "ten_gods": {
+        "hidden_stems_ten_gods": [
+          {
+            "stem": {
+              "element": "Fire",
+              "english": "Ding",
+              "hanzi": "丁",
+              "polarity": "Yin"
+            },
+            "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
+          },
+          {
+            "stem": {
+              "element": "Earth",
+              "english": "Ji",
+              "hanzi": "己",
+              "polarity": "Yin"
+            },
+            "ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
+          }
+        ],
+        "stem_ten_god": "Siedem Zabójców (Qi Sha)"
+      }
+    },
+    "month_pillar": {
+      "branch": {
+        "animal": "Rat",
+        "element": "Water",
+        "hanzi": "子",
+        "polarity": "Yang"
+      },
+      "hanzi": "戊子",
+      "stem": {
+        "element": "Earth",
+        "english": "Wu",
+        "hanzi": "戊",
+        "polarity": "Yang"
+      },
+      "ten_gods": {
+        "hidden_stems_ten_gods": [
+          {
+            "stem": {
+              "element": "Water",
+              "english": "Gui",
+              "hanzi": "癸",
+              "polarity": "Yin"
+            },
+            "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+          }
+        ],
+        "stem_ten_god": "Częściowa Pieczęć (Pian Yin)"
+      }
+    },
+    "na_yin": "石榴木",
+    "useful_god": {
+      "day_master_strength": "strong",
+      "rationale": "Day Master Metal is strong; Water balances the chart.",
+      "useful_element": "Water"
+    },
+    "year_pillar": {
+      "branch": {
+        "animal": "Horse",
+        "element": "Fire",
+        "hanzi": "午",
+        "polarity": "Yang"
+      },
+      "hanzi": "庚午",
+      "stem": {
+        "element": "Metal",
+        "english": "Geng",
+        "hanzi": "庚",
+        "polarity": "Yang"
+      },
+      "ten_gods": {
+        "hidden_stems_ten_gods": [
+          {
+            "stem": {
+              "element": "Fire",
+              "english": "Ding",
+              "hanzi": "丁",
+              "polarity": "Yin"
+            },
+            "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
+          },
+          {
+            "stem": {
+              "element": "Earth",
+              "english": "Ji",
+              "hanzi": "己",
+              "polarity": "Yin"
+            },
+            "ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
+          }
+        ],
+        "stem_ten_god": "Równy Brat (Bi Jian)"
+      }
+    }
+  },
+  "draconic": {
+    "north_node_longitude": 298.181392,
+    "planets": [
+      {
+        "degree_in_sign": 1,
+        "draconic_longitude": 330.625332,
+        "name": "Sun",
+        "sign": "Pisces",
+        "tropical_longitude": 268.806724
+      },
+      {
+        "degree_in_sign": 12,
+        "draconic_longitude": 11.905386,
+        "name": "Moon",
+        "sign": "Aries",
+        "tropical_longitude": 310.086778
+      },
+      {
+        "degree_in_sign": 8,
+        "draconic_longitude": 338.362742,
+        "name": "Mercury",
+        "sign": "Pisces",
+        "tropical_longitude": 276.544134
+      },
+      {
+        "degree_in_sign": 13,
+        "draconic_longitude": 342.685858,
+        "name": "Venus",
+        "sign": "Pisces",
+        "tropical_longitude": 280.86725
+      },
+      {
+        "degree_in_sign": 0,
+        "draconic_longitude": 120.475433,
+        "name": "Mars",
+        "sign": "Leo",
+        "tropical_longitude": 58.656825
+      },
+      {
+        "degree_in_sign": 15,
+        "draconic_longitude": 194.711534,
+        "name": "Jupiter",
+        "sign": "Libra",
+        "tropical_longitude": 132.892926
+      },
+      {
+        "degree_in_sign": 26,
+        "draconic_longitude": 356.224927,
+        "name": "Saturn",
+        "sign": "Pisces",
+        "tropical_longitude": 294.406319
+      },
+      {
+        "degree_in_sign": 11,
+        "draconic_longitude": 340.88905,
+        "name": "Uranus",
+        "sign": "Pisces",
+        "tropical_longitude": 279.070442
+      },
+      {
+        "degree_in_sign": 16,
+        "draconic_longitude": 345.521988,
+        "name": "Neptune",
+        "sign": "Pisces",
+        "tropical_longitude": 283.70338
+      },
+      {
+        "degree_in_sign": 21,
+        "draconic_longitude": 291.067526,
+        "name": "Pluto",
+        "sign": "Capricorn",
+        "tropical_longitude": 229.248918
+      },
+      {
+        "degree_in_sign": 0,
+        "draconic_longitude": 0.0,
+        "name": "TrueNode",
+        "sign": "Aries",
+        "tropical_longitude": 298.181392
+      }
+    ]
+  },
+  "gene_keys": {
+    "activation_sequence": {
+      "Evolution": {
+        "body": "Earth",
+        "gate": 15,
+        "gene_key": 15,
+        "line": 1,
+        "longitude": 88.806724,
+        "sequence": "Activation",
+        "sphere": "Evolution",
+        "variant": "Personality"
+      },
+      "Life's Work": {
+        "body": "Sun",
+        "gate": 10,
+        "gene_key": 10,
+        "line": 1,
+        "longitude": 268.806724,
+        "sequence": "Activation",
+        "sphere": "Life's Work",
+        "variant": "Personality"
+      },
+      "Purpose": {
+        "body": "Earth",
+        "gate": 25,
+        "gene_key": 25,
+        "line": 3,
+        "longitude": 0.806724,
+        "sequence": "Activation",
+        "sphere": "Purpose",
+        "variant": "Design"
+      },
+      "Radiance": {
+        "body": "Sun",
+        "gate": 46,
+        "gene_key": 46,
+        "line": 3,
+        "longitude": 180.806724,
+        "sequence": "Activation",
+        "sphere": "Radiance",
+        "variant": "Design"
+      }
+    },
+    "pearl_sequence": {
+      "Brand": {
+        "body": "Sun",
+        "gate": 10,
+        "gene_key": 10,
+        "line": 1,
+        "longitude": 268.806724,
+        "sequence": "Pearl",
+        "sphere": "Brand",
+        "variant": "Personality"
+      },
+      "Culture": {
+        "body": "Jupiter",
+        "gate": 31,
+        "gene_key": 31,
+        "line": 6,
+        "longitude": 127.163263,
+        "sequence": "Pearl",
+        "sphere": "Culture",
+        "variant": "Design"
+      },
+      "Pearl": {
+        "body": "Jupiter",
+        "gate": 33,
+        "gene_key": 33,
+        "line": 6,
+        "longitude": 132.892926,
+        "sequence": "Pearl",
+        "sphere": "Pearl",
+        "variant": "Personality"
+      },
+      "Vocation": {
+        "body": "Mars",
+        "gate": 8,
+        "gene_key": 8,
+        "line": 5,
+        "longitude": 58.656825,
+        "sequence": "Pearl",
+        "sphere": "Vocation",
+        "variant": "Personality"
+      }
+    },
+    "venus_sequence": {
+      "Attraction": {
+        "body": "Moon",
+        "gate": 14,
+        "gene_key": 14,
+        "line": 5,
+        "longitude": 238.430233,
+        "sequence": "Venus",
+        "sphere": "Attraction",
+        "variant": "Design"
+      },
+      "Core Wound": {
+        "body": "Mars",
+        "gate": 8,
+        "gene_key": 8,
+        "line": 5,
+        "longitude": 58.656825,
+        "sequence": "Venus",
+        "sphere": "Core Wound",
+        "variant": "Personality"
+      },
+      "EQ": {
+        "body": "Mars",
+        "gate": 16,
+        "gene_key": 16,
+        "line": 5,
+        "longitude": 69.898968,
+        "sequence": "Venus",
+        "sphere": "EQ",
+        "variant": "Design"
+      },
+      "IQ": {
+        "body": "Venus",
+        "gate": 38,
+        "gene_key": 38,
+        "line": 2,
+        "longitude": 280.86725,
+        "sequence": "Venus",
+        "sphere": "IQ",
+        "variant": "Personality"
+      },
+      "Purpose": {
+        "body": "Earth",
+        "gate": 25,
+        "gene_key": 25,
+        "line": 3,
+        "longitude": 0.806724,
+        "sequence": "Venus",
+        "sphere": "Purpose",
+        "variant": "Design"
+      },
+      "SQ": {
+        "body": "Venus",
+        "gate": 47,
+        "gene_key": 47,
+        "line": 5,
+        "longitude": 170.78896,
+        "sequence": "Venus",
+        "sphere": "SQ",
+        "variant": "Design"
+      }
+    }
+  },
+  "human_design": {
+    "design": [
+      {
+        "gate": 46,
+        "line": 3,
+        "longitude": 180.806724,
+        "name": "Sun"
+      },
+      {
+        "gate": 25,
+        "line": 3,
+        "longitude": 0.806724,
+        "name": "Earth"
+      },
+      {
+        "gate": 14,
+        "line": 5,
+        "longitude": 238.430233,
+        "name": "Moon"
+      },
+      {
+        "gate": 41,
+        "line": 4,
+        "longitude": 305.562492,
+        "name": "NorthNode"
+      },
+      {
+        "gate": 31,
+        "line": 4,
+        "longitude": 125.562492,
+        "name": "SouthNode"
+      },
+      {
+        "gate": 64,
+        "line": 2,
+        "longitude": 162.970367,
+        "name": "Mercury"
+      },
+      {
+        "gate": 47,
+        "line": 5,
+        "longitude": 170.78896,
+        "name": "Venus"
+      },
+      {
+        "gate": 16,
+        "line": 5,
+        "longitude": 69.898968,
+        "name": "Mars"
+      },
+      {
+        "gate": 31,
+        "line": 6,
+        "longitude": 127.163263,
+        "name": "Jupiter"
+      },
+      {
+        "gate": 54,
+        "line": 4,
+        "longitude": 288.704889,
+        "name": "Saturn"
+      },
+      {
+        "gate": 58,
+        "line": 2,
+        "longitude": 275.637643,
+        "name": "Uranus"
+      },
+      {
+        "gate": 38,
+        "line": 3,
+        "longitude": 281.797644,
+        "name": "Neptune"
+      },
+      {
+        "gate": 1,
+        "line": 3,
+        "longitude": 225.951342,
+        "name": "Pluto"
+      }
+    ],
+    "design_julian_day_ut": 2448158.61241462,
+    "mechanics": {
+      "authority": "Self-Projected",
+      "channels": [
+        {
+          "centers": [
+            "G",
+            "Throat"
+          ],
+          "gates": [
+            1,
+            8
+          ],
+          "id": "1-8"
+        },
+        {
+          "centers": [
+            "Ajna",
+            "Head"
+          ],
+          "gates": [
+            47,
+            64
+          ],
+          "id": "47-64"
+        }
+      ],
+      "defined_centers": [
+        "Head",
+        "Ajna",
+        "Throat",
+        "G"
+      ],
+      "definition": "Split Definition",
+      "gates_by_center": {
+        "Ajna": [
+          43,
+          47
+        ],
+        "G": [
+          1,
+          10,
+          15,
+          25,
+          46
+        ],
+        "Head": [
+          61,
+          64
+        ],
+        "Heart": [],
+        "Root": [
+          19,
+          38,
+          41,
+          54,
+          58,
+          60
+        ],
+        "Sacral": [
+          14
+        ],
+        "SolarPlexus": [],
+        "Spleen": [],
+        "Throat": [
+          8,
+          16,
+          31,
+          33,
+          56
+        ]
+      },
+      "incarnation_cross_angle": "Right Angle",
+      "incarnation_cross_gates": [
+        10,
+        15,
+        46,
+        25
+      ],
+      "not_self_theme": "Bitterness",
+      "open_centers": [
+        "Heart",
+        "SolarPlexus",
+        "Sacral",
+        "Spleen",
+        "Root"
+      ],
+      "profile": "1/3",
+      "signature": "Success",
+      "strategy": "Wait for the Invitation",
+      "type": "Projector"
+    },
+    "personality": [
+      {
+        "gate": 10,
+        "line": 1,
+        "longitude": 268.806724,
+        "name": "Sun"
+      },
+      {
+        "gate": 15,
+        "line": 1,
+        "longitude": 88.806724,
+        "name": "Earth"
+      },
+      {
+        "gate": 19,
+        "line": 3,
+        "longitude": 310.086778,
+        "name": "Moon"
+      },
+      {
+        "gate": 60,
+        "line": 2,
+        "longitude": 298.181392,
+        "name": "NorthNode"
+      },
+      {
+        "gate": 56,
+        "line": 2,
+        "longitude": 118.181392,
+        "name": "SouthNode"
+      },
+      {
+        "gate": 58,
+        "line": 3,
+        "longitude": 276.544134,
+        "name": "Mercury"
+      },
+      {
+        "gate": 38,
+        "line": 2,
+        "longitude": 280.86725,
+        "name": "Venus"
+      },
+      {
+        "gate": 8,
+        "line": 5,
+        "longitude": 58.656825,
+        "name": "Mars"
+      },
+      {
+        "gate": 33,
+        "line": 6,
+        "longitude": 132.892926,
+        "name": "Jupiter"
+      },
+      {
+        "gate": 61,
+        "line": 4,
+        "longitude": 294.406319,
+        "name": "Saturn"
+      },
+      {
+        "gate": 58,
+        "line": 6,
+        "longitude": 279.070442,
+        "name": "Uranus"
+      },
+      {
+        "gate": 38,
+        "line": 5,
+        "longitude": 283.70338,
+        "name": "Neptune"
+      },
+      {
+        "gate": 43,
+        "line": 1,
+        "longitude": 229.248918,
+        "name": "Pluto"
+      }
+    ]
+  },
+  "matrix": {
+    "core": {
+      "bottom": 7,
+      "center": 14,
+      "left": 21,
+      "right": 19,
+      "top": 12
+    },
+    "core_names": {
+      "bottom": "Rydwan",
+      "center": "Umiar",
+      "left": "Świat",
+      "right": "Słońce",
+      "top": "Wisielec"
+    },
+    "intermediate": {
+      "center_bottom": 21,
+      "center_left": 8,
+      "center_right": 6,
+      "center_top": 8
+    },
+    "lines": {
+      "karmic_tail": [
+        7,
+        21,
+        10
+      ],
+      "relationship": [
+        8,
+        9,
+        10
+      ],
+      "wealth": [
+        19,
+        6,
+        7
+      ]
+    },
+    "personal_destiny_40": 5,
+    "personal_destiny_40_name": "Hierofant",
+    "timeline": {
+      "current_age": 35,
+      "decades": {
+        "20": {
+          "arcana_name": "Słońce",
+          "arcana_number": 19,
+          "vertex": "right"
+        },
+        "30": {
+          "arcana_name": "Rydwan",
+          "arcana_number": 7,
+          "vertex": "bottom"
+        },
+        "40": {
+          "arcana_name": "Świat",
+          "arcana_number": 21,
+          "vertex": "left"
+        },
+        "50": {
+          "arcana_name": "Umiar",
+          "arcana_number": 14,
+          "vertex": "center"
+        },
+        "60": {
+          "arcana_name": "Wisielec",
+          "arcana_number": 12,
+          "vertex": "top"
+        }
+      },
+      "highlighted_decade": "30"
+    }
+  },
+  "meta": {
+    "engine_version": "1.0.0",
+    "errors": [
+      {
+        "code": "HOUSE_SYSTEM_UNAVAILABLE",
+        "field": "house_system",
+        "message": "House system 'placidus' is undefined at latitude -77.8419. Beyond the polar circles the diurnal arc does not divide; use house_system='whole_sign', which is defined at every latitude.",
+        "system": "western"
+      }
+    ],
+    "julian_day_ut": 2448246.45833333,
+    "reference_date": "2026-07-31",
+    "warnings": []
+  },
+  "numerology": {
+    "day_number": 3,
+    "expression_number": null,
+    "life_path": 7,
+    "maturity_number": null,
+    "personal_year": 7,
+    "personality_number": null,
+    "soul_urge_number": null
+  },
+  "vedic": {
+    "ascendant": {
+      "degree_in_sign": 25.880697,
+      "is_retrograde": false,
+      "longitude": 325.880697,
+      "name": "Ascendant",
+      "sign": "Aquarius"
+    },
+    "avakahada_chakra": {
+      "gana": "Deva",
+      "nadi": "Kapha",
+      "nakshatra": "Shravana",
+      "varna": "Shudra",
+      "yoni": "Małpa"
+    },
+    "ayanamsa": 23.730943,
+    "houses": [
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 1,
+        "longitude": 300.0,
+        "sign": "Aquarius"
+      },
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 2,
+        "longitude": 330.0,
+        "sign": "Pisces"
+      },
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 3,
+        "longitude": 0.0,
+        "sign": "Aries"
+      },
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 4,
+        "longitude": 30.0,
+        "sign": "Taurus"
+      },
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 5,
+        "longitude": 60.0,
+        "sign": "Gemini"
+      },
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 6,
+        "longitude": 90.0,
+        "sign": "Cancer"
+      },
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 7,
+        "longitude": 120.0,
+        "sign": "Leo"
+      },
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 8,
+        "longitude": 150.0,
+        "sign": "Virgo"
+      },
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 9,
+        "longitude": 180.0,
+        "sign": "Libra"
+      },
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 10,
+        "longitude": 210.0,
+        "sign": "Scorpio"
+      },
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 11,
+        "longitude": 240.0,
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 0.0,
+        "house_number": 12,
+        "longitude": 270.0,
+        "sign": "Capricorn"
+      }
+    ],
+    "midheaven": {
+      "degree_in_sign": 9.267073,
+      "is_retrograde": false,
+      "longitude": 219.267073,
+      "name": "Midheaven",
+      "sign": "Scorpio"
+    },
+    "nakshatras": [
+      {
+        "degree_in_sign": 5.071657,
+        "is_retrograde": false,
+        "longitude": 245.071657,
+        "nakshatra_name": "Mula",
+        "nakshatra_number": 19,
+        "name": "Sun",
+        "pada": 2,
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 16.351712,
+        "is_retrograde": false,
+        "longitude": 286.351712,
+        "nakshatra_name": "Shravana",
+        "nakshatra_number": 22,
+        "name": "Moon",
+        "pada": 2,
+        "sign": "Capricorn"
+      },
+      {
+        "degree_in_sign": 12.809067,
+        "is_retrograde": true,
+        "longitude": 252.809067,
+        "name": "Mercury",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 17.132183,
+        "is_retrograde": false,
+        "longitude": 257.132183,
+        "name": "Venus",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 4.921758,
+        "is_retrograde": true,
+        "longitude": 34.921758,
+        "name": "Mars",
+        "sign": "Taurus"
+      },
+      {
+        "degree_in_sign": 19.157859,
+        "is_retrograde": true,
+        "longitude": 109.157859,
+        "name": "Jupiter",
+        "sign": "Cancer"
+      },
+      {
+        "degree_in_sign": 0.671252,
+        "is_retrograde": false,
+        "longitude": 270.671252,
+        "name": "Saturn",
+        "sign": "Capricorn"
+      },
+      {
+        "degree_in_sign": 15.335376,
+        "is_retrograde": false,
+        "longitude": 255.335376,
+        "name": "Uranus",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 19.968313,
+        "is_retrograde": false,
+        "longitude": 259.968313,
+        "name": "Neptune",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 25.513851,
+        "is_retrograde": false,
+        "longitude": 205.513851,
+        "name": "Pluto",
+        "sign": "Libra"
+      },
+      {
+        "degree_in_sign": 4.446325,
+        "is_retrograde": false,
+        "longitude": 274.446325,
+        "name": "TrueNode",
+        "sign": "Capricorn"
+      },
+      {
+        "degree_in_sign": 25.880697,
+        "is_retrograde": false,
+        "longitude": 325.880697,
+        "nakshatra_name": "Purva Bhadrapada",
+        "nakshatra_number": 25,
+        "name": "Ascendant",
+        "pada": 2,
+        "sign": "Aquarius"
+      }
+    ],
+    "planets": [
+      {
+        "degree_in_sign": 5.071657,
+        "is_retrograde": false,
+        "longitude": 245.071657,
+        "name": "Sun",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 16.351712,
+        "is_retrograde": false,
+        "longitude": 286.351712,
+        "name": "Moon",
+        "sign": "Capricorn"
+      },
+      {
+        "degree_in_sign": 12.809067,
+        "is_retrograde": true,
+        "longitude": 252.809067,
+        "name": "Mercury",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 17.132183,
+        "is_retrograde": false,
+        "longitude": 257.132183,
+        "name": "Venus",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 4.921758,
+        "is_retrograde": true,
+        "longitude": 34.921758,
+        "name": "Mars",
+        "sign": "Taurus"
+      },
+      {
+        "degree_in_sign": 19.157859,
+        "is_retrograde": true,
+        "longitude": 109.157859,
+        "name": "Jupiter",
+        "sign": "Cancer"
+      },
+      {
+        "degree_in_sign": 0.671252,
+        "is_retrograde": false,
+        "longitude": 270.671252,
+        "name": "Saturn",
+        "sign": "Capricorn"
+      },
+      {
+        "degree_in_sign": 15.335376,
+        "is_retrograde": false,
+        "longitude": 255.335376,
+        "name": "Uranus",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 19.968313,
+        "is_retrograde": false,
+        "longitude": 259.968313,
+        "name": "Neptune",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 25.513851,
+        "is_retrograde": false,
+        "longitude": 205.513851,
+        "name": "Pluto",
+        "sign": "Libra"
+      },
+      {
+        "degree_in_sign": 4.446325,
+        "is_retrograde": false,
+        "longitude": 274.446325,
+        "name": "TrueNode",
+        "sign": "Capricorn"
+      }
+    ],
+    "sade_sati": {
+      "end_date": "2054-05-14",
+      "interpretation_ready": true,
+      "moon_sign": "Capricorn",
+      "phase": null,
+      "phase_end": null,
+      "phase_start": null,
+      "phases": [
+        {
+          "end": "2049-03-06",
+          "phase": "rising",
+          "sign": "Sagittarius",
+          "start": "2046-12-07"
+        },
+        {
+          "end": "2052-02-24",
+          "phase": "peak",
+          "sign": "Capricorn",
+          "start": "2049-03-06"
+        },
+        {
+          "end": "2054-05-14",
+          "phase": "setting",
+          "sign": "Aquarius",
+          "start": "2052-02-24"
+        }
+      ],
+      "saturn_sign": "Pisces",
+      "start_date": "2046-12-07",
+      "status": "inactive"
+    },
+    "system": "Lahiri (Chitra Paksha)",
+    "vimshottari_dasha": {
+      "balance_at_birth": {
+        "lord": "Moon",
+        "years_remaining": 5.2362
+      },
+      "current": {
+        "antardashas": [
+          {
+            "end": "2028-02-18",
+            "lord": "Mercury",
+            "start": "2025-11-13"
+          }
+        ],
+        "end": "2037-03-15",
+        "lord": "Jupiter",
+        "start": "2021-03-15"
+      },
+      "moon_nakshatra": "Shravana",
+      "moon_nakshatra_lord": "Moon",
+      "timeline": [
+        {
+          "antardashas": [
+            {
+              "end": "1992-01-14",
+              "lord": "Saturn",
+              "start": "1990-06-15"
+            },
+            {
+              "end": "1993-06-14",
+              "lord": "Mercury",
+              "start": "1992-01-14"
+            },
+            {
+              "end": "1994-01-13",
+              "lord": "Ketu",
+              "start": "1993-06-14"
+            },
+            {
+              "end": "1995-09-13",
+              "lord": "Venus",
+              "start": "1994-01-13"
+            },
+            {
+              "end": "1996-03-13",
+              "lord": "Sun",
+              "start": "1995-09-13"
+            }
+          ],
+          "end": "1996-03-16",
+          "lord": "Moon",
+          "start": "1990-12-20"
+        },
+        {
+          "antardashas": [
+            {
+              "end": "1996-08-12",
+              "lord": "Mars",
+              "start": "1996-03-16"
+            },
+            {
+              "end": "1997-08-30",
+              "lord": "Rahu",
+              "start": "1996-08-12"
+            },
+            {
+              "end": "1998-08-05",
+              "lord": "Jupiter",
+              "start": "1997-08-30"
+            },
+            {
+              "end": "1999-09-13",
+              "lord": "Saturn",
+              "start": "1998-08-05"
+            },
+            {
+              "end": "2000-09-09",
+              "lord": "Mercury",
+              "start": "1999-09-13"
+            },
+            {
+              "end": "2001-02-05",
+              "lord": "Ketu",
+              "start": "2000-09-09"
+            },
+            {
+              "end": "2002-04-07",
+              "lord": "Venus",
+              "start": "2001-02-05"
+            },
+            {
+              "end": "2002-08-12",
+              "lord": "Sun",
+              "start": "2002-04-07"
+            },
+            {
+              "end": "2003-03-13",
+              "lord": "Moon",
+              "start": "2002-08-12"
+            }
+          ],
+          "end": "2003-03-16",
+          "lord": "Mars",
+          "start": "1996-03-16"
+        },
+        {
+          "antardashas": [
+            {
+              "end": "2005-11-26",
+              "lord": "Rahu",
+              "start": "2003-03-16"
+            },
+            {
+              "end": "2008-04-20",
+              "lord": "Jupiter",
+              "start": "2005-11-26"
+            },
+            {
+              "end": "2011-02-24",
+              "lord": "Saturn",
+              "start": "2008-04-20"
+            },
+            {
+              "end": "2013-09-12",
+              "lord": "Mercury",
+              "start": "2011-02-24"
+            },
+            {
+              "end": "2014-09-30",
+              "lord": "Ketu",
+              "start": "2013-09-12"
+            },
+            {
+              "end": "2017-09-29",
+              "lord": "Venus",
+              "start": "2014-09-30"
+            },
+            {
+              "end": "2018-08-23",
+              "lord": "Sun",
+              "start": "2017-09-29"
+            },
+            {
+              "end": "2020-02-21",
+              "lord": "Moon",
+              "start": "2018-08-23"
+            },
+            {
+              "end": "2021-03-10",
+              "lord": "Mars",
+              "start": "2020-02-21"
+            }
+          ],
+          "end": "2021-03-15",
+          "lord": "Rahu",
+          "start": "2003-03-16"
+        },
+        {
+          "antardashas": [
+            {
+              "end": "2023-05-03",
+              "lord": "Jupiter",
+              "start": "2021-03-15"
+            },
+            {
+              "end": "2025-11-13",
+              "lord": "Saturn",
+              "start": "2023-05-03"
+            },
+            {
+              "end": "2028-02-18",
+              "lord": "Mercury",
+              "start": "2025-11-13"
+            },
+            {
+              "end": "2029-01-23",
+              "lord": "Ketu",
+              "start": "2028-02-18"
+            },
+            {
+              "end": "2031-09-24",
+              "lord": "Venus",
+              "start": "2029-01-23"
+            },
+            {
+              "end": "2032-07-12",
+              "lord": "Sun",
+              "start": "2031-09-24"
+            },
+            {
+              "end": "2033-11-11",
+              "lord": "Moon",
+              "start": "2032-07-12"
+            },
+            {
+              "end": "2034-10-17",
+              "lord": "Mars",
+              "start": "2033-11-11"
+            },
+            {
+              "end": "2037-03-11",
+              "lord": "Rahu",
+              "start": "2034-10-17"
+            }
+          ],
+          "end": "2037-03-15",
+          "lord": "Jupiter",
+          "start": "2021-03-15"
+        },
+        {
+          "antardashas": [
+            {
+              "end": "2040-03-17",
+              "lord": "Saturn",
+              "start": "2037-03-15"
+            },
+            {
+              "end": "2042-11-25",
+              "lord": "Mercury",
+              "start": "2040-03-17"
+            },
+            {
+              "end": "2044-01-03",
+              "lord": "Ketu",
+              "start": "2042-11-25"
+            },
+            {
+              "end": "2047-03-04",
+              "lord": "Venus",
+              "start": "2044-01-03"
+            },
+            {
+              "end": "2048-02-13",
+              "lord": "Sun",
+              "start": "2047-03-04"
+            },
+            {
+              "end": "2049-09-13",
+              "lord": "Moon",
+              "start": "2048-02-13"
+            },
+            {
+              "end": "2050-10-22",
+              "lord": "Mars",
+              "start": "2049-09-13"
+            },
+            {
+              "end": "2053-08-27",
+              "lord": "Rahu",
+              "start": "2050-10-22"
+            },
+            {
+              "end": "2056-03-09",
+              "lord": "Jupiter",
+              "start": "2053-08-27"
+            }
+          ],
+          "end": "2056-03-14",
+          "lord": "Saturn",
+          "start": "2037-03-15"
+        },
+        {
+          "antardashas": [
+            {
+              "end": "2058-08-10",
+              "lord": "Mercury",
+              "start": "2056-03-14"
+            },
+            {
+              "end": "2059-08-07",
+              "lord": "Ketu",
+              "start": "2058-08-10"
+            },
+            {
+              "end": "2062-06-06",
+              "lord": "Venus",
+              "start": "2059-08-07"
+            },
+            {
+              "end": "2063-04-12",
+              "lord": "Sun",
+              "start": "2062-06-06"
+            },
+            {
+              "end": "2064-09-10",
+              "lord": "Moon",
+              "start": "2063-04-12"
+            },
+            {
+              "end": "2065-09-07",
+              "lord": "Mars",
+              "start": "2064-09-10"
+            },
+            {
+              "end": "2068-03-26",
+              "lord": "Rahu",
+              "start": "2065-09-07"
+            },
+            {
+              "end": "2070-07-01",
+              "lord": "Jupiter",
+              "start": "2068-03-26"
+            },
+            {
+              "end": "2073-03-10",
+              "lord": "Saturn",
+              "start": "2070-07-01"
+            }
+          ],
+          "end": "2073-03-14",
+          "lord": "Mercury",
+          "start": "2056-03-14"
+        },
+        {
+          "antardashas": [
+            {
+              "end": "2073-08-10",
+              "lord": "Ketu",
+              "start": "2073-03-14"
+            },
+            {
+              "end": "2074-10-10",
+              "lord": "Venus",
+              "start": "2073-08-10"
+            },
+            {
+              "end": "2075-02-14",
+              "lord": "Sun",
+              "start": "2074-10-10"
+            },
+            {
+              "end": "2075-09-15",
+              "lord": "Moon",
+              "start": "2075-02-14"
+            },
+            {
+              "end": "2076-02-11",
+              "lord": "Mars",
+              "start": "2075-09-15"
+            },
+            {
+              "end": "2077-02-28",
+              "lord": "Rahu",
+              "start": "2076-02-11"
+            },
+            {
+              "end": "2078-02-03",
+              "lord": "Jupiter",
+              "start": "2077-02-28"
+            },
+            {
+              "end": "2079-03-14",
+              "lord": "Saturn",
+              "start": "2078-02-03"
+            },
+            {
+              "end": "2080-03-10",
+              "lord": "Mercury",
+              "start": "2079-03-14"
+            }
+          ],
+          "end": "2080-03-13",
+          "lord": "Ketu",
+          "start": "2073-03-14"
+        },
+        {
+          "antardashas": [
+            {
+              "end": "2083-07-13",
+              "lord": "Venus",
+              "start": "2080-03-13"
+            },
+            {
+              "end": "2084-07-12",
+              "lord": "Sun",
+              "start": "2083-07-13"
+            },
+            {
+              "end": "2086-03-12",
+              "lord": "Moon",
+              "start": "2084-07-12"
+            },
+            {
+              "end": "2087-05-12",
+              "lord": "Mars",
+              "start": "2086-03-12"
+            },
+            {
+              "end": "2090-05-11",
+              "lord": "Rahu",
+              "start": "2087-05-12"
+            },
+            {
+              "end": "2093-01-09",
+              "lord": "Jupiter",
+              "start": "2090-05-11"
+            },
+            {
+              "end": "2096-03-10",
+              "lord": "Saturn",
+              "start": "2093-01-09"
+            },
+            {
+              "end": "2099-01-08",
+              "lord": "Mercury",
+              "start": "2096-03-10"
+            },
+            {
+              "end": "2100-03-10",
+              "lord": "Ketu",
+              "start": "2099-01-08"
+            }
+          ],
+          "end": "2100-03-14",
+          "lord": "Venus",
+          "start": "2080-03-13"
+        }
+      ]
+    }
+  }
+}

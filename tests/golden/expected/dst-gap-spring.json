@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "AMBIGUOUS_LOCAL_TIME",
+    "field": "birth_time",
+    "message": "Local time 02:30:00 on 1993-03-28 does not exist in Europe/Warsaw (daylight-saving gap)."
+  }
+}

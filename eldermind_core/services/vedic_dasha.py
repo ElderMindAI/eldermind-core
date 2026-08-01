@@ -10,6 +10,7 @@ from datetime import date, datetime, timedelta
 from typing import Final
 
 from eldermind_core.core.config import NAKSHATRA_DEGREES
+from eldermind_core.core.reference import resolve_reference_date
 
 # Vimshottari sequence of lords and their period lengths in years (sum = 120).
 VIMSHOTTARI_ORDER: Final[list[str]] = [
@@ -230,8 +231,7 @@ def compute_vimshottari_dasha(
     Returns:
         Dictionary matching the ``VimshottariDasha`` schema.
     """
-    if reference_date is None:
-        reference_date = date.today()
+    reference_date = resolve_reference_date(reference_date)
 
     birth_date = birth_dt.date()
     normalized = moon_sidereal_longitude % 360.0

@@ -8,6 +8,8 @@ Zero is not a valid value in this system.
 from datetime import date
 from typing import Final
 
+from eldermind_core.core.reference import resolve_reference_date
+
 
 _MATRIX_MIN = 1
 _MATRIX_MAX = 22
@@ -70,11 +72,17 @@ def _sum_digits(value: int) -> int:
     return sum(int(digit) for digit in str(abs(value)))
 
 
-def compute_matrix_of_destiny(birth_date: date) -> dict:
+def compute_matrix_of_destiny(
+    birth_date: date,
+    reference_date: date | None = None,
+) -> dict:
     """Calculate the advanced Matrix of Destiny chart.
 
     Args:
         birth_date: The subject's birth date (day, month, year).
+        reference_date: Date used to compute the current age and highlight the
+            active decade. Defaults to today (UTC). Everything else in the chart
+            is time-invariant.
 
     Returns:
         Dictionary with core vertices, derived lines and personal destiny.
@@ -146,17 +154,21 @@ def compute_matrix_of_destiny(birth_date: date) -> dict:
         },
         "personal_destiny_40": personal_destiny_40,
         "personal_destiny_40_name": TAROT_ARCANA[personal_destiny_40],
-        "timeline": _compute_age_timeline(core, birth_date),
+        "timeline": _compute_age_timeline(core, birth_date, reference_date),
     }
 
 
-def _compute_age_timeline(core: dict[str, int], birth_date: date) -> dict:
+def _compute_age_timeline(
+    core: dict[str, int],
+    birth_date: date,
+    reference_date: date | None = None,
+) -> dict:
     """Build the decade timeline and highlight the client's current decade.
 
     The Matrix maps each decade of adult life to one of the core vertices:
     20s -> right, 30s -> bottom, 40s -> left, 50s -> center, 60s -> top.
     """
-    today = date.today()
+    today = resolve_reference_date(reference_date)
     age = today.year - birth_date.year
     if (today.month, today.day) < (birth_date.month, birth_date.day):
         age -= 1

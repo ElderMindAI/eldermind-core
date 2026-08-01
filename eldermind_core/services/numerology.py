@@ -8,6 +8,8 @@ counterparts before letter-to-number conversion.
 import unicodedata
 from datetime import date
 
+from eldermind_core.core.reference import resolve_reference_date
+
 
 MASTER_NUMBERS: set[int] = {11, 22, 33}
 
@@ -124,27 +126,41 @@ def compute_maturity_number(life_path: int, expression_number: int) -> int:
 
 def compute_numerology(
     birth_date: date,
-    current_date: date,
-    full_name: str,
+    current_date: date | None = None,
+    full_name: str | None = None,
 ) -> dict:
     """Compute the complete Pythagorean numerology profile.
 
     Args:
         birth_date: The local birth date.
-        current_date: The reference date for Personal Year (usually today).
-        full_name: Full name used for letter-based calculations.
+        current_date: The reference date for Personal Year. Defaults to today
+            (UTC) — see `eldermind_core.core.reference`.
+        full_name: Full name used for letter-based calculations. Optional
+            (bloker B2): four of the seven numbers come from the date alone, and
+            a caller who does not need name numerology should not have to hand
+            over a person's name to get them.
 
     Returns:
-        Dictionary with all core numerology numbers.
+        Dictionary with all core numerology numbers. The four name-derived
+        numbers are ``None`` when no name was supplied — absent rather than
+        zero, so a consumer cannot mistake "not calculated" for a real value.
     """
+    current_date = resolve_reference_date(current_date)
     life_path = compute_life_path(birth_date)
-    expression_number = compute_expression_number(full_name)
+
+    has_name = bool(full_name and full_name.strip())
+    expression_number = compute_expression_number(full_name) if has_name else None
+
     return {
         "life_path": life_path,
         "personal_year": compute_personal_year(birth_date, current_date),
         "expression_number": expression_number,
-        "soul_urge_number": compute_soul_urge_number(full_name),
-        "personality_number": compute_personality_number(full_name),
-        "maturity_number": compute_maturity_number(life_path, expression_number),
+        "soul_urge_number": compute_soul_urge_number(full_name) if has_name else None,
+        "personality_number": compute_personality_number(full_name) if has_name else None,
+        "maturity_number": (
+            compute_maturity_number(life_path, expression_number)
+            if expression_number is not None
+            else None
+        ),
         "day_number": compute_day_number(birth_date),
     }

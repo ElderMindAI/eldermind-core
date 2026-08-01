@@ -14,6 +14,7 @@ from eldermind_core.core.config import (
     ASPECT_DEFINITIONS,
     DEGREES_PER_SIGN,
     DEFAULT_ORB_DEGREES,
+    HOUSE_SYSTEM_CODES,
     HOUSE_SYSTEM_WESTERN,
     NAKSHATRA_BODIES,
     NAKSHATRA_COUNT,
@@ -25,6 +26,13 @@ from eldermind_core.core.config import (
     SIGNS_COUNT,
     ZODIAC_SIGNS,
 )
+from eldermind_core.core.errors import (
+    AmbiguousLocalTimeError,
+    HouseSystemUnavailableError,
+    InvalidTimezoneError,
+    NonexistentLocalTimeError,
+)
+from eldermind_core.core.reference import assert_date_in_range
 from eldermind_core.services.vedic_dasha import compute_avakahada_chakra, compute_vimshottari_dasha
 from eldermind_core.services.sade_sati import compute_sade_sati
 
@@ -32,19 +40,57 @@ from eldermind_core.services.sade_sati import compute_sade_sati
 def _assert_valid_timezone(timezone_name: str) -> None:
     """Validate that the supplied timezone name is a known IANA zone."""
     if timezone_name not in available_timezones():
-        raise ValueError(f"Unknown or unsupported timezone: {timezone_name!r}")
+        raise InvalidTimezoneError(f"Unknown or unsupported timezone: {timezone_name!r}")
+
+
+def describe_local_time_anomaly(local_dt: datetime) -> str | None:
+    """Return a human-readable note if this wall-clock time is not well-defined.
+
+    Two things can go wrong around a daylight-saving transition:
+
+    * **Gap** (spring forward) — the time never existed; no instant maps to it.
+    * **Fold** (autumn back) — the time happened twice, an hour apart.
+
+    `zoneinfo` silently picks a reading in both cases rather than complaining, so
+    without this check a birth time inside a DST transition yields a confidently
+    wrong chart. Returns ``None`` when the time is unambiguous.
+    """
+    # Round-tripping through UTC lands somewhere else only for gap times.
+    if local_dt.astimezone(ZoneInfo("UTC")).astimezone(local_dt.tzinfo) != local_dt:
+        return (
+            f"Local time {local_dt.time().isoformat()} on "
+            f"{local_dt.date().isoformat()} does not exist in "
+            f"{local_dt.tzinfo} (daylight-saving gap)."
+        )
+
+    if local_dt.replace(fold=0).utcoffset() != local_dt.replace(fold=1).utcoffset():
+        return (
+            f"Local time {local_dt.time().isoformat()} on "
+            f"{local_dt.date().isoformat()} occurs twice in "
+            f"{local_dt.tzinfo} (daylight-saving overlap)."
+        )
+
+    return None
 
 
 def _local_to_utc(
     birth_date: date,
     birth_time: time,
     timezone_name: str,
+    *,
+    strict: bool = False,
 ) -> datetime:
     """Convert a local birth date/time to UTC using the IANA timezone database.
 
+    Args:
+        strict: When true, refuse to guess through a daylight-saving transition
+            and raise instead. The public API sets this; the report product does
+            not, so its behaviour is unchanged.
+
     Raises:
-        ValueError: If the timezone name is unknown or the local time is invalid
-            (e.g. during a DST gap).
+        InvalidTimezoneError: The timezone name is not a known IANA zone.
+        AmbiguousLocalTimeError: Strict mode, and the time occurs twice.
+        NonexistentLocalTimeError: Strict mode, and the time never happened.
     """
     _assert_valid_timezone(timezone_name)
     tz: tzinfo = ZoneInfo(timezone_name)
@@ -63,7 +109,16 @@ def _local_to_utc(
     except Exception as exc:  # pragma: no cover - defensive catch for malformed dates
         raise ValueError(f"Unable to build local datetime: {exc}") from exc
 
-    # This conversion will raise exceptions for ambiguous or non-existent times.
+    if strict:
+        anomaly = describe_local_time_anomaly(local_dt)
+        if anomaly is not None:
+            error = (
+                NonexistentLocalTimeError
+                if "does not exist" in anomaly
+                else AmbiguousLocalTimeError
+            )
+            raise error(anomaly)
+
     return local_dt.astimezone(ZoneInfo("UTC"))
 
 
@@ -111,13 +166,24 @@ def compute_julian_day_ut(
     birth_date: date,
     birth_time: time,
     timezone_name: str,
+    *,
+    strict: bool = False,
 ) -> Tuple[float, datetime]:
     """Convert local birth data to UTC and compute the Julian Day (UT).
 
+    Args:
+        strict: Refuse ambiguous or non-existent local times instead of silently
+            picking a reading. See `_local_to_utc`.
+
     Returns:
         A tuple of (julian_day_ut, utc_datetime).
+
+    Raises:
+        DateOutOfRangeError: The date is outside the supported window (B7).
+        InvalidTimezoneError: The timezone name is not a known IANA zone.
     """
-    utc_dt = _local_to_utc(birth_date, birth_time, timezone_name)
+    assert_date_in_range(birth_date)
+    utc_dt = _local_to_utc(birth_date, birth_time, timezone_name, strict=strict)
     jd_ut = _utc_to_julian_day_ut(utc_dt)
     return jd_ut, utc_dt
 
@@ -182,6 +248,7 @@ def compute_houses(
     longitude: float,
     *,
     sidereal: bool = False,
+    house_system: str = "placidus",
 ) -> Tuple[dict, dict, list[dict]]:
     """Calculate houses, Ascendant and Midheaven.
 
@@ -194,15 +261,37 @@ def compute_houses(
         latitude: Geographic latitude in decimal degrees.
         longitude: Geographic longitude in decimal degrees (positive east).
         sidereal: If True, compute sidereal positions using Lahiri ayanamsa.
+        house_system: ``placidus`` or ``whole_sign``. Placidus fails beyond the
+            polar circles — see `HouseSystemUnavailableError`.
 
     Returns:
         Tuple of (ascendant_dict, midheaven_dict, list_of_house_dicts).
+
+    Raises:
+        HouseSystemUnavailableError: The system is undefined at this latitude.
     """
     if sidereal:
         _apply_ayanamsa_mode()
 
-    hsys = _house_system_code()
-    cusps, ascmc = swe.houses_ex(jd_ut, latitude, longitude, hsys, 0)
+    hsys = HOUSE_SYSTEM_CODES.get(house_system)
+    if hsys is None:
+        raise HouseSystemUnavailableError(
+            f"Unknown house system {house_system!r}. "
+            f"Supported: {', '.join(sorted(HOUSE_SYSTEM_CODES))}."
+        )
+
+    try:
+        cusps, ascmc = swe.houses_ex(jd_ut, latitude, longitude, hsys, 0)
+    except Exception as exc:
+        # Swiss Ephemeris signals "cannot divide the diurnal arc" with a bare
+        # error string. Left unhandled it surfaces as a 500 and the caller has
+        # no idea their latitude is the problem.
+        raise HouseSystemUnavailableError(
+            f"House system {house_system!r} is undefined at latitude "
+            f"{latitude:.4f}. Beyond the polar circles the diurnal arc does not "
+            f"divide; use house_system='whole_sign', which is defined at every "
+            f"latitude."
+        ) from exc
 
     if sidereal:
         # ``swe.houses_ex`` returns tropical cusps even when called with
@@ -719,8 +808,11 @@ def compute_vedic_chart(
     _apply_ayanamsa_mode()
     ayanamsa = round(float(swe.get_ayanamsa(jd_ut)), 6)
 
+    # Whole Sign, not Placidus: the Vedic chart derives its houses from the
+    # Ascendant's sign anyway, and Whole Sign is the only system defined beyond
+    # the polar circles — so a birth in Tromso still gets a Jyotish chart.
     ascendant, midheaven, _ = compute_houses(
-        jd_ut, latitude, longitude, sidereal=True
+        jd_ut, latitude, longitude, sidereal=True, house_system="whole_sign"
     )
     planets = compute_all_planets(jd_ut, sidereal=True)
     whole_sign_houses = compute_vedic_whole_sign_houses(ascendant["sign"])

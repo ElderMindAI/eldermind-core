@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "INVALID_TIMEZONE",
+    "field": "timezone",
+    "message": "Unknown or unsupported timezone: 'Mars/Olympus'"
+  }
+}

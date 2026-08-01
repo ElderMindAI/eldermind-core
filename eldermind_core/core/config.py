@@ -8,6 +8,15 @@ HOUSE_SYSTEM_WESTERN: Final[bytes] = b"P"
 # House system: Whole Sign for Vedic astrology.
 HOUSE_SYSTEM_VEDIC: Final[bytes] = b"W"
 
+# Public names accepted by the API, mapped to Swiss Ephemeris codes.
+# Placidus is undefined beyond the polar circles; Whole Sign works at every
+# latitude, which is why it is both the Vedic default and the documented
+# fallback for polar births.
+HOUSE_SYSTEM_CODES: Final[dict[str, bytes]] = {
+    "placidus": HOUSE_SYSTEM_WESTERN,
+    "whole_sign": HOUSE_SYSTEM_VEDIC,
+}
+
 # Number of zodiac signs and degrees per sign.
 SIGNS_COUNT: Final[int] = 12
 DEGREES_PER_SIGN: Final[float] = 30.0

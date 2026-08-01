@@ -26,6 +26,8 @@ from geopy.exc import GeocoderServiceError, GeocoderTimedOut
 from geopy.geocoders import Nominatim
 from timezonefinder import TimezoneFinder
 
+from eldermind_core.core.errors import GeocodingFailedError
+
 USER_AGENT = "eldermind-report-engine/1.0"
 
 # Be a good citizen of the free Nominatim public instance: max 1 req/sec,
@@ -37,12 +39,16 @@ _geolocator = Nominatim(user_agent=USER_AGENT)
 _timezone_finder = TimezoneFinder()
 
 
-class LocationResolutionError(RuntimeError):
+class LocationResolutionError(GeocodingFailedError, RuntimeError):
     """Raised when the birth place can't be geocoded or timezone can't be resolved.
 
     This is the client-input-facing error: the worker should catch it and
     mark the order `failed` with a clear, non-technical message rather than
     burning LLM credits on invalid/incomplete birth data.
+
+    It inherits `GeocodingFailedError` so the public API can map it to a typed
+    422 (`GEOCODING_FAILED`), and keeps `RuntimeError` so the report worker's
+    existing handlers are unaffected.
     """
 
 

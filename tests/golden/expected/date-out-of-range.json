@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "DATE_OUT_OF_RANGE",
+    "field": "birth_date",
+    "message": "Date 1750-06-15 is outside the supported range 1800-01-01..2200-12-31."
+  }
+}

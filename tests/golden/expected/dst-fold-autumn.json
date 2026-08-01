@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "AMBIGUOUS_LOCAL_TIME",
+    "field": "birth_time",
+    "message": "Local time 02:30:00 on 1993-09-26 occurs twice in Europe/Warsaw (daylight-saving overlap)."
+  }
+}

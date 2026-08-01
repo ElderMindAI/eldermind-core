@@ -17,6 +17,7 @@ from typing import Final
 import swisseph as swe
 
 from eldermind_core.core.config import PLANET_IDS, ZODIAC_SIGNS
+from eldermind_core.core.reference import resolve_reference_date
 
 # Saturn spends roughly 2.5 years in each sign.
 SATURN_DAYS_PER_SIGN: Final[float] = 365.25 * 2.5
@@ -25,7 +26,13 @@ SATURN_DAYS_PER_SIGN: Final[float] = 365.25 * 2.5
 _SEARCH_STEP_DAYS: Final[float] = 5.0
 
 # Search horizon in years when looking backward/forward for a Sade-Sati window.
-_SEARCH_HORIZON_YEARS: Final[float] = 20.0
+#
+# Must exceed one full Saturn revolution (~29.46 years). At 20 years the search
+# silently failed for any Moon sign whose next window lay further out than that
+# — on 2026-07-31 that was Capricorn, whose next transit of Sagittarius is in
+# 2049. The whole Vedic section (and, through it, the report) died with a
+# RuntimeError for roughly one client in twelve. Caught by the golden suite.
+_SEARCH_HORIZON_YEARS: Final[float] = 32.0
 
 _PHASE_ORDER: Final[list[str]] = ["rising", "peak", "setting"]
 
@@ -150,8 +157,7 @@ def compute_sade_sati(
         Dictionary with status, phase, phase dates and a breakdown of the
         three Sade-Sati phases. Dates are ISO strings for JSON compatibility.
     """
-    if reference_date is None:
-        reference_date = date.today()
+    reference_date = resolve_reference_date(reference_date)
 
     moon_index = _sign_index(moon_sign)
     sign_12 = (moon_index - 1) % 12
