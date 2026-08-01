@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eldermind-core"
+version = "1.0.0"
+description = "Deterministic esoteric calculation engine: Western/Vedic astrology, Human Design, Gene Keys, Matrix of Destiny, BaZi, numerology, draconic chart, Animal Design."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary" }
+authors = [{ name = "Eldermind" }]
+keywords = ["astrology", "human-design", "gene-keys", "bazi", "swiss-ephemeris"]
+
+dependencies = [
+    "pyswisseph==2.10.3.2",
+    "cnlunar==0.2.4",
+    "python-dateutil==2.9.0",
+    "geopy==2.5.0",
+    "timezonefinder==8.2.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+]
+
+[tool.setuptools.packages.find]
+include = ["eldermind_core*"]
+
+[tool.setuptools.package-data]
+eldermind_core = ["knowledge/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

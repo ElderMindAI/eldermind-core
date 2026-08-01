@@ -1,0 +1,313 @@
+{
+  "source_url": "https://www.geneticmatrix.com/learn-hub/animals/index.html",
+  "source_note": "Uproszczony, autorski opis inspirowany publicznym materiałem Genetic Matrix o \"Animal Design\" (Mammalian Design System) — 15 bram, 5 centrów, 3 grupy. Baza utrzymywana ODDZIELNIE od ludzkiej bazy wiedzy Human Design (app/knowledge/hd_*.json).",
+  "gates": {
+    "19": {
+      "keynote": { "pl": "Terytorium", "en": "Territory" },
+      "center": "Root",
+      "group": "Territory",
+      "description": {
+        "pl": "Brama-Portal terytorium. Zwierzę z tą aktywacją silnie broni swojej przestrzeni, jedzenia i zasobów — to fundament starożytnego układu ze człowiekiem: bezpieczne terytorium i pożywienie w zamian za oswojenie.",
+        "en": "The Territory Portal gate. An animal with this activation strongly guards its space, food and resources — the foundation of the ancient bargain with humans: safe territory and food in exchange for domestication."
+      }
+    },
+    "38": {
+      "keynote": { "pl": "Zaciekłość", "en": "Fierceness" },
+      "center": "Root",
+      "group": "Territory",
+      "description": {
+        "pl": "Czysta, surowa energia obronna. Zwierzę z tą bramą potrafi być zaskakująco zaciekłe, gdy czuje zagrożenie — ale ta samo zaciekłość bywa też jego tarczą i sposobem na zachowanie integralności.",
+        "en": "Pure, raw defensive energy. An animal with this gate can be surprisingly fierce when it feels threatened — but that same fierceness is also its shield and its way of holding onto its integrity."
+      }
+    },
+    "28": {
+      "keynote": { "pl": "Czujność", "en": "Fear/Alertness" },
+      "center": "Root",
+      "group": "Territory",
+      "description": {
+        "pl": "Korzeń zwierzęcej inteligencji akustycznej. Takie zwierzę stale nasłuchuje i jest czujne na niespodziewane dźwięki — a z tej czujności rodzi się bystrość i zdolność uczenia się.",
+        "en": "The root of mammalian acoustic intelligence. This animal is constantly listening and alert to unexpected sounds — and out of that alertness comes sharp learning ability."
+      }
+    },
+    "53": {
+      "keynote": { "pl": "Wolność", "en": "Freedom" },
+      "center": "Root",
+      "group": "Territory",
+      "description": {
+        "pl": "Jedyna aktywacja w matrycy zwierzęcej powiązana z ryzykiem przygnębienia przy braku wolności. Zwierzę z tą bramą źle znosi stałe zamknięcie — potrzebuje przestrzeni do naturalnego cyklu dojrzewania.",
+        "en": "The only activation in the animal matrix linked to a risk of depression when freedom is denied. An animal with this gate does poorly under constant confinement — it needs room to complete its natural maturation cycle."
+      }
+    },
+    "42": {
+      "keynote": { "pl": "Dojrzewanie", "en": "Maturity" },
+      "center": "Sacral",
+      "group": "Territory",
+      "description": {
+        "pl": "Druga strona cyklu dojrzewania. Takie zwierzę potrzebuje domknąć swój pełny proces życiowy — warto to mieć na uwadze przy decyzjach o sterylizacji, zwłaszcza gdy jednocześnie aktywna jest brama 53 (pełny kanał 53/42).",
+        "en": "The other half of the maturation cycle. This animal needs to complete its full life process — worth keeping in mind around sterilization decisions, especially when gate 53 is active too (the full 53/42 channel)."
+      }
+    },
+    "12": {
+      "keynote": { "pl": "Metamorfoza", "en": "Metamorphosis" },
+      "center": "Throat",
+      "group": "Metamorphosis",
+      "description": {
+        "pl": "Brama-Portal ostrożnej przyjaźni. Zwierzę z tą aktywacją buduje więź powoli i ostrożnie — ale gdy zaufanie już powstanie, jest ono głębokie i prawdziwe.",
+        "en": "The Metamorphosis Portal gate of cautious friendship. An animal with this activation builds trust slowly and carefully — but once formed, the bond is deep and genuine."
+      }
+    },
+    "27": {
+      "keynote": { "pl": "Stadność", "en": "Herding" },
+      "center": "Sacral",
+      "group": "Metamorphosis",
+      "description": {
+        "pl": "Potrzeba wspólnoty. Zwierzę z tą bramą źle znosi samotność i naturalnie \"spędza\" wokół siebie innych — także inne gatunki (stąd np. psy pasterskie pilnujące dzieci).",
+        "en": "The need for togetherness. An animal with this gate doesn't do well alone and naturally herds others around it — even other species (which is why herding dogs will herd children)."
+      }
+    },
+    "50": {
+      "keynote": { "pl": "Więź/Rozród", "en": "Bonding" },
+      "center": "Spleen",
+      "group": "Metamorphosis",
+      "description": {
+        "pl": "Silny instynkt rozrodczy i budowania więzi. Zwierzęta z tą bramą są zwykle bardzo skutecznymi rozrodczo osobnikami — ale trzymane w niewoli mogą przejawiać zachowania związane z niezaspokojoną potrzebą rozrodu.",
+        "en": "A strong bonding/breeding instinct. Animals with this gate tend to be highly successful breeders — but kept without an outlet, they may show behaviors tied to that unmet drive."
+      }
+    },
+    "5": {
+      "keynote": { "pl": "Rytm", "en": "Patterns" },
+      "center": "Sacral",
+      "group": "Metamorphosis",
+      "description": {
+        "pl": "Stały, ustalony rytm. Takie zwierzę oczekuje karmienia i aktywności o stałych porach — zaburzenie rutyny wyraźnie je niepokoi.",
+        "en": "Fixed, established rhythm. This animal expects feeding and activity at consistent times — disrupting its routine noticeably unsettles it."
+      }
+    },
+    "15": {
+      "keynote": { "pl": "Różnorodność", "en": "Diversity" },
+      "center": "G",
+      "group": "Metamorphosis",
+      "description": {
+        "pl": "Elastyczność rytmu. W przeciwieństwie do bramy 5, to zwierzę potrafi dostosować się do różnych pór dnia, o ile jego potrzeby są w końcu zaspokajane.",
+        "en": "Rhythmic flexibility. Unlike gate 5, this animal can adapt to a variety of schedules, as long as its needs are eventually met."
+      }
+    },
+    "62": {
+      "keynote": { "pl": "Alfa", "en": "Alpha" },
+      "center": "Throat",
+      "group": "Alpha",
+      "description": {
+        "pl": "Brama-Portal pracownika. Zwierzę z tą aktywacją uczy się rozpoznawać wzorce i przewidywać przyszłość (dźwięk otwieracza do puszek, brzęk smyczy) — potrzebuje jakiegoś \"zajęcia\", inaczej czuje się niespełnione.",
+        "en": "The Alpha (Worker) Portal gate. An animal with this activation learns to recognize patterns and anticipate the future (the sound of a can opener, the jingle of a leash) — it needs a 'job', or it feels unfulfilled."
+      }
+    },
+    "20": {
+      "keynote": { "pl": "Obecność", "en": "Presence" },
+      "center": "Throat",
+      "group": "Alpha",
+      "description": {
+        "pl": "Intensywna obecność w teraźniejszości. W parze z bramą 57 (pełny kanał) tworzy niezwykle bystre, responsywne zwierzę, żyjące bardzo mocno w \"tu i teraz\".",
+        "en": "Intense presence in the now. Paired with gate 57 (full channel), it forms an unusually sharp, responsive animal that lives very strongly in the 'here and now'."
+      }
+    },
+    "57": {
+      "keynote": { "pl": "Świadomość", "en": "Awareness" },
+      "center": "Spleen",
+      "group": "Alpha",
+      "description": {
+        "pl": "Korzeń zwierzęcej inteligencji akustycznej najwyższego rzędu. Takie zwierzę uczy się głównie ze słuchu — kojarzy dźwięki ze zdarzeniami niemal natychmiast, bez potrzeby długiego treningu.",
+        "en": "The root of top-tier mammalian acoustic intelligence. This animal learns mostly by ear — it associates sounds with events almost instantly, without needing much training."
+      }
+    },
+    "8": {
+      "keynote": { "pl": "Kierunek", "en": "Direction" },
+      "center": "Throat",
+      "group": "Alpha",
+      "description": {
+        "pl": "Bramę tę, w parze z bramą 1 (pełny kanał), noszą zwierzęta-odmieńcy stada — te, które robią coś inaczej niż reszta i tym samym torują nową drogę dla innych.",
+        "en": "Paired with gate 1 (full channel), this is the gate of the pack's outliers — the ones who do something differently and, in doing so, blaze a new trail for the rest."
+      }
+    },
+    "1": {
+      "keynote": { "pl": "Indywidualność", "en": "Individuality" },
+      "center": "G",
+      "group": "Alpha",
+      "description": {
+        "pl": "Wyrazista, autentyczna indywidualność. Zwierzę z tą bramą wyróżnia się z otoczenia — nie zawsze pasuje do grupy, ale jego oryginalność bywa siłą napędową zmiany.",
+        "en": "A distinct, authentic individuality. An animal with this gate stands out from its surroundings — it doesn't always fit the group, but its originality can drive change."
+      }
+    }
+  },
+  "channels": {
+    "1-8": {
+      "name": { "pl": "Kanał Inspiracji", "en": "Channel of Inspiration" },
+      "centers": ["Throat", "G"],
+      "description": {
+        "pl": "Kanał mutacyjny. Zwierzęta z pełnym kanałem 1/8 to \"odmieńcy stada\" — te, które robią coś inaczej i tym samym prowadzą grupę w nowym kierunku (ale bywają też odrzucane jako niepasujące).",
+        "en": "The mutative channel. Animals with the full 1/8 channel are the pack's outliers — the ones who do something differently and lead the group in a new direction (though they can also be the odd one out that gets rejected)."
+      }
+    },
+    "5-15": {
+      "name": { "pl": "Kanał Rytmu", "en": "Channel of Rhythm" },
+      "centers": ["Sacral", "G"],
+      "description": {
+        "pl": "Najpotężniejszy kanał w matrycy zwierzęcej. Takie zwierzę potrafi narzucić rytm całemu domowi — pory karmienia, snu, aktywności całej rodziny zaczynają kręcić się wokół jego wewnętrznego zegara.",
+        "en": "The most powerful channel in the mammalian matrix. This animal can set the rhythm for the whole household — feeding, sleep and activity times for the whole family start to revolve around its internal clock."
+      }
+    },
+    "20-57": {
+      "name": { "pl": "Kanał Bystrej Obecności", "en": "Channel of Sharp Presence" },
+      "centers": ["Throat", "Spleen"],
+      "description": {
+        "pl": "Wyjątkowo bystre i responsywne zwierzę, intensywnie obecne w chwili bieżącej. Bez jednoczesnej aktywacji bramy 28 bywa też mocno skupione na sobie i niechętne, by słuchać, gdy zajęte jest czymś innym.",
+        "en": "An unusually sharp, responsive animal, intensely present in the moment. Without gate 28 also active, it can be quite self-focused and unwilling to listen when it's busy with something else."
+      }
+    },
+    "27-50": {
+      "name": { "pl": "Kanał Stadnej Więzi", "en": "Channel of Herd Bonding" },
+      "centers": ["Sacral", "Spleen"],
+      "description": {
+        "pl": "Łączy potrzebę wspólnoty (brama 27) z silnym instynktem więzi/rozrodu (brama 50) — zwierzę mocno zorientowane na grupę i budowanie trwałych relacji wokół siebie.",
+        "en": "Combines the need for togetherness (gate 27) with a strong bonding/breeding instinct (gate 50) — an animal strongly oriented toward the group and building lasting relationships around itself."
+      }
+    },
+    "28-38": {
+      "name": { "pl": "Kanał Czujnej Zaciekłości", "en": "Channel of Alert Fierceness" },
+      "centers": ["Root", "Spleen"],
+      "description": {
+        "pl": "Łączy stałą czujność (brama 28) z gotowością do obrony (brama 38) — zwierzę wyczulone na zagrożenia i zdolne do zaciekłej reakcji, gdy uzna, że są realne.",
+        "en": "Combines constant alertness (gate 28) with readiness to defend (gate 38) — an animal attuned to threats and capable of a fierce reaction when it judges them to be real."
+      }
+    },
+    "42-53": {
+      "name": { "pl": "Kanał Wolności i Dojrzewania", "en": "Channel of Freedom and Maturity" },
+      "centers": ["Sacral", "Root"],
+      "description": {
+        "pl": "Łączy potrzebę wolności (brama 53) z potrzebą domknięcia pełnego cyklu życiowego (brama 42). Zwierzę z pełnym kanałem źle znosi trwałe ograniczenie przestrzeni lub sterylizację bez uwzględnienia jego natury — może to prowadzić do przewlekłego przygnębienia.",
+        "en": "Combines the need for freedom (gate 53) with the need to complete a full life cycle (gate 42). An animal with the full channel does poorly under permanent confinement or sterilization without regard for its nature — this can lead to lasting low mood."
+      }
+    }
+  },
+  "groups": {
+    "Territory": {
+      "name": { "pl": "Grupa Terytorium", "en": "Territory Group" },
+      "centers": ["Root", "Spleen", "Sacral"],
+      "portal_gate": 19,
+      "description": {
+        "pl": "Fundament przetrwania: gdzie zwierzę mieszka, co je i jak bezpiecznie się czuje. To tutaj najczęściej pojawia się napięcie między zwierzęciem a jego opiekunem — bo to poziom instynktowny i niepodlegający negocjacji.",
+        "en": "The foundation of survival: where the animal lives, what it eats, how safe it feels. This is where the most friction with human companions tends to arise — because it's instinctual, non-negotiable ground."
+      }
+    },
+    "Metamorphosis": {
+      "name": { "pl": "Grupa Metamorfozy", "en": "Metamorphosis Group" },
+      "centers": ["Throat", "Sacral", "Spleen", "G"],
+      "portal_gate": 12,
+      "description": {
+        "pl": "Serce społeczne zwierzęcia: tutaj rodzi się przyjaźń i głęboka więź między człowiekiem a zwierzęciem — zwierzę jako towarzysz i niemal równy partner, nie jako zasób czy pracownik.",
+        "en": "The animal's social heart: where friendship and a deep bond with a human are formed — the animal as companion and near-equal, not as resource or worker."
+      }
+    },
+    "Alpha": {
+      "name": { "pl": "Grupa Alfa", "en": "Alpha Group" },
+      "centers": ["Throat", "Spleen", "G"],
+      "portal_gate": 62,
+      "description": {
+        "pl": "Inteligencja robocza: zdolność zwierzęcia do uczenia się, przewodzenia i bycia trenowanym, a także do rozumienia ludzkiego pojęcia czasu i przewidywania przyszłości.",
+        "en": "Working intelligence: the animal's capacity to learn, to lead, to be trained, and to connect with the human concept of time and anticipating the future."
+      }
+    }
+  },
+  "lines": {
+    "1": {
+      "name": { "pl": "Skrytość", "en": "Stealth" },
+      "description": {
+        "pl": "Najczystszy wyraz natury bramy. Zwierzę ostrożne i niepewne, sprawdzające otoczenie długo, zanim zrobi jakikolwiek ruch — przetrwanie oparte na czujności.",
+        "en": "The purest expression of the gate's nature. A cautious, insecure animal that checks its surroundings for a long time before making any move — survival through vigilance."
+      }
+    },
+    "2": {
+      "name": { "pl": "Tajemnica", "en": "Mystery" },
+      "description": {
+        "pl": "Zwierzę widoczne i przez to bardziej narażone — płochliwe, nieprzewidywalne, czasem reagujące nagle i gwałtownie, jakby genetycznie wyczuwało swoją podatność.",
+        "en": "A visible, and therefore more exposed, animal — skittish, unpredictable, sometimes reacting suddenly and sharply, as if it genetically senses its own vulnerability."
+      }
+    },
+    "3": {
+      "name": { "pl": "Zmaganie", "en": "Struggle" },
+      "description": {
+        "pl": "Nauka metodą prób i błędów. Bywa uparte i wolno się uczy niektórych rzeczy — ale to właśnie te zwierzęta odkrywają rzeczy, których inne przeoczają.",
+        "en": "Trial-and-error learning. Can be stubborn and slow to learn certain things — but these are the animals that discover what others miss."
+      }
+    },
+    "4": {
+      "name": { "pl": "Wpływ", "en": "Influence" },
+      "description": {
+        "pl": "Najbardziej wpływowa linia w świecie zwierząt. Stałe, silne, skłonne do przejmowania kontroli i przewodzenia w hierarchii — wymaga partnerskiego podejścia zamiast walki o dominację.",
+        "en": "The most influential line in the animal world. Fixed, strong, inclined to take control and lead the hierarchy — needs a collaborative approach rather than a fight for dominance."
+      }
+    },
+    "5": {
+      "name": { "pl": "Wyzwanie", "en": "Challenge" },
+      "description": {
+        "pl": "Pole projekcji. Takie zwierzę przyciąga uwagę i cudze oczekiwania (\"to na pewno będzie świetny zwierzak\") — czasem wplątuje się w konflikty, których samo nie zaczęło.",
+        "en": "The projection field. This animal attracts attention and other people's expectations ('this one will make a great pet') — it can end up in conflicts it didn't start."
+      }
+    },
+    "6": {
+      "name": { "pl": "Odrębność", "en": "Separation" },
+      "description": {
+        "pl": "Pomost między zwierzęciem a człowiekiem. Stoi nieco z boku grupy, obserwuje — ma w sobie coś nietowarzyskiego, ale też potencjał do wyjątkowo głębokiej więzi z człowiekiem.",
+        "en": "The bridge between animal and human. Stands a little apart from the group, observing — has an anti-social streak, but also the potential for an unusually deep bond with a human."
+      }
+    }
+  },
+  "portals": {
+    "19": {
+      "human_gate": 49,
+      "name": { "pl": "Zasób", "en": "Resource" },
+      "description": {
+        "pl": "Starożytny układ: zwierzę jako zasób. To fundament hodowli i relacji gospodarskiej między człowiekiem a zwierzęciem.",
+        "en": "The ancient bargain: the animal as resource. This is the foundation of livestock farming and the working relationship between humans and animals."
+      }
+    },
+    "12": {
+      "human_gate": 22,
+      "name": { "pl": "Przyjaciel", "en": "Friend" },
+      "description": {
+        "pl": "Zwierzę jako towarzysz i niemal równy partner — rozpoznanie unikalnej \"osobowości\" w innej formie życia. To ten sam mechanizm, dzięki któremu wilk stał się psem.",
+        "en": "The animal as companion and near-equal — recognizing a unique personality in another form of life. This is the same mechanism through which the wolf became the dog."
+      }
+    },
+    "62": {
+      "human_gate": 17,
+      "name": { "pl": "Pracownik", "en": "Worker" },
+      "description": {
+        "pl": "Zwierzę jako partner do pracy. Potrafi uczyć się wzorców, przewidywać rutynę i potrzebuje jakiegoś \"zajęcia\", by czuć się spełnione.",
+        "en": "The animal as a working partner. It can learn patterns, anticipate routine, and needs a 'job' to feel fulfilled."
+      }
+    }
+  },
+  "types": {
+    "Reflector": {
+      "name": { "pl": "Reflektor", "en": "Reflector" },
+      "description": {
+        "pl": "Zdecydowana większość ssaków to Reflektory — całkowicie otwarte wykresy, bez żadnej definicji. To najłatwiejsze zwierzęta we współżyciu: chłonną, otwartą aurą wchłaniają energię otoczenia i odbijają charakter swojego opiekuna czy domu.",
+        "en": "The vast majority of mammals are Reflectors — completely open charts with no definition at all. These are the easiest animals to live with: with a fully open, absorbent aura, they take on the energy of their environment and reflect their owner's or household's character."
+      }
+    },
+    "Generator": {
+      "name": { "pl": "Generator", "en": "Generator" },
+      "description": {
+        "pl": "Zwierzę z zdefiniowanym Centrum Sakralnym ma trwałą, odnawialną energię życiową. Potrzebuje aktywności, celu i możliwości \"zużycia\" tej energii — bez tego staje się sfrustrowane i destrukcyjne.",
+        "en": "An animal with a defined Sacral center has sustained, renewable life-force energy. It needs activity, purpose, and an outlet for that energy — without it, it becomes frustrated and destructive."
+      }
+    },
+    "Defined": {
+      "name": { "pl": "Zdefiniowany (bez Sakralu)", "en": "Defined (non-Sacral)" },
+      "description": {
+        "pl": "Centrum Sakralne jest otwarte, ale przynajmniej jedno inne centrum jest u tego zwierzęcia zdefiniowane na stałe — oznacza to jedną lub więcej stałych, przewidywalnych cech charakteru, niezależnych od tego, kto akurat jest w pobliżu.",
+        "en": "The Sacral center is open, but at least one other center is permanently defined in this animal — meaning one or more fixed, predictable character traits, independent of whoever happens to be nearby."
+      }
+    }
+  }
+}
