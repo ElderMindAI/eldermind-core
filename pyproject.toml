@@ -15,9 +15,16 @@ keywords = ["astrology", "human-design", "gene-keys", "bazi", "swiss-ephemeris"]
 dependencies = [
     "pyswisseph==2.10.3.2",
     "cnlunar==0.2.4",
-    "python-dateutil==2.9.0",
+    # Not pinned to an exact patch: the report backend and the API service
+    # resolve it independently, and 2.9.0 vs 2.9.0.post0 is not a difference
+    # worth breaking an install over.
+    "python-dateutil~=2.9",
     "geopy==2.5.0",
     "timezonefinder==8.2.5",
+    # Required, not optional: `zoneinfo` reads the *system* tz database, which
+    # Windows does not have and slim container images usually strip. Without it
+    # every timezone resolves to "unknown" and the engine rejects valid input.
+    "tzdata>=2024.1",
 ]
 
 [project.optional-dependencies]
