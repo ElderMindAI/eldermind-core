@@ -305,12 +305,40 @@ def credits_for(systems: Iterable[str]) -> int:
     return sum(per_system.get(name, 1) for name in requested)
 
 
+#: Widest transit scan the API will accept, in months. Beyond roughly a year the
+#: default `max_windows` already truncates the result, so a longer scan has to be
+#: paired with a higher window cap to buy anything; 24 keeps the worst case near
+#: 1.6 s of CPU, which the single-vCPU box can absorb.
+MAX_TRANSIT_MONTHS = 24
+
+
+def credits_for_transits(months: int) -> int:
+    """One credit per month scanned, minimum one.
+
+    Linear because the work is: `compute_transit_windows` steps day by day and
+    samples every body at each step, so the cost tracks the span exactly.
+    Measured at ~67 ms per month, flat from 1 to 60 months.
+
+    That makes transits by far the heaviest thing sold here — an 18-month scan
+    is ~1.2 s against ~41 ms for the whole eight-system bundle. The old flat
+    price of 5 credits would have made the most expensive call cheaper than the
+    cheapest one. Even at 1 credit per month the deal still favours the client
+    (a 1-credit light system costs ~5 ms), which is deliberate: the number stays
+    trivially explainable, and "1 credit = 1 month" needs no pricing table.
+    """
+    if months < 1:
+        raise ValueError("months must be at least 1")
+    return months
+
+
 __all__ = [
     "ALL_SYSTEMS",
     "DEFAULT_BIRTH_TIME",
+    "MAX_TRANSIT_MONTHS",
     "ProfileResult",
     "Subject",
     "compute_profile",
     "credits_for",
+    "credits_for_transits",
     "jsonable",
 ]
