@@ -26,18 +26,26 @@ profile, Gene Keys). To materiał opisowy — nie bierze udziału w żadnym obli
 
 ## Instalacja
 
+Wymagany Python 3.11+.
+
 ```bash
 pip install -e .          # tryb deweloperski
 pip install .             # zwykła instalacja
 ```
 
-`pyswisseph` na Windowsie wymaga kompilatora MSVC albo gotowego koła.
+`pyswisseph` na Windowsie wymaga kompilatora MSVC albo gotowego koła. Jeśli nie
+masz Build Tools, `uv pip install` załatwia sprawę bez nich — jego cache trzyma
+skompilowane koło.
 
 ## Testy
 
 ```bash
-pytest
+pytest          # 122 testy, w tym 29 złotych
 ```
+
+Testy złote (`tests/golden/`) przypinają wyniki do zapisanych wartości
+referencyjnych. Ruszenie choćby jednej liczby wywala build — to jest mechanizm,
+który utrzymuje determinizm opisany wyżej, a nie deklaracja o dobrych intencjach.
 
 ## Wersjonowanie
 
@@ -49,7 +57,17 @@ do klucza cache'u i do nagłówka `X-Engine-Version` w publicznym API.
 
 ## Kto z tego korzysta
 
-* **Backend Calculator Engine** — produkt raportowy (LLM, PDF, Supabase)
-* **eldermind-astro-api** — publiczne REST + MCP
+* **[`eldermind-astro-api`](https://github.com/ElderMindAI/eldermind-astro-api)** — publiczne REST + MCP
+* **`eldermind-report-backend`** — produkt raportowy (LLM, PDF, Supabase), repozytorium prywatne
 
 Kod obliczeniowy nie może się rozjechać między tymi serwisami — dlatego żyje tutaj.
+
+## Licencja
+
+Kod jest **udostępniony do wglądu, nie open source**. Wolno go czytać, studiować
+i oceniać; użycie w produkcie lub usłudze wymaga pisemnej zgody. Pełne warunki:
+[`LICENSE`](LICENSE).
+
+Katalog `knowledge/` opisuje systemy powstałe poza tym projektem (m.in. Human
+Design, Gene Keys). Licencja nie rości sobie żadnych praw do tych systemów ani
+ich nazw.

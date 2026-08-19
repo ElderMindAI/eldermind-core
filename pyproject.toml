@@ -8,8 +8,10 @@ version = "1.0.0"
 description = "Deterministic esoteric calculation engine: Western/Vedic astrology, Human Design, Gene Keys, Matrix of Destiny, BaZi, numerology, draconic chart, Animal Design."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "Proprietary" }
-authors = [{ name = "Eldermind" }]
+# Zrodlo widoczne, prawa zastrzezone — nie jest to zadna licencja OSI, wiec
+# nie ma dla niej identyfikatora SPDX. Wiazace sa warunki w pliku LICENSE.
+license = { file = "LICENSE" }
+authors = [{ name = "Eldermind Labs" }]
 keywords = ["astrology", "human-design", "gene-keys", "bazi", "swiss-ephemeris"]
 
 dependencies = [

@@ -1,0 +1,51 @@
+Eldermind Source-Available License
+Copyright (c) 2026 BezKodu.io Marcin Gojdka, trading as Eldermind Labs.
+All rights reserved.
+
+This source code is published so that it can be read, studied and evaluated.
+It is NOT open source, and no open-source license applies to it.
+
+WHAT YOU MAY DO
+
+  1. View, read and study this source code.
+  2. Clone or download a copy for the sole purpose of reading it, evaluating
+     it, or reviewing it (for example, as part of assessing the author's work).
+  3. Quote short excerpts for commentary, review, teaching or reporting, with
+     attribution to Eldermind Labs.
+
+WHAT YOU MAY NOT DO WITHOUT PRIOR WRITTEN PERMISSION
+
+  1. Use this software, in whole or in part, in any product, service or
+     system, whether commercial or non-commercial, internal or public.
+  2. Copy, modify, translate or create derivative works from it, other than
+     as strictly required for the reading and evaluation permitted above.
+  3. Redistribute, publish, sublicense, sell or otherwise make it available
+     to third parties.
+  4. Remove or alter this notice, or any copyright or attribution notice
+     contained in the source.
+
+Permission for any of the above can be granted, and is granted in writing
+only. Enquiries: https://eldermind.io
+
+THIRD-PARTY AND DESCRIPTIVE MATERIAL
+
+This repository contains descriptive material about esoteric systems that
+originate outside this project, including terminology from Human Design and
+Gene Keys. Nothing in this license grants any right in those systems, their
+names, or any third-party material, and no claim of ownership over them is
+made here. Rights in third-party dependencies are governed by their own
+licenses.
+
+NO WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+The calculations produced by this software are deterministic computations over
+symbolic systems. They are not predictions, and they are not advice — medical,
+psychological, financial, legal or otherwise.
