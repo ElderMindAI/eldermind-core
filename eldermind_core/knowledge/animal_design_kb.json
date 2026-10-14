@@ -34,8 +34,8 @@
       "center": "Root",
       "group": "Territory",
       "description": {
-        "pl": "Jedyna aktywacja w matrycy zwierzęcej powiązana z ryzykiem przygnębienia przy braku wolności. Zwierzę z tą bramą źle znosi stałe zamknięcie — potrzebuje przestrzeni do naturalnego cyklu dojrzewania.",
-        "en": "The only activation in the animal matrix linked to a risk of depression when freedom is denied. An animal with this gate does poorly under constant confinement — it needs room to complete its natural maturation cycle."
+        "pl": "Brama swobody i nowych początków. Zwierzę z tą bramą lepiej się czuje, gdy ma przestrzeń do ruchu i odkrywania, niż przy stałym zamknięciu.",
+        "en": "The gate of freedom and new beginnings. An animal with this gate does better with room to move and explore than under constant confinement."
       }
     },
     "42": {
@@ -43,8 +43,8 @@
       "center": "Sacral",
       "group": "Territory",
       "description": {
-        "pl": "Druga strona cyklu dojrzewania. Takie zwierzę potrzebuje domknąć swój pełny proces życiowy — warto to mieć na uwadze przy decyzjach o sterylizacji, zwłaszcza gdy jednocześnie aktywna jest brama 53 (pełny kanał 53/42).",
-        "en": "The other half of the maturation cycle. This animal needs to complete its full life process — worth keeping in mind around sterilization decisions, especially when gate 53 is active too (the full 53/42 channel)."
+        "pl": "Druga strona cyklu dojrzewania. Takie zwierzę lubi domykać to, co zaczęło — dobrze mu służy rytm, w którym zabawa, praca i odpoczynek mają swój początek i koniec.",
+        "en": "The other half of the maturation cycle. This animal likes to finish what it starts — it does well with a rhythm in which play, work and rest each have a beginning and an end."
       }
     },
     "12": {
@@ -183,8 +183,8 @@
       "name": { "pl": "Kanał Wolności i Dojrzewania", "en": "Channel of Freedom and Maturity" },
       "centers": ["Sacral", "Root"],
       "description": {
-        "pl": "Łączy potrzebę wolności (brama 53) z potrzebą domknięcia pełnego cyklu życiowego (brama 42). Zwierzę z pełnym kanałem źle znosi trwałe ograniczenie przestrzeni lub sterylizację bez uwzględnienia jego natury — może to prowadzić do przewlekłego przygnębienia.",
-        "en": "Combines the need for freedom (gate 53) with the need to complete a full life cycle (gate 42). An animal with the full channel does poorly under permanent confinement or sterilization without regard for its nature — this can lead to lasting low mood."
+        "pl": "Łączy potrzebę swobody i nowych początków (brama 53) z potrzebą domykania cykli (brama 42). Zwierzę z pełnym kanałem potrzebuje przestrzeni i rytmu, w którym rzeczy mają początek i koniec — trwałe ograniczenie przestrzeni służy mu gorzej niż innym.",
+        "en": "Combines the need for freedom and new beginnings (gate 53) with the need to complete cycles (gate 42). An animal with the full channel needs room and a rhythm in which things have a beginning and an end — permanent confinement suits it less well than it suits others."
       }
     }
   },
