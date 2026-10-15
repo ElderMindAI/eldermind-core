@@ -7,7 +7,7 @@
       "center": "Root",
       "group": "Territory",
       "description": {
-        "pl": "Brama-Portal terytorium. Zwierzę z tą aktywacją silnie broni swojej przestrzeni, jedzenia i zasobów — to fundament starożytnego układu ze człowiekiem: bezpieczne terytorium i pożywienie w zamian za oswojenie.",
+        "pl": "Brama-Portal terytorium. Zwierzę z tą aktywacją silnie broni swojej przestrzeni, jedzenia i zasobów — to fundament starożytnego układu z człowiekiem: bezpieczne terytorium i pożywienie w zamian za oswojenie.",
         "en": "The Territory Portal gate. An animal with this activation strongly guards its space, food and resources — the foundation of the ancient bargain with humans: safe territory and food in exchange for domestication."
       }
     },
@@ -16,7 +16,7 @@
       "center": "Root",
       "group": "Territory",
       "description": {
-        "pl": "Czysta, surowa energia obronna. Zwierzę z tą bramą potrafi być zaskakująco zaciekłe, gdy czuje zagrożenie — ale ta samo zaciekłość bywa też jego tarczą i sposobem na zachowanie integralności.",
+        "pl": "Czysta, surowa energia obronna. Zwierzę z tą bramą potrafi być zaskakująco zaciekłe, gdy czuje zagrożenie — ale ta sama zaciekłość bywa też jego tarczą i sposobem na zachowanie integralności.",
         "en": "Pure, raw defensive energy. An animal with this gate can be surprisingly fierce when it feels threatened — but that same fierceness is also its shield and its way of holding onto its integrity."
       }
     },
@@ -61,7 +61,7 @@
       "center": "Sacral",
       "group": "Metamorphosis",
       "description": {
-        "pl": "Potrzeba wspólnoty. Zwierzę z tą bramą źle znosi samotność i naturalnie \"spędza\" wokół siebie innych — także inne gatunki (stąd np. psy pasterskie pilnujące dzieci).",
+        "pl": "Potrzeba wspólnoty. Zwierzę z tą bramą źle znosi samotność i naturalnie „spędza” wokół siebie innych — także inne gatunki (stąd np. psy pasterskie zaganiające dzieci).",
         "en": "The need for togetherness. An animal with this gate doesn't do well alone and naturally herds others around it — even other species (which is why herding dogs will herd children)."
       }
     },
@@ -70,7 +70,7 @@
       "center": "Spleen",
       "group": "Metamorphosis",
       "description": {
-        "pl": "Silny instynkt rozrodczy i budowania więzi. Zwierzęta z tą bramą są zwykle bardzo skutecznymi rozrodczo osobnikami — ale trzymane w niewoli mogą przejawiać zachowania związane z niezaspokojoną potrzebą rozrodu.",
+        "pl": "Silny instynkt rozrodczy i budowania więzi. Zwierzęta z tą bramą są zwykle bardzo skutecznymi rozrodczo osobnikami — ale gdy ten instynkt nie ma ujścia, mogą przejawiać zachowania związane z jego niezaspokojeniem.",
         "en": "A strong bonding/breeding instinct. Animals with this gate tend to be highly successful breeders — but kept without an outlet, they may show behaviors tied to that unmet drive."
       }
     },
@@ -97,7 +97,7 @@
       "center": "Throat",
       "group": "Alpha",
       "description": {
-        "pl": "Brama-Portal pracownika. Zwierzę z tą aktywacją uczy się rozpoznawać wzorce i przewidywać przyszłość (dźwięk otwieracza do puszek, brzęk smyczy) — potrzebuje jakiegoś \"zajęcia\", inaczej czuje się niespełnione.",
+        "pl": "Brama-Portal pracownika. Zwierzę z tą aktywacją uczy się rozpoznawać wzorce i przewidywać przyszłość (dźwięk otwieracza do puszek, brzęk smyczy) — potrzebuje jakiegoś „zajęcia”, inaczej czuje się niespełnione.",
         "en": "The Alpha (Worker) Portal gate. An animal with this activation learns to recognize patterns and anticipate the future (the sound of a can opener, the jingle of a leash) — it needs a 'job', or it feels unfulfilled."
       }
     },
@@ -106,7 +106,7 @@
       "center": "Throat",
       "group": "Alpha",
       "description": {
-        "pl": "Intensywna obecność w teraźniejszości. W parze z bramą 57 (pełny kanał) tworzy niezwykle bystre, responsywne zwierzę, żyjące bardzo mocno w \"tu i teraz\".",
+        "pl": "Intensywna obecność w teraźniejszości. W parze z bramą 57 (pełny kanał) tworzy niezwykle bystre, szybko reagujące zwierzę, żyjące bardzo mocno w „tu i teraz”.",
         "en": "Intense presence in the now. Paired with gate 57 (full channel), it forms an unusually sharp, responsive animal that lives very strongly in the 'here and now'."
       }
     },
@@ -143,7 +143,7 @@
       "name": { "pl": "Kanał Inspiracji", "en": "Channel of Inspiration" },
       "centers": ["Throat", "G"],
       "description": {
-        "pl": "Kanał mutacyjny. Zwierzęta z pełnym kanałem 1/8 to \"odmieńcy stada\" — te, które robią coś inaczej i tym samym prowadzą grupę w nowym kierunku (ale bywają też odrzucane jako niepasujące).",
+        "pl": "Kanał mutacyjny. Zwierzęta z pełnym kanałem 1-8 to „odmieńcy stada” — te, które robią coś inaczej i tym samym prowadzą grupę w nowym kierunku (ale bywają też odrzucane jako niepasujące).",
         "en": "The mutative channel. Animals with the full 1/8 channel are the pack's outliers — the ones who do something differently and lead the group in a new direction (though they can also be the odd one out that gets rejected)."
       }
     },
@@ -151,7 +151,7 @@
       "name": { "pl": "Kanał Rytmu", "en": "Channel of Rhythm" },
       "centers": ["Sacral", "G"],
       "description": {
-        "pl": "Najpotężniejszy kanał w matrycy zwierzęcej. Takie zwierzę potrafi narzucić rytm całemu domowi — pory karmienia, snu, aktywności całej rodziny zaczynają kręcić się wokół jego wewnętrznego zegara.",
+        "pl": "Najpotężniejszy kanał w matrycy zwierzęcej. Takie zwierzę potrafi narzucić rytm całemu domowi — pory karmienia, snu i aktywności całej rodziny zaczynają kręcić się wokół jego wewnętrznego zegara.",
         "en": "The most powerful channel in the mammalian matrix. This animal can set the rhythm for the whole household — feeding, sleep and activity times for the whole family start to revolve around its internal clock."
       }
     },
@@ -159,7 +159,7 @@
       "name": { "pl": "Kanał Bystrej Obecności", "en": "Channel of Sharp Presence" },
       "centers": ["Throat", "Spleen"],
       "description": {
-        "pl": "Wyjątkowo bystre i responsywne zwierzę, intensywnie obecne w chwili bieżącej. Bez jednoczesnej aktywacji bramy 28 bywa też mocno skupione na sobie i niechętne, by słuchać, gdy zajęte jest czymś innym.",
+        "pl": "Wyjątkowo bystre i szybko reagujące zwierzę, intensywnie obecne w chwili bieżącej. Bez jednoczesnej aktywacji bramy 28 bywa też mocno skupione na sobie i niechętnie słucha, gdy jest zajęte czymś innym.",
         "en": "An unusually sharp, responsive animal, intensely present in the moment. Without gate 28 also active, it can be quite self-focused and unwilling to listen when it's busy with something else."
       }
     },
@@ -167,7 +167,7 @@
       "name": { "pl": "Kanał Stadnej Więzi", "en": "Channel of Herd Bonding" },
       "centers": ["Sacral", "Spleen"],
       "description": {
-        "pl": "Łączy potrzebę wspólnoty (brama 27) z silnym instynktem więzi/rozrodu (brama 50) — zwierzę mocno zorientowane na grupę i budowanie trwałych relacji wokół siebie.",
+        "pl": "Łączy potrzebę wspólnoty (brama 27) z silnym instynktem więzi i rozrodu (brama 50) — zwierzę mocno zorientowane na grupę i budowanie trwałych relacji wokół siebie.",
         "en": "Combines the need for togetherness (gate 27) with a strong bonding/breeding instinct (gate 50) — an animal strongly oriented toward the group and building lasting relationships around itself."
       }
     },
@@ -228,35 +228,35 @@
     "2": {
       "name": { "pl": "Tajemnica", "en": "Mystery" },
       "description": {
-        "pl": "Zwierzę widoczne i przez to bardziej narażone — płochliwe, nieprzewidywalne, czasem reagujące nagle i gwałtownie, jakby genetycznie wyczuwało swoją podatność.",
+        "pl": "Zwierzę widoczne i przez to bardziej narażone — płochliwe, nieprzewidywalne, czasem reagujące nagle i gwałtownie, jakby genetycznie wyczuwało swoją bezbronność.",
         "en": "A visible, and therefore more exposed, animal — skittish, unpredictable, sometimes reacting suddenly and sharply, as if it genetically senses its own vulnerability."
       }
     },
     "3": {
       "name": { "pl": "Zmaganie", "en": "Struggle" },
       "description": {
-        "pl": "Nauka metodą prób i błędów. Bywa uparte i wolno się uczy niektórych rzeczy — ale to właśnie te zwierzęta odkrywają rzeczy, których inne przeoczają.",
+        "pl": "Nauka metodą prób i błędów. Takie zwierzę bywa uparte i niektórych rzeczy uczy się wolno — ale to właśnie takie zwierzęta odkrywają to, co inne przeoczają.",
         "en": "Trial-and-error learning. Can be stubborn and slow to learn certain things — but these are the animals that discover what others miss."
       }
     },
     "4": {
       "name": { "pl": "Wpływ", "en": "Influence" },
       "description": {
-        "pl": "Najbardziej wpływowa linia w świecie zwierząt. Stałe, silne, skłonne do przejmowania kontroli i przewodzenia w hierarchii — wymaga partnerskiego podejścia zamiast walki o dominację.",
+        "pl": "Najbardziej wpływowa linia w świecie zwierząt. Zwierzę stałe i silne, skłonne do przejmowania kontroli i przewodzenia w hierarchii — wymaga partnerskiego podejścia zamiast walki o dominację.",
         "en": "The most influential line in the animal world. Fixed, strong, inclined to take control and lead the hierarchy — needs a collaborative approach rather than a fight for dominance."
       }
     },
     "5": {
       "name": { "pl": "Wyzwanie", "en": "Challenge" },
       "description": {
-        "pl": "Pole projekcji. Takie zwierzę przyciąga uwagę i cudze oczekiwania (\"to na pewno będzie świetny zwierzak\") — czasem wplątuje się w konflikty, których samo nie zaczęło.",
+        "pl": "Pole projekcji. Takie zwierzę przyciąga uwagę i cudze oczekiwania („to na pewno będzie świetny zwierzak”) — czasem wplątuje się w konflikty, których samo nie zaczęło.",
         "en": "The projection field. This animal attracts attention and other people's expectations ('this one will make a great pet') — it can end up in conflicts it didn't start."
       }
     },
     "6": {
       "name": { "pl": "Odrębność", "en": "Separation" },
       "description": {
-        "pl": "Pomost między zwierzęciem a człowiekiem. Stoi nieco z boku grupy, obserwuje — ma w sobie coś nietowarzyskiego, ale też potencjał do wyjątkowo głębokiej więzi z człowiekiem.",
+        "pl": "Pomost między zwierzęciem a człowiekiem. Takie zwierzę stoi nieco z boku grupy i obserwuje — ma w sobie coś nietowarzyskiego, ale też potencjał do wyjątkowo głębokiej więzi z człowiekiem.",
         "en": "The bridge between animal and human. Stands a little apart from the group, observing — has an anti-social streak, but also the potential for an unusually deep bond with a human."
       }
     }
@@ -274,7 +274,7 @@
       "human_gate": 22,
       "name": { "pl": "Przyjaciel", "en": "Friend" },
       "description": {
-        "pl": "Zwierzę jako towarzysz i niemal równy partner — rozpoznanie unikalnej \"osobowości\" w innej formie życia. To ten sam mechanizm, dzięki któremu wilk stał się psem.",
+        "pl": "Zwierzę jako towarzysz i niemal równy partner — rozpoznanie unikalnej „osobowości” w innej formie życia. To ten sam mechanizm, dzięki któremu wilk stał się psem.",
         "en": "The animal as companion and near-equal — recognizing a unique personality in another form of life. This is the same mechanism through which the wolf became the dog."
       }
     },
@@ -282,7 +282,7 @@
       "human_gate": 17,
       "name": { "pl": "Pracownik", "en": "Worker" },
       "description": {
-        "pl": "Zwierzę jako partner do pracy. Potrafi uczyć się wzorców, przewidywać rutynę i potrzebuje jakiegoś \"zajęcia\", by czuć się spełnione.",
+        "pl": "Zwierzę jako partner do pracy. Potrafi uczyć się wzorców, przewidywać rutynę i potrzebuje jakiegoś „zajęcia”, by czuć się spełnione.",
         "en": "The animal as a working partner. It can learn patterns, anticipate routine, and needs a 'job' to feel fulfilled."
       }
     }
@@ -291,21 +291,21 @@
     "Reflector": {
       "name": { "pl": "Reflektor", "en": "Reflector" },
       "description": {
-        "pl": "Zdecydowana większość ssaków to Reflektory — całkowicie otwarte wykresy, bez żadnej definicji. To najłatwiejsze zwierzęta we współżyciu: chłonną, otwartą aurą wchłaniają energię otoczenia i odbijają charakter swojego opiekuna czy domu.",
+        "pl": "Zdecydowana większość ssaków to Reflektory — całkowicie otwarte wykresy, bez żadnej definicji. To najłatwiejsze zwierzęta we współżyciu: otwartą, chłonną aurą przejmują energię otoczenia i odbijają charakter swojego opiekuna czy domu.",
         "en": "The vast majority of mammals are Reflectors — completely open charts with no definition at all. These are the easiest animals to live with: with a fully open, absorbent aura, they take on the energy of their environment and reflect their owner's or household's character."
       }
     },
     "Generator": {
       "name": { "pl": "Generator", "en": "Generator" },
       "description": {
-        "pl": "Zwierzę z zdefiniowanym Centrum Sakralnym ma trwałą, odnawialną energię życiową. Potrzebuje aktywności, celu i możliwości \"zużycia\" tej energii — bez tego staje się sfrustrowane i destrukcyjne.",
+        "pl": "Zwierzę ze zdefiniowanym Centrum Sakralnym ma trwałą, odnawialną energię życiową. Potrzebuje aktywności, celu i możliwości „zużycia” tej energii — bez tego staje się sfrustrowane i destrukcyjne.",
         "en": "An animal with a defined Sacral center has sustained, renewable life-force energy. It needs activity, purpose, and an outlet for that energy — without it, it becomes frustrated and destructive."
       }
     },
     "Defined": {
       "name": { "pl": "Zdefiniowany (bez Sakralu)", "en": "Defined (non-Sacral)" },
       "description": {
-        "pl": "Centrum Sakralne jest otwarte, ale przynajmniej jedno inne centrum jest u tego zwierzęcia zdefiniowane na stałe — oznacza to jedną lub więcej stałych, przewidywalnych cech charakteru, niezależnych od tego, kto akurat jest w pobliżu.",
+        "pl": "Centrum Sakralne jest otwarte, ale przynajmniej jedno inne centrum jest u tego zwierzęcia zdefiniowane na stałe, co oznacza co najmniej jedną stałą, przewidywalną cechę charakteru, niezależną od tego, kto akurat jest w pobliżu.",
         "en": "The Sacral center is open, but at least one other center is permanently defined in this animal — meaning one or more fixed, predictable character traits, independent of whoever happens to be nearby."
       }
     }
