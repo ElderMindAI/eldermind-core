@@ -66,12 +66,12 @@
       }
     },
     "50": {
-      "keynote": { "pl": "Więź/Rozród", "en": "Bonding" },
+      "keynote": { "pl": "Więź", "en": "Bonding" },
       "center": "Spleen",
       "group": "Metamorphosis",
       "description": {
-        "pl": "Silny instynkt rozrodczy i budowania więzi. Zwierzęta z tą bramą są zwykle bardzo skutecznymi rozrodczo osobnikami — ale gdy ten instynkt nie ma ujścia, mogą przejawiać zachowania związane z jego niezaspokojeniem.",
-        "en": "A strong bonding/breeding instinct. Animals with this gate tend to be highly successful breeders — but kept without an outlet, they may show behaviors tied to that unmet drive."
+        "pl": "Silny instynkt budowania więzi. Zwierzę z tą bramą mocno przywiązuje się do bliskich i do grupy — a gdy ten instynkt nie ma ujścia, może przejawiać zachowania związane z jego niezaspokojeniem.",
+        "en": "A strong bonding instinct. An animal with this gate attaches strongly to those close to it and to the group — and kept without an outlet, it may show behaviors tied to that unmet drive."
       }
     },
     "5": {
@@ -167,8 +167,8 @@
       "name": { "pl": "Kanał Stadnej Więzi", "en": "Channel of Herd Bonding" },
       "centers": ["Sacral", "Spleen"],
       "description": {
-        "pl": "Łączy potrzebę wspólnoty (brama 27) z silnym instynktem więzi i rozrodu (brama 50) — zwierzę mocno zorientowane na grupę i budowanie trwałych relacji wokół siebie.",
-        "en": "Combines the need for togetherness (gate 27) with a strong bonding/breeding instinct (gate 50) — an animal strongly oriented toward the group and building lasting relationships around itself."
+        "pl": "Łączy potrzebę wspólnoty (brama 27) z silnym instynktem więzi (brama 50) — zwierzę mocno zorientowane na grupę i budowanie trwałych relacji wokół siebie.",
+        "en": "Combines the need for togetherness (gate 27) with a strong bonding instinct (gate 50) — an animal strongly oriented toward the group and building lasting relationships around itself."
       }
     },
     "28-38": {
@@ -291,8 +291,8 @@
     "Reflector": {
       "name": { "pl": "Reflektor", "en": "Reflector" },
       "description": {
-        "pl": "Zdecydowana większość ssaków to Reflektory — całkowicie otwarte wykresy, bez żadnej definicji. To najłatwiejsze zwierzęta we współżyciu: otwartą, chłonną aurą przejmują energię otoczenia i odbijają charakter swojego opiekuna czy domu.",
-        "en": "The vast majority of mammals are Reflectors — completely open charts with no definition at all. These are the easiest animals to live with: with a fully open, absorbent aura, they take on the energy of their environment and reflect their owner's or household's character."
+        "pl": "Mniej więcej trzy na cztery daty urodzenia dają Reflektora — całkowicie otwarty wykres, bez żadnej definicji. Reflektory to najłatwiejsze zwierzęta we współżyciu: otwartą, chłonną aurą przejmują energię otoczenia i odbijają charakter swojego opiekuna czy domu.",
+        "en": "Roughly three birth dates in four give a Reflector — a completely open chart with no definition at all. Reflectors are the easiest animals to live with: with a fully open, absorbent aura, they take on the energy of their environment and reflect their owner's or household's character."
       }
     },
     "Generator": {
