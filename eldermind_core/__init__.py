@@ -19,6 +19,8 @@ __version__ = "1.0.0"
 #: Version of the calculation semantics, not of the packaging. Two builds with
 #: the same ENGINE_VERSION must produce byte-identical results for identical
 #: inputs — the golden tests enforce this.
-ENGINE_VERSION = "1.0.0"
+#: 1.0.1 (2026-10-23): BaZi Ten Gods derived from the five-element cycles —
+#: the old hand-written table had 32 of 100 cells wrong.
+ENGINE_VERSION = "1.0.1"
 
 __all__ = ["ENGINE_VERSION", "__version__"]

@@ -111,37 +111,41 @@ HIDDEN_STEMS: Final[dict[str, tuple[str, ...]]] = {
 
 # Ten Gods relationship of a stem to the Day Master stem.
 # Indexed as TEN_GODS[day_master_index][stem_index].
+#
+# Derived, not typed in. Until 2026-10-23 this was a hand-written 10×10 table
+# with 32 wrong cells: the Wood rows had Metal and Water swapped (Geng against
+# Jia came out "Partial Seal" instead of Seven Killings), and the Metal and
+# Water rows were wrong for every element but their own and their resource.
+# Only the Fire and Earth rows were right, and the tests checked that the
+# field existed, never what it said. The relationship is fully determined by
+# the two five-element cycles and the two stems' polarity, so it is computed
+# from them: same polarity gives the "partial" god of each pair.
+_GENERATES: Final[dict[str, str]] = {
+    "Wood": "Fire", "Fire": "Earth", "Earth": "Metal", "Metal": "Water", "Water": "Wood",
+}
+_CONTROLS: Final[dict[str, str]] = {
+    "Wood": "Earth", "Earth": "Water", "Water": "Fire", "Fire": "Metal", "Metal": "Wood",
+}
+
+
+def _ten_god(day_master: str, stem: str) -> str:
+    """Ten God of `stem` (English name) as seen from the `day_master` stem."""
+    own, other = ELEMENTS[day_master], ELEMENTS[stem]
+    same = STEM_POLARITY[day_master] == STEM_POLARITY[stem]
+    if other == own:
+        return "Bi Jian" if same else "Rob Wealth"
+    if _GENERATES[own] == other:  # what the Day Master produces: output
+        return "Food God" if same else "Injured Officer"
+    if _CONTROLS[own] == other:  # what it controls: wealth
+        return "Indirect Wealth" if same else "Direct Wealth"
+    if _CONTROLS[other] == own:  # what controls it: officer
+        return "Seven Killings" if same else "Direct Officer"
+    return "Partial Seal" if same else "Direct Seal"  # what produces it: resource
+
+
 TEN_GODS: Final[list[list[str]]] = [
-    # Jia (0)
-    ["Bi Jian", "Rob Wealth", "Food God", "Injured Officer", "Indirect Wealth",
-     "Direct Wealth", "Partial Seal", "Direct Seal", "Seven Killings", "Direct Officer"],
-    # Yi (1)
-    ["Rob Wealth", "Bi Jian", "Injured Officer", "Food God", "Direct Wealth",
-     "Indirect Wealth", "Direct Seal", "Partial Seal", "Direct Officer", "Seven Killings"],
-    # Bing (2)
-    ["Partial Seal", "Direct Seal", "Bi Jian", "Rob Wealth", "Food God",
-     "Injured Officer", "Indirect Wealth", "Direct Wealth", "Seven Killings", "Direct Officer"],
-    # Ding (3)
-    ["Direct Seal", "Partial Seal", "Rob Wealth", "Bi Jian", "Injured Officer",
-     "Food God", "Direct Wealth", "Indirect Wealth", "Direct Officer", "Seven Killings"],
-    # Wu (4)
-    ["Seven Killings", "Direct Officer", "Partial Seal", "Direct Seal", "Bi Jian",
-     "Rob Wealth", "Food God", "Injured Officer", "Indirect Wealth", "Direct Wealth"],
-    # Ji (5)
-    ["Direct Officer", "Seven Killings", "Direct Seal", "Partial Seal", "Rob Wealth",
-     "Bi Jian", "Injured Officer", "Food God", "Direct Wealth", "Indirect Wealth"],
-    # Geng (6)
-    ["Food God", "Injured Officer", "Indirect Wealth", "Direct Wealth", "Partial Seal",
-     "Direct Seal", "Bi Jian", "Rob Wealth", "Seven Killings", "Direct Officer"],
-    # Xin (7)
-    ["Injured Officer", "Food God", "Direct Wealth", "Indirect Wealth", "Direct Seal",
-     "Partial Seal", "Rob Wealth", "Bi Jian", "Direct Officer", "Seven Killings"],
-    # Ren (8)
-    ["Indirect Wealth", "Direct Wealth", "Seven Killings", "Direct Officer", "Food God",
-     "Injured Officer", "Partial Seal", "Direct Seal", "Bi Jian", "Rob Wealth"],
-    # Gui (9)
-    ["Direct Wealth", "Indirect Wealth", "Direct Officer", "Seven Killings", "Injured Officer",
-     "Food God", "Direct Seal", "Partial Seal", "Rob Wealth", "Bi Jian"],
+    [_ten_god(day_master, stem) for stem in HEAVENLY_STEMS_ENGLISH]
+    for day_master in HEAVENLY_STEMS_ENGLISH
 ]
 
 

@@ -38,7 +38,7 @@
               "ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
             }
           ],
-          "stem_ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+          "stem_ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
         }
       },
       {
@@ -87,7 +87,7 @@
               "ten_god": "Równy Brat (Bi Jian)"
             }
           ],
-          "stem_ten_god": "Siedem Zabójców (Qi Sha)"
+          "stem_ten_god": "Częściowa Pieczęć (Pian Yin)"
         }
       },
       {
@@ -115,7 +115,7 @@
                 "hanzi": "庚",
                 "polarity": "Yang"
               },
-              "ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
+              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
             },
             {
               "stem": {
@@ -124,7 +124,7 @@
                 "hanzi": "壬",
                 "polarity": "Yang"
               },
-              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+              "ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
             },
             {
               "stem": {
@@ -164,7 +164,7 @@
                 "hanzi": "辛",
                 "polarity": "Yin"
               },
-              "ten_god": "Częściowa Pieczęć (Pian Yin)"
+              "ten_god": "Siedem Zabójców (Qi Sha)"
             }
           ],
           "stem_ten_god": "Równy Brat (Bi Jian)"
@@ -204,7 +204,7 @@
                 "hanzi": "辛",
                 "polarity": "Yin"
               },
-              "ten_god": "Częściowa Pieczęć (Pian Yin)"
+              "ten_god": "Siedem Zabójców (Qi Sha)"
             },
             {
               "stem": {
@@ -244,7 +244,7 @@
                 "hanzi": "壬",
                 "polarity": "Yang"
               },
-              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+              "ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
             },
             {
               "stem": {
@@ -284,7 +284,7 @@
                 "hanzi": "癸",
                 "polarity": "Yin"
               },
-              "ten_god": "Siedem Zabójców (Qi Sha)"
+              "ten_god": "Częściowa Pieczęć (Pian Yin)"
             }
           ],
           "stem_ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
@@ -324,7 +324,7 @@
                 "hanzi": "癸",
                 "polarity": "Yin"
               },
-              "ten_god": "Siedem Zabójców (Qi Sha)"
+              "ten_god": "Częściowa Pieczęć (Pian Yin)"
             },
             {
               "stem": {
@@ -333,7 +333,7 @@
                 "hanzi": "辛",
                 "polarity": "Yin"
               },
-              "ten_god": "Częściowa Pieczęć (Pian Yin)"
+              "ten_god": "Siedem Zabójców (Qi Sha)"
             }
           ],
           "stem_ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
@@ -381,7 +381,7 @@
               "hanzi": "癸",
               "polarity": "Yin"
             },
-            "ten_god": "Siedem Zabójców (Qi Sha)"
+            "ten_god": "Częściowa Pieczęć (Pian Yin)"
           },
           {
             "stem": {
@@ -390,7 +390,7 @@
               "hanzi": "辛",
               "polarity": "Yin"
             },
-            "ten_god": "Częściowa Pieczęć (Pian Yin)"
+            "ten_god": "Siedem Zabójców (Qi Sha)"
           }
         ],
         "stem_ten_god": "Równy Brat (Bi Jian)"
@@ -438,7 +438,7 @@
             "ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
           }
         ],
-        "stem_ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+        "stem_ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
       }
     },
     "month_pillar": {
@@ -476,7 +476,7 @@
             "ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
           }
         ],
-        "stem_ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+        "stem_ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
       }
     },
     "na_yin": "海中金",
@@ -508,7 +508,7 @@
               "hanzi": "庚",
               "polarity": "Yang"
             },
-            "ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
+            "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
           },
           {
             "stem": {
@@ -517,7 +517,7 @@
               "hanzi": "壬",
               "polarity": "Yang"
             },
-            "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+            "ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
           },
           {
             "stem": {
@@ -529,7 +529,7 @@
             "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
           }
         ],
-        "stem_ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
+        "stem_ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
       }
     }
   },
@@ -1114,7 +1114,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.0",
+    "engine_version": "1.0.1",
     "errors": [
       {
         "code": "HOUSE_SYSTEM_UNAVAILABLE",

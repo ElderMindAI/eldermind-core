@@ -2,7 +2,45 @@
 
 from datetime import date, time
 
-from eldermind_core.services.bazi import compute_bazi
+import pytest
+
+from eldermind_core.services.bazi import HEAVENLY_STEMS_ENGLISH, TEN_GODS, compute_bazi
+
+
+def _god(day_master: str, stem: str) -> str:
+    return TEN_GODS[HEAVENLY_STEMS_ENGLISH.index(day_master)][HEAVENLY_STEMS_ENGLISH.index(stem)]
+
+
+# Textbook pairs, one per relationship and polarity — the first block are cells
+# the hand-written table had wrong until 2026-10-23 (32 of 100 were).
+@pytest.mark.parametrize(
+    ("day_master", "stem", "expected"),
+    [
+        ("Jia", "Geng", "Seven Killings"),   # 庚 is 甲's 七殺: Metal cuts Wood
+        ("Yi", "Geng", "Direct Officer"),    # 乙庚合: Geng is Yi's 正官
+        ("Yi", "Xin", "Seven Killings"),
+        ("Yi", "Ren", "Direct Seal"),        # Water feeds Wood: resource
+        ("Yi", "Gui", "Partial Seal"),
+        ("Geng", "Jia", "Indirect Wealth"),  # Metal controls Wood: wealth
+        ("Geng", "Bing", "Seven Killings"),  # Fire melts Metal
+        ("Ren", "Jia", "Food God"),          # Water produces Wood: output
+        ("Ren", "Wu", "Seven Killings"),     # Earth dams Water
+        ("Gui", "Ji", "Seven Killings"),
+        ("Bing", "Ren", "Seven Killings"),   # right before the fix too
+        ("Wu", "Bing", "Partial Seal"),
+        ("Ding", "Geng", "Direct Wealth"),
+        ("Ji", "Xin", "Food God"),
+    ],
+)
+def test_ten_gods_follow_the_five_element_cycles(day_master: str, stem: str, expected: str) -> None:
+    assert _god(day_master, stem) == expected
+
+
+def test_every_day_master_sees_each_god_exactly_once() -> None:
+    """Ten stems, ten gods: each row is a permutation, with Bi Jian on the diagonal."""
+    for index, row in enumerate(TEN_GODS):
+        assert len(set(row)) == 10
+        assert row[index] == "Bi Jian"
 
 
 def test_bazi_structure_and_day_master() -> None:

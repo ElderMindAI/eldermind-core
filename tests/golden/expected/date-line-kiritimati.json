@@ -29,7 +29,7 @@
               "ten_god": "Grabieżca Bogactwa (Jie Cai)"
             }
           ],
-          "stem_ten_god": "Siedem Zabójców (Qi Sha)"
+          "stem_ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
         }
       },
       {
@@ -66,10 +66,10 @@
                 "hanzi": "甲",
                 "polarity": "Yang"
               },
-              "ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
+              "ten_god": "Bóg Jedzenia (Shi Shen)"
             }
           ],
-          "stem_ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
+          "stem_ten_god": "Ranny Urzędnik (Shang Guan)"
         }
       },
       {
@@ -97,7 +97,7 @@
                 "hanzi": "戊",
                 "polarity": "Yang"
               },
-              "ten_god": "Bóg Jedzenia (Shi Shen)"
+              "ten_god": "Siedem Zabójców (Qi Sha)"
             },
             {
               "stem": {
@@ -115,10 +115,10 @@
                 "hanzi": "丁",
                 "polarity": "Yin"
               },
-              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+              "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
             }
           ],
-          "stem_ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
+          "stem_ten_god": "Bóg Jedzenia (Shi Shen)"
         }
       },
       {
@@ -195,7 +195,7 @@
                 "hanzi": "戊",
                 "polarity": "Yang"
               },
-              "ten_god": "Bóg Jedzenia (Shi Shen)"
+              "ten_god": "Siedem Zabójców (Qi Sha)"
             }
           ],
           "stem_ten_god": "Równy Brat (Bi Jian)"
@@ -226,7 +226,7 @@
                 "hanzi": "己",
                 "polarity": "Yin"
               },
-              "ten_god": "Ranny Urzędnik (Shang Guan)"
+              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
             },
             {
               "stem": {
@@ -235,7 +235,7 @@
                 "hanzi": "丁",
                 "polarity": "Yin"
               },
-              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+              "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
             },
             {
               "stem": {
@@ -244,7 +244,7 @@
                 "hanzi": "乙",
                 "polarity": "Yin"
               },
-              "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
+              "ten_god": "Ranny Urzędnik (Shang Guan)"
             }
           ],
           "stem_ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
@@ -275,7 +275,7 @@
                 "hanzi": "丁",
                 "polarity": "Yin"
               },
-              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+              "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
             },
             {
               "stem": {
@@ -284,7 +284,7 @@
                 "hanzi": "己",
                 "polarity": "Yin"
               },
-              "ten_god": "Ranny Urzędnik (Shang Guan)"
+              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
             }
           ],
           "stem_ten_god": "Częściowa Pieczęć (Pian Yin)"
@@ -315,7 +315,7 @@
                 "hanzi": "丙",
                 "polarity": "Yang"
               },
-              "ten_god": "Siedem Zabójców (Qi Sha)"
+              "ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
             },
             {
               "stem": {
@@ -333,10 +333,10 @@
                 "hanzi": "戊",
                 "polarity": "Yang"
               },
-              "ten_god": "Bóg Jedzenia (Shi Shen)"
+              "ten_god": "Siedem Zabójców (Qi Sha)"
             }
           ],
-          "stem_ten_god": "Ranny Urzędnik (Shang Guan)"
+          "stem_ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
         }
       }
     ],
@@ -372,7 +372,7 @@
               "hanzi": "戊",
               "polarity": "Yang"
             },
-            "ten_god": "Bóg Jedzenia (Shi Shen)"
+            "ten_god": "Siedem Zabójców (Qi Sha)"
           },
           {
             "stem": {
@@ -381,7 +381,7 @@
               "hanzi": "乙",
               "polarity": "Yin"
             },
-            "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
+            "ten_god": "Ranny Urzędnik (Shang Guan)"
           },
           {
             "stem": {
@@ -458,7 +458,7 @@
             "ten_god": "Grabieżca Bogactwa (Jie Cai)"
           }
         ],
-        "stem_ten_god": "Siedem Zabójców (Qi Sha)"
+        "stem_ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
       }
     },
     "na_yin": "长流水",
@@ -490,7 +490,7 @@
               "hanzi": "戊",
               "polarity": "Yang"
             },
-            "ten_god": "Bóg Jedzenia (Shi Shen)"
+            "ten_god": "Siedem Zabójców (Qi Sha)"
           },
           {
             "stem": {
@@ -508,10 +508,10 @@
               "hanzi": "丁",
               "polarity": "Yin"
             },
-            "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+            "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
           }
         ],
-        "stem_ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
+        "stem_ten_god": "Bóg Jedzenia (Shi Shen)"
       }
     }
   },
@@ -1082,7 +1082,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.0",
+    "engine_version": "1.0.1",
     "errors": [],
     "julian_day_ut": 2449717.91736111,
     "reference_date": "2026-07-31",
