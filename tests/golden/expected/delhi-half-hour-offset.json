@@ -3,63 +3,14 @@
     "da_yun": [
       {
         "branch": {
-          "animal": "Ox",
-          "element": "Earth",
-          "hanzi": "丑",
-          "polarity": "Yin"
-        },
-        "end_age": 13,
-        "hanzi": "辛丑",
-        "start_age": 4,
-        "stem": {
-          "element": "Metal",
-          "english": "Xin",
-          "hanzi": "辛",
-          "polarity": "Yin"
-        },
-        "ten_gods": {
-          "hidden_stems_ten_gods": [
-            {
-              "stem": {
-                "element": "Earth",
-                "english": "Ji",
-                "hanzi": "己",
-                "polarity": "Yin"
-              },
-              "ten_god": "Ranny Urzędnik (Shang Guan)"
-            },
-            {
-              "stem": {
-                "element": "Water",
-                "english": "Gui",
-                "hanzi": "癸",
-                "polarity": "Yin"
-              },
-              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
-            },
-            {
-              "stem": {
-                "element": "Metal",
-                "english": "Xin",
-                "hanzi": "辛",
-                "polarity": "Yin"
-              },
-              "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
-            }
-          ],
-          "stem_ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
-        }
-      },
-      {
-        "branch": {
           "animal": "Tiger",
           "element": "Wood",
           "hanzi": "寅",
           "polarity": "Yang"
         },
-        "end_age": 23,
+        "end_age": 12,
         "hanzi": "壬寅",
-        "start_age": 14,
+        "start_age": 3,
         "stem": {
           "element": "Water",
           "english": "Ren",
@@ -106,9 +57,9 @@
           "hanzi": "卯",
           "polarity": "Yin"
         },
-        "end_age": 33,
+        "end_age": 22,
         "hanzi": "癸卯",
-        "start_age": 24,
+        "start_age": 13,
         "stem": {
           "element": "Water",
           "english": "Gui",
@@ -137,9 +88,9 @@
           "hanzi": "辰",
           "polarity": "Yang"
         },
-        "end_age": 43,
+        "end_age": 32,
         "hanzi": "甲辰",
-        "start_age": 34,
+        "start_age": 23,
         "stem": {
           "element": "Wood",
           "english": "Jia",
@@ -186,9 +137,9 @@
           "hanzi": "巳",
           "polarity": "Yin"
         },
-        "end_age": 53,
+        "end_age": 42,
         "hanzi": "乙巳",
-        "start_age": 44,
+        "start_age": 33,
         "stem": {
           "element": "Wood",
           "english": "Yi",
@@ -235,9 +186,9 @@
           "hanzi": "午",
           "polarity": "Yang"
         },
-        "end_age": 63,
+        "end_age": 52,
         "hanzi": "丙午",
-        "start_age": 54,
+        "start_age": 43,
         "stem": {
           "element": "Fire",
           "english": "Bing",
@@ -275,9 +226,9 @@
           "hanzi": "未",
           "polarity": "Yin"
         },
-        "end_age": 73,
+        "end_age": 62,
         "hanzi": "丁未",
-        "start_age": 64,
+        "start_age": 53,
         "stem": {
           "element": "Fire",
           "english": "Ding",
@@ -324,9 +275,9 @@
           "hanzi": "申",
           "polarity": "Yang"
         },
-        "end_age": 83,
+        "end_age": 72,
         "hanzi": "戊申",
-        "start_age": 74,
+        "start_age": 63,
         "stem": {
           "element": "Earth",
           "english": "Wu",
@@ -365,11 +316,44 @@
           ],
           "stem_ten_god": "Bóg Jedzenia (Shi Shen)"
         }
+      },
+      {
+        "branch": {
+          "animal": "Rooster",
+          "element": "Metal",
+          "hanzi": "酉",
+          "polarity": "Yin"
+        },
+        "end_age": 82,
+        "hanzi": "己酉",
+        "start_age": 73,
+        "stem": {
+          "element": "Earth",
+          "english": "Ji",
+          "hanzi": "己",
+          "polarity": "Yin"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Metal",
+                "english": "Xin",
+                "hanzi": "辛",
+                "polarity": "Yin"
+              },
+              "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
+            }
+          ],
+          "stem_ten_god": "Ranny Urzędnik (Shang Guan)"
+        }
       }
     ],
     "da_yun_direction": "forward",
     "da_yun_direction_assumed": false,
-    "da_yun_start_age": 4,
+    "da_yun_start_age": 3,
+    "da_yun_start_age_approximate": false,
+    "da_yun_start_age_precise": 3.19,
     "day_master": {
       "element": "Fire",
       "english": "Bing",
@@ -1161,7 +1145,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.1",
+    "engine_version": "1.0.2",
     "errors": [],
     "julian_day_ut": 2441342.66666667,
     "reference_date": "2026-07-31",

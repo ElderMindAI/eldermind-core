@@ -247,7 +247,10 @@ def compute_profile(
         "gene_keys": gene_keys,
         "matrix": lambda: compute_matrix_of_destiny(subject.birth_date, reference_date),
         "bazi": lambda: compute_bazi(
-            subject.birth_date, subject.effective_birth_time, gender=subject.gender
+            subject.birth_date,
+            subject.effective_birth_time,
+            gender=subject.gender,
+            julian_day_ut=jd_ut,
         ),
         "numerology": lambda: compute_numerology(
             birth_date=subject.birth_date,

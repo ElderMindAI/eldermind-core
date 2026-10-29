@@ -3,45 +3,14 @@
     "da_yun": [
       {
         "branch": {
-          "animal": "Rat",
-          "element": "Water",
-          "hanzi": "子",
-          "polarity": "Yang"
-        },
-        "end_age": 12,
-        "hanzi": "丙子",
-        "start_age": 3,
-        "stem": {
-          "element": "Fire",
-          "english": "Bing",
-          "hanzi": "丙",
-          "polarity": "Yang"
-        },
-        "ten_gods": {
-          "hidden_stems_ten_gods": [
-            {
-              "stem": {
-                "element": "Water",
-                "english": "Gui",
-                "hanzi": "癸",
-                "polarity": "Yin"
-              },
-              "ten_god": "Grabieżca Bogactwa (Jie Cai)"
-            }
-          ],
-          "stem_ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
-        }
-      },
-      {
-        "branch": {
           "animal": "Pig",
           "element": "Water",
           "hanzi": "亥",
           "polarity": "Yin"
         },
-        "end_age": 22,
+        "end_age": 17,
         "hanzi": "乙亥",
-        "start_age": 13,
+        "start_age": 8,
         "stem": {
           "element": "Wood",
           "english": "Yi",
@@ -79,9 +48,9 @@
           "hanzi": "戌",
           "polarity": "Yang"
         },
-        "end_age": 32,
+        "end_age": 27,
         "hanzi": "甲戌",
-        "start_age": 23,
+        "start_age": 18,
         "stem": {
           "element": "Wood",
           "english": "Jia",
@@ -128,9 +97,9 @@
           "hanzi": "酉",
           "polarity": "Yin"
         },
-        "end_age": 42,
+        "end_age": 37,
         "hanzi": "癸酉",
-        "start_age": 33,
+        "start_age": 28,
         "stem": {
           "element": "Water",
           "english": "Gui",
@@ -159,9 +128,9 @@
           "hanzi": "申",
           "polarity": "Yang"
         },
-        "end_age": 52,
+        "end_age": 47,
         "hanzi": "壬申",
-        "start_age": 43,
+        "start_age": 38,
         "stem": {
           "element": "Water",
           "english": "Ren",
@@ -208,9 +177,9 @@
           "hanzi": "未",
           "polarity": "Yin"
         },
-        "end_age": 62,
+        "end_age": 57,
         "hanzi": "辛未",
-        "start_age": 53,
+        "start_age": 48,
         "stem": {
           "element": "Metal",
           "english": "Xin",
@@ -257,9 +226,9 @@
           "hanzi": "午",
           "polarity": "Yang"
         },
-        "end_age": 72,
+        "end_age": 67,
         "hanzi": "庚午",
-        "start_age": 63,
+        "start_age": 58,
         "stem": {
           "element": "Metal",
           "english": "Geng",
@@ -297,9 +266,9 @@
           "hanzi": "巳",
           "polarity": "Yin"
         },
-        "end_age": 82,
+        "end_age": 77,
         "hanzi": "己巳",
-        "start_age": 73,
+        "start_age": 68,
         "stem": {
           "element": "Earth",
           "english": "Ji",
@@ -338,11 +307,62 @@
           ],
           "stem_ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
         }
+      },
+      {
+        "branch": {
+          "animal": "Dragon",
+          "element": "Earth",
+          "hanzi": "辰",
+          "polarity": "Yang"
+        },
+        "end_age": 87,
+        "hanzi": "戊辰",
+        "start_age": 78,
+        "stem": {
+          "element": "Earth",
+          "english": "Wu",
+          "hanzi": "戊",
+          "polarity": "Yang"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Earth",
+                "english": "Wu",
+                "hanzi": "戊",
+                "polarity": "Yang"
+              },
+              "ten_god": "Siedem Zabójców (Qi Sha)"
+            },
+            {
+              "stem": {
+                "element": "Wood",
+                "english": "Yi",
+                "hanzi": "乙",
+                "polarity": "Yin"
+              },
+              "ten_god": "Ranny Urzędnik (Shang Guan)"
+            },
+            {
+              "stem": {
+                "element": "Water",
+                "english": "Gui",
+                "hanzi": "癸",
+                "polarity": "Yin"
+              },
+              "ten_god": "Grabieżca Bogactwa (Jie Cai)"
+            }
+          ],
+          "stem_ten_god": "Siedem Zabójców (Qi Sha)"
+        }
       }
     ],
     "da_yun_direction": "backward",
     "da_yun_direction_assumed": false,
-    "da_yun_start_age": 3,
+    "da_yun_start_age": 8,
+    "da_yun_start_age_approximate": false,
+    "da_yun_start_age_precise": 8.02,
     "day_master": {
       "element": "Water",
       "english": "Ren",
@@ -1082,7 +1102,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.1",
+    "engine_version": "1.0.2",
     "errors": [],
     "julian_day_ut": 2449717.91736111,
     "reference_date": "2026-07-31",

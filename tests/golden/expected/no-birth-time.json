@@ -3,45 +3,14 @@
     "da_yun": [
       {
         "branch": {
-          "animal": "Rat",
-          "element": "Water",
-          "hanzi": "子",
-          "polarity": "Yang"
-        },
-        "end_age": 12,
-        "hanzi": "丙子",
-        "start_age": 3,
-        "stem": {
-          "element": "Fire",
-          "english": "Bing",
-          "hanzi": "丙",
-          "polarity": "Yang"
-        },
-        "ten_gods": {
-          "hidden_stems_ten_gods": [
-            {
-              "stem": {
-                "element": "Water",
-                "english": "Gui",
-                "hanzi": "癸",
-                "polarity": "Yin"
-              },
-              "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
-            }
-          ],
-          "stem_ten_god": "Częściowa Pieczęć (Pian Yin)"
-        }
-      },
-      {
-        "branch": {
           "animal": "Ox",
           "element": "Earth",
           "hanzi": "丑",
           "polarity": "Yin"
         },
-        "end_age": 22,
+        "end_age": 11,
         "hanzi": "丁丑",
-        "start_age": 13,
+        "start_age": 2,
         "stem": {
           "element": "Fire",
           "english": "Ding",
@@ -88,9 +57,9 @@
           "hanzi": "寅",
           "polarity": "Yang"
         },
-        "end_age": 32,
+        "end_age": 21,
         "hanzi": "戊寅",
-        "start_age": 23,
+        "start_age": 12,
         "stem": {
           "element": "Earth",
           "english": "Wu",
@@ -137,9 +106,9 @@
           "hanzi": "卯",
           "polarity": "Yin"
         },
-        "end_age": 42,
+        "end_age": 31,
         "hanzi": "己卯",
-        "start_age": 33,
+        "start_age": 22,
         "stem": {
           "element": "Earth",
           "english": "Ji",
@@ -168,9 +137,9 @@
           "hanzi": "辰",
           "polarity": "Yang"
         },
-        "end_age": 52,
+        "end_age": 41,
         "hanzi": "庚辰",
-        "start_age": 43,
+        "start_age": 32,
         "stem": {
           "element": "Metal",
           "english": "Geng",
@@ -217,9 +186,9 @@
           "hanzi": "巳",
           "polarity": "Yin"
         },
-        "end_age": 62,
+        "end_age": 51,
         "hanzi": "辛巳",
-        "start_age": 53,
+        "start_age": 42,
         "stem": {
           "element": "Metal",
           "english": "Xin",
@@ -266,9 +235,9 @@
           "hanzi": "午",
           "polarity": "Yang"
         },
-        "end_age": 72,
+        "end_age": 61,
         "hanzi": "壬午",
-        "start_age": 63,
+        "start_age": 52,
         "stem": {
           "element": "Water",
           "english": "Ren",
@@ -306,9 +275,9 @@
           "hanzi": "未",
           "polarity": "Yin"
         },
-        "end_age": 82,
+        "end_age": 71,
         "hanzi": "癸未",
-        "start_age": 73,
+        "start_age": 62,
         "stem": {
           "element": "Water",
           "english": "Gui",
@@ -347,11 +316,62 @@
           ],
           "stem_ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
         }
+      },
+      {
+        "branch": {
+          "animal": "Monkey",
+          "element": "Metal",
+          "hanzi": "申",
+          "polarity": "Yang"
+        },
+        "end_age": 81,
+        "hanzi": "甲申",
+        "start_age": 72,
+        "stem": {
+          "element": "Wood",
+          "english": "Jia",
+          "hanzi": "甲",
+          "polarity": "Yang"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Metal",
+                "english": "Geng",
+                "hanzi": "庚",
+                "polarity": "Yang"
+              },
+              "ten_god": "Bóg Jedzenia (Shi Shen)"
+            },
+            {
+              "stem": {
+                "element": "Water",
+                "english": "Ren",
+                "hanzi": "壬",
+                "polarity": "Yang"
+              },
+              "ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
+            },
+            {
+              "stem": {
+                "element": "Earth",
+                "english": "Wu",
+                "hanzi": "戊",
+                "polarity": "Yang"
+              },
+              "ten_god": "Równy Brat (Bi Jian)"
+            }
+          ],
+          "stem_ten_god": "Siedem Zabójców (Qi Sha)"
+        }
       }
     ],
     "da_yun_direction": "forward",
     "da_yun_direction_assumed": false,
-    "da_yun_start_age": 3,
+    "da_yun_start_age": 2,
+    "da_yun_start_age_approximate": false,
+    "da_yun_start_age_precise": 1.53,
     "day_master": {
       "element": "Earth",
       "english": "Wu",
@@ -1101,7 +1121,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.1",
+    "engine_version": "1.0.2",
     "errors": [],
     "julian_day_ut": 2451544.95833333,
     "reference_date": "2026-07-31",

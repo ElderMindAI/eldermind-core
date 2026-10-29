@@ -3,54 +3,14 @@
     "da_yun": [
       {
         "branch": {
-          "animal": "Horse",
-          "element": "Fire",
-          "hanzi": "午",
-          "polarity": "Yang"
-        },
-        "end_age": 12,
-        "hanzi": "壬午",
-        "start_age": 3,
-        "stem": {
-          "element": "Water",
-          "english": "Ren",
-          "hanzi": "壬",
-          "polarity": "Yang"
-        },
-        "ten_gods": {
-          "hidden_stems_ten_gods": [
-            {
-              "stem": {
-                "element": "Fire",
-                "english": "Ding",
-                "hanzi": "丁",
-                "polarity": "Yin"
-              },
-              "ten_god": "Częściowa Pieczęć (Pian Yin)"
-            },
-            {
-              "stem": {
-                "element": "Earth",
-                "english": "Ji",
-                "hanzi": "己",
-                "polarity": "Yin"
-              },
-              "ten_god": "Równy Brat (Bi Jian)"
-            }
-          ],
-          "stem_ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
-        }
-      },
-      {
-        "branch": {
           "animal": "Goat",
           "element": "Earth",
           "hanzi": "未",
           "polarity": "Yin"
         },
-        "end_age": 22,
+        "end_age": 10,
         "hanzi": "癸未",
-        "start_age": 13,
+        "start_age": 1,
         "stem": {
           "element": "Water",
           "english": "Gui",
@@ -97,9 +57,9 @@
           "hanzi": "申",
           "polarity": "Yang"
         },
-        "end_age": 32,
+        "end_age": 20,
         "hanzi": "甲申",
-        "start_age": 23,
+        "start_age": 11,
         "stem": {
           "element": "Wood",
           "english": "Jia",
@@ -146,9 +106,9 @@
           "hanzi": "酉",
           "polarity": "Yin"
         },
-        "end_age": 42,
+        "end_age": 30,
         "hanzi": "乙酉",
-        "start_age": 33,
+        "start_age": 21,
         "stem": {
           "element": "Wood",
           "english": "Yi",
@@ -177,9 +137,9 @@
           "hanzi": "戌",
           "polarity": "Yang"
         },
-        "end_age": 52,
+        "end_age": 40,
         "hanzi": "丙戌",
-        "start_age": 43,
+        "start_age": 31,
         "stem": {
           "element": "Fire",
           "english": "Bing",
@@ -226,9 +186,9 @@
           "hanzi": "亥",
           "polarity": "Yin"
         },
-        "end_age": 62,
+        "end_age": 50,
         "hanzi": "丁亥",
-        "start_age": 53,
+        "start_age": 41,
         "stem": {
           "element": "Fire",
           "english": "Ding",
@@ -266,9 +226,9 @@
           "hanzi": "子",
           "polarity": "Yang"
         },
-        "end_age": 72,
+        "end_age": 60,
         "hanzi": "戊子",
-        "start_age": 63,
+        "start_age": 51,
         "stem": {
           "element": "Earth",
           "english": "Wu",
@@ -297,9 +257,9 @@
           "hanzi": "丑",
           "polarity": "Yin"
         },
-        "end_age": 82,
+        "end_age": 70,
         "hanzi": "己丑",
-        "start_age": 73,
+        "start_age": 61,
         "stem": {
           "element": "Earth",
           "english": "Ji",
@@ -338,11 +298,62 @@
           ],
           "stem_ten_god": "Równy Brat (Bi Jian)"
         }
+      },
+      {
+        "branch": {
+          "animal": "Tiger",
+          "element": "Wood",
+          "hanzi": "寅",
+          "polarity": "Yang"
+        },
+        "end_age": 80,
+        "hanzi": "庚寅",
+        "start_age": 71,
+        "stem": {
+          "element": "Metal",
+          "english": "Geng",
+          "hanzi": "庚",
+          "polarity": "Yang"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Wood",
+                "english": "Jia",
+                "hanzi": "甲",
+                "polarity": "Yang"
+              },
+              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+            },
+            {
+              "stem": {
+                "element": "Fire",
+                "english": "Bing",
+                "hanzi": "丙",
+                "polarity": "Yang"
+              },
+              "ten_god": "Bezpośrednia Pieczęć (Zheng Yin)"
+            },
+            {
+              "stem": {
+                "element": "Earth",
+                "english": "Wu",
+                "hanzi": "戊",
+                "polarity": "Yang"
+              },
+              "ten_god": "Grabieżca Bogactwa (Jie Cai)"
+            }
+          ],
+          "stem_ten_god": "Ranny Urzędnik (Shang Guan)"
+        }
       }
     ],
     "da_yun_direction": "forward",
     "da_yun_direction_assumed": false,
-    "da_yun_start_age": 3,
+    "da_yun_start_age": 1,
+    "da_yun_start_age_approximate": false,
+    "da_yun_start_age_precise": 0.77,
     "day_master": {
       "element": "Earth",
       "english": "Ji",
@@ -1090,7 +1101,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.1",
+    "engine_version": "1.0.2",
     "errors": [],
     "julian_day_ut": 2453556.20833333,
     "reference_date": "2026-07-31",

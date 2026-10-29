@@ -5,10 +5,12 @@ Provides a minimal BaZi reading using the ``cnlunar`` package:
 - Earthly Branch / zodiac animal of the year pillar.
 """
 
+import math
 from datetime import date, datetime, time
 from typing import Final
 
 import cnlunar
+import swisseph as swe
 
 HEAVENLY_STEMS_HANZI: Final[list[str]] = [
     "甲",  # Jia
@@ -287,37 +289,76 @@ def _da_yun_direction(year_stem_english: str, gender: str | None) -> tuple[str, 
     return "forward", True
 
 
+def _sun_longitude(jd_ut: float) -> float:
+    result, err = swe.calc_ut(jd_ut, swe.SUN, 0)
+    if err and not result:
+        raise RuntimeError(f"Failed to compute Sun position: {err}")
+    return float(result[0]) % 360.0
+
+
+def _jie_julian_day(jd_ut: float, forward: bool) -> float:
+    """Julian Day UT of the nearest month-opening solar term (Jie) after or before jd_ut.
+
+    The twelve Jie that open the BaZi months (Li Chun 315°, Jing Zhe 345°,
+    Qing Ming 15°, ... Xiao Han 285°) sit at Sun longitudes of 15° + 30°k.
+    """
+    longitude = _sun_longitude(jd_ut)
+    offset = (longitude - 15.0) % 30.0
+    target = (longitude + (30.0 - offset if forward else -offset)) % 360.0
+    jd = jd_ut + (30.0 - offset if forward else -offset) / 0.9856
+    for _ in range(20):
+        delta = (_sun_longitude(jd) - target + 180.0) % 360.0 - 180.0
+        if abs(delta) < 1e-6:
+            break
+        jd -= delta / 0.9856
+    return jd
+
+
+def _start_age_from_jie(jd_ut: float, forward: bool) -> float:
+    """Da Yun starting age in years: days to the next Jie (forward) or since the
+    previous one (backward), at the classical three days to one year."""
+    return abs(_jie_julian_day(jd_ut, forward) - jd_ut) / 3.0
+
+
 def _compute_da_yun(
     month_pillar_hanzi: str,
     year_stem_english: str,
     day_master_hanzi: str,
     gender: str | None,
     birth_day: int,
+    julian_day_ut: float | None = None,
 ) -> dict:
     """Compute the 10-year Great Luck Pillars (Da Yun) from the month pillar.
 
-    This is an MVP implementation:
-      * 8 pillars are generated, each spanning 10 years.
-      * Starting age is approximated to 3 years (precise JieQi-based age would
-        require solar-term ephemeris calculations).
+      * 8 pillars, each spanning 10 years. The first one is the pillar next to
+        the month pillar in the direction of travel, never the month pillar
+        itself (until 2026-10-29 it was, which shifted every decade by one).
+      * Starting age comes from the distance to the nearest Jie solar term when
+        `julian_day_ut` is given; otherwise a 3/4-year heuristic, flagged
+        approximate.
       * Direction follows the standard gender/year-stem rule.
     """
     direction, is_assumed = _da_yun_direction(year_stem_english, gender)
-    step_stem = _next_stem if direction == "forward" else _prev_stem
-    step_branch = _next_branch if direction == "forward" else _prev_branch
+    forward = direction == "forward"
+    step_stem = _next_stem if forward else _prev_stem
+    step_branch = _next_branch if forward else _prev_branch
 
     current_stem = month_pillar_hanzi[0]
     current_branch = month_pillar_hanzi[1]
 
-    # Approximate starting age: 3 years, nudged to 4 if born late in the lunar
-    # month as a coarse heuristic. JieQi-based calculation is out of MVP scope.
-    start_age = 3 if birth_day <= 15 else 4
+    if julian_day_ut is not None:
+        start_age_precise: float | None = round(_start_age_from_jie(julian_day_ut, forward), 2)
+        start_age = math.floor(start_age_precise + 0.5)
+        approximate = False
+    else:
+        start_age_precise = None
+        start_age = 3 if birth_day <= 15 else 4
+        approximate = True
 
     pillars: list[dict] = []
     for i in range(8):
-        if i > 0:
-            current_stem = step_stem(current_stem)
-            current_branch = step_branch(current_branch)
+        current_stem = step_stem(current_stem)
+        current_branch = step_branch(current_branch)
         pillar_hanzi = current_stem + current_branch
         pillar = _pillar_info(pillar_hanzi, day_master_hanzi)
         pillar["start_age"] = start_age + i * 10
@@ -329,7 +370,8 @@ def _compute_da_yun(
         "direction": direction,
         "direction_assumed": is_assumed,
         "start_age": start_age,
-        "start_age_approximate": True,
+        "start_age_precise": start_age_precise,
+        "start_age_approximate": approximate,
     }
 
 
@@ -381,6 +423,7 @@ def compute_bazi(
     birth_date: date,
     birth_time: time,
     gender: str | None = None,
+    julian_day_ut: float | None = None,
 ) -> dict:
     """Compute the full Four Pillars BaZi reading for a birth moment.
 
@@ -390,6 +433,8 @@ def compute_bazi(
         gender: Optional biological gender ('male' or 'female') used to pick
             the correct Da Yun direction. If omitted, forward direction is
             assumed and the response flags this.
+        julian_day_ut: Birth moment in UT. Needed for the Da Yun starting
+            age from the solar terms; without it the age is approximate.
 
     Returns:
         Dictionary with all four pillars, Day Master, and Da Yun timeline.
@@ -420,6 +465,7 @@ def compute_bazi(
         day_master_hanzi=day_master_hanzi,
         gender=gender,
         birth_day=birth_date.day,
+        julian_day_ut=julian_day_ut,
     )
 
     return {
@@ -435,4 +481,6 @@ def compute_bazi(
         "da_yun_direction": da_yun["direction"],
         "da_yun_direction_assumed": da_yun["direction_assumed"],
         "da_yun_start_age": da_yun["start_age"],
+        "da_yun_start_age_precise": da_yun["start_age_precise"],
+        "da_yun_start_age_approximate": da_yun["start_age_approximate"],
     }

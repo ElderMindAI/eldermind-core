@@ -1,10 +1,18 @@
 """Unit tests for the BaZi (Four Pillars) service, including Da Yun."""
 
-from datetime import date, time
+from datetime import date, datetime, time, timedelta
 
 import pytest
+import swisseph as swe
 
-from eldermind_core.services.bazi import HEAVENLY_STEMS_ENGLISH, TEN_GODS, compute_bazi
+from eldermind_core.services.bazi import (
+    HEAVENLY_STEMS_ENGLISH,
+    TEN_GODS,
+    _jie_julian_day,
+    _sun_longitude,
+    compute_bazi,
+)
+from eldermind_core.services.ephemeris import compute_julian_day_ut
 
 
 def _god(day_master: str, stem: str) -> str:
@@ -94,11 +102,10 @@ def test_da_yun_forward_for_male_yang_year() -> None:
     assert first["start_age"] == result["da_yun_start_age"]
     assert first["end_age"] == first["start_age"] + 9
 
-    # Stems and branches should progress forward from the month pillar.
-    month_stem = result["month_pillar"]["stem"]["hanzi"]
-    month_branch = result["month_pillar"]["branch"]["hanzi"]
-    assert result["da_yun"][0]["stem"]["hanzi"] == month_stem
-    assert result["da_yun"][0]["branch"]["hanzi"] == month_branch
+    # The first pillar is the one AFTER the month pillar, never the month
+    # pillar itself (until 2026-10-29 this test pinned the wrong behaviour).
+    assert result["month_pillar"]["hanzi"] == "庚午"
+    assert [p["hanzi"] for p in result["da_yun"][:3]] == ["辛未", "壬申", "癸酉"]
 
 
 def test_da_yun_backward_for_female_yang_year() -> None:
@@ -107,6 +114,7 @@ def test_da_yun_backward_for_female_yang_year() -> None:
 
     assert result["da_yun_direction"] == "backward"
     assert len(result["da_yun"]) == 8
+    assert [p["hanzi"] for p in result["da_yun"][:3]] == ["己巳", "戊辰", "丁卯"]
 
 
 def test_da_yun_backward_for_male_yin_year() -> None:
@@ -140,6 +148,57 @@ def test_da_yun_direction_not_assumed_when_gender_given() -> None:
     result = compute_bazi(date(1985, 6, 15), time(14, 30), gender="female")
 
     assert result["da_yun_direction_assumed"] is False
+
+
+def _jd(day: date, local: time, zone: str = "Europe/Warsaw") -> float:
+    return compute_julian_day_ut(birth_date=day, birth_time=local, timezone_name=zone)[0]
+
+
+@pytest.mark.parametrize(
+    ("jd_ut", "forward", "expected_beijing", "expected_longitude"),
+    [
+        # Almanac times are Beijing time (UT+8).
+        # 1986: Xiao Shu (105°) 7 July 18:01, Li Qiu (135°) 8 August 03:46.
+        (_jd(date(1986, 7, 19), time(5, 39)), False, datetime(1986, 7, 7, 18, 1), 105.0),
+        (_jd(date(1986, 7, 19), time(5, 39)), True, datetime(1986, 8, 8, 3, 46), 135.0),
+        # Li Chun (315°) opens the year: 4 February 2024 16:27.
+        (_jd(date(2024, 2, 20), time(12, 0)), False, datetime(2024, 2, 4, 16, 27), 315.0),
+    ],
+)
+def test_jie_solar_terms_land_on_their_almanac_times(
+    jd_ut: float, forward: bool, expected_beijing: datetime, expected_longitude: float
+) -> None:
+    jd = _jie_julian_day(jd_ut, forward)
+    assert _sun_longitude(jd) == pytest.approx(expected_longitude, abs=1e-4)
+    year, month, day, hour = swe.revjul(jd + 8 / 24)
+    beijing = datetime(year, month, day) + timedelta(hours=hour)
+    assert abs((beijing - expected_beijing).total_seconds()) < 120
+
+
+def test_da_yun_female_yang_year_textbook_case() -> None:
+    """Woman, Bing Yin year (Yang), month Yi Wei, born 12 days after Xiao Shu.
+
+    Backward from Yi Wei: Jia Wu, Gui Si, Ren Chen, Xin Mao, Geng Yin...
+    12 days / 3 = 4 years. The pre-fix engine said Wu Xu for ages 34-43.
+    """
+    birth = date(1986, 7, 19), time(5, 39)
+    result = compute_bazi(*birth, gender="female", julian_day_ut=_jd(*birth))
+
+    assert result["month_pillar"]["hanzi"] == "乙未"
+    assert result["da_yun_direction"] == "backward"
+    assert [p["hanzi"] for p in result["da_yun"][:5]] == ["甲午", "癸巳", "壬辰", "辛卯", "庚寅"]
+    assert result["da_yun_start_age_precise"] == pytest.approx(3.9, abs=0.15)
+    assert result["da_yun_start_age"] == 4
+    assert result["da_yun_start_age_approximate"] is False
+    fourth = result["da_yun"][3]
+    assert (fourth["start_age"], fourth["end_age"]) == (34, 43)
+
+
+def test_da_yun_start_age_flagged_approximate_without_julian_day() -> None:
+    result = compute_bazi(date(1986, 7, 19), time(5, 39), gender="female")
+
+    assert result["da_yun_start_age_approximate"] is True
+    assert result["da_yun_start_age_precise"] is None
 
 
 def test_da_yun_pillars_contain_ten_gods() -> None:

@@ -3,45 +3,14 @@
     "da_yun": [
       {
         "branch": {
-          "animal": "Rabbit",
-          "element": "Wood",
-          "hanzi": "卯",
-          "polarity": "Yin"
-        },
-        "end_age": 12,
-        "hanzi": "乙卯",
-        "start_age": 3,
-        "stem": {
-          "element": "Wood",
-          "english": "Yi",
-          "hanzi": "乙",
-          "polarity": "Yin"
-        },
-        "ten_gods": {
-          "hidden_stems_ten_gods": [
-            {
-              "stem": {
-                "element": "Wood",
-                "english": "Yi",
-                "hanzi": "乙",
-                "polarity": "Yin"
-              },
-              "ten_god": "Siedem Zabójców (Qi Sha)"
-            }
-          ],
-          "stem_ten_god": "Siedem Zabójców (Qi Sha)"
-        }
-      },
-      {
-        "branch": {
           "animal": "Dragon",
           "element": "Earth",
           "hanzi": "辰",
           "polarity": "Yang"
         },
-        "end_age": 22,
+        "end_age": 16,
         "hanzi": "丙辰",
-        "start_age": 13,
+        "start_age": 7,
         "stem": {
           "element": "Fire",
           "english": "Bing",
@@ -88,9 +57,9 @@
           "hanzi": "巳",
           "polarity": "Yin"
         },
-        "end_age": 32,
+        "end_age": 26,
         "hanzi": "丁巳",
-        "start_age": 23,
+        "start_age": 17,
         "stem": {
           "element": "Fire",
           "english": "Ding",
@@ -137,9 +106,9 @@
           "hanzi": "午",
           "polarity": "Yang"
         },
-        "end_age": 42,
+        "end_age": 36,
         "hanzi": "戊午",
-        "start_age": 33,
+        "start_age": 27,
         "stem": {
           "element": "Earth",
           "english": "Wu",
@@ -177,9 +146,9 @@
           "hanzi": "未",
           "polarity": "Yin"
         },
-        "end_age": 52,
+        "end_age": 46,
         "hanzi": "己未",
-        "start_age": 43,
+        "start_age": 37,
         "stem": {
           "element": "Earth",
           "english": "Ji",
@@ -226,9 +195,9 @@
           "hanzi": "申",
           "polarity": "Yang"
         },
-        "end_age": 62,
+        "end_age": 56,
         "hanzi": "庚申",
-        "start_age": 53,
+        "start_age": 47,
         "stem": {
           "element": "Metal",
           "english": "Geng",
@@ -275,9 +244,9 @@
           "hanzi": "酉",
           "polarity": "Yin"
         },
-        "end_age": 72,
+        "end_age": 66,
         "hanzi": "辛酉",
-        "start_age": 63,
+        "start_age": 57,
         "stem": {
           "element": "Metal",
           "english": "Xin",
@@ -306,9 +275,9 @@
           "hanzi": "戌",
           "polarity": "Yang"
         },
-        "end_age": 82,
+        "end_age": 76,
         "hanzi": "壬戌",
-        "start_age": 73,
+        "start_age": 67,
         "stem": {
           "element": "Water",
           "english": "Ren",
@@ -347,11 +316,53 @@
           ],
           "stem_ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
         }
+      },
+      {
+        "branch": {
+          "animal": "Pig",
+          "element": "Water",
+          "hanzi": "亥",
+          "polarity": "Yin"
+        },
+        "end_age": 86,
+        "hanzi": "癸亥",
+        "start_age": 77,
+        "stem": {
+          "element": "Water",
+          "english": "Gui",
+          "hanzi": "癸",
+          "polarity": "Yin"
+        },
+        "ten_gods": {
+          "hidden_stems_ten_gods": [
+            {
+              "stem": {
+                "element": "Water",
+                "english": "Ren",
+                "hanzi": "壬",
+                "polarity": "Yang"
+              },
+              "ten_god": "Bezpośrednie Bogactwo (Zheng Cai)"
+            },
+            {
+              "stem": {
+                "element": "Wood",
+                "english": "Jia",
+                "hanzi": "甲",
+                "polarity": "Yang"
+              },
+              "ten_god": "Bezpośredni Urzędnik (Zheng Guan)"
+            }
+          ],
+          "stem_ten_god": "Niebezpośrednie Bogactwo (Pian Cai)"
+        }
       }
     ],
     "da_yun_direction": "forward",
     "da_yun_direction_assumed": false,
-    "da_yun_start_age": 3,
+    "da_yun_start_age": 7,
+    "da_yun_start_age_approximate": false,
+    "da_yun_start_age_precise": 6.53,
     "day_master": {
       "element": "Earth",
       "english": "Ji",
@@ -1078,7 +1089,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.1",
+    "engine_version": "1.0.2",
     "errors": [],
     "julian_day_ut": 2447236.48958333,
     "reference_date": "2026-07-31",
