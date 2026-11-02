@@ -23,7 +23,7 @@ from datetime import date, time
 from typing import Any, Callable, Iterable, Sequence
 
 from eldermind_core import ENGINE_VERSION
-from eldermind_core.core.errors import EldermindCoreError
+from eldermind_core.core.errors import EldermindCoreError, HouseSystemUnavailableError
 from eldermind_core.core.reference import assert_date_in_range, resolve_reference_date
 from eldermind_core.services.bazi import compute_bazi
 from eldermind_core.services.ephemeris import (
@@ -235,6 +235,15 @@ def compute_profile(
             human_design_cache.update(compute_human_design(jd_birth_ut=jd_ut))
         return human_design_cache
 
+    def draconic() -> dict:
+        # Houses are the natal Placidus ones; beyond the polar circles there
+        # are none, and the draconic chart is still fine without them.
+        try:
+            ensure_western()
+        except HouseSystemUnavailableError:
+            return compute_draconic_chart(jd_ut=jd_ut)
+        return compute_draconic_chart(jd_ut=jd_ut, house_cusps=houses)
+
     def gene_keys() -> dict:
         # Gene Keys is a projection of the Human Design activations, so it needs
         # that chart whether or not the caller asked for it explicitly.
@@ -258,7 +267,7 @@ def compute_profile(
             current_date=reference_date,
             full_name=subject.full_name,
         ),
-        "draconic": lambda: compute_draconic_chart(jd_ut=jd_ut),
+        "draconic": draconic,
     }
 
     for name in ALL_SYSTEMS:

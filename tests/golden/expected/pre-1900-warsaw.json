@@ -538,6 +538,7 @@
       {
         "degree_in_sign": 19,
         "draconic_longitude": 19.055369,
+        "house_number": 1,
         "name": "Sun",
         "sign": "Aries",
         "tropical_longitude": 279.328994
@@ -545,6 +546,7 @@
       {
         "degree_in_sign": 1,
         "draconic_longitude": 0.677658,
+        "house_number": 1,
         "name": "Moon",
         "sign": "Aries",
         "tropical_longitude": 260.951283
@@ -552,6 +554,7 @@
       {
         "degree_in_sign": 28,
         "draconic_longitude": 357.701242,
+        "house_number": 1,
         "name": "Mercury",
         "sign": "Pisces",
         "tropical_longitude": 257.974867
@@ -559,6 +562,7 @@
       {
         "degree_in_sign": 15,
         "draconic_longitude": 45.095555,
+        "house_number": 2,
         "name": "Venus",
         "sign": "Taurus",
         "tropical_longitude": 305.36918
@@ -566,6 +570,7 @@
       {
         "degree_in_sign": 23,
         "draconic_longitude": 22.971572,
+        "house_number": 1,
         "name": "Mars",
         "sign": "Aries",
         "tropical_longitude": 283.245197
@@ -573,6 +578,7 @@
       {
         "degree_in_sign": 11,
         "draconic_longitude": 340.703787,
+        "house_number": 12,
         "name": "Jupiter",
         "sign": "Pisces",
         "tropical_longitude": 240.977412
@@ -580,6 +586,7 @@
       {
         "degree_in_sign": 7,
         "draconic_longitude": 7.349043,
+        "house_number": 1,
         "name": "Saturn",
         "sign": "Aries",
         "tropical_longitude": 267.622668
@@ -587,6 +594,7 @@
       {
         "degree_in_sign": 20,
         "draconic_longitude": 349.820698,
+        "house_number": 1,
         "name": "Uranus",
         "sign": "Pisces",
         "tropical_longitude": 250.094323
@@ -594,6 +602,7 @@
       {
         "degree_in_sign": 5,
         "draconic_longitude": 184.967169,
+        "house_number": 7,
         "name": "Neptune",
         "sign": "Libra",
         "tropical_longitude": 85.240794
@@ -601,6 +610,7 @@
       {
         "degree_in_sign": 25,
         "draconic_longitude": 174.991755,
+        "house_number": 7,
         "name": "Pluto",
         "sign": "Virgo",
         "tropical_longitude": 75.26538
@@ -608,6 +618,7 @@
       {
         "degree_in_sign": 0,
         "draconic_longitude": 0.0,
+        "house_number": 1,
         "name": "TrueNode",
         "sign": "Aries",
         "tropical_longitude": 260.273625
@@ -1106,7 +1117,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.4",
+    "engine_version": "1.0.5",
     "errors": [],
     "julian_day_ut": 2415019.69166667,
     "reference_date": "2026-07-31",
@@ -1362,6 +1373,7 @@
         "nakshatra_name": "Purva Ashadha",
         "nakshatra_number": 20,
         "name": "Sun",
+        "navamsa_sign": "Virgo",
         "pada": 2,
         "sign": "Sagittarius"
       },
@@ -1373,6 +1385,7 @@
         "nakshatra_name": "Jyeshtha",
         "nakshatra_number": 18,
         "name": "Moon",
+        "navamsa_sign": "Pisces",
         "pada": 4,
         "sign": "Scorpio"
       },
@@ -1384,6 +1397,7 @@
         "nakshatra_name": "Jyeshtha",
         "nakshatra_number": 18,
         "name": "Mercury",
+        "navamsa_sign": "Aquarius",
         "pada": 3,
         "sign": "Scorpio"
       },
@@ -1395,6 +1409,7 @@
         "nakshatra_name": "Shravana",
         "nakshatra_number": 22,
         "name": "Venus",
+        "navamsa_sign": "Aries",
         "pada": 1,
         "sign": "Capricorn"
       },
@@ -1406,6 +1421,7 @@
         "nakshatra_name": "Purva Ashadha",
         "nakshatra_number": 20,
         "name": "Mars",
+        "navamsa_sign": "Libra",
         "pada": 3,
         "sign": "Sagittarius"
       },
@@ -1417,6 +1433,7 @@
         "nakshatra_name": "Anuradha",
         "nakshatra_number": 17,
         "name": "Jupiter",
+        "navamsa_sign": "Virgo",
         "pada": 2,
         "sign": "Scorpio"
       },
@@ -1428,6 +1445,7 @@
         "nakshatra_name": "Mula",
         "nakshatra_number": 19,
         "name": "Saturn",
+        "navamsa_sign": "Taurus",
         "pada": 2,
         "sign": "Sagittarius"
       },
@@ -1439,6 +1457,7 @@
         "nakshatra_name": "Jyeshtha",
         "nakshatra_number": 18,
         "name": "Uranus",
+        "navamsa_sign": "Sagittarius",
         "pada": 1,
         "sign": "Scorpio"
       },
@@ -1450,6 +1469,7 @@
         "nakshatra_name": "Mrigashira",
         "nakshatra_number": 5,
         "name": "Neptune",
+        "navamsa_sign": "Libra",
         "pada": 3,
         "sign": "Gemini"
       },
@@ -1461,6 +1481,7 @@
         "nakshatra_name": "Rohini",
         "nakshatra_number": 4,
         "name": "Pluto",
+        "navamsa_sign": "Cancer",
         "pada": 4,
         "sign": "Taurus"
       },
@@ -1472,6 +1493,7 @@
         "nakshatra_name": "Jyeshtha",
         "nakshatra_number": 18,
         "name": "TrueNode",
+        "navamsa_sign": "Pisces",
         "pada": 4,
         "sign": "Scorpio"
       },
@@ -1483,6 +1505,7 @@
         "nakshatra_name": "Mrigashira",
         "nakshatra_number": 5,
         "name": "Ketu",
+        "navamsa_sign": "Virgo",
         "pada": 2,
         "sign": "Taurus"
       },
@@ -1494,6 +1517,7 @@
         "nakshatra_name": "Jyeshtha",
         "nakshatra_number": 18,
         "name": "Ascendant",
+        "navamsa_sign": "Sagittarius",
         "pada": 1,
         "sign": "Scorpio"
       }

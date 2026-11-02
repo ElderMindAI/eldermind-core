@@ -1161,7 +1161,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.4",
+    "engine_version": "1.0.5",
     "errors": [
       {
         "code": "HOUSE_SYSTEM_UNAVAILABLE",
@@ -1432,6 +1432,7 @@
         "nakshatra_name": "Mula",
         "nakshatra_number": 19,
         "name": "Sun",
+        "navamsa_sign": "Taurus",
         "pada": 2,
         "sign": "Sagittarius"
       },
@@ -1443,6 +1444,7 @@
         "nakshatra_name": "Shravana",
         "nakshatra_number": 22,
         "name": "Moon",
+        "navamsa_sign": "Taurus",
         "pada": 2,
         "sign": "Capricorn"
       },
@@ -1454,6 +1456,7 @@
         "nakshatra_name": "Mula",
         "nakshatra_number": 19,
         "name": "Mercury",
+        "navamsa_sign": "Cancer",
         "pada": 4,
         "sign": "Sagittarius"
       },
@@ -1465,6 +1468,7 @@
         "nakshatra_name": "Purva Ashadha",
         "nakshatra_number": 20,
         "name": "Venus",
+        "navamsa_sign": "Virgo",
         "pada": 2,
         "sign": "Sagittarius"
       },
@@ -1476,6 +1480,7 @@
         "nakshatra_name": "Krittika",
         "nakshatra_number": 3,
         "name": "Mars",
+        "navamsa_sign": "Aquarius",
         "pada": 3,
         "sign": "Taurus"
       },
@@ -1487,6 +1492,7 @@
         "nakshatra_name": "Ashlesha",
         "nakshatra_number": 9,
         "name": "Jupiter",
+        "navamsa_sign": "Sagittarius",
         "pada": 1,
         "sign": "Cancer"
       },
@@ -1498,6 +1504,7 @@
         "nakshatra_name": "Uttara Ashadha",
         "nakshatra_number": 21,
         "name": "Saturn",
+        "navamsa_sign": "Capricorn",
         "pada": 2,
         "sign": "Capricorn"
       },
@@ -1509,6 +1516,7 @@
         "nakshatra_name": "Purva Ashadha",
         "nakshatra_number": 20,
         "name": "Uranus",
+        "navamsa_sign": "Leo",
         "pada": 1,
         "sign": "Sagittarius"
       },
@@ -1520,6 +1528,7 @@
         "nakshatra_name": "Purva Ashadha",
         "nakshatra_number": 20,
         "name": "Neptune",
+        "navamsa_sign": "Virgo",
         "pada": 2,
         "sign": "Sagittarius"
       },
@@ -1531,6 +1540,7 @@
         "nakshatra_name": "Vishakha",
         "nakshatra_number": 16,
         "name": "Pluto",
+        "navamsa_sign": "Taurus",
         "pada": 2,
         "sign": "Libra"
       },
@@ -1542,6 +1552,7 @@
         "nakshatra_name": "Uttara Ashadha",
         "nakshatra_number": 21,
         "name": "TrueNode",
+        "navamsa_sign": "Aquarius",
         "pada": 3,
         "sign": "Capricorn"
       },
@@ -1553,6 +1564,7 @@
         "nakshatra_name": "Pushya",
         "nakshatra_number": 8,
         "name": "Ketu",
+        "navamsa_sign": "Leo",
         "pada": 1,
         "sign": "Cancer"
       },
@@ -1564,6 +1576,7 @@
         "nakshatra_name": "Purva Bhadrapada",
         "nakshatra_number": 25,
         "name": "Ascendant",
+        "navamsa_sign": "Taurus",
         "pada": 2,
         "sign": "Aquarius"
       }

@@ -40,6 +40,24 @@ from eldermind_core.services.vedic_dasha import (
     compute_vimshottari_dasha,
 )
 from eldermind_core.services.sade_sati import compute_sade_sati
+from eldermind_core.services.transits import (
+    EXACT_ORB,
+    NODE_CLUSTER_DAYS,
+    aspect_orb,
+    bisect_change,
+    cluster,
+    jd_to_date,
+    jd_to_moment,
+    julian_day_at_noon,
+    local_minima,
+    longitude_speed,
+    merge_node_passes,
+    minimize,
+    separation,
+    sign_index,
+    sign_of,
+    tropical_longitude,
+)
 from eldermind_core.services.vedic_yogas import (
     attach_vedic_houses,
     compute_drishti,
@@ -404,7 +422,7 @@ def compute_all_planets(jd_ut: float, *, sidereal: bool = False) -> list[dict]:
     ]
 
 
-def compute_draconic_chart(jd_ut: float) -> dict:
+def compute_draconic_chart(jd_ut: float, house_cusps: list[dict] | None = None) -> dict:
     """Calculate the Draconic chart by shifting the tropical zodiac to the
     True North Node.
 
@@ -417,6 +435,11 @@ def compute_draconic_chart(jd_ut: float) -> dict:
 
     Args:
         jd_ut: Julian Day in Universal Time.
+        house_cusps: Natal Placidus cusps. When given, every point also gets
+            ``house_number``: the natal house of the planet, the convention
+            the report's draconic module reads against (the draconic Sun of a
+            natal 6th-house Sun is "in the 6th"). Until 1.0.5 the model
+            assigned these itself and put such a Sun in the 8th.
 
     Returns:
         Dictionary with the North Node longitude and a list of Draconic
@@ -430,16 +453,17 @@ def compute_draconic_chart(jd_ut: float) -> dict:
         tropical = compute_planet_position(jd_ut, name, planet_id)
         draconic_longitude = (tropical["longitude"] - node_longitude) % 360.0
         sign, degree_in_sign = _longitude_to_zodiac(draconic_longitude)
-        draconic_points.append(
-            {
-                "name": name,
-                "draconic_longitude": round(draconic_longitude, 6),
-                "sign": sign,
-                # Round to whole degrees to prevent LLM hallucinations like 8°91'.
-                "degree_in_sign": int(round(degree_in_sign)) % 30,
-                "tropical_longitude": round(tropical["longitude"], 6),
-            }
-        )
+        point = {
+            "name": name,
+            "draconic_longitude": round(draconic_longitude, 6),
+            "sign": sign,
+            # Round to whole degrees to prevent LLM hallucinations like 8°91'.
+            "degree_in_sign": int(round(degree_in_sign)) % 30,
+            "tropical_longitude": round(tropical["longitude"], 6),
+        }
+        if house_cusps:
+            point["house_number"] = _which_house(tropical["longitude"], house_cusps)
+        draconic_points.append(point)
 
     return {
         "north_node_longitude": round(node_longitude, 6),
@@ -507,8 +531,16 @@ _TRANSIT_WINDOW_ASPECTS = (
     (180.0, "Opposition"),
 )
 
-# Tight orb for "exact" transit hits; we report the day of minimum orb within range.
+# Tight orb for transit hits: a pass is reported when the closest approach of
+# the orb, refined to the minute, falls under it.
 _TRANSIT_WINDOW_ORB = 1.5
+
+# Days sampled beyond each end of the scan. A minimum of the orb is recognised
+# only between two samples, so the extra days let the first and the last day
+# of the window hold a hit, and keep hits outside the window out of it. Until
+# 1.0.5 the scan clamped them instead: a hit still approaching on the last day
+# got that day's date, one that peaked before the start got the start date.
+_TRANSIT_SCAN_MARGIN_DAYS = 2
 
 # Even tighter orb for fast-planet conjunctions to natal luminaries/angles;
 # these are the only fast-planet events we surface.
@@ -544,6 +576,39 @@ def _is_seismic_aspect(
         return aspect_name == "Conjunction" and orb < _FAST_CONJUNCTION_ORB
 
     return False
+
+
+# Passes of a fast planet further apart than this are separate windows (the
+# span of one retrograde loop). The Sun has no loop: every pass is its own.
+# Slower bodies keep all passes of the scan in one window.
+_PASS_LOOP_DAYS = {"Sun": 0.0, "Mercury": 60.0, "Venus": 120.0}
+
+
+def _aspect_window(body: str, natal_name: str, aspect_name: str, passes: list[dict]) -> dict:
+    """One transit-window entry from the passes of one geometric event."""
+    passes = [{k: v for k, v in entry.items() if k != "jd"} for entry in passes]
+    parts = [
+        f"{entry['date']} (dokładnie)"
+        if entry["exact"]
+        else f"{entry['date']} (najbliżej, orb {entry['orb']}°, bez dokładnego przejścia)"
+        for entry in passes
+    ]
+    return {
+        "event_date": passes[0]["date"],
+        "moment_utc": passes[0]["moment_utc"],
+        "event_type": "aspect",
+        "transit_body": body,
+        "natal_body": natal_name,
+        "aspect": aspect_name,
+        "sign": passes[0]["sign"],
+        "orb": min(entry["orb"] for entry in passes),
+        "exact": any(entry["exact"] for entry in passes),
+        "passes": passes,
+        "description": (
+            f"{body} {aspect_name.lower()} {natal_name} w {passes[0]['sign']}: "
+            + "; ".join(parts) + "."
+        ),
+    }
 
 
 def _score_window(window: dict) -> int:
@@ -607,10 +672,23 @@ def compute_transit_windows(
         max_windows: Hard cap on returned windows to avoid white-noise overload
             (default 20 for the executive report tier).
 
+    Every geometric event is one window, and every time it happens inside the
+    scan is one of its ``passes``: the moment of the closest approach, refined
+    to the minute from a daily noon-UTC grid. A retrograde planet can make the
+    same aspect three times; a planet that stations short of the degree makes
+    a pass with ``exact: false`` and its minimum orb (Saturn stationing 0.84°
+    from a natal MC never perfects the square). A sign ingress is one window
+    per sign entered. The window's own ``event_date``/``moment_utc`` are its
+    first pass, ``orb`` the smallest of them. The Sun, Mercury and Venus
+    return to the same point a year on, which is a new window, not a pass
+    (`_PASS_LOOP_DAYS`); the transiting Moon keeps only its first pass — it
+    would otherwise repeat every month.
+
     Returns:
         List of transit window dictionaries with keys:
-        ``event_date``, ``event_type``, ``transit_body``, ``natal_body``,
-        ``aspect``, ``sign``, ``orb`` and ``description``.
+        ``event_date``, ``moment_utc``, ``event_type``, ``transit_body``,
+        ``natal_body``, ``aspect``, ``sign``, ``orb``, ``exact``, ``passes``
+        and ``description``.
     """
     natal_lookup: dict[str, dict] = {
         p["name"]: p
@@ -625,86 +703,132 @@ def compute_transit_windows(
         return []
 
     end_date = start_date + timedelta(days=int(months * 30.4375))
-    current = start_date
+    first_day = start_date - timedelta(days=_TRANSIT_SCAN_MARGIN_DAYS)
+    sample_count = (end_date - first_day).days + _TRANSIT_SCAN_MARGIN_DAYS + 1
+    grid = [julian_day_at_noon(first_day + timedelta(days=i)) for i in range(sample_count)]
+
+    def inside(jd_ut: float) -> bool:
+        return start_date <= jd_to_date(jd_ut) <= end_date
+
+    bodies = [
+        body
+        for body in (*_SLOW_TRANSIT_BODIES, _MARS_BODY, *_FAST_TRANSIT_BODIES)
+        if body in PLANET_IDS
+    ]
+    longitudes = {body: [tropical_longitude(jd, body) for jd in grid] for body in bodies}
 
     windows: list[dict] = []
-    last_sign: dict[str, str] = {}
 
-    # Use noon UTC for the daily sample; accurate enough for month-level windows.
-    while current <= end_date:
-        jd_ut = _utc_to_julian_day_ut(datetime.combine(current, time(12, 0), tzinfo=ZoneInfo("UTC")))
-
-        for body in (*_SLOW_TRANSIT_BODIES, _MARS_BODY, *_FAST_TRANSIT_BODIES):
-            if body not in PLANET_IDS:
+    for body in bodies:
+        if body not in (*_SLOW_TRANSIT_BODIES, _MARS_BODY):
+            continue
+        series = longitudes[body]
+        crossings = [
+            {
+                "jd": bisect_change(
+                    lambda t, body=body: sign_index(tropical_longitude(t, body)), grid[i - 1], grid[i]
+                ),
+                "from_sign": sign_of(series[i - 1]),
+                "to_sign": sign_of(series[i]),
+            }
+            for i in range(1, len(grid))
+            if sign_index(series[i]) != sign_index(series[i - 1])
+        ]
+        if body == "TrueNode":
+            # A wobbling node can cross a sign boundary back and forth within
+            # days: one ingress per burst, dated at its first crossing into
+            # the sign it ends up in, none if it ends where it started.
+            crossings = [
+                next(c for c in group if c["to_sign"] == group[-1]["to_sign"]) | {
+                    "from_sign": group[0]["from_sign"]
+                }
+                for group in cluster(crossings, NODE_CLUSTER_DAYS)
+                if group[0]["from_sign"] != group[-1]["to_sign"]
+            ]
+        by_sign: dict[str, dict] = {}
+        for crossing in crossings:
+            moment = crossing["jd"]
+            if not inside(moment):
                 continue
-            transit_pos = compute_planet_position(jd_ut, body, PLANET_IDS[body])
+            new_sign = crossing["to_sign"]
+            entry = {
+                "date": jd_to_date(moment).isoformat(),
+                "moment_utc": jd_to_moment(moment),
+                "from_sign": crossing["from_sign"],
+                # The node's motion is retrograde by nature; saying so on
+                # every node ingress would only confuse the reader.
+                "retrograde": body != "TrueNode" and longitude_speed(moment, body) < 0.0,
+            }
+            window = by_sign.get(new_sign)
+            if window is None:
+                by_sign[new_sign] = {
+                    "event_date": entry["date"],
+                    "moment_utc": entry["moment_utc"],
+                    "event_type": "ingress",
+                    "transit_body": body,
+                    "natal_body": None,
+                    "aspect": None,
+                    "sign": new_sign,
+                    "orb": None,
+                    "exact": None,
+                    "passes": [entry],
+                }
+            else:
+                window["passes"].append(entry)
+        for window in by_sign.values():
+            window["description"] = f"{body} wchodzi do {window['sign']}: " + "; ".join(
+                f"{entry['date']} (z {entry['from_sign']}"
+                + (", ruchem wstecznym)" if entry["retrograde"] else ")")
+                for entry in window["passes"]
+            ) + "."
+            windows.append(window)
 
-            # Ingress detection (always keep ingresses of slow bodies and Mars).
-            prev_sign = last_sign.get(body)
-            if prev_sign is not None and transit_pos["sign"] != prev_sign:
-                if body in (*_SLOW_TRANSIT_BODIES, _MARS_BODY):
-                    windows.append({
-                        "event_date": current.isoformat(),
-                        "event_type": "ingress",
-                        "transit_body": body,
-                        "natal_body": None,
-                        "aspect": None,
-                        "sign": transit_pos["sign"],
-                        "orb": None,
-                        "description": (
-                            f"{body} przechodzi z {prev_sign} do {transit_pos['sign']} "
-                            f"(ok. {current.isoformat()})."
-                        ),
+    for body in bodies:
+        series = longitudes[body]
+        # A minimum on the daily grid can sit up to one day's motion away from
+        # the true one, so a sample that close to the orb is worth refining.
+        motion = max(separation(series[i], series[i - 1]) for i in range(1, len(series)))
+        # One window per retrograde loop: the Sun, Mercury and Venus come back
+        # to the same point a year on, and that is a new event, not a pass.
+        for natal_name, natal in natal_lookup.items():
+            natal_lon = float(natal["longitude"])
+            for angle, aspect_name in _TRANSIT_WINDOW_ASPECTS:
+                if not _is_seismic_aspect(body, natal_name, aspect_name, 0.0):
+                    continue
+
+                def orb_at(t: float, body=body, natal_lon=natal_lon, angle=angle) -> float:
+                    return aspect_orb(tropical_longitude(t, body), natal_lon, angle)
+
+                orbs = [aspect_orb(lon, natal_lon, angle) for lon in series]
+                passes: list[dict] = []
+                for i in local_minima(orbs):
+                    if orbs[i] - motion > _TRANSIT_WINDOW_ORB:
+                        continue
+                    moment, best = minimize(orb_at, grid[i - 1], grid[i + 1])
+                    if best > _TRANSIT_WINDOW_ORB or not inside(moment):
+                        continue
+                    if not _is_seismic_aspect(body, natal_name, aspect_name, best):
+                        continue
+                    longitude = tropical_longitude(moment, body)
+                    passes.append({
+                        "jd": moment,
+                        "date": jd_to_date(moment).isoformat(),
+                        "moment_utc": jd_to_moment(moment),
+                        "orb": round(best, 2),
+                        "exact": best < EXACT_ORB,
+                        "retrograde": longitude_speed(moment, body) < 0.0,
+                        "sign": sign_of(longitude),
                     })
-            last_sign[body] = transit_pos["sign"]
+                if not passes:
+                    continue
+                if body == "TrueNode":
+                    passes = merge_node_passes(passes)
+                if body == "Moon":
+                    passes = passes[:1]
+                for group in cluster(passes, _PASS_LOOP_DAYS.get(body, float("inf"))):
+                    windows.append(_aspect_window(body, natal_name, aspect_name, group))
 
-            # Exact aspect detection (tight orb) to natal planets.
-            transit_lon = transit_pos["longitude"]
-            for natal_name, natal in natal_lookup.items():
-                natal_lon = natal["longitude"]
-                for angle, aspect_name in _TRANSIT_WINDOW_ASPECTS:
-                    distance = min(
-                        (transit_lon - natal_lon) % 360.0,
-                        (natal_lon - transit_lon) % 360.0,
-                    )
-                    variance = abs(distance - angle)
-                    if variance <= _TRANSIT_WINDOW_ORB:
-                        if not _is_seismic_aspect(body, natal_name, aspect_name, variance):
-                            continue
-                        windows.append({
-                            "event_date": current.isoformat(),
-                            "event_type": "aspect",
-                            "transit_body": body,
-                            "natal_body": natal_name,
-                            "aspect": aspect_name,
-                            "sign": transit_pos["sign"],
-                            "orb": round(variance, 2),
-                            "description": (
-                                f"{body} {aspect_name.lower()} {natal_name} "
-                                f"w {transit_pos['sign']} (ok. {current.isoformat()}, "
-                                f"orb {round(variance, 1)}°)."
-                            ),
-                        })
-
-        current += timedelta(days=1)
-
-    # Deduplicate contiguous duplicate (body, natal, aspect) hits by keeping
-    # the single day with the smallest orb for each geometric event.
-    grouped: dict[tuple[str, str | None, str | None, str], dict] = {}
-    for window in windows:
-        key = (
-            window["transit_body"],
-            window.get("natal_body"),
-            window.get("aspect"),
-            window.get("event_type"),
-        )
-        existing = grouped.get(key)
-        if existing is None or (window.get("orb") is not None and (
-            existing.get("orb") is None or window["orb"] < existing["orb"]
-        )):
-            grouped[key] = window
-
-    ranked = sorted(grouped.values(), key=lambda w: (_score_window(w), w["event_date"]), reverse=True)
+    ranked = sorted(windows, key=lambda w: (_score_window(w), w["event_date"]), reverse=True)
     selected = ranked[:max_windows]
     return sorted(selected, key=lambda w: (w["event_date"], w["transit_body"]))
 
@@ -731,11 +855,17 @@ def _longitude_to_nakshatra(longitude: float) -> dict:
     # Clamp Pada to the valid 1-4 range as a defensive measure.
     pada = max(1, min(pada, PADA_COUNT))
 
+    # Each pada is one navamsa (D9); the 108 of them run through the signs
+    # from Aries, so pada 2 of Pushya is Virgo. Until 1.0.5 the model did this
+    # itself and gave it as Taurus.
+    navamsa_index = (nakshatra_index * PADA_COUNT + pada - 1) % SIGNS_COUNT
+
     return {
         "nakshatra_number": nakshatra_number,
         "nakshatra_name": NAKSHATRA_NAMES[nakshatra_index],
         "nakshatra_lord": VIMSHOTTARI_ORDER[nakshatra_index % 9],
         "pada": pada,
+        "navamsa_sign": ZODIAC_SIGNS[navamsa_index],
     }
 
 

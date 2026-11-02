@@ -240,6 +240,7 @@ def test_nakshatra_of_every_body() -> None:
     assert ketu["sign"] == "Scorpio"
     assert _longitude_to_nakshatra(ketu["longitude"]) == {
         "nakshatra_number": 17, "nakshatra_name": "Anuradha", "nakshatra_lord": "Saturn", "pada": 4,
+        "navamsa_sign": "Scorpio",
     }
 
 

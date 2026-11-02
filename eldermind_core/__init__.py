@@ -31,6 +31,13 @@ __version__ = "1.0.0"
 #: Moon, drishti, yogas and doshas with their conditions, the panchanga, every
 #: Sade-Sati window of the life, Da Yun calendar years, and the bridges of a
 #: split Human Design definition. No existing number moved.
-ENGINE_VERSION = "1.0.4"
+#: 1.0.5 (2026-11-02): transit windows dated at the minute of each pass instead
+#: of the noon of the nearest day in orb (a hit past the end of the scan was
+#: clamped to its last day, one before the start to its first), every pass of a
+#: retrograde loop listed, stations short of the degree marked `exact: false`,
+#: one ingress per sign entered; aspects of the transits in force on the
+#: reference day and the Jupiter/Saturn returns (`services/transits.py`);
+#: navamsa sign of every pada, natal house of every draconic point.
+ENGINE_VERSION = "1.0.5"
 
 __all__ = ["ENGINE_VERSION", "__version__"]
