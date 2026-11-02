@@ -1225,7 +1225,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.5",
+    "engine_version": "1.0.6",
     "errors": [],
     "julian_day_ut": 2449232.02083333,
     "reference_date": "2026-07-31",
@@ -1248,6 +1248,7 @@
       "name": "Ascendant",
       "sign": "Scorpio"
     },
+    "atmakaraka": "Jupiter",
     "avakahada_chakra": {
       "gana": "Rakshasa",
       "nadi": "Vata",
@@ -1256,6 +1257,50 @@
       "yoni": "Koń"
     },
     "ayanamsa": 23.768634,
+    "chara_karakas": [
+      {
+        "degree_in_sign": 21.46,
+        "karaka": "Atmakaraka",
+        "planet": "Jupiter",
+        "sign": "Virgo"
+      },
+      {
+        "degree_in_sign": 19.89,
+        "karaka": "Amatyakaraka",
+        "planet": "Moon",
+        "sign": "Aquarius"
+      },
+      {
+        "degree_in_sign": 19.31,
+        "karaka": "Bhratrikaraka",
+        "planet": "Mars",
+        "sign": "Virgo"
+      },
+      {
+        "degree_in_sign": 18.35,
+        "karaka": "Matrikaraka",
+        "planet": "Mercury",
+        "sign": "Leo"
+      },
+      {
+        "degree_in_sign": 15.31,
+        "karaka": "Putrakaraka",
+        "planet": "Sun",
+        "sign": "Leo"
+      },
+      {
+        "degree_in_sign": 12.01,
+        "karaka": "Gnatikaraka",
+        "planet": "Venus",
+        "sign": "Cancer"
+      },
+      {
+        "degree_in_sign": 2.25,
+        "karaka": "Darakaraka",
+        "planet": "Saturn",
+        "sign": "Aquarius"
+      }
+    ],
     "drishti": [
       {
         "aspects": [
@@ -1755,24 +1800,64 @@
       "cycles": [
         {
           "age_at_end": 4.6,
+          "age_at_final_end": 4.6,
           "age_at_start": 0.0,
           "end_date": "1998-04-17",
+          "final_end_date": "1998-04-17",
           "phases": [
             {
               "end": "1993-03-05",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "1990-06-20",
+                  "start": "1990-03-20"
+                },
+                {
+                  "end": "1993-03-05",
+                  "start": "1990-12-14"
+                },
+                {
+                  "end": "1993-11-09",
+                  "start": "1993-10-15"
+                }
+              ],
               "sign": "Capricorn",
               "start": "1990-03-20"
             },
             {
               "end": "1995-06-02",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "1993-10-15",
+                  "start": "1993-03-05"
+                },
+                {
+                  "end": "1995-06-02",
+                  "start": "1993-11-09"
+                },
+                {
+                  "end": "1996-02-16",
+                  "start": "1995-08-09"
+                }
+              ],
               "sign": "Aquarius",
               "start": "1993-03-05"
             },
             {
               "end": "1998-04-17",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "1995-08-09",
+                  "start": "1995-06-02"
+                },
+                {
+                  "end": "1998-04-17",
+                  "start": "1996-02-16"
+                }
+              ],
               "sign": "Pisces",
               "start": "1995-06-02"
             }
@@ -1782,24 +1867,56 @@
         },
         {
           "age_at_end": 33.8,
+          "age_at_final_end": 34.5,
           "age_at_start": 26.4,
           "end_date": "2027-06-02",
+          "final_end_date": "2028-02-23",
           "phases": [
             {
               "end": "2022-04-29",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2022-04-29",
+                  "start": "2020-01-24"
+                },
+                {
+                  "end": "2023-01-17",
+                  "start": "2022-07-12"
+                }
+              ],
               "sign": "Capricorn",
               "start": "2020-01-24"
             },
             {
               "end": "2025-03-29",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2022-07-12",
+                  "start": "2022-04-29"
+                },
+                {
+                  "end": "2025-03-29",
+                  "start": "2023-01-17"
+                }
+              ],
               "sign": "Aquarius",
               "start": "2022-04-29"
             },
             {
               "end": "2027-06-02",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2027-06-02",
+                  "start": "2025-03-29"
+                },
+                {
+                  "end": "2028-02-23",
+                  "start": "2027-10-20"
+                }
+              ],
               "sign": "Pisces",
               "start": "2025-03-29"
             }
@@ -1809,24 +1926,56 @@
         },
         {
           "age_at_end": 63.6,
+          "age_at_final_end": 63.6,
           "age_at_start": 55.5,
           "end_date": "2057-04-07",
+          "final_end_date": "2057-04-07",
           "phases": [
             {
               "end": "2052-02-24",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2049-07-09",
+                  "start": "2049-03-06"
+                },
+                {
+                  "end": "2052-02-24",
+                  "start": "2049-12-04"
+                }
+              ],
               "sign": "Capricorn",
               "start": "2049-03-06"
             },
             {
               "end": "2054-05-14",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2054-05-14",
+                  "start": "2052-02-24"
+                },
+                {
+                  "end": "2055-02-05",
+                  "start": "2054-09-01"
+                }
+              ],
               "sign": "Aquarius",
               "start": "2052-02-24"
             },
             {
               "end": "2057-04-07",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2054-09-01",
+                  "start": "2054-05-14"
+                },
+                {
+                  "end": "2057-04-07",
+                  "start": "2055-02-05"
+                }
+              ],
               "sign": "Pisces",
               "start": "2054-05-14"
             }
@@ -1836,24 +1985,56 @@
         },
         {
           "age_at_end": 92.7,
+          "age_at_final_end": 93.4,
           "age_at_start": 85.4,
           "end_date": "2086-05-21",
+          "final_end_date": "2087-02-08",
           "phases": [
             {
               "end": "2081-04-11",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2081-04-11",
+                  "start": "2079-01-14"
+                },
+                {
+                  "end": "2082-01-06",
+                  "start": "2081-08-03"
+                }
+              ],
               "sign": "Capricorn",
               "start": "2079-01-14"
             },
             {
               "end": "2084-03-19",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2081-08-03",
+                  "start": "2081-04-11"
+                },
+                {
+                  "end": "2084-03-19",
+                  "start": "2082-01-06"
+                }
+              ],
               "sign": "Aquarius",
               "start": "2081-04-11"
             },
             {
               "end": "2086-05-21",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2086-05-21",
+                  "start": "2084-03-19"
+                },
+                {
+                  "end": "2087-02-08",
+                  "start": "2086-11-10"
+                }
+              ],
               "sign": "Pisces",
               "start": "2084-03-19"
             }
@@ -1863,6 +2044,7 @@
         }
       ],
       "end_date": "2027-06-02",
+      "final_end_date": "2028-02-23",
       "interpretation_ready": true,
       "moon_sign": "Aquarius",
       "phase": "setting",
@@ -1870,20 +2052,50 @@
       "phase_start": "2025-03-29",
       "phases": [
         {
-          "end": "2023-01-17",
+          "end": "2022-04-29",
           "phase": "rising",
+          "segments": [
+            {
+              "end": "2022-04-29",
+              "start": "2020-01-24"
+            },
+            {
+              "end": "2023-01-17",
+              "start": "2022-07-12"
+            }
+          ],
           "sign": "Capricorn",
           "start": "2020-01-24"
         },
         {
           "end": "2025-03-29",
           "phase": "peak",
+          "segments": [
+            {
+              "end": "2022-07-12",
+              "start": "2022-04-29"
+            },
+            {
+              "end": "2025-03-29",
+              "start": "2023-01-17"
+            }
+          ],
           "sign": "Aquarius",
-          "start": "2023-01-17"
+          "start": "2022-04-29"
         },
         {
           "end": "2027-06-02",
           "phase": "setting",
+          "segments": [
+            {
+              "end": "2027-06-02",
+              "start": "2025-03-29"
+            },
+            {
+              "end": "2028-02-23",
+              "start": "2027-10-20"
+            }
+          ],
           "sign": "Pisces",
           "start": "2025-03-29"
         }
@@ -2564,6 +2776,12 @@
         ],
         "present": true,
         "reason": "The 9th lord Moon and the 10th lord Sun are linked: Moon in Aquarius and Sun in Leo aspect each other."
+      },
+      {
+        "name": "Nakshatra Parivartana",
+        "planets": [],
+        "present": false,
+        "reason": "No two bodies occupy each other's nakshatras; nakshatra lords: Sun Venus, Moon Rahu, Mars Moon, Mercury Venus, Jupiter Moon, Venus Saturn, Saturn Mars, Rahu Saturn, Ketu Moon."
       }
     ]
   },

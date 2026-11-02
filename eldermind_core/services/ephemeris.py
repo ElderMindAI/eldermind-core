@@ -60,6 +60,7 @@ from eldermind_core.services.transits import (
 )
 from eldermind_core.services.vedic_yogas import (
     attach_vedic_houses,
+    compute_chara_karakas,
     compute_drishti,
     compute_yogas,
     ketu_position,
@@ -593,7 +594,7 @@ def _aspect_window(body: str, natal_name: str, aspect_name: str, passes: list[di
         else f"{entry['date']} (najbliżej, orb {entry['orb']}°, bez dokładnego przejścia)"
         for entry in passes
     ]
-    return {
+    window = {
         "event_date": passes[0]["date"],
         "moment_utc": passes[0]["moment_utc"],
         "event_type": "aspect",
@@ -609,6 +610,9 @@ def _aspect_window(body: str, natal_name: str, aspect_name: str, passes: list[di
             + "; ".join(parts) + "."
         ),
     }
+    if "natal_house" in passes[0]:
+        window["natal_house"] = passes[0]["natal_house"]
+    return window
 
 
 def _score_window(window: dict) -> int:
@@ -652,6 +656,7 @@ def compute_transit_windows(
     natal_ascendant: dict | None = None,
     natal_midheaven: dict | None = None,
     max_windows: int = 20,
+    house_cusps: list[dict] | None = None,
 ) -> list[dict]:
     """Find upcoming sign ingresses and exact transiting aspects for M9.
 
@@ -671,6 +676,11 @@ def compute_transit_windows(
         natal_midheaven: Optional natal Midheaven dictionary.
         max_windows: Hard cap on returned windows to avoid white-noise overload
             (default 20 for the executive report tier).
+        house_cusps: Natal Placidus cusps. When given, every pass — and the
+            window, from its first pass — gets ``natal_house``: the natal
+            house the transiting body stands in at that moment. Without it
+            the report guessed: Saturn's 2028 ingress into Taurus went to the
+            8th house of a chart whose 8th cusp is at 22° Taurus.
 
     Every geometric event is one window, and every time it happens inside the
     scan is one of its ``passes``: the moment of the closest approach, refined
@@ -759,6 +769,8 @@ def compute_transit_windows(
                 # every node ingress would only confuse the reader.
                 "retrograde": body != "TrueNode" and longitude_speed(moment, body) < 0.0,
             }
+            if house_cusps:
+                entry["natal_house"] = _which_house(tropical_longitude(moment, body), house_cusps)
             window = by_sign.get(new_sign)
             if window is None:
                 by_sign[new_sign] = {
@@ -773,12 +785,16 @@ def compute_transit_windows(
                     "exact": None,
                     "passes": [entry],
                 }
+                if "natal_house" in entry:
+                    by_sign[new_sign]["natal_house"] = entry["natal_house"]
             else:
                 window["passes"].append(entry)
         for window in by_sign.values():
             window["description"] = f"{body} wchodzi do {window['sign']}: " + "; ".join(
                 f"{entry['date']} (z {entry['from_sign']}"
-                + (", ruchem wstecznym)" if entry["retrograde"] else ")")
+                + (", ruchem wstecznym" if entry["retrograde"] else "")
+                + (f", dom natalny {entry['natal_house']}" if "natal_house" in entry else "")
+                + ")"
                 for entry in window["passes"]
             ) + "."
             windows.append(window)
@@ -810,7 +826,7 @@ def compute_transit_windows(
                     if not _is_seismic_aspect(body, natal_name, aspect_name, best):
                         continue
                     longitude = tropical_longitude(moment, body)
-                    passes.append({
+                    entry = {
                         "jd": moment,
                         "date": jd_to_date(moment).isoformat(),
                         "moment_utc": jd_to_moment(moment),
@@ -818,7 +834,10 @@ def compute_transit_windows(
                         "exact": best < EXACT_ORB,
                         "retrograde": longitude_speed(moment, body) < 0.0,
                         "sign": sign_of(longitude),
-                    })
+                    }
+                    if house_cusps:
+                        entry["natal_house"] = _which_house(longitude, house_cusps)
+                    passes.append(entry)
                 if not passes:
                     continue
                 if body == "TrueNode":
@@ -999,6 +1018,7 @@ def compute_vedic_chart(
         nakshatra_name=vimshottari_dasha["moon_nakshatra"],
         moon_sign=moon_data["sign"],
     )
+    chara_karakas = compute_chara_karakas(planets)
 
     return {
         "ayanamsa": ayanamsa,
@@ -1010,6 +1030,8 @@ def compute_vedic_chart(
         "nakshatras": nakshatra_bodies,
         "drishti": compute_drishti(planets, ascendant),
         "yogas": compute_yogas(planets, ascendant),
+        "chara_karakas": chara_karakas,
+        "atmakaraka": chara_karakas[0]["planet"],
         "panchanga": compute_panchanga(jd_ut),
         "vimshottari_dasha": vimshottari_dasha,
         "sade_sati": sade_sati,

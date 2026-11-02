@@ -10,12 +10,12 @@ własność sprawia, że wyniki da się cache'ować i objąć kontraktem publicz
 
 | Moduł | Co liczy |
 |---|---|
-| `services/ephemeris.py` | Astrologia zachodnia (Placidus, aspekty ptolemejskie), wedyjska (Lahiri, Whole Sign, nakszatry każdego ciała z Ketu i nawamszą pady), karta drakoniczna (z domem natalnym planety), okna tranzytowe |
-| `services/vedic_yogas.py` | Domy wedyjskie od Lagny i od Księżyca, drishti, stała lista jóg i dosz — każda z `present` i warunkiem w `reason` |
+| `services/ephemeris.py` | Astrologia zachodnia (Placidus, aspekty ptolemejskie), wedyjska (Lahiri, Whole Sign, nakszatry każdego ciała z Ketu i nawamszą pady), karta drakoniczna (z domem natalnym planety), okna tranzytowe (z domem natalnym planety tranzytującej, gdy podane są wierzchołki domów) |
+| `services/vedic_yogas.py` | Domy wedyjskie od Lagny i od Księżyca, drishti, karaki Jaimini z Atmakaraką, stała lista jóg i dosz (także Nakshatra Parivartana) — każda z `present` i warunkiem w `reason` |
 | `services/panchanga.py` | Tithi, paksza, dni do nowiu i pełni |
 | `services/transits.py` | Momenty przejść co do minuty (okna tranzytowe), aspekty tranzytów do wykresu natalnego na dzień odniesienia, powroty Jowisza i Saturna z przejściami i stacjami |
 | `services/vedic_dasha.py` | Vimshottari Dasha (maha + antar), Avakahada Chakra |
-| `services/sade_sati.py` | Sade Sati — trzy fazy, wyszukiwanie ingresów Saturna, wszystkie okna życia (`cycles`) |
+| `services/sade_sati.py` | Sade Sati — trzy fazy od pierwszego wejścia Saturna, każdy pobyt w znaku z powrotami ruchem wstecznym (`segments`), ostateczny koniec (`final_end_date`), wszystkie okna życia (`cycles`) |
 | `services/human_design.py` | Typ, strategia, autorytet, profil, definicja, kanały, centra, krzyż inkarnacyjny, mosty definicji podzielonej, kanały domykane przez tranzyty. Moment Design metodą Newtona-Raphsona (dokładne 88° Słońca) |
 | `services/gene_keys.py` | Profil hologenetyczny: sekwencje Activation, Venus, Pearl |
 | `services/matrix_destiny.py` | Matryca Losu: wierzchołki, linie, Personal Destiny 40, oś dekad |

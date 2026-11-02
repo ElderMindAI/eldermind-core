@@ -1412,7 +1412,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.5",
+    "engine_version": "1.0.6",
     "errors": [],
     "julian_day_ut": 2441342.66666667,
     "reference_date": "2026-07-31",
@@ -1435,6 +1435,7 @@
       "name": "Ascendant",
       "sign": "Aquarius"
     },
+    "atmakaraka": "Mercury",
     "avakahada_chakra": {
       "gana": "Manushya",
       "nadi": "Kapha",
@@ -1443,6 +1444,50 @@
       "yoni": "Wąż"
     },
     "ayanamsa": 23.466931,
+    "chara_karakas": [
+      {
+        "degree_in_sign": 27.41,
+        "karaka": "Atmakaraka",
+        "planet": "Mercury",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 26.36,
+        "karaka": "Amatyakaraka",
+        "planet": "Mars",
+        "sign": "Pisces"
+      },
+      {
+        "degree_in_sign": 18.16,
+        "karaka": "Bhratrikaraka",
+        "planet": "Venus",
+        "sign": "Aquarius"
+      },
+      {
+        "degree_in_sign": 18.06,
+        "karaka": "Matrikaraka",
+        "planet": "Moon",
+        "sign": "Taurus"
+      },
+      {
+        "degree_in_sign": 11.83,
+        "karaka": "Putrakaraka",
+        "planet": "Sun",
+        "sign": "Capricorn"
+      },
+      {
+        "degree_in_sign": 6.13,
+        "karaka": "Gnatikaraka",
+        "planet": "Saturn",
+        "sign": "Taurus"
+      },
+      {
+        "degree_in_sign": 4.25,
+        "karaka": "Darakaraka",
+        "planet": "Jupiter",
+        "sign": "Sagittarius"
+      }
+    ],
     "drishti": [
       {
         "aspects": [
@@ -1932,24 +1977,48 @@
       "cycles": [
         {
           "age_at_end": 3.5,
+          "age_at_final_end": 3.5,
           "age_at_start": 0.0,
           "end_date": "1975-07-23",
+          "final_end_date": "1975-07-23",
           "phases": [
             {
               "end": "1971-04-28",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "1968-09-28",
+                  "start": "1968-06-17"
+                },
+                {
+                  "end": "1971-04-28",
+                  "start": "1969-03-07"
+                }
+              ],
               "sign": "Aries",
               "start": "1968-06-17"
             },
             {
               "end": "1973-06-10",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "1973-06-10",
+                  "start": "1971-04-28"
+                }
+              ],
               "sign": "Taurus",
               "start": "1971-04-28"
             },
             {
               "end": "1975-07-23",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "1975-07-23",
+                  "start": "1973-06-10"
+                }
+              ],
               "sign": "Gemini",
               "start": "1973-06-10"
             }
@@ -1959,24 +2028,56 @@
         },
         {
           "age_at_end": 32.6,
+          "age_at_final_end": 33.3,
           "age_at_start": 26.2,
           "end_date": "2004-09-05",
+          "final_end_date": "2005-05-26",
           "phases": [
             {
               "end": "2000-06-06",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2000-06-06",
+                  "start": "1998-04-17"
+                }
+              ],
               "sign": "Aries",
               "start": "1998-04-17"
             },
             {
               "end": "2002-07-23",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2002-07-23",
+                  "start": "2000-06-06"
+                },
+                {
+                  "end": "2003-04-07",
+                  "start": "2003-01-08"
+                }
+              ],
               "sign": "Taurus",
               "start": "2000-06-06"
             },
             {
               "end": "2004-09-05",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2003-01-08",
+                  "start": "2002-07-23"
+                },
+                {
+                  "end": "2004-09-05",
+                  "start": "2003-04-07"
+                },
+                {
+                  "end": "2005-05-26",
+                  "start": "2005-01-13"
+                }
+              ],
               "sign": "Gemini",
               "start": "2002-07-23"
             }
@@ -1986,24 +2087,56 @@
         },
         {
           "age_at_end": 62.5,
+          "age_at_final_end": 62.5,
           "age_at_start": 55.4,
           "end_date": "2034-07-12",
+          "final_end_date": "2034-07-12",
           "phases": [
             {
               "end": "2029-08-08",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2027-10-20",
+                  "start": "2027-06-02"
+                },
+                {
+                  "end": "2029-08-08",
+                  "start": "2028-02-23"
+                },
+                {
+                  "end": "2030-04-17",
+                  "start": "2029-10-05"
+                }
+              ],
               "sign": "Aries",
               "start": "2027-06-02"
             },
             {
               "end": "2032-05-30",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2029-10-05",
+                  "start": "2029-08-08"
+                },
+                {
+                  "end": "2032-05-30",
+                  "start": "2030-04-17"
+                }
+              ],
               "sign": "Taurus",
               "start": "2029-08-08"
             },
             {
               "end": "2034-07-12",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2034-07-12",
+                  "start": "2032-05-30"
+                }
+              ],
               "sign": "Gemini",
               "start": "2032-05-30"
             }
@@ -2013,24 +2146,56 @@
         },
         {
           "age_at_end": 91.6,
+          "age_at_final_end": 92.3,
           "age_at_start": 85.2,
           "end_date": "2063-08-24",
+          "final_end_date": "2064-05-09",
           "phases": [
             {
               "end": "2059-05-27",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2059-05-27",
+                  "start": "2057-04-07"
+                }
+              ],
               "sign": "Aries",
               "start": "2057-04-07"
             },
             {
               "end": "2061-07-10",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2061-07-10",
+                  "start": "2059-05-27"
+                },
+                {
+                  "end": "2062-03-06",
+                  "start": "2062-02-13"
+                }
+              ],
               "sign": "Taurus",
               "start": "2059-05-27"
             },
             {
               "end": "2063-08-24",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2062-02-13",
+                  "start": "2061-07-10"
+                },
+                {
+                  "end": "2063-08-24",
+                  "start": "2062-03-06"
+                },
+                {
+                  "end": "2064-05-09",
+                  "start": "2064-02-05"
+                }
+              ],
               "sign": "Gemini",
               "start": "2061-07-10"
             }
@@ -2040,6 +2205,7 @@
         }
       ],
       "end_date": "2034-07-12",
+      "final_end_date": "2034-07-12",
       "interpretation_ready": true,
       "moon_sign": "Taurus",
       "phase": null,
@@ -2049,18 +2215,48 @@
         {
           "end": "2029-08-08",
           "phase": "rising",
+          "segments": [
+            {
+              "end": "2027-10-20",
+              "start": "2027-06-02"
+            },
+            {
+              "end": "2029-08-08",
+              "start": "2028-02-23"
+            },
+            {
+              "end": "2030-04-17",
+              "start": "2029-10-05"
+            }
+          ],
           "sign": "Aries",
           "start": "2027-06-02"
         },
         {
           "end": "2032-05-30",
           "phase": "peak",
+          "segments": [
+            {
+              "end": "2029-10-05",
+              "start": "2029-08-08"
+            },
+            {
+              "end": "2032-05-30",
+              "start": "2030-04-17"
+            }
+          ],
           "sign": "Taurus",
           "start": "2029-08-08"
         },
         {
           "end": "2034-07-12",
           "phase": "setting",
+          "segments": [
+            {
+              "end": "2034-07-12",
+              "start": "2032-05-30"
+            }
+          ],
           "sign": "Gemini",
           "start": "2032-05-30"
         }
@@ -2711,6 +2907,12 @@
         ],
         "present": false,
         "reason": "The 9th lord Venus (Aquarius) and the 10th lord Mars (Pisces) share no sign, mutual aspect or sign exchange."
+      },
+      {
+        "name": "Nakshatra Parivartana",
+        "planets": [],
+        "present": false,
+        "reason": "No two bodies occupy each other's nakshatras; nakshatra lords: Sun Moon, Moon Moon, Mars Mercury, Mercury Sun, Jupiter Ketu, Venus Rahu, Saturn Sun, Rahu Moon, Ketu Saturn."
       }
     ]
   },

@@ -1161,7 +1161,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.5",
+    "engine_version": "1.0.6",
     "errors": [
       {
         "code": "HOUSE_SYSTEM_UNAVAILABLE",
@@ -1191,6 +1191,7 @@
       "name": "Ascendant",
       "sign": "Aquarius"
     },
+    "atmakaraka": "Jupiter",
     "avakahada_chakra": {
       "gana": "Deva",
       "nadi": "Kapha",
@@ -1199,6 +1200,50 @@
       "yoni": "Małpa"
     },
     "ayanamsa": 23.730943,
+    "chara_karakas": [
+      {
+        "degree_in_sign": 19.16,
+        "karaka": "Atmakaraka",
+        "planet": "Jupiter",
+        "sign": "Cancer"
+      },
+      {
+        "degree_in_sign": 17.13,
+        "karaka": "Amatyakaraka",
+        "planet": "Venus",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 16.35,
+        "karaka": "Bhratrikaraka",
+        "planet": "Moon",
+        "sign": "Capricorn"
+      },
+      {
+        "degree_in_sign": 12.81,
+        "karaka": "Matrikaraka",
+        "planet": "Mercury",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 5.07,
+        "karaka": "Putrakaraka",
+        "planet": "Sun",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 4.92,
+        "karaka": "Gnatikaraka",
+        "planet": "Mars",
+        "sign": "Taurus"
+      },
+      {
+        "degree_in_sign": 0.67,
+        "karaka": "Darakaraka",
+        "planet": "Saturn",
+        "sign": "Capricorn"
+      }
+    ],
     "drishti": [
       {
         "aspects": [
@@ -1696,24 +1741,64 @@
       "cycles": [
         {
           "age_at_end": 4.4,
+          "age_at_final_end": 5.2,
           "age_at_start": 0.0,
           "end_date": "1995-06-02",
+          "final_end_date": "1996-02-16",
           "phases": [
             {
               "end": "1990-03-20",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "1990-03-20",
+                  "start": "1987-12-16"
+                },
+                {
+                  "end": "1990-12-14",
+                  "start": "1990-06-20"
+                }
+              ],
               "sign": "Sagittarius",
               "start": "1987-12-16"
             },
             {
               "end": "1993-03-05",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "1990-06-20",
+                  "start": "1990-03-20"
+                },
+                {
+                  "end": "1993-03-05",
+                  "start": "1990-12-14"
+                },
+                {
+                  "end": "1993-11-09",
+                  "start": "1993-10-15"
+                }
+              ],
               "sign": "Capricorn",
               "start": "1990-03-20"
             },
             {
               "end": "1995-06-02",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "1993-10-15",
+                  "start": "1993-03-05"
+                },
+                {
+                  "end": "1995-06-02",
+                  "start": "1993-11-09"
+                },
+                {
+                  "end": "1996-02-16",
+                  "start": "1995-08-09"
+                }
+              ],
               "sign": "Aquarius",
               "start": "1993-03-05"
             }
@@ -1723,24 +1808,56 @@
         },
         {
           "age_at_end": 34.3,
+          "age_at_final_end": 34.3,
           "age_at_start": 26.1,
           "end_date": "2025-03-29",
+          "final_end_date": "2025-03-29",
           "phases": [
             {
               "end": "2020-01-24",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2017-06-20",
+                  "start": "2017-01-26"
+                },
+                {
+                  "end": "2020-01-24",
+                  "start": "2017-10-26"
+                }
+              ],
               "sign": "Sagittarius",
               "start": "2017-01-26"
             },
             {
               "end": "2022-04-29",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2022-04-29",
+                  "start": "2020-01-24"
+                },
+                {
+                  "end": "2023-01-17",
+                  "start": "2022-07-12"
+                }
+              ],
               "sign": "Capricorn",
               "start": "2020-01-24"
             },
             {
               "end": "2025-03-29",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2022-07-12",
+                  "start": "2022-04-29"
+                },
+                {
+                  "end": "2025-03-29",
+                  "start": "2023-01-17"
+                }
+              ],
               "sign": "Aquarius",
               "start": "2022-04-29"
             }
@@ -1750,24 +1867,56 @@
         },
         {
           "age_at_end": 63.4,
+          "age_at_final_end": 64.1,
           "age_at_start": 56.0,
           "end_date": "2054-05-14",
+          "final_end_date": "2055-02-05",
           "phases": [
             {
               "end": "2049-03-06",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2049-03-06",
+                  "start": "2046-12-07"
+                },
+                {
+                  "end": "2049-12-04",
+                  "start": "2049-07-09"
+                }
+              ],
               "sign": "Sagittarius",
               "start": "2046-12-07"
             },
             {
               "end": "2052-02-24",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2049-07-09",
+                  "start": "2049-03-06"
+                },
+                {
+                  "end": "2052-02-24",
+                  "start": "2049-12-04"
+                }
+              ],
               "sign": "Capricorn",
               "start": "2049-03-06"
             },
             {
               "end": "2054-05-14",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2054-05-14",
+                  "start": "2052-02-24"
+                },
+                {
+                  "end": "2055-02-05",
+                  "start": "2054-09-01"
+                }
+              ],
               "sign": "Aquarius",
               "start": "2052-02-24"
             }
@@ -1777,24 +1926,56 @@
         },
         {
           "age_at_end": 93.2,
+          "age_at_final_end": 93.2,
           "age_at_start": 85.1,
           "end_date": "2084-03-19",
+          "final_end_date": "2084-03-19",
           "phases": [
             {
               "end": "2079-01-14",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2076-07-10",
+                  "start": "2076-01-16"
+                },
+                {
+                  "end": "2079-01-14",
+                  "start": "2076-10-11"
+                }
+              ],
               "sign": "Sagittarius",
               "start": "2076-01-16"
             },
             {
               "end": "2081-04-11",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2081-04-11",
+                  "start": "2079-01-14"
+                },
+                {
+                  "end": "2082-01-06",
+                  "start": "2081-08-03"
+                }
+              ],
               "sign": "Capricorn",
               "start": "2079-01-14"
             },
             {
               "end": "2084-03-19",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2081-08-03",
+                  "start": "2081-04-11"
+                },
+                {
+                  "end": "2084-03-19",
+                  "start": "2082-01-06"
+                }
+              ],
               "sign": "Aquarius",
               "start": "2081-04-11"
             }
@@ -1804,6 +1985,7 @@
         }
       ],
       "end_date": "2054-05-14",
+      "final_end_date": "2055-02-05",
       "interpretation_ready": true,
       "moon_sign": "Capricorn",
       "phase": null,
@@ -1813,18 +1995,48 @@
         {
           "end": "2049-03-06",
           "phase": "rising",
+          "segments": [
+            {
+              "end": "2049-03-06",
+              "start": "2046-12-07"
+            },
+            {
+              "end": "2049-12-04",
+              "start": "2049-07-09"
+            }
+          ],
           "sign": "Sagittarius",
           "start": "2046-12-07"
         },
         {
           "end": "2052-02-24",
           "phase": "peak",
+          "segments": [
+            {
+              "end": "2049-07-09",
+              "start": "2049-03-06"
+            },
+            {
+              "end": "2052-02-24",
+              "start": "2049-12-04"
+            }
+          ],
           "sign": "Capricorn",
           "start": "2049-03-06"
         },
         {
           "end": "2054-05-14",
           "phase": "setting",
+          "segments": [
+            {
+              "end": "2054-05-14",
+              "start": "2052-02-24"
+            },
+            {
+              "end": "2055-02-05",
+              "start": "2054-09-01"
+            }
+          ],
           "sign": "Aquarius",
           "start": "2052-02-24"
         }
@@ -2475,6 +2687,12 @@
         ],
         "present": false,
         "reason": "The 9th lord Venus (Sagittarius) and the 10th lord Mars (Taurus) share no sign, mutual aspect or sign exchange."
+      },
+      {
+        "name": "Nakshatra Parivartana",
+        "planets": [],
+        "present": false,
+        "reason": "No two bodies occupy each other's nakshatras; nakshatra lords: Sun Ketu, Moon Moon, Mars Sun, Mercury Ketu, Jupiter Mercury, Venus Venus, Saturn Sun, Rahu Sun, Ketu Saturn."
       }
     ]
   }

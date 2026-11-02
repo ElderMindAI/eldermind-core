@@ -177,6 +177,30 @@ def test_navamsa_sign_of_each_pada() -> None:
     assert signs[:12] == signs[12:24] == signs[96:108]
 
 
+def test_windows_carry_the_natal_house_of_the_transiting_body() -> None:
+    # Without it M9 placed Saturn's ingress into Taurus in the 8th house of a
+    # chart whose 8th cusp is at 22° Taurus.
+    jd = julian_day_at_noon(date(1993, 5, 17))
+    _, _, houses = compute_houses(jd, 52.23, 21.01)
+    found = compute_transit_windows(
+        NATAL, date(2026, 10, 29), 18, ASCENDANT, MIDHEAVEN, max_windows=200, house_cusps=houses,
+    )
+    for window in found:
+        assert window["natal_house"] == window["passes"][0]["natal_house"]
+        for entry in window["passes"]:
+            hour = int(entry["moment_utc"][11:13]) + int(entry["moment_utc"][14:16]) / 60.0
+            moment = julian_day_at_noon(date.fromisoformat(entry["date"])) - 0.5 + hour / 24.0
+            expected = attach_houses_to_planets(
+                [{"name": window["transit_body"], "longitude": tropical_longitude(moment, window["transit_body"])}],
+                houses,
+            )[0]["house_number"]
+            assert entry["natal_house"] == expected
+    ingress = next(w for w in found if w["event_type"] == "ingress")
+    assert f"dom natalny {ingress['natal_house']}" in ingress["description"]
+    plain = compute_transit_windows(NATAL, date(2026, 10, 29), 18, ASCENDANT, MIDHEAVEN, max_windows=200)
+    assert all("natal_house" not in w and all("natal_house" not in p for p in w["passes"]) for w in plain)
+
+
 def test_draconic_houses_are_the_natal_houses() -> None:
     jd = julian_day_at_noon(date(1993, 5, 17))
     _, _, houses = compute_houses(jd, 52.23, 21.01)

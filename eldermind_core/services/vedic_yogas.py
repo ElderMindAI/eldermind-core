@@ -25,10 +25,19 @@ from __future__ import annotations
 from itertools import combinations
 from typing import Final
 
-from eldermind_core.core.config import ZODIAC_SIGNS
+from eldermind_core.core.config import NAKSHATRA_DEGREES, ZODIAC_SIGNS
+from eldermind_core.services.vedic_dasha import VIMSHOTTARI_ORDER
 
 CLASSICAL_PLANETS: Final[tuple[str, ...]] = (
     "Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn",
+)
+
+# Jaimini's seven chara karakas, in rank order. The module specs ask for the
+# Atmakaraka, and until 1.0.6 the model ranked the planets itself — on
+# 2026-11-02 once with Pluto on top, which the scheme never admits.
+CHARA_KARAKAS: Final[tuple[str, ...]] = (
+    "Atmakaraka", "Amatyakaraka", "Bhratrikaraka", "Matrikaraka",
+    "Putrakaraka", "Gnatikaraka", "Darakaraka",
 )
 
 SIGN_LORDS: Final[dict[str, str]] = {
@@ -419,6 +428,64 @@ def _parivartana(b: dict[str, dict]) -> list[dict]:
     ]
 
 
+def _nakshatra_lord(longitude: float) -> str:
+    return VIMSHOTTARI_ORDER[int((longitude % 360.0) // NAKSHATRA_DEGREES) % 9]
+
+
+def _nakshatra_parivartana(b: dict[str, dict]) -> list[dict]:
+    """Two bodies in each other's nakshatras — Rahu and Ketu rule nakshatras, so they count.
+
+    Not a sign exchange. Three reports up to 2026-11-02 described one between
+    Saturn and Rahu, each time from a Saturn put in the wrong nakshatra; with
+    the lords listed, the absence is a fact the synthesis can read. The two
+    nodes are not paired with each other: they always stand opposite.
+    """
+    names = (*CLASSICAL_PLANETS, "Rahu", "Ketu")
+    lords = {name: _nakshatra_lord(float(b[name]["longitude"])) for name in names}
+    pairs = [
+        _yoga(
+            "Nakshatra Parivartana", True,
+            f"{a} is in a nakshatra ruled by {c} and {c} in one ruled by {a}.",
+            [a, c],
+        )
+        for a, c in combinations(names, 2)
+        if {a, c} != {"Rahu", "Ketu"} and lords[a] == c and lords[c] == a
+    ]
+    if pairs:
+        return pairs
+    listing = ", ".join(f"{name} {lords[name]}" for name in names)
+    return [
+        _yoga(
+            "Nakshatra Parivartana", False,
+            f"No two bodies occupy each other's nakshatras; nakshatra lords: {listing}.",
+            [],
+        )
+    ]
+
+
+def compute_chara_karakas(planets: list[dict]) -> list[dict]:
+    """The seven chara karakas, Atmakaraka first: the classical planets by degree within their sign.
+
+    Rahu belongs only to the eight-karaka variant, Uranus, Neptune and Pluto
+    to neither. A tie on the degree is broken by the full longitude.
+    """
+    by_name = {p["name"]: p for p in planets}
+    ranked = sorted(
+        CLASSICAL_PLANETS,
+        key=lambda name: (float(by_name[name]["longitude"]) % 30.0, float(by_name[name]["longitude"])),
+        reverse=True,
+    )
+    return [
+        {
+            "karaka": karaka,
+            "planet": name,
+            "sign": by_name[name]["sign"],
+            "degree_in_sign": round(float(by_name[name]["longitude"]) % 30.0, 2),
+        }
+        for karaka, name in zip(CHARA_KARAKAS, ranked)
+    ]
+
+
 def _mangal_dosha(b: dict[str, dict], lagna: str) -> dict:
     mars = b["Mars"]["sign"]
     houses = {
@@ -525,7 +592,8 @@ def compute_yogas(planets: list[dict], ascendant: dict) -> list[dict]:
     """Evaluate the fixed list of yogas and doshas against the sidereal chart.
 
     Returns one entry per yoga — several for Neecha Bhanga (one per
-    debilitated planet), Parivartana and Dhana (one per pair) — each
+    debilitated planet), Parivartana, Nakshatra Parivartana and Dhana (one
+    per pair) — each
     `{name, present, reason, planets}` plus rule-specific flags.
     """
     b = _bodies(planets)
@@ -547,10 +615,13 @@ def compute_yogas(planets: list[dict], ascendant: dict) -> list[dict]:
     yogas.append(_amala(b, lagna))
     yogas += _dhana(b, lagna)
     yogas.append(_dharma_karmadhipati(b, lagna))
+    # Last, so the positions of the entries before 1.0.6 do not move.
+    yogas += _nakshatra_parivartana(b)
     return yogas
 
 
 __all__ = [
+    "CHARA_KARAKAS",
     "CLASSICAL_PLANETS",
     "DEBILITATION_SIGNS",
     "DRISHTI",
@@ -558,6 +629,7 @@ __all__ = [
     "OWN_SIGNS",
     "SIGN_LORDS",
     "attach_vedic_houses",
+    "compute_chara_karakas",
     "compute_drishti",
     "compute_yogas",
     "house_from",

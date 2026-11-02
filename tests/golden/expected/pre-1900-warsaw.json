@@ -1117,7 +1117,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.5",
+    "engine_version": "1.0.6",
     "errors": [],
     "julian_day_ut": 2415019.69166667,
     "reference_date": "2026-07-31",
@@ -1140,6 +1140,7 @@
       "name": "Ascendant",
       "sign": "Scorpio"
     },
+    "atmakaraka": "Moon",
     "avakahada_chakra": {
       "gana": "Rakshasa",
       "nadi": "Vata",
@@ -1148,6 +1149,50 @@
       "yoni": "Jeleń"
     },
     "ayanamsa": 22.4605,
+    "chara_karakas": [
+      {
+        "degree_in_sign": 28.49,
+        "karaka": "Atmakaraka",
+        "planet": "Moon",
+        "sign": "Scorpio"
+      },
+      {
+        "degree_in_sign": 25.51,
+        "karaka": "Amatyakaraka",
+        "planet": "Mercury",
+        "sign": "Scorpio"
+      },
+      {
+        "degree_in_sign": 20.78,
+        "karaka": "Bhratrikaraka",
+        "planet": "Mars",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 16.86,
+        "karaka": "Matrikaraka",
+        "planet": "Sun",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 12.9,
+        "karaka": "Putrakaraka",
+        "planet": "Venus",
+        "sign": "Capricorn"
+      },
+      {
+        "degree_in_sign": 8.51,
+        "karaka": "Gnatikaraka",
+        "planet": "Jupiter",
+        "sign": "Scorpio"
+      },
+      {
+        "degree_in_sign": 5.16,
+        "karaka": "Darakaraka",
+        "planet": "Saturn",
+        "sign": "Sagittarius"
+      }
+    ],
     "drishti": [
       {
         "aspects": [
@@ -1637,24 +1682,60 @@
       "cycles": [
         {
           "age_at_end": 2.1,
+          "age_at_final_end": 2.8,
           "age_at_start": 0.0,
           "end_date": "1902-02-11",
+          "final_end_date": "1902-11-05",
           "phases": [
             {
               "end": "1896-11-19",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "1894-04-04",
+                  "start": "1893-12-06"
+                },
+                {
+                  "end": "1896-11-19",
+                  "start": "1894-09-01"
+                }
+              ],
               "sign": "Libra",
               "start": "1893-12-06"
             },
             {
               "end": "1899-02-22",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "1899-02-22",
+                  "start": "1896-11-19"
+                },
+                {
+                  "end": "1899-11-16",
+                  "start": "1899-05-12"
+                }
+              ],
               "sign": "Scorpio",
               "start": "1896-11-19"
             },
             {
               "end": "1902-02-11",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "1899-05-12",
+                  "start": "1899-02-22"
+                },
+                {
+                  "end": "1902-02-11",
+                  "start": "1899-11-16"
+                },
+                {
+                  "end": "1902-11-05",
+                  "start": "1902-08-15"
+                }
+              ],
               "sign": "Sagittarius",
               "start": "1899-02-22"
             }
@@ -1664,24 +1745,56 @@
         },
         {
           "age_at_end": 31.3,
+          "age_at_final_end": 32.0,
           "age_at_start": 23.8,
           "end_date": "1931-04-11",
+          "final_end_date": "1931-12-24",
           "phases": [
             {
               "end": "1926-01-01",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "1926-01-01",
+                  "start": "1923-10-15"
+                },
+                {
+                  "end": "1926-09-29",
+                  "start": "1926-05-13"
+                }
+              ],
               "sign": "Libra",
               "start": "1923-10-15"
             },
             {
               "end": "1928-12-24",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "1926-05-13",
+                  "start": "1926-01-01"
+                },
+                {
+                  "end": "1928-12-24",
+                  "start": "1926-09-29"
+                }
+              ],
               "sign": "Scorpio",
               "start": "1926-01-01"
             },
             {
               "end": "1931-04-11",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "1931-04-11",
+                  "start": "1928-12-24"
+                },
+                {
+                  "end": "1931-12-24",
+                  "start": "1931-05-25"
+                }
+              ],
               "sign": "Sagittarius",
               "start": "1928-12-24"
             }
@@ -1691,24 +1804,60 @@
         },
         {
           "age_at_end": 61.1,
+          "age_at_final_end": 61.8,
           "age_at_start": 52.9,
           "end_date": "1961-02-01",
+          "final_end_date": "1961-10-07",
           "phases": [
             {
               "end": "1955-11-12",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "1953-04-24",
+                  "start": "1952-11-25"
+                },
+                {
+                  "end": "1955-11-12",
+                  "start": "1953-08-21"
+                }
+              ],
               "sign": "Libra",
               "start": "1952-11-25"
             },
             {
               "end": "1958-02-08",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "1958-02-08",
+                  "start": "1955-11-12"
+                },
+                {
+                  "end": "1958-11-07",
+                  "start": "1958-06-02"
+                }
+              ],
               "sign": "Scorpio",
               "start": "1955-11-12"
             },
             {
               "end": "1961-02-01",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "1958-06-02",
+                  "start": "1958-02-08"
+                },
+                {
+                  "end": "1961-02-01",
+                  "start": "1958-11-07"
+                },
+                {
+                  "end": "1961-10-07",
+                  "start": "1961-09-17"
+                }
+              ],
               "sign": "Sagittarius",
               "start": "1958-02-08"
             }
@@ -1718,24 +1867,56 @@
         },
         {
           "age_at_end": 90.2,
+          "age_at_final_end": 91.0,
           "age_at_start": 82.8,
           "end_date": "1990-03-20",
+          "final_end_date": "1990-12-14",
           "phases": [
             {
               "end": "1984-12-21",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "1984-12-21",
+                  "start": "1982-10-06"
+                },
+                {
+                  "end": "1985-09-16",
+                  "start": "1985-05-31"
+                }
+              ],
               "sign": "Libra",
               "start": "1982-10-06"
             },
             {
               "end": "1987-12-16",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "1985-05-31",
+                  "start": "1984-12-21"
+                },
+                {
+                  "end": "1987-12-16",
+                  "start": "1985-09-16"
+                }
+              ],
               "sign": "Scorpio",
               "start": "1984-12-21"
             },
             {
               "end": "1990-03-20",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "1990-03-20",
+                  "start": "1987-12-16"
+                },
+                {
+                  "end": "1990-12-14",
+                  "start": "1990-06-20"
+                }
+              ],
               "sign": "Sagittarius",
               "start": "1987-12-16"
             }
@@ -1745,6 +1926,7 @@
         }
       ],
       "end_date": "2049-03-06",
+      "final_end_date": "2049-12-04",
       "interpretation_ready": true,
       "moon_sign": "Scorpio",
       "phase": null,
@@ -1754,18 +1936,52 @@
         {
           "end": "2043-12-11",
           "phase": "rising",
+          "segments": [
+            {
+              "end": "2041-02-06",
+              "start": "2041-01-27"
+            },
+            {
+              "end": "2043-12-11",
+              "start": "2041-09-26"
+            },
+            {
+              "end": "2044-08-30",
+              "start": "2044-06-23"
+            }
+          ],
           "sign": "Libra",
           "start": "2041-01-27"
         },
         {
           "end": "2046-12-07",
           "phase": "peak",
+          "segments": [
+            {
+              "end": "2044-06-23",
+              "start": "2043-12-11"
+            },
+            {
+              "end": "2046-12-07",
+              "start": "2044-08-30"
+            }
+          ],
           "sign": "Scorpio",
           "start": "2043-12-11"
         },
         {
           "end": "2049-03-06",
           "phase": "setting",
+          "segments": [
+            {
+              "end": "2049-03-06",
+              "start": "2046-12-07"
+            },
+            {
+              "end": "2049-12-04",
+              "start": "2049-07-09"
+            }
+          ],
           "sign": "Sagittarius",
           "start": "2046-12-07"
         }
@@ -2471,6 +2687,12 @@
         ],
         "present": false,
         "reason": "The 9th lord Moon (Scorpio) and the 10th lord Sun (Sagittarius) share no sign, mutual aspect or sign exchange."
+      },
+      {
+        "name": "Nakshatra Parivartana",
+        "planets": [],
+        "present": false,
+        "reason": "No two bodies occupy each other's nakshatras; nakshatra lords: Sun Venus, Moon Mercury, Mars Venus, Mercury Mercury, Jupiter Saturn, Venus Moon, Saturn Ketu, Rahu Mercury, Ketu Mars."
       }
     ]
   },

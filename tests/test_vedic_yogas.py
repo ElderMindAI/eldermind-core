@@ -29,6 +29,7 @@ from eldermind_core.services.panchanga import compute_panchanga, tithi_from_elon
 from eldermind_core.services.sade_sati import compute_sade_sati
 from eldermind_core.services.vedic_yogas import (
     attach_vedic_houses,
+    compute_chara_karakas,
     compute_drishti,
     compute_yogas,
     ketu_position,
@@ -292,6 +293,57 @@ def test_sade_sati_window_under_way_at_birth() -> None:
     assert first["start_date"] < "1995-01-01" < first["end_date"]
     assert first["age_at_start"] == 0.0
     assert result["cycles"][1]["relation"] == "current"
+
+
+def test_sade_sati_phases_follow_the_first_entry_and_keep_retrograde_returns() -> None:
+    # Saturn (sidereal) entered Aquarius on 2022-04-29, went back to Capricorn
+    # on 2022-07-12 and returned on 2023-01-17; it leaves Pisces on 2027-06-02,
+    # is back from 2027-10-20 and leaves for good on 2028-02-23. Until 1.0.6 the
+    # top-level peak began on 2023-01-17 while `cycles` began it on 2022-04-29,
+    # and nothing showed the return to Pisces — a report called 2027-06-02 the
+    # definitive end.
+    result = compute_sade_sati("Aquarius", date(2026, 11, 2), birth_date=date(1995, 1, 1))
+    current = next(c for c in result["cycles"] if c["relation"] == "current")
+    assert result["phases"] == current["phases"]
+    segments = {p["phase"]: [(s["start"], s["end"]) for s in p["segments"]] for p in result["phases"]}
+    assert segments == {
+        "rising": [("2020-01-24", "2022-04-29"), ("2022-07-12", "2023-01-17")],
+        "peak": [("2022-04-29", "2022-07-12"), ("2023-01-17", "2025-03-29")],
+        "setting": [("2025-03-29", "2027-06-02"), ("2027-10-20", "2028-02-23")],
+    }
+    assert (result["end_date"], result["final_end_date"]) == ("2027-06-02", "2028-02-23")
+    assert current["final_end_date"] == "2028-02-23"
+    back_in_pisces = compute_sade_sati("Aquarius", date(2027, 11, 1))
+    assert (back_in_pisces["status"], back_in_pisces["phase"]) == ("active", "setting")
+    assert back_in_pisces["final_end_date"] == "2028-02-23"
+
+
+def test_chara_karakas_rank_the_classical_seven_by_degree() -> None:
+    # Pluto at 29° Libra stands highest in its sign and is no karaka: on
+    # 2026-11-02 a report made it the Atmakaraka of this chart.
+    planets, _ = CHART_C
+    ranked = [(k["karaka"], k["planet"]) for k in compute_chara_karakas(planets)]
+    assert ranked == [
+        ("Atmakaraka", "Jupiter"), ("Amatyakaraka", "Mars"), ("Bhratrikaraka", "Mercury"),
+        ("Matrikaraka", "Moon"), ("Putrakaraka", "Sun"), ("Gnatikaraka", "Venus"),
+        ("Darakaraka", "Saturn"),
+    ]
+
+
+def test_nakshatra_parivartana() -> None:
+    # Moon in Shatabhisha (Rahu), Rahu in Anuradha (Saturn), Saturn in
+    # Dhanishta (Mars): a chain, not an exchange — three reports called it one.
+    absent = _yogas(CHART_C)["Nakshatra Parivartana"]
+    assert [y["present"] for y in absent] == [False]
+    assert "Saturn Mars" in absent[0]["reason"] and "Rahu Saturn" in absent[0]["reason"]
+    planets, ascendant = CHART_C
+    # Saturn moved to Bharani (Venus) while Venus stays in Pushya (Saturn).
+    moved = [
+        dict(p, longitude=20.0, sign="Aries", degree_in_sign=20.0) if p["name"] == "Saturn" else p
+        for p in planets
+    ]
+    present = [y for y in compute_yogas(moved, ascendant) if y["name"] == "Nakshatra Parivartana"]
+    assert [(y["present"], y["planets"]) for y in present] == [(True, ["Venus", "Saturn"])]
 
 
 def test_da_yun_calendar_years_and_current_pillar() -> None:

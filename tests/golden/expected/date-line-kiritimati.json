@@ -1290,7 +1290,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.5",
+    "engine_version": "1.0.6",
     "errors": [],
     "julian_day_ut": 2449717.91736111,
     "reference_date": "2026-07-31",
@@ -1313,6 +1313,7 @@
       "name": "Ascendant",
       "sign": "Virgo"
     },
+    "atmakaraka": "Venus",
     "avakahada_chakra": {
       "gana": "Rakshasa",
       "nadi": "Vata",
@@ -1321,6 +1322,50 @@
       "yoni": "Pies"
     },
     "ayanamsa": 23.787217,
+    "chara_karakas": [
+      {
+        "degree_in_sign": 29.54,
+        "karaka": "Atmakaraka",
+        "planet": "Venus",
+        "sign": "Libra"
+      },
+      {
+        "degree_in_sign": 25.7,
+        "karaka": "Amatyakaraka",
+        "planet": "Mercury",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 15.71,
+        "karaka": "Bhratrikaraka",
+        "planet": "Sun",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 14.15,
+        "karaka": "Matrikaraka",
+        "planet": "Saturn",
+        "sign": "Aquarius"
+      },
+      {
+        "degree_in_sign": 10.82,
+        "karaka": "Putrakaraka",
+        "planet": "Jupiter",
+        "sign": "Scorpio"
+      },
+      {
+        "degree_in_sign": 8.84,
+        "karaka": "Gnatikaraka",
+        "planet": "Mars",
+        "sign": "Leo"
+      },
+      {
+        "degree_in_sign": 1.25,
+        "karaka": "Darakaraka",
+        "planet": "Moon",
+        "sign": "Sagittarius"
+      }
+    ],
     "drishti": [
       {
         "aspects": [
@@ -1816,24 +1861,56 @@
       "cycles": [
         {
           "age_at_end": 27.3,
+          "age_at_final_end": 28.0,
           "age_at_start": 19.8,
           "end_date": "2022-04-29",
+          "final_end_date": "2023-01-17",
           "phases": [
             {
               "end": "2017-01-26",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2017-01-26",
+                  "start": "2014-11-02"
+                },
+                {
+                  "end": "2017-10-26",
+                  "start": "2017-06-20"
+                }
+              ],
               "sign": "Scorpio",
               "start": "2014-11-02"
             },
             {
               "end": "2020-01-24",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2017-06-20",
+                  "start": "2017-01-26"
+                },
+                {
+                  "end": "2020-01-24",
+                  "start": "2017-10-26"
+                }
+              ],
               "sign": "Sagittarius",
               "start": "2017-01-26"
             },
             {
               "end": "2022-04-29",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2022-04-29",
+                  "start": "2020-01-24"
+                },
+                {
+                  "end": "2023-01-17",
+                  "start": "2022-07-12"
+                }
+              ],
               "sign": "Capricorn",
               "start": "2020-01-24"
             }
@@ -1843,24 +1920,56 @@
         },
         {
           "age_at_end": 57.2,
+          "age_at_final_end": 57.2,
           "age_at_start": 48.9,
           "end_date": "2052-02-24",
+          "final_end_date": "2052-02-24",
           "phases": [
             {
               "end": "2046-12-07",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2044-06-23",
+                  "start": "2043-12-11"
+                },
+                {
+                  "end": "2046-12-07",
+                  "start": "2044-08-30"
+                }
+              ],
               "sign": "Scorpio",
               "start": "2043-12-11"
             },
             {
               "end": "2049-03-06",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2049-03-06",
+                  "start": "2046-12-07"
+                },
+                {
+                  "end": "2049-12-04",
+                  "start": "2049-07-09"
+                }
+              ],
               "sign": "Sagittarius",
               "start": "2046-12-07"
             },
             {
               "end": "2052-02-24",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2049-07-09",
+                  "start": "2049-03-06"
+                },
+                {
+                  "end": "2052-02-24",
+                  "start": "2049-12-04"
+                }
+              ],
               "sign": "Capricorn",
               "start": "2049-03-06"
             }
@@ -1870,24 +1979,60 @@
         },
         {
           "age_at_end": 86.3,
+          "age_at_final_end": 87.0,
           "age_at_start": 78.1,
           "end_date": "2081-04-11",
+          "final_end_date": "2082-01-06",
           "phases": [
             {
               "end": "2076-01-16",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2073-03-31",
+                  "start": "2073-02-05"
+                },
+                {
+                  "end": "2076-01-16",
+                  "start": "2073-10-23"
+                },
+                {
+                  "end": "2076-10-11",
+                  "start": "2076-07-10"
+                }
+              ],
               "sign": "Scorpio",
               "start": "2073-02-05"
             },
             {
               "end": "2079-01-14",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2076-07-10",
+                  "start": "2076-01-16"
+                },
+                {
+                  "end": "2079-01-14",
+                  "start": "2076-10-11"
+                }
+              ],
               "sign": "Sagittarius",
               "start": "2076-01-16"
             },
             {
               "end": "2081-04-11",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2081-04-11",
+                  "start": "2079-01-14"
+                },
+                {
+                  "end": "2082-01-06",
+                  "start": "2081-08-03"
+                }
+              ],
               "sign": "Capricorn",
               "start": "2079-01-14"
             }
@@ -1897,6 +2042,7 @@
         }
       ],
       "end_date": "2052-02-24",
+      "final_end_date": "2052-02-24",
       "interpretation_ready": true,
       "moon_sign": "Sagittarius",
       "phase": null,
@@ -1906,18 +2052,48 @@
         {
           "end": "2046-12-07",
           "phase": "rising",
+          "segments": [
+            {
+              "end": "2044-06-23",
+              "start": "2043-12-11"
+            },
+            {
+              "end": "2046-12-07",
+              "start": "2044-08-30"
+            }
+          ],
           "sign": "Scorpio",
           "start": "2043-12-11"
         },
         {
           "end": "2049-03-06",
           "phase": "peak",
+          "segments": [
+            {
+              "end": "2049-03-06",
+              "start": "2046-12-07"
+            },
+            {
+              "end": "2049-12-04",
+              "start": "2049-07-09"
+            }
+          ],
           "sign": "Sagittarius",
           "start": "2046-12-07"
         },
         {
           "end": "2052-02-24",
           "phase": "setting",
+          "segments": [
+            {
+              "end": "2049-07-09",
+              "start": "2049-03-06"
+            },
+            {
+              "end": "2052-02-24",
+              "start": "2049-12-04"
+            }
+          ],
           "sign": "Capricorn",
           "start": "2049-03-06"
         }
@@ -2580,6 +2756,12 @@
         ],
         "present": false,
         "reason": "The 9th lord Venus (Libra) and the 10th lord Mercury (Sagittarius) share no sign, mutual aspect or sign exchange."
+      },
+      {
+        "name": "Nakshatra Parivartana",
+        "planets": [],
+        "present": false,
+        "reason": "No two bodies occupy each other's nakshatras; nakshatra lords: Sun Venus, Moon Ketu, Mars Ketu, Mercury Venus, Jupiter Saturn, Venus Jupiter, Saturn Rahu, Rahu Rahu, Ketu Venus."
       }
     ]
   },

@@ -1150,7 +1150,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.5",
+    "engine_version": "1.0.6",
     "errors": [
       {
         "code": "HOUSE_SYSTEM_UNAVAILABLE",
@@ -1180,6 +1180,7 @@
       "name": "Ascendant",
       "sign": "Virgo"
     },
+    "atmakaraka": "Mercury",
     "avakahada_chakra": {
       "gana": "Deva",
       "nadi": "Vata",
@@ -1188,6 +1189,50 @@
       "yoni": "Bawół"
     },
     "ayanamsa": 23.584301,
+    "chara_karakas": [
+      {
+        "degree_in_sign": 29.65,
+        "karaka": "Atmakaraka",
+        "planet": "Mercury",
+        "sign": "Gemini"
+      },
+      {
+        "degree_in_sign": 27.37,
+        "karaka": "Amatyakaraka",
+        "planet": "Saturn",
+        "sign": "Leo"
+      },
+      {
+        "degree_in_sign": 27.08,
+        "karaka": "Bhratrikaraka",
+        "planet": "Venus",
+        "sign": "Taurus"
+      },
+      {
+        "degree_in_sign": 26.12,
+        "karaka": "Matrikaraka",
+        "planet": "Mars",
+        "sign": "Leo"
+      },
+      {
+        "degree_in_sign": 16.33,
+        "karaka": "Putrakaraka",
+        "planet": "Moon",
+        "sign": "Virgo"
+      },
+      {
+        "degree_in_sign": 11.01,
+        "karaka": "Gnatikaraka",
+        "planet": "Jupiter",
+        "sign": "Leo"
+      },
+      {
+        "degree_in_sign": 6.59,
+        "karaka": "Darakaraka",
+        "planet": "Sun",
+        "sign": "Gemini"
+      }
+    ],
     "drishti": [
       {
         "aspects": [
@@ -1673,24 +1718,56 @@
       "cycles": [
         {
           "age_at_end": 4.5,
+          "age_at_final_end": 5.2,
           "age_at_start": 0.0,
           "end_date": "1984-12-21",
+          "final_end_date": "1985-09-16",
           "phases": [
             {
               "end": "1979-11-03",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "1979-11-03",
+                  "start": "1977-09-07"
+                },
+                {
+                  "end": "1980-07-27",
+                  "start": "1980-03-14"
+                }
+              ],
               "sign": "Leo",
               "start": "1977-09-07"
             },
             {
               "end": "1982-10-06",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "1980-03-14",
+                  "start": "1979-11-03"
+                },
+                {
+                  "end": "1982-10-06",
+                  "start": "1980-07-27"
+                }
+              ],
               "sign": "Virgo",
               "start": "1979-11-03"
             },
             {
               "end": "1984-12-21",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "1984-12-21",
+                  "start": "1982-10-06"
+                },
+                {
+                  "end": "1985-09-16",
+                  "start": "1985-05-31"
+                }
+              ],
               "sign": "Libra",
               "start": "1982-10-06"
             }
@@ -1700,24 +1777,56 @@
         },
         {
           "age_at_end": 34.4,
+          "age_at_final_end": 34.4,
           "age_at_start": 26.4,
           "end_date": "2014-11-02",
+          "final_end_date": "2014-11-02",
           "phases": [
             {
               "end": "2009-09-09",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2007-01-10",
+                  "start": "2006-11-01"
+                },
+                {
+                  "end": "2009-09-09",
+                  "start": "2007-07-15"
+                }
+              ],
               "sign": "Leo",
               "start": "2006-11-01"
             },
             {
               "end": "2011-11-15",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2011-11-15",
+                  "start": "2009-09-09"
+                },
+                {
+                  "end": "2012-08-04",
+                  "start": "2012-05-16"
+                }
+              ],
               "sign": "Virgo",
               "start": "2009-09-09"
             },
             {
               "end": "2014-11-02",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2012-05-16",
+                  "start": "2011-11-15"
+                },
+                {
+                  "end": "2014-11-02",
+                  "start": "2012-08-04"
+                }
+              ],
               "sign": "Libra",
               "start": "2011-11-15"
             }
@@ -1727,24 +1836,64 @@
         },
         {
           "age_at_end": 63.5,
+          "age_at_final_end": 64.2,
           "age_at_start": 56.2,
           "end_date": "2043-12-11",
+          "final_end_date": "2044-08-30",
           "phases": [
             {
               "end": "2038-10-22",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2038-10-22",
+                  "start": "2036-08-27"
+                },
+                {
+                  "end": "2039-07-12",
+                  "start": "2039-04-05"
+                }
+              ],
               "sign": "Leo",
               "start": "2036-08-27"
             },
             {
               "end": "2041-01-27",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2039-04-05",
+                  "start": "2038-10-22"
+                },
+                {
+                  "end": "2041-01-27",
+                  "start": "2039-07-12"
+                },
+                {
+                  "end": "2041-09-26",
+                  "start": "2041-02-06"
+                }
+              ],
               "sign": "Virgo",
               "start": "2038-10-22"
             },
             {
               "end": "2043-12-11",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2041-02-06",
+                  "start": "2041-01-27"
+                },
+                {
+                  "end": "2043-12-11",
+                  "start": "2041-09-26"
+                },
+                {
+                  "end": "2044-08-30",
+                  "start": "2044-06-23"
+                }
+              ],
               "sign": "Libra",
               "start": "2041-01-27"
             }
@@ -1754,24 +1903,52 @@
         },
         {
           "age_at_end": 92.6,
+          "age_at_final_end": 93.3,
           "age_at_start": 85.3,
           "end_date": "2073-02-05",
+          "final_end_date": "2073-10-23",
           "phases": [
             {
               "end": "2068-08-30",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2066-02-03",
+                  "start": "2065-10-12"
+                },
+                {
+                  "end": "2068-08-30",
+                  "start": "2066-07-03"
+                }
+              ],
               "sign": "Leo",
               "start": "2065-10-12"
             },
             {
               "end": "2070-11-04",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2070-11-04",
+                  "start": "2068-08-30"
+                }
+              ],
               "sign": "Virgo",
               "start": "2068-08-30"
             },
             {
               "end": "2073-02-05",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2073-02-05",
+                  "start": "2070-11-04"
+                },
+                {
+                  "end": "2073-10-23",
+                  "start": "2073-03-31"
+                }
+              ],
               "sign": "Libra",
               "start": "2070-11-04"
             }
@@ -1781,6 +1958,7 @@
         }
       ],
       "end_date": "2043-12-11",
+      "final_end_date": "2044-08-30",
       "interpretation_ready": true,
       "moon_sign": "Virgo",
       "phase": null,
@@ -1790,18 +1968,56 @@
         {
           "end": "2038-10-22",
           "phase": "rising",
+          "segments": [
+            {
+              "end": "2038-10-22",
+              "start": "2036-08-27"
+            },
+            {
+              "end": "2039-07-12",
+              "start": "2039-04-05"
+            }
+          ],
           "sign": "Leo",
           "start": "2036-08-27"
         },
         {
           "end": "2041-01-27",
           "phase": "peak",
+          "segments": [
+            {
+              "end": "2039-04-05",
+              "start": "2038-10-22"
+            },
+            {
+              "end": "2041-01-27",
+              "start": "2039-07-12"
+            },
+            {
+              "end": "2041-09-26",
+              "start": "2041-02-06"
+            }
+          ],
           "sign": "Virgo",
           "start": "2038-10-22"
         },
         {
           "end": "2043-12-11",
           "phase": "setting",
+          "segments": [
+            {
+              "end": "2041-02-06",
+              "start": "2041-01-27"
+            },
+            {
+              "end": "2043-12-11",
+              "start": "2041-09-26"
+            },
+            {
+              "end": "2044-08-30",
+              "start": "2044-06-23"
+            }
+          ],
           "sign": "Libra",
           "start": "2041-01-27"
         }
@@ -2455,6 +2671,15 @@
         ],
         "present": false,
         "reason": "The 9th lord Venus (Taurus) and the 10th lord Mercury (Gemini) share no sign, mutual aspect or sign exchange."
+      },
+      {
+        "name": "Nakshatra Parivartana",
+        "planets": [
+          "Mars",
+          "Venus"
+        ],
+        "present": true,
+        "reason": "Mars is in a nakshatra ruled by Venus and Venus in one ruled by Mars."
       }
     ]
   }

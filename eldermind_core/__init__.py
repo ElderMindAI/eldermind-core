@@ -38,6 +38,6 @@ __version__ = "1.0.0"
 #: one ingress per sign entered; aspects of the transits in force on the
 #: reference day and the Jupiter/Saturn returns (`services/transits.py`);
 #: navamsa sign of every pada, natal house of every draconic point.
-ENGINE_VERSION = "1.0.5"
+ENGINE_VERSION = "1.0.6"
 
 __all__ = ["ENGINE_VERSION", "__version__"]

@@ -1216,7 +1216,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.5",
+    "engine_version": "1.0.6",
     "errors": [],
     "julian_day_ut": 2445612.37847222,
     "reference_date": "2026-07-31",
@@ -1239,6 +1239,7 @@
       "name": "Ascendant",
       "sign": "Virgo"
     },
+    "atmakaraka": "Moon",
     "avakahada_chakra": {
       "gana": "Manushya",
       "nadi": "Pitta",
@@ -1247,6 +1248,50 @@
       "yoni": "Szczur"
     },
     "ayanamsa": 23.630209,
+    "chara_karakas": [
+      {
+        "degree_in_sign": 25.47,
+        "karaka": "Atmakaraka",
+        "planet": "Moon",
+        "sign": "Leo"
+      },
+      {
+        "degree_in_sign": 17.44,
+        "karaka": "Amatyakaraka",
+        "planet": "Sun",
+        "sign": "Virgo"
+      },
+      {
+        "degree_in_sign": 13.69,
+        "karaka": "Bhratrikaraka",
+        "planet": "Jupiter",
+        "sign": "Scorpio"
+      },
+      {
+        "degree_in_sign": 10.49,
+        "karaka": "Matrikaraka",
+        "planet": "Saturn",
+        "sign": "Libra"
+      },
+      {
+        "degree_in_sign": 9.4,
+        "karaka": "Putrakaraka",
+        "planet": "Mars",
+        "sign": "Leo"
+      },
+      {
+        "degree_in_sign": 5.81,
+        "karaka": "Gnatikaraka",
+        "planet": "Venus",
+        "sign": "Leo"
+      },
+      {
+        "degree_in_sign": 0.27,
+        "karaka": "Darakaraka",
+        "planet": "Mercury",
+        "sign": "Virgo"
+      }
+    ],
     "drishti": [
       {
         "aspects": [
@@ -1735,24 +1780,60 @@
       "cycles": [
         {
           "age_at_end": 28.1,
+          "age_at_final_end": 28.8,
           "age_at_start": 20.9,
           "end_date": "2011-11-15",
+          "final_end_date": "2012-08-04",
           "phases": [
             {
               "end": "2006-11-01",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2005-01-13",
+                  "start": "2004-09-05"
+                },
+                {
+                  "end": "2006-11-01",
+                  "start": "2005-05-26"
+                },
+                {
+                  "end": "2007-07-15",
+                  "start": "2007-01-10"
+                }
+              ],
               "sign": "Cancer",
               "start": "2004-09-05"
             },
             {
               "end": "2009-09-09",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2007-01-10",
+                  "start": "2006-11-01"
+                },
+                {
+                  "end": "2009-09-09",
+                  "start": "2007-07-15"
+                }
+              ],
               "sign": "Leo",
               "start": "2006-11-01"
             },
             {
               "end": "2011-11-15",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2011-11-15",
+                  "start": "2009-09-09"
+                },
+                {
+                  "end": "2012-08-04",
+                  "start": "2012-05-16"
+                }
+              ],
               "sign": "Virgo",
               "start": "2009-09-09"
             }
@@ -1762,24 +1843,56 @@
         },
         {
           "age_at_end": 57.3,
+          "age_at_final_end": 58.0,
           "age_at_start": 50.8,
           "end_date": "2041-01-27",
+          "final_end_date": "2041-09-26",
           "phases": [
             {
               "end": "2036-08-27",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2036-08-27",
+                  "start": "2034-07-12"
+                }
+              ],
               "sign": "Cancer",
               "start": "2034-07-12"
             },
             {
               "end": "2038-10-22",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2038-10-22",
+                  "start": "2036-08-27"
+                },
+                {
+                  "end": "2039-07-12",
+                  "start": "2039-04-05"
+                }
+              ],
               "sign": "Leo",
               "start": "2036-08-27"
             },
             {
               "end": "2041-01-27",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2039-04-05",
+                  "start": "2038-10-22"
+                },
+                {
+                  "end": "2041-01-27",
+                  "start": "2039-07-12"
+                },
+                {
+                  "end": "2041-09-26",
+                  "start": "2041-02-06"
+                }
+              ],
               "sign": "Virgo",
               "start": "2038-10-22"
             }
@@ -1789,24 +1902,56 @@
         },
         {
           "age_at_end": 87.1,
+          "age_at_final_end": 87.1,
           "age_at_start": 79.9,
           "end_date": "2070-11-04",
+          "final_end_date": "2070-11-04",
           "phases": [
             {
               "end": "2065-10-12",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2064-02-05",
+                  "start": "2063-08-24"
+                },
+                {
+                  "end": "2065-10-12",
+                  "start": "2064-05-09"
+                },
+                {
+                  "end": "2066-07-03",
+                  "start": "2066-02-03"
+                }
+              ],
               "sign": "Cancer",
               "start": "2063-08-24"
             },
             {
               "end": "2068-08-30",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2066-02-03",
+                  "start": "2065-10-12"
+                },
+                {
+                  "end": "2068-08-30",
+                  "start": "2066-07-03"
+                }
+              ],
               "sign": "Leo",
               "start": "2065-10-12"
             },
             {
               "end": "2070-11-04",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2070-11-04",
+                  "start": "2068-08-30"
+                }
+              ],
               "sign": "Virgo",
               "start": "2068-08-30"
             }
@@ -1816,6 +1961,7 @@
         }
       ],
       "end_date": "2041-01-27",
+      "final_end_date": "2041-09-26",
       "interpretation_ready": true,
       "moon_sign": "Leo",
       "phase": null,
@@ -1825,18 +1971,48 @@
         {
           "end": "2036-08-27",
           "phase": "rising",
+          "segments": [
+            {
+              "end": "2036-08-27",
+              "start": "2034-07-12"
+            }
+          ],
           "sign": "Cancer",
           "start": "2034-07-12"
         },
         {
           "end": "2038-10-22",
           "phase": "peak",
+          "segments": [
+            {
+              "end": "2038-10-22",
+              "start": "2036-08-27"
+            },
+            {
+              "end": "2039-07-12",
+              "start": "2039-04-05"
+            }
+          ],
           "sign": "Leo",
           "start": "2036-08-27"
         },
         {
           "end": "2041-01-27",
           "phase": "setting",
+          "segments": [
+            {
+              "end": "2039-04-05",
+              "start": "2038-10-22"
+            },
+            {
+              "end": "2041-01-27",
+              "start": "2039-07-12"
+            },
+            {
+              "end": "2041-09-26",
+              "start": "2041-02-06"
+            }
+          ],
           "sign": "Virgo",
           "start": "2038-10-22"
         }
@@ -2529,6 +2705,12 @@
         ],
         "present": false,
         "reason": "The 9th lord Venus (Leo) and the 10th lord Mercury (Virgo) share no sign, mutual aspect or sign exchange."
+      },
+      {
+        "name": "Nakshatra Parivartana",
+        "planets": [],
+        "present": false,
+        "reason": "No two bodies occupy each other's nakshatras; nakshatra lords: Sun Moon, Moon Venus, Mars Ketu, Mercury Sun, Jupiter Saturn, Venus Ketu, Saturn Rahu, Rahu Mars, Ketu Mercury."
       }
     ]
   },

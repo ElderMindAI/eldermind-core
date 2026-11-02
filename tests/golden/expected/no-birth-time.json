@@ -1275,7 +1275,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.5",
+    "engine_version": "1.0.6",
     "errors": [],
     "julian_day_ut": 2451544.95833333,
     "reference_date": "2026-07-31",
@@ -1300,6 +1300,7 @@
       "name": "Ascendant",
       "sign": "Aries"
     },
+    "atmakaraka": "Moon",
     "avakahada_chakra": {
       "gana": "Deva",
       "nadi": "Kapha",
@@ -1308,6 +1309,50 @@
       "yoni": "Bawół"
     },
     "ayanamsa": 23.857091,
+    "chara_karakas": [
+      {
+        "degree_in_sign": 18.97,
+        "karaka": "Atmakaraka",
+        "planet": "Moon",
+        "sign": "Libra"
+      },
+      {
+        "degree_in_sign": 16.54,
+        "karaka": "Amatyakaraka",
+        "planet": "Saturn",
+        "sign": "Aries"
+      },
+      {
+        "degree_in_sign": 16.47,
+        "karaka": "Bhratrikaraka",
+        "planet": "Sun",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 7.97,
+        "karaka": "Matrikaraka",
+        "planet": "Mercury",
+        "sign": "Sagittarius"
+      },
+      {
+        "degree_in_sign": 7.66,
+        "karaka": "Putrakaraka",
+        "planet": "Venus",
+        "sign": "Scorpio"
+      },
+      {
+        "degree_in_sign": 4.08,
+        "karaka": "Gnatikaraka",
+        "planet": "Mars",
+        "sign": "Aquarius"
+      },
+      {
+        "degree_in_sign": 1.4,
+        "karaka": "Darakaraka",
+        "planet": "Jupiter",
+        "sign": "Aries"
+      }
+    ],
     "drishti": [
       {
         "aspects": [
@@ -1803,24 +1848,56 @@
       "cycles": [
         {
           "age_at_end": 17.1,
+          "age_at_final_end": 17.8,
           "age_at_start": 9.7,
           "end_date": "2017-01-26",
+          "final_end_date": "2017-10-26",
           "phases": [
             {
               "end": "2011-11-15",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2011-11-15",
+                  "start": "2009-09-09"
+                },
+                {
+                  "end": "2012-08-04",
+                  "start": "2012-05-16"
+                }
+              ],
               "sign": "Virgo",
               "start": "2009-09-09"
             },
             {
               "end": "2014-11-02",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2012-05-16",
+                  "start": "2011-11-15"
+                },
+                {
+                  "end": "2014-11-02",
+                  "start": "2012-08-04"
+                }
+              ],
               "sign": "Libra",
               "start": "2011-11-15"
             },
             {
               "end": "2017-01-26",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2017-01-26",
+                  "start": "2014-11-02"
+                },
+                {
+                  "end": "2017-10-26",
+                  "start": "2017-06-20"
+                }
+              ],
               "sign": "Scorpio",
               "start": "2014-11-02"
             }
@@ -1830,24 +1907,64 @@
         },
         {
           "age_at_end": 46.9,
+          "age_at_final_end": 46.9,
           "age_at_start": 38.8,
           "end_date": "2046-12-07",
+          "final_end_date": "2046-12-07",
           "phases": [
             {
               "end": "2041-01-27",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2039-04-05",
+                  "start": "2038-10-22"
+                },
+                {
+                  "end": "2041-01-27",
+                  "start": "2039-07-12"
+                },
+                {
+                  "end": "2041-09-26",
+                  "start": "2041-02-06"
+                }
+              ],
               "sign": "Virgo",
               "start": "2038-10-22"
             },
             {
               "end": "2043-12-11",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2041-02-06",
+                  "start": "2041-01-27"
+                },
+                {
+                  "end": "2043-12-11",
+                  "start": "2041-09-26"
+                },
+                {
+                  "end": "2044-08-30",
+                  "start": "2044-06-23"
+                }
+              ],
               "sign": "Libra",
               "start": "2041-01-27"
             },
             {
               "end": "2046-12-07",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2044-06-23",
+                  "start": "2043-12-11"
+                },
+                {
+                  "end": "2046-12-07",
+                  "start": "2044-08-30"
+                }
+              ],
               "sign": "Scorpio",
               "start": "2043-12-11"
             }
@@ -1857,24 +1974,56 @@
         },
         {
           "age_at_end": 76.0,
+          "age_at_final_end": 76.8,
           "age_at_start": 68.7,
           "end_date": "2076-01-16",
+          "final_end_date": "2076-10-11",
           "phases": [
             {
               "end": "2070-11-04",
               "phase": "rising",
+              "segments": [
+                {
+                  "end": "2070-11-04",
+                  "start": "2068-08-30"
+                }
+              ],
               "sign": "Virgo",
               "start": "2068-08-30"
             },
             {
               "end": "2073-02-05",
               "phase": "peak",
+              "segments": [
+                {
+                  "end": "2073-02-05",
+                  "start": "2070-11-04"
+                },
+                {
+                  "end": "2073-10-23",
+                  "start": "2073-03-31"
+                }
+              ],
               "sign": "Libra",
               "start": "2070-11-04"
             },
             {
               "end": "2076-01-16",
               "phase": "setting",
+              "segments": [
+                {
+                  "end": "2073-03-31",
+                  "start": "2073-02-05"
+                },
+                {
+                  "end": "2076-01-16",
+                  "start": "2073-10-23"
+                },
+                {
+                  "end": "2076-10-11",
+                  "start": "2076-07-10"
+                }
+              ],
               "sign": "Scorpio",
               "start": "2073-02-05"
             }
@@ -1884,6 +2033,7 @@
         }
       ],
       "end_date": "2046-12-07",
+      "final_end_date": "2046-12-07",
       "interpretation_ready": true,
       "moon_sign": "Libra",
       "phase": null,
@@ -1893,18 +2043,56 @@
         {
           "end": "2041-01-27",
           "phase": "rising",
+          "segments": [
+            {
+              "end": "2039-04-05",
+              "start": "2038-10-22"
+            },
+            {
+              "end": "2041-01-27",
+              "start": "2039-07-12"
+            },
+            {
+              "end": "2041-09-26",
+              "start": "2041-02-06"
+            }
+          ],
           "sign": "Virgo",
           "start": "2038-10-22"
         },
         {
           "end": "2043-12-11",
           "phase": "peak",
+          "segments": [
+            {
+              "end": "2041-02-06",
+              "start": "2041-01-27"
+            },
+            {
+              "end": "2043-12-11",
+              "start": "2041-09-26"
+            },
+            {
+              "end": "2044-08-30",
+              "start": "2044-06-23"
+            }
+          ],
           "sign": "Libra",
           "start": "2041-01-27"
         },
         {
           "end": "2046-12-07",
           "phase": "setting",
+          "segments": [
+            {
+              "end": "2044-06-23",
+              "start": "2043-12-11"
+            },
+            {
+              "end": "2046-12-07",
+              "start": "2044-08-30"
+            }
+          ],
           "sign": "Scorpio",
           "start": "2043-12-11"
         }
@@ -2592,6 +2780,15 @@
         ],
         "present": true,
         "reason": "The 9th lord Jupiter and the 10th lord Saturn are linked: Jupiter and Saturn are both in Aries."
+      },
+      {
+        "name": "Nakshatra Parivartana",
+        "planets": [
+          "Venus",
+          "Saturn"
+        ],
+        "present": true,
+        "reason": "Venus is in a nakshatra ruled by Saturn and Saturn in one ruled by Venus."
       }
     ]
   },
