@@ -10,13 +10,15 @@ własność sprawia, że wyniki da się cache'ować i objąć kontraktem publicz
 
 | Moduł | Co liczy |
 |---|---|
-| `services/ephemeris.py` | Astrologia zachodnia (Placidus, aspekty ptolemejskie), wedyjska (Lahiri, Whole Sign, nakszatry), karta drakoniczna, okna tranzytowe |
+| `services/ephemeris.py` | Astrologia zachodnia (Placidus, aspekty ptolemejskie), wedyjska (Lahiri, Whole Sign, nakszatry każdego ciała z Ketu), karta drakoniczna, okna tranzytowe |
+| `services/vedic_yogas.py` | Domy wedyjskie od Lagny i od Księżyca, drishti, stała lista jóg i dosz — każda z `present` i warunkiem w `reason` |
+| `services/panchanga.py` | Tithi, paksza, dni do nowiu i pełni |
 | `services/vedic_dasha.py` | Vimshottari Dasha (maha + antar), Avakahada Chakra |
-| `services/sade_sati.py` | Sade Sati — trzy fazy, wyszukiwanie ingresów Saturna |
-| `services/human_design.py` | Typ, strategia, autorytet, profil, definicja, kanały, centra, krzyż inkarnacyjny. Moment Design metodą Newtona-Raphsona (dokładne 88° Słońca) |
+| `services/sade_sati.py` | Sade Sati — trzy fazy, wyszukiwanie ingresów Saturna, wszystkie okna życia (`cycles`) |
+| `services/human_design.py` | Typ, strategia, autorytet, profil, definicja, kanały, centra, krzyż inkarnacyjny, mosty definicji podzielonej, kanały domykane przez tranzyty. Moment Design metodą Newtona-Raphsona (dokładne 88° Słońca) |
 | `services/gene_keys.py` | Profil hologenetyczny: sekwencje Activation, Venus, Pearl |
 | `services/matrix_destiny.py` | Matryca Losu: wierzchołki, linie, Personal Destiny 40, oś dekad |
-| `services/bazi.py` | Cztery Filary, Day Master, Dziesięciu Bogów, bilans elementów, Na Yin, Da Yun |
+| `services/bazi.py` | Cztery Filary, Day Master, Dziesięciu Bogów, bilans elementów, Na Yin, Da Yun (z latami kalendarzowymi i filarem bieżącym) |
 | `services/numerology.py` | Numerologia pitagorejska (liczby mistrzowskie zachowane) |
 | `services/animal_design.py` | Animal Design — autorski system 15 bram ssaczych |
 | `services/geocoder.py` | Nazwa miejsca → lat/lon/IANA tz |

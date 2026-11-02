@@ -6,11 +6,13 @@ Provides a minimal BaZi reading using the ``cnlunar`` package:
 """
 
 import math
-from datetime import date, datetime, time
+from datetime import date, datetime, time, timedelta
 from typing import Final
 
 import cnlunar
 import swisseph as swe
+
+from eldermind_core.core.reference import resolve_reference_date
 
 HEAVENLY_STEMS_HANZI: Final[list[str]] = [
     "甲",  # Jia
@@ -320,6 +322,25 @@ def _start_age_from_jie(jd_ut: float, forward: bool) -> float:
     return abs(_jie_julian_day(jd_ut, forward) - jd_ut) / 3.0
 
 
+_DAYS_PER_YEAR: Final[float] = 365.2425
+
+
+def _da_yun_calendar(pillars: list[dict], birth_date: date, start_age: float, reference_date: date) -> None:
+    """Add `start_year`, `end_year` and `is_current` to each pillar, in place.
+
+    The pillars change at birth + start age + 10k years, so the years come
+    from the precise starting age, not the rounded one. Without them the
+    synthesis turned "ages 28-37" into "you are entering it now, at 33" in
+    about 25 places per report (2026-11-02).
+    """
+    for index, pillar in enumerate(pillars):
+        start = birth_date + timedelta(days=(start_age + index * 10) * _DAYS_PER_YEAR)
+        end = birth_date + timedelta(days=(start_age + (index + 1) * 10) * _DAYS_PER_YEAR)
+        pillar["start_year"] = start.year
+        pillar["end_year"] = end.year
+        pillar["is_current"] = start <= reference_date < end
+
+
 def _compute_da_yun(
     month_pillar_hanzi: str,
     year_stem_english: str,
@@ -424,6 +445,7 @@ def compute_bazi(
     birth_time: time,
     gender: str | None = None,
     julian_day_ut: float | None = None,
+    reference_date: date | None = None,
 ) -> dict:
     """Compute the full Four Pillars BaZi reading for a birth moment.
 
@@ -435,6 +457,8 @@ def compute_bazi(
             assumed and the response flags this.
         julian_day_ut: Birth moment in UT. Needed for the Da Yun starting
             age from the solar terms; without it the age is approximate.
+        reference_date: Date the current Da Yun pillar (`is_current`) is
+            reported for. Defaults to today (UTC).
 
     Returns:
         Dictionary with all four pillars, Day Master, and Da Yun timeline.
@@ -466,6 +490,13 @@ def compute_bazi(
         gender=gender,
         birth_day=birth_date.day,
         julian_day_ut=julian_day_ut,
+    )
+    precise_age = da_yun["start_age_precise"]
+    _da_yun_calendar(
+        da_yun["pillars"],
+        birth_date,
+        precise_age if precise_age is not None else da_yun["start_age"],
+        resolve_reference_date(reference_date),
     )
 
     return {

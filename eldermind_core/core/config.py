@@ -98,5 +98,10 @@ NAKSHATRA_NAMES: Final[list[str]] = [
     "Revati",
 ]
 
-# Bodies for which Nakshatra/Pada are calculated in the Vedic section.
-NAKSHATRA_BODIES: Final[set[str]] = {"Sun", "Moon", "Ascendant"}
+# Bodies for which Nakshatra/Pada are calculated in the Vedic section. Until
+# 1.0.4 only the Sun, the Moon and the Ascendant; the model then had to place
+# every other planet itself and in one report put Saturn in the Lagna's
+# Nakshatra. Ketu is derived from the true node.
+NAKSHATRA_BODIES: Final[frozenset[str]] = frozenset(
+    {*PLANET_IDS, "Ketu", "Ascendant"}
+)

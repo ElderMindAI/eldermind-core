@@ -33,8 +33,19 @@ from eldermind_core.core.errors import (
     NonexistentLocalTimeError,
 )
 from eldermind_core.core.reference import assert_date_in_range
-from eldermind_core.services.vedic_dasha import compute_avakahada_chakra, compute_vimshottari_dasha
+from eldermind_core.services.panchanga import compute_panchanga
+from eldermind_core.services.vedic_dasha import (
+    VIMSHOTTARI_ORDER,
+    compute_avakahada_chakra,
+    compute_vimshottari_dasha,
+)
 from eldermind_core.services.sade_sati import compute_sade_sati
+from eldermind_core.services.vedic_yogas import (
+    attach_vedic_houses,
+    compute_drishti,
+    compute_yogas,
+    ketu_position,
+)
 
 
 def _assert_valid_timezone(timezone_name: str) -> None:
@@ -723,22 +734,29 @@ def _longitude_to_nakshatra(longitude: float) -> dict:
     return {
         "nakshatra_number": nakshatra_number,
         "nakshatra_name": NAKSHATRA_NAMES[nakshatra_index],
+        "nakshatra_lord": VIMSHOTTARI_ORDER[nakshatra_index % 9],
         "pada": pada,
     }
 
 
 def _attach_nakshatras(planets: list[dict], ascendant: dict) -> list[dict]:
-    """Attach Nakshatra/Pada data to Sun, Moon and Ascendant in the Vedic section.
+    """Attach Nakshatra, Pada and the Nakshatra's lord to every Vedic body.
 
     Args:
         planets: List of sidereal planet dictionaries.
         ascendant: Sidereal Ascendant dictionary.
 
     Returns:
-        Updated list of planet dictionaries including Nakshatra data where applicable.
+        The planets in their usual order, then Ketu (opposite the true node),
+        then the Ascendant — each with its Nakshatra data.
     """
+    bodies = list(planets)
+    node = next((p for p in planets if p["name"] == "TrueNode"), None)
+    if node is not None:
+        bodies.append(ketu_position(node))
+
     updated: list[dict] = []
-    for body in planets:
+    for body in bodies:
         entry = dict(body)
         if body["name"] in NAKSHATRA_BODIES:
             entry.update(_longitude_to_nakshatra(body["longitude"]))
@@ -803,7 +821,9 @@ def compute_vedic_chart(
 
     Returns:
         Dictionary containing sidereal Ascendant, MC, Whole Sign houses,
-        planets, the applied ayanamsa value and the Vimshottari Dasha.
+        planets (with their houses from the Lagna and the Moon), Nakshatras,
+        drishti, yogas, the panchanga, the applied ayanamsa value, the
+        Vimshottari Dasha and Sade-Sati.
     """
     _apply_ayanamsa_mode()
     ayanamsa = round(float(swe.get_ayanamsa(jd_ut)), 6)
@@ -814,9 +834,10 @@ def compute_vedic_chart(
     ascendant, midheaven, _ = compute_houses(
         jd_ut, latitude, longitude, sidereal=True, house_system="whole_sign"
     )
-    planets = compute_all_planets(jd_ut, sidereal=True)
+    sidereal_planets = compute_all_planets(jd_ut, sidereal=True)
+    planets = attach_vedic_houses(sidereal_planets, ascendant)
     whole_sign_houses = compute_vedic_whole_sign_houses(ascendant["sign"])
-    nakshatra_bodies = _attach_nakshatras(planets, ascendant)
+    nakshatra_bodies = _attach_nakshatras(sidereal_planets, ascendant)
 
     moon_longitude = next(
         (p["longitude"] for p in planets if p["name"] == "Moon"), None
@@ -842,6 +863,7 @@ def compute_vedic_chart(
     sade_sati = compute_sade_sati(
         moon_sign=moon_data["sign"],
         reference_date=reference_date,
+        birth_date=birth_dt.date(),
     )
     avakahada = compute_avakahada_chakra(
         nakshatra_name=vimshottari_dasha["moon_nakshatra"],
@@ -856,6 +878,9 @@ def compute_vedic_chart(
         "houses": whole_sign_houses,
         "planets": planets,
         "nakshatras": nakshatra_bodies,
+        "drishti": compute_drishti(planets, ascendant),
+        "yogas": compute_yogas(planets, ascendant),
+        "panchanga": compute_panchanga(jd_ut),
         "vimshottari_dasha": vimshottari_dasha,
         "sade_sati": sade_sati,
         "avakahada_chakra": avakahada,

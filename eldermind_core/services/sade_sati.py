@@ -36,6 +36,13 @@ _SEARCH_HORIZON_YEARS: Final[float] = 32.0
 
 _PHASE_ORDER: Final[list[str]] = ["rising", "peak", "setting"]
 
+# How far past the birth date `cycles` reaches. Three Saturn revolutions.
+LIFESPAN_YEARS: Final[float] = 90.0
+
+# Saturn's fastest geocentric motion is about 0.13 deg/day: a jump of
+# (distance to the boundary) / 0.14 days can never carry it across unseen.
+_SATURN_MAX_SPEED: Final[float] = 0.14
+
 
 def _apply_lahiri_ayanamsa() -> None:
     """Ensure Swiss Ephemeris is in Lahiri sidereal mode."""
@@ -142,9 +149,127 @@ def _find_ingress(
     return None
 
 
+def _next_ingress(source_sign: int, target_sign: int, start_jd: float, limit_jd: float) -> float | None:
+    """First crossing from `source_sign` into `target_sign` after `start_jd`.
+
+    Same answer as `_find_ingress(..., forward=True)`, without walking every
+    five days: far from the boundary it jumps as far as Saturn could possibly
+    travel. A lifetime of windows by the five-day walk cost ~0.9 s of CPU per
+    chart; this takes a few dozen ephemeris calls per window.
+    """
+    boundary = target_sign * 30.0
+    jd = start_jd
+    longitude = _saturn_sidereal_longitude(jd)
+    while jd <= limit_jd:
+        step = max(((boundary - longitude) % 360.0) / _SATURN_MAX_SPEED, _SEARCH_STEP_DAYS)
+        probe = jd + step
+        probe_longitude = _saturn_sidereal_longitude(probe)
+        if int(longitude // 30.0) % 12 == source_sign and int(probe_longitude // 30.0) % 12 == target_sign:
+            return _refine_ingress(target_sign, jd, probe)
+        jd, longitude = probe, probe_longitude
+    return None
+
+
+def _phase_list(signs: list[int], moments: list[float]) -> list[dict]:
+    """The three phases from four boundary moments (rising, peak, setting, end)."""
+    return [
+        {
+            "phase": _PHASE_ORDER[index],
+            "sign": ZODIAC_SIGNS[signs[index]],
+            "start": _jd_to_date(moments[index]).isoformat(),
+            "end": _jd_to_date(moments[index + 1]).isoformat(),
+        }
+        for index in range(3)
+    ]
+
+
+def _lifetime_cycles(
+    moon_index: int,
+    birth_date: date,
+    current_start: str,
+    status: str,
+    reference_date: date,
+    lifespan_years: float,
+) -> list[dict]:
+    """Every Sade-Sati window from birth to `lifespan_years`, oldest first.
+
+    Until 1.0.4 only the current or next window existed, so a reading that
+    mentioned the previous one invented its years ("2009-2017" for a window
+    that ran 2011-11-15 to 2020-01-24). The windows are found by the same
+    ingress chain as the top-level fields, so the one those fields describe
+    appears here with identical dates; `relation` places each window against
+    the reference date: past, previous, current, next or future.
+    """
+    sign_12 = (moon_index - 1) % 12
+    signs = [sign_12, moon_index, (moon_index + 1) % 12, (moon_index + 2) % 12]
+    birth_jd = _date_to_jd(birth_date)
+    horizon_jd = birth_jd + lifespan_years * 365.25
+
+    found: list[list[float]] = []
+    # Start one search horizon before birth: a window may be under way at birth.
+    jd = birth_jd - _SEARCH_HORIZON_YEARS * 365.25
+    while True:
+        rising = _next_ingress((sign_12 - 1) % 12, sign_12, jd, horizon_jd)
+        if rising is None or rising > horizon_jd:
+            break
+        moments = [rising]
+        for source, target in zip(signs[:3], signs[1:]):
+            nxt = _next_ingress(source, target, moments[-1], moments[-1] + _SEARCH_HORIZON_YEARS * 365.25)
+            if nxt is None:
+                break
+            moments.append(nxt)
+        if len(moments) < 4:
+            break
+        if moments[-1] > birth_jd:
+            found.append(moments)
+        jd = moments[-1]
+
+    cycles = [
+        {
+            "relation": None,
+            "start_date": _jd_to_date(m[0]).isoformat(),
+            "end_date": _jd_to_date(m[3]).isoformat(),
+            "age_at_start": round(max(m[0] - birth_jd, 0.0) / 365.25, 1),
+            "age_at_end": round((m[3] - birth_jd) / 365.25, 1),
+            "phases": _phase_list(signs, m),
+        }
+        for m in found
+    ]
+
+    anchor = next(
+        (i for i, c in enumerate(cycles) if c["start_date"] == current_start), None
+    )
+    ref = reference_date.isoformat()
+    for index, cycle in enumerate(cycles):
+        if anchor is not None:
+            if index == anchor:
+                relation = "current" if status == "active" else "next"
+            elif index == anchor - 1:
+                relation = "previous"
+            elif index < anchor:
+                relation = "past"
+            elif index == anchor + 1 and status == "active":
+                relation = "next"
+            else:
+                relation = "future"
+        elif cycle["start_date"] <= ref < cycle["end_date"]:
+            relation = "current"
+        elif cycle["end_date"] <= ref:
+            later_done = any(c["end_date"] <= ref for c in cycles[index + 1:])
+            relation = "past" if later_done else "previous"
+        else:
+            earlier_ahead = any(c["start_date"] > ref for c in cycles[:index])
+            relation = "future" if earlier_ahead else "next"
+        cycle["relation"] = relation
+    return cycles
+
+
 def compute_sade_sati(
     moon_sign: str,
     reference_date: date | None = None,
+    birth_date: date | None = None,
+    *,
+    lifespan_years: float = LIFESPAN_YEARS,
 ) -> dict:
     """Compute the Sade-Sati status for a given natal Moon sign.
 
@@ -152,6 +277,9 @@ def compute_sade_sati(
         moon_sign: Sidereal zodiac sign occupied by the natal Moon.
         reference_date: Date used to determine whether Sade-Sati is active.
             Defaults to today.
+        birth_date: When given, `cycles` lists every window of the life
+            (see `_lifetime_cycles`).
+        lifespan_years: How far past birth `cycles` reaches.
 
     Returns:
         Dictionary with status, phase, phase dates and a breakdown of the
@@ -269,7 +397,7 @@ def compute_sade_sati(
         phase_start_date = phases[phase_index]["start"]
         phase_end_date = phases[phase_index]["end"]
 
-    return {
+    result = {
         "status": "active" if sade_sati_active else "inactive",
         "phase": current_phase_name,
         "moon_sign": moon_sign,
@@ -281,3 +409,13 @@ def compute_sade_sati(
         "phases": phases,
         "interpretation_ready": True,
     }
+    if birth_date is not None:
+        result["cycles"] = _lifetime_cycles(
+            moon_index,
+            birth_date,
+            result["start_date"],
+            result["status"],
+            reference_date,
+            lifespan_years,
+        )
+    return result

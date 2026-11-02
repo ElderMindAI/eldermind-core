@@ -251,6 +251,7 @@ def compute_profile(
             subject.effective_birth_time,
             gender=subject.gender,
             julian_day_ut=jd_ut,
+            reference_date=reference_date,
         ),
         "numerology": lambda: compute_numerology(
             birth_date=subject.birth_date,

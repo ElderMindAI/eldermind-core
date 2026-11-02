@@ -9,8 +9,11 @@
           "polarity": "Yin"
         },
         "end_age": 17,
+        "end_year": 2012,
         "hanzi": "己未",
+        "is_current": false,
         "start_age": 8,
+        "start_year": 2002,
         "stem": {
           "element": "Earth",
           "english": "Ji",
@@ -58,8 +61,11 @@
           "polarity": "Yang"
         },
         "end_age": 27,
+        "end_year": 2022,
         "hanzi": "戊午",
+        "is_current": false,
         "start_age": 18,
+        "start_year": 2012,
         "stem": {
           "element": "Earth",
           "english": "Wu",
@@ -98,8 +104,11 @@
           "polarity": "Yin"
         },
         "end_age": 37,
+        "end_year": 2032,
         "hanzi": "丁巳",
+        "is_current": true,
         "start_age": 28,
+        "start_year": 2022,
         "stem": {
           "element": "Fire",
           "english": "Ding",
@@ -147,8 +156,11 @@
           "polarity": "Yang"
         },
         "end_age": 47,
+        "end_year": 2042,
         "hanzi": "丙辰",
+        "is_current": false,
         "start_age": 38,
+        "start_year": 2032,
         "stem": {
           "element": "Fire",
           "english": "Bing",
@@ -196,8 +208,11 @@
           "polarity": "Yin"
         },
         "end_age": 57,
+        "end_year": 2052,
         "hanzi": "乙卯",
+        "is_current": false,
         "start_age": 48,
+        "start_year": 2042,
         "stem": {
           "element": "Wood",
           "english": "Yi",
@@ -227,8 +242,11 @@
           "polarity": "Yang"
         },
         "end_age": 67,
+        "end_year": 2062,
         "hanzi": "甲寅",
+        "is_current": false,
         "start_age": 58,
+        "start_year": 2052,
         "stem": {
           "element": "Wood",
           "english": "Jia",
@@ -276,8 +294,11 @@
           "polarity": "Yin"
         },
         "end_age": 77,
+        "end_year": 2072,
         "hanzi": "癸丑",
+        "is_current": false,
         "start_age": 68,
+        "start_year": 2062,
         "stem": {
           "element": "Water",
           "english": "Gui",
@@ -325,8 +346,11 @@
           "polarity": "Yang"
         },
         "end_age": 87,
+        "end_year": 2082,
         "hanzi": "壬子",
+        "is_current": false,
         "start_age": 78,
+        "start_year": 2072,
         "stem": {
           "element": "Water",
           "english": "Ren",
@@ -951,6 +975,88 @@
       ],
       "profile": "4/6",
       "signature": "Satisfaction and Peace",
+      "split_bridges": {
+        "channel_pairs": [
+          {
+            "channel": "6-59",
+            "connects": [
+              "SolarPlexus",
+              "Sacral"
+            ],
+            "gates": [
+              6,
+              59
+            ]
+          },
+          {
+            "channel": "12-22",
+            "connects": [
+              "Throat",
+              "SolarPlexus"
+            ],
+            "gates": [
+              12,
+              22
+            ]
+          },
+          {
+            "channel": "21-45",
+            "connects": [
+              "Heart",
+              "Throat"
+            ],
+            "gates": [
+              21,
+              45
+            ]
+          },
+          {
+            "channel": "25-51",
+            "connects": [
+              "G",
+              "Heart"
+            ],
+            "gates": [
+              25,
+              51
+            ]
+          },
+          {
+            "channel": "26-44",
+            "connects": [
+              "Heart",
+              "Spleen"
+            ],
+            "gates": [
+              26,
+              44
+            ]
+          }
+        ],
+        "components": [
+          [
+            "Throat",
+            "G",
+            "Sacral",
+            "Spleen"
+          ],
+          [
+            "Heart",
+            "SolarPlexus"
+          ]
+        ],
+        "single_gate": [
+          {
+            "channel": "35-36",
+            "connects": [
+              "Throat",
+              "SolarPlexus"
+            ],
+            "gate": 36,
+            "with_natal_gate": 35
+          }
+        ]
+      },
       "strategy": "To Respond, then Inform",
       "type": "Manifesting Generator"
     },
@@ -1108,7 +1214,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.3",
+    "engine_version": "1.0.4",
     "errors": [],
     "julian_day_ut": 2449232.02083333,
     "reference_date": "2026-07-31",
@@ -1139,6 +1245,151 @@
       "yoni": "Koń"
     },
     "ayanamsa": 23.768634,
+    "drishti": [
+      {
+        "aspects": [
+          {
+            "aspect": 7,
+            "house_number": 4,
+            "planets": [
+              "Moon",
+              "Saturn"
+            ],
+            "sign": "Aquarius"
+          }
+        ],
+        "house_number": 10,
+        "planet": "Sun",
+        "sign": "Leo"
+      },
+      {
+        "aspects": [
+          {
+            "aspect": 7,
+            "house_number": 10,
+            "planets": [
+              "Sun",
+              "Mercury"
+            ],
+            "sign": "Leo"
+          }
+        ],
+        "house_number": 4,
+        "planet": "Moon",
+        "sign": "Aquarius"
+      },
+      {
+        "aspects": [
+          {
+            "aspect": 4,
+            "house_number": 2,
+            "planets": [],
+            "sign": "Sagittarius"
+          },
+          {
+            "aspect": 7,
+            "house_number": 5,
+            "planets": [],
+            "sign": "Pisces"
+          },
+          {
+            "aspect": 8,
+            "house_number": 6,
+            "planets": [],
+            "sign": "Aries"
+          }
+        ],
+        "house_number": 11,
+        "planet": "Mars",
+        "sign": "Virgo"
+      },
+      {
+        "aspects": [
+          {
+            "aspect": 7,
+            "house_number": 4,
+            "planets": [
+              "Moon",
+              "Saturn"
+            ],
+            "sign": "Aquarius"
+          }
+        ],
+        "house_number": 10,
+        "planet": "Mercury",
+        "sign": "Leo"
+      },
+      {
+        "aspects": [
+          {
+            "aspect": 5,
+            "house_number": 3,
+            "planets": [],
+            "sign": "Capricorn"
+          },
+          {
+            "aspect": 7,
+            "house_number": 5,
+            "planets": [],
+            "sign": "Pisces"
+          },
+          {
+            "aspect": 9,
+            "house_number": 7,
+            "planets": [
+              "Ketu"
+            ],
+            "sign": "Taurus"
+          }
+        ],
+        "house_number": 11,
+        "planet": "Jupiter",
+        "sign": "Virgo"
+      },
+      {
+        "aspects": [
+          {
+            "aspect": 7,
+            "house_number": 3,
+            "planets": [],
+            "sign": "Capricorn"
+          }
+        ],
+        "house_number": 9,
+        "planet": "Venus",
+        "sign": "Cancer"
+      },
+      {
+        "aspects": [
+          {
+            "aspect": 3,
+            "house_number": 6,
+            "planets": [],
+            "sign": "Aries"
+          },
+          {
+            "aspect": 7,
+            "house_number": 10,
+            "planets": [
+              "Sun",
+              "Mercury"
+            ],
+            "sign": "Leo"
+          },
+          {
+            "aspect": 10,
+            "house_number": 1,
+            "planets": [
+              "Rahu"
+            ],
+            "sign": "Scorpio"
+          }
+        ],
+        "house_number": 4,
+        "planet": "Saturn",
+        "sign": "Aquarius"
+      }
+    ],
     "houses": [
       {
         "degree_in_sign": 0.0,
@@ -1225,6 +1476,7 @@
         "degree_in_sign": 15.306193,
         "is_retrograde": false,
         "longitude": 135.306193,
+        "nakshatra_lord": "Venus",
         "nakshatra_name": "Purva Phalguni",
         "nakshatra_number": 11,
         "name": "Sun",
@@ -1235,6 +1487,7 @@
         "degree_in_sign": 19.88868,
         "is_retrograde": false,
         "longitude": 319.88868,
+        "nakshatra_lord": "Rahu",
         "nakshatra_name": "Shatabhisha",
         "nakshatra_number": 24,
         "name": "Moon",
@@ -1245,69 +1498,117 @@
         "degree_in_sign": 18.34646,
         "is_retrograde": false,
         "longitude": 138.34646,
+        "nakshatra_lord": "Venus",
+        "nakshatra_name": "Purva Phalguni",
+        "nakshatra_number": 11,
         "name": "Mercury",
+        "pada": 2,
         "sign": "Leo"
       },
       {
         "degree_in_sign": 12.011937,
         "is_retrograde": false,
         "longitude": 102.011937,
+        "nakshatra_lord": "Saturn",
+        "nakshatra_name": "Pushya",
+        "nakshatra_number": 8,
         "name": "Venus",
+        "pada": 3,
         "sign": "Cancer"
       },
       {
         "degree_in_sign": 19.308026,
         "is_retrograde": false,
         "longitude": 169.308026,
+        "nakshatra_lord": "Moon",
+        "nakshatra_name": "Hasta",
+        "nakshatra_number": 13,
         "name": "Mars",
+        "pada": 3,
         "sign": "Virgo"
       },
       {
         "degree_in_sign": 21.464524,
         "is_retrograde": false,
         "longitude": 171.464524,
+        "nakshatra_lord": "Moon",
+        "nakshatra_name": "Hasta",
+        "nakshatra_number": 13,
         "name": "Jupiter",
+        "pada": 4,
         "sign": "Virgo"
       },
       {
         "degree_in_sign": 2.24712,
         "is_retrograde": true,
         "longitude": 302.24712,
+        "nakshatra_lord": "Mars",
+        "nakshatra_name": "Dhanishta",
+        "nakshatra_number": 23,
         "name": "Saturn",
+        "pada": 3,
         "sign": "Aquarius"
       },
       {
         "degree_in_sign": 24.73007,
         "is_retrograde": true,
         "longitude": 264.73007,
+        "nakshatra_lord": "Venus",
+        "nakshatra_name": "Purva Ashadha",
+        "nakshatra_number": 20,
         "name": "Uranus",
+        "pada": 4,
         "sign": "Sagittarius"
       },
       {
         "degree_in_sign": 24.820519,
         "is_retrograde": true,
         "longitude": 264.820519,
+        "nakshatra_lord": "Venus",
+        "nakshatra_name": "Purva Ashadha",
+        "nakshatra_number": 20,
         "name": "Neptune",
+        "pada": 4,
         "sign": "Sagittarius"
       },
       {
         "degree_in_sign": 29.196006,
         "is_retrograde": false,
         "longitude": 209.196006,
+        "nakshatra_lord": "Jupiter",
+        "nakshatra_name": "Vishakha",
+        "nakshatra_number": 16,
         "name": "Pluto",
+        "pada": 3,
         "sign": "Libra"
       },
       {
         "degree_in_sign": 13.665907,
         "is_retrograde": true,
         "longitude": 223.665907,
+        "nakshatra_lord": "Saturn",
+        "nakshatra_name": "Anuradha",
+        "nakshatra_number": 17,
         "name": "TrueNode",
+        "pada": 4,
         "sign": "Scorpio"
+      },
+      {
+        "degree_in_sign": 13.665907,
+        "is_retrograde": true,
+        "longitude": 43.665907,
+        "nakshatra_lord": "Moon",
+        "nakshatra_name": "Rohini",
+        "nakshatra_number": 4,
+        "name": "Ketu",
+        "pada": 2,
+        "sign": "Taurus"
       },
       {
         "degree_in_sign": 15.850297,
         "is_retrograde": false,
         "longitude": 225.850297,
+        "nakshatra_lord": "Saturn",
         "nakshatra_name": "Anuradha",
         "nakshatra_number": 17,
         "name": "Ascendant",
@@ -1315,9 +1616,21 @@
         "sign": "Scorpio"
       }
     ],
+    "panchanga": {
+      "days_since_full_moon": 0.41,
+      "days_since_new_moon": 14.71,
+      "days_to_full_moon": 29.27,
+      "days_to_new_moon": 14.61,
+      "elongation": 184.582,
+      "paksha": "Krishna",
+      "tithi_name": "Pratipada",
+      "tithi_number": 16
+    },
     "planets": [
       {
         "degree_in_sign": 15.306193,
+        "house_from_moon": 7,
+        "house_number": 10,
         "is_retrograde": false,
         "longitude": 135.306193,
         "name": "Sun",
@@ -1325,6 +1638,8 @@
       },
       {
         "degree_in_sign": 19.88868,
+        "house_from_moon": 1,
+        "house_number": 4,
         "is_retrograde": false,
         "longitude": 319.88868,
         "name": "Moon",
@@ -1332,6 +1647,8 @@
       },
       {
         "degree_in_sign": 18.34646,
+        "house_from_moon": 7,
+        "house_number": 10,
         "is_retrograde": false,
         "longitude": 138.34646,
         "name": "Mercury",
@@ -1339,6 +1656,8 @@
       },
       {
         "degree_in_sign": 12.011937,
+        "house_from_moon": 6,
+        "house_number": 9,
         "is_retrograde": false,
         "longitude": 102.011937,
         "name": "Venus",
@@ -1346,6 +1665,8 @@
       },
       {
         "degree_in_sign": 19.308026,
+        "house_from_moon": 8,
+        "house_number": 11,
         "is_retrograde": false,
         "longitude": 169.308026,
         "name": "Mars",
@@ -1353,6 +1674,8 @@
       },
       {
         "degree_in_sign": 21.464524,
+        "house_from_moon": 8,
+        "house_number": 11,
         "is_retrograde": false,
         "longitude": 171.464524,
         "name": "Jupiter",
@@ -1360,6 +1683,8 @@
       },
       {
         "degree_in_sign": 2.24712,
+        "house_from_moon": 1,
+        "house_number": 4,
         "is_retrograde": true,
         "longitude": 302.24712,
         "name": "Saturn",
@@ -1367,6 +1692,8 @@
       },
       {
         "degree_in_sign": 24.73007,
+        "house_from_moon": 11,
+        "house_number": 2,
         "is_retrograde": true,
         "longitude": 264.73007,
         "name": "Uranus",
@@ -1374,6 +1701,8 @@
       },
       {
         "degree_in_sign": 24.820519,
+        "house_from_moon": 11,
+        "house_number": 2,
         "is_retrograde": true,
         "longitude": 264.820519,
         "name": "Neptune",
@@ -1381,6 +1710,8 @@
       },
       {
         "degree_in_sign": 29.196006,
+        "house_from_moon": 9,
+        "house_number": 12,
         "is_retrograde": false,
         "longitude": 209.196006,
         "name": "Pluto",
@@ -1388,6 +1719,8 @@
       },
       {
         "degree_in_sign": 13.665907,
+        "house_from_moon": 10,
+        "house_number": 1,
         "is_retrograde": true,
         "longitude": 223.665907,
         "name": "TrueNode",
@@ -1395,6 +1728,116 @@
       }
     ],
     "sade_sati": {
+      "cycles": [
+        {
+          "age_at_end": 4.6,
+          "age_at_start": 0.0,
+          "end_date": "1998-04-17",
+          "phases": [
+            {
+              "end": "1993-03-05",
+              "phase": "rising",
+              "sign": "Capricorn",
+              "start": "1990-03-20"
+            },
+            {
+              "end": "1995-06-02",
+              "phase": "peak",
+              "sign": "Aquarius",
+              "start": "1993-03-05"
+            },
+            {
+              "end": "1998-04-17",
+              "phase": "setting",
+              "sign": "Pisces",
+              "start": "1995-06-02"
+            }
+          ],
+          "relation": "previous",
+          "start_date": "1990-03-20"
+        },
+        {
+          "age_at_end": 33.8,
+          "age_at_start": 26.4,
+          "end_date": "2027-06-02",
+          "phases": [
+            {
+              "end": "2022-04-29",
+              "phase": "rising",
+              "sign": "Capricorn",
+              "start": "2020-01-24"
+            },
+            {
+              "end": "2025-03-29",
+              "phase": "peak",
+              "sign": "Aquarius",
+              "start": "2022-04-29"
+            },
+            {
+              "end": "2027-06-02",
+              "phase": "setting",
+              "sign": "Pisces",
+              "start": "2025-03-29"
+            }
+          ],
+          "relation": "current",
+          "start_date": "2020-01-24"
+        },
+        {
+          "age_at_end": 63.6,
+          "age_at_start": 55.5,
+          "end_date": "2057-04-07",
+          "phases": [
+            {
+              "end": "2052-02-24",
+              "phase": "rising",
+              "sign": "Capricorn",
+              "start": "2049-03-06"
+            },
+            {
+              "end": "2054-05-14",
+              "phase": "peak",
+              "sign": "Aquarius",
+              "start": "2052-02-24"
+            },
+            {
+              "end": "2057-04-07",
+              "phase": "setting",
+              "sign": "Pisces",
+              "start": "2054-05-14"
+            }
+          ],
+          "relation": "next",
+          "start_date": "2049-03-06"
+        },
+        {
+          "age_at_end": 92.7,
+          "age_at_start": 85.4,
+          "end_date": "2086-05-21",
+          "phases": [
+            {
+              "end": "2081-04-11",
+              "phase": "rising",
+              "sign": "Capricorn",
+              "start": "2079-01-14"
+            },
+            {
+              "end": "2084-03-19",
+              "phase": "peak",
+              "sign": "Aquarius",
+              "start": "2081-04-11"
+            },
+            {
+              "end": "2086-05-21",
+              "phase": "setting",
+              "sign": "Pisces",
+              "start": "2084-03-19"
+            }
+          ],
+          "relation": "future",
+          "start_date": "2079-01-14"
+        }
+      ],
       "end_date": "2027-06-02",
       "interpretation_ready": true,
       "moon_sign": "Aquarius",
@@ -1875,7 +2318,230 @@
           "start": "2088-10-23"
         }
       ]
-    }
+    },
+    "yogas": [
+      {
+        "name": "Gaja-Kesari",
+        "planets": [
+          "Jupiter",
+          "Moon"
+        ],
+        "present": false,
+        "reason": "Jupiter is in the 8th sign from the Moon; Gaja-Kesari needs the 1st, 4th, 7th or 10th."
+      },
+      {
+        "name": "Budha-Aditya",
+        "planets": [
+          "Sun",
+          "Mercury"
+        ],
+        "present": true,
+        "reason": "Sun and Mercury are both in Leo."
+      },
+      {
+        "name": "Chandra-Mangala",
+        "planets": [
+          "Moon",
+          "Mars"
+        ],
+        "present": false,
+        "reason": "Moon is in Aquarius and Mars in Virgo; Chandra-Mangala needs both in the same sign."
+      },
+      {
+        "from_moon": false,
+        "name": "Ruchaka",
+        "planets": [
+          "Mars"
+        ],
+        "present": false,
+        "reason": "Mars is in Virgo, neither its own sign (Aries, Scorpio) nor its exaltation sign (Capricorn)."
+      },
+      {
+        "from_moon": false,
+        "name": "Bhadra",
+        "planets": [
+          "Mercury"
+        ],
+        "present": false,
+        "reason": "Mercury is in Leo, neither its own sign (Gemini, Virgo) nor its exaltation sign (Virgo)."
+      },
+      {
+        "from_moon": false,
+        "name": "Hamsa",
+        "planets": [
+          "Jupiter"
+        ],
+        "present": false,
+        "reason": "Jupiter is in Virgo, neither its own sign (Sagittarius, Pisces) nor its exaltation sign (Cancer)."
+      },
+      {
+        "from_moon": false,
+        "name": "Malavya",
+        "planets": [
+          "Venus"
+        ],
+        "present": false,
+        "reason": "Venus is in Cancer, neither its own sign (Taurus, Libra) nor its exaltation sign (Pisces)."
+      },
+      {
+        "from_moon": true,
+        "name": "Sasa",
+        "planets": [
+          "Saturn"
+        ],
+        "present": true,
+        "reason": "Saturn is in its own sign Aquarius and in the 4th house from the Lagna, a kendra."
+      },
+      {
+        "kind": "Vipareeta Raja",
+        "name": "Harsha",
+        "planets": [
+          "Mars"
+        ],
+        "present": false,
+        "reason": "The 6th house is Aries; its lord Mars is in the 11th house; Harsha needs the 6th, 8th or 12th."
+      },
+      {
+        "kind": "Vipareeta Raja",
+        "name": "Sarala",
+        "planets": [
+          "Mercury"
+        ],
+        "present": false,
+        "reason": "The 8th house is Gemini; its lord Mercury is in the 10th house; Sarala needs the 6th, 8th or 12th."
+      },
+      {
+        "kind": "Vipareeta Raja",
+        "name": "Vimala",
+        "planets": [
+          "Venus"
+        ],
+        "present": false,
+        "reason": "The 12th house is Libra; its lord Venus is in the 9th house; Vimala needs the 6th, 8th or 12th."
+      },
+      {
+        "name": "Neecha Bhanga",
+        "planets": [],
+        "present": false,
+        "reason": "No planet is in its debilitation sign."
+      },
+      {
+        "name": "Sunapha",
+        "planets": [],
+        "present": false,
+        "reason": "2nd from the Moon (Pisces): none; 12th from the Moon (Capricorn): none (Sun, Rahu and Ketu do not count)."
+      },
+      {
+        "name": "Anapha",
+        "planets": [],
+        "present": false,
+        "reason": "2nd from the Moon (Pisces): none; 12th from the Moon (Capricorn): none (Sun, Rahu and Ketu do not count)."
+      },
+      {
+        "name": "Durudhara",
+        "planets": [],
+        "present": false,
+        "reason": "2nd from the Moon (Pisces): none; 12th from the Moon (Capricorn): none (Sun, Rahu and Ketu do not count)."
+      },
+      {
+        "cancelled": true,
+        "name": "Kemadruma",
+        "planets": [],
+        "present": true,
+        "reason": "2nd from the Moon (Pisces): none; 12th from the Moon (Capricorn): none (Sun, Rahu and Ketu do not count); Kemadruma means both are empty. It is cancelled (Kemadruma Bhanga): Mercury and Saturn in a kendra from the Moon (1st, 4th, 7th or 10th sign)."
+      },
+      {
+        "name": "Vesi",
+        "planets": [
+          "Mars",
+          "Jupiter"
+        ],
+        "present": true,
+        "reason": "2nd from the Sun (Virgo): Mars and Jupiter; 12th from the Sun (Cancer): Venus (Moon, Rahu and Ketu do not count)."
+      },
+      {
+        "name": "Vasi",
+        "planets": [
+          "Venus"
+        ],
+        "present": true,
+        "reason": "2nd from the Sun (Virgo): Mars and Jupiter; 12th from the Sun (Cancer): Venus (Moon, Rahu and Ketu do not count)."
+      },
+      {
+        "name": "Ubhayachari",
+        "planets": [
+          "Mars",
+          "Jupiter",
+          "Venus"
+        ],
+        "present": true,
+        "reason": "2nd from the Sun (Virgo): Mars and Jupiter; 12th from the Sun (Cancer): Venus (Moon, Rahu and Ketu do not count)."
+      },
+      {
+        "name": "Subha Kartari",
+        "planets": [],
+        "present": false,
+        "reason": "Natural benefics (Jupiter, Venus, Mercury) in the 2nd house: none; in the 12th: none. Subha Kartari needs both houses occupied by them (the Moon is not counted)."
+      },
+      {
+        "name": "Papa Kartari",
+        "planets": [],
+        "present": false,
+        "reason": "Natural malefics (Sun, Mars, Saturn, Rahu, Ketu) in the 2nd house: none; in the 12th: none. Papa Kartari needs both houses occupied by them (the Moon is not counted)."
+      },
+      {
+        "name": "Parivartana",
+        "planets": [],
+        "present": false,
+        "reason": "No two planets stand in each other's signs."
+      },
+      {
+        "from_lagna": false,
+        "from_moon": true,
+        "from_venus": false,
+        "name": "Mangal Dosha",
+        "planets": [
+          "Mars"
+        ],
+        "present": true,
+        "reason": "Mars is 11th from the Lagna, 8th from the Moon and 3rd from Venus; the dosha houses are the 1st, 2nd, 4th, 7th, 8th and 12th."
+      },
+      {
+        "name": "Kala Sarpa",
+        "planets": [
+          "Rahu",
+          "Ketu"
+        ],
+        "present": false,
+        "reason": "Planets lie on both sides of the Rahu–Ketu axis: Moon and Saturn on one, Sun, Mars, Mercury, Jupiter and Venus on the other."
+      },
+      {
+        "name": "Amala",
+        "planets": [
+          "Mercury"
+        ],
+        "present": true,
+        "reason": "Natural benefics (Jupiter, Venus, Mercury) in the 10th from the Lagna (Leo): Mercury; in the 10th from the Moon (Scorpio): none."
+      },
+      {
+        "name": "Dhana",
+        "planets": [
+          "Moon",
+          "Mercury"
+        ],
+        "present": true,
+        "reason": "The 9th lord Moon and the 11th lord Mercury are linked: Moon in Aquarius and Mercury in Leo aspect each other."
+      },
+      {
+        "name": "Dharma-Karmadhipati",
+        "planets": [
+          "Moon",
+          "Sun"
+        ],
+        "present": true,
+        "reason": "The 9th lord Moon and the 10th lord Sun are linked: Moon in Aquarius and Sun in Leo aspect each other."
+      }
+    ]
   },
   "western": {
     "ascendant": {

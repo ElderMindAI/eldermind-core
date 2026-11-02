@@ -236,9 +236,10 @@ _SUMMARIZERS = {
 #: Fields dropped at `standard`: long historical tables that only an export needs.
 #: `timeline` is the 100-year Vimshottari table, `da_yun` the ten-year luck
 #: pillars — together most of the payload, and useful to almost no caller who
-#: is not building their own chart software.
+#: is not building their own chart software. `cycles` is every Sade-Sati window
+#: of the life; the current or next one stays in the top-level fields.
 _STANDARD_DROPS = {
-    "vedic": ("timeline",),
+    "vedic": ("timeline", "cycles"),
     "bazi": ("da_yun",),
     "human_design": ("personality", "design"),
 }

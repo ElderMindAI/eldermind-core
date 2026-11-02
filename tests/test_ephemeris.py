@@ -212,8 +212,8 @@ def test_nakshatra_mapping() -> None:
     assert last["pada"] == 4
 
 
-def test_vedic_nakshatras_for_key_bodies() -> None:
-    """Vedic chart section must return Nakshatra data for Sun, Moon and Ascendant."""
+def test_vedic_nakshatras_for_every_body() -> None:
+    """Every Vedic body, Ketu and the Ascendant carry a Nakshatra, its pada and lord (1.0.4)."""
     jd_ut, utc_dt = compute_julian_day_ut(
         date(1985, 6, 15), time(14, 30), "Europe/Warsaw"
     )
@@ -222,14 +222,18 @@ def test_vedic_nakshatras_for_key_bodies() -> None:
     )
 
     assert "nakshatras" in vedic
-    names = {n["name"] for n in vedic["nakshatras"]}
-    assert names >= NAKSHATRA_BODIES
+    names = [n["name"] for n in vedic["nakshatras"]]
+    assert set(names) == NAKSHATRA_BODIES
+    assert names[-2:] == ["Ketu", "Ascendant"]
 
     for body in vedic["nakshatras"]:
-        if body["name"] in NAKSHATRA_BODIES:
-            assert 1 <= body["nakshatra_number"] <= 27
-            assert 1 <= body["pada"] <= 4
-            assert body["nakshatra_name"] != ""
+        assert 1 <= body["nakshatra_number"] <= 27
+        assert 1 <= body["pada"] <= 4
+        assert body["nakshatra_name"] != ""
+        assert body["nakshatra_lord"]
+    for planet in vedic["planets"]:
+        assert 1 <= planet["house_number"] <= 12
+        assert 1 <= planet["house_from_moon"] <= 12
 
 
 def test_sade_sati_aquarius_setting_in_2026() -> None:

@@ -6,7 +6,7 @@ gates and lines.
 """
 
 from datetime import date, datetime
-from typing import Tuple
+from typing import Final, Tuple
 
 import swisseph as swe
 
@@ -215,6 +215,64 @@ def _connected_components(
     return list(groups.values())
 
 
+def _split_bridges(
+    activated_gates: set[int], components: list[set[str]]
+) -> dict | None:
+    """What would join the separate parts of a split definition.
+
+    `single_gate`: a gate the chart lacks that, together with one of its own
+    gates, completes a channel between two different defined components.
+    `channel_pairs`: channels between two components with neither gate
+    present. Bridges through an undefined center (two channels or more) are
+    not listed. Until 1.0.4 the model counted these itself and got them
+    wrong in three reports out of three (2026-11-02).
+
+    Returns None for a chart with fewer than two components.
+    """
+    if len(components) < 2:
+        return None
+    # Set iteration order is not stable across processes; the golden files are.
+    components = sorted(components, key=lambda part: min(HD_CENTERS.index(c) for c in part))
+    component_of = {
+        center: index for index, component in enumerate(components) for center in component
+    }
+
+    single_gate: list[dict] = []
+    channel_pairs: list[dict] = []
+    for gate_a, gate_b in HD_CHANNELS:
+        center_a, center_b = HD_GATE_TO_CENTER[gate_a], HD_GATE_TO_CENTER[gate_b]
+        if center_a not in component_of or center_b not in component_of:
+            continue
+        if component_of[center_a] == component_of[center_b]:
+            continue
+        has_a, has_b = gate_a in activated_gates, gate_b in activated_gates
+        channel = f"{gate_a}-{gate_b}"
+        if has_a and has_b:
+            continue  # already defined, so the centers would share a component
+        if has_a or has_b:
+            missing, natal = (gate_b, gate_a) if has_a else (gate_a, gate_b)
+            single_gate.append(
+                {
+                    "gate": missing,
+                    "with_natal_gate": natal,
+                    "channel": channel,
+                    "connects": [HD_GATE_TO_CENTER[natal], HD_GATE_TO_CENTER[missing]],
+                }
+            )
+        else:
+            channel_pairs.append(
+                {"channel": channel, "gates": [gate_a, gate_b], "connects": [center_a, center_b]}
+            )
+
+    return {
+        "components": [
+            [center for center in HD_CENTERS if center in component] for component in components
+        ],
+        "single_gate": sorted(single_gate, key=lambda item: (item["gate"], item["with_natal_gate"])),
+        "channel_pairs": channel_pairs,
+    }
+
+
 def _motor_connected_to_throat(
     defined_centers: set[str], components: list[set[str]]
 ) -> bool:
@@ -345,6 +403,7 @@ def compute_hd_mechanics(personality: list[dict], design: list[dict]) -> dict:
         "open_centers": open_centers,
         "channels": channels,
         "gates_by_center": gates_by_center,
+        "split_bridges": _split_bridges(activated_gates, components),
     }
 
 
@@ -376,6 +435,148 @@ def compute_human_design(jd_birth_ut: float) -> dict:
         "design": design,
         "mechanics": mechanics,
     }
+
+
+# Transiting bodies Human Design reads besides the planets: the Earth opposite
+# the Sun and the South Node opposite the North (true) node.
+_OPPOSITE_BODIES: Final[dict[str, str]] = {"Earth": "Sun", "SouthNode": "TrueNode"}
+
+# Scan step and search horizon, in days, for the edges of a body's stay in one
+# gate. Generous for the slow bodies: a station can hold Pluto in a gate for years.
+_GATE_SCAN: Final[dict[str, tuple[float, float]]] = {
+    "Moon": (1.0 / 24.0, 3.0),
+    "Sun": (0.25, 12.0),
+    "Earth": (0.25, 12.0),
+    "Mercury": (0.5, 200.0),
+    "Venus": (0.5, 200.0),
+    "Mars": (0.5, 320.0),
+    "Jupiter": (1.0, 800.0),
+    "Saturn": (1.0, 1200.0),
+    "TrueNode": (1.0, 700.0),
+    "SouthNode": (1.0, 700.0),
+    "Uranus": (2.0, 2600.0),
+    "Neptune": (2.0, 2600.0),
+    "Pluto": (2.0, 2600.0),
+}
+
+_PLANET_IDS_BY_NAME: Final[dict[str, int]] = {
+    "Sun": 0, "Earth": 0, "Moon": 1, "Mercury": 2, "Venus": 3, "Mars": 4,
+    "Jupiter": 5, "Saturn": 6, "Uranus": 7, "Neptune": 8, "Pluto": 9,
+    "TrueNode": 11, "SouthNode": 11,
+}
+
+
+def _gate_of(jd_ut: float, planet_id: int, offset: float) -> int:
+    result, _ = swe.calc_ut(jd_ut, planet_id, 0)
+    return longitude_to_gate_line((float(result[0]) + offset) % 360.0)["gate"]
+
+
+def _gate_edge(
+    jd_ut: float, planet_id: int, offset: float, gate: int, step: float, horizon: float, forward: bool
+) -> float | None:
+    """Moment the body leaves `gate` going forward (or entered it, going back)."""
+    direction = 1.0 if forward else -1.0
+    inside = jd_ut
+    travelled = 0.0
+    while travelled < horizon:
+        probe = inside + direction * step
+        if _gate_of(probe, planet_id, offset) != gate:
+            outside = probe
+            for _ in range(40):
+                middle = (inside + outside) / 2.0
+                if _gate_of(middle, planet_id, offset) == gate:
+                    inside = middle
+                else:
+                    outside = middle
+                if abs(outside - inside) < 1.0 / 1440.0:
+                    break
+            return (inside + outside) / 2.0
+        inside = probe
+        travelled += step
+    return None
+
+
+def _jd_to_iso(jd_ut: float | None) -> str | None:
+    if jd_ut is None:
+        return None
+    year, month, day, _ = swe.revjul(jd_ut)
+    return date(int(year), int(month), int(day)).isoformat()
+
+
+def transit_gate_window(body: str, jd_ut: float) -> dict:
+    """When a transiting body entered its current gate and when it leaves it."""
+    planet_id = _PLANET_IDS_BY_NAME[body]
+    offset = 180.0 if body in _OPPOSITE_BODIES else 0.0
+    step, horizon = _GATE_SCAN[body]
+    gate = _gate_of(jd_ut, planet_id, offset)
+    start = _gate_edge(jd_ut, planet_id, offset, gate, step, horizon, forward=False)
+    end = _gate_edge(jd_ut, planet_id, offset, gate, step, horizon, forward=True)
+    return {
+        "active_from": _jd_to_iso(start),
+        "active_until": _jd_to_iso(end),
+        "duration_days": round(end - start, 1) if start is not None and end is not None else None,
+    }
+
+
+def compute_transit_channels(
+    personality: list[dict],
+    design: list[dict],
+    transit_planets: list[dict],
+    jd_ut: float | None = None,
+) -> list[dict]:
+    """Channels a transiting body completes with a gate of the birth chart.
+
+    `transit_planets` are tropical positions (`name`, `longitude`), as
+    `compute_all_planets` returns them; the Earth and the South Node are
+    derived from the Sun and the true node. Channels the chart already has
+    are skipped. With `jd_ut` (the moment of the positions) every entry also
+    says when the body entered its gate and when it leaves it.
+
+    Until 1.0.4 the report checked this only for the Sun and the Moon, and
+    the model then told a reader "you do not have Gate 26" while a transit
+    was closing the 26-44 channel on that very gate (2026-11-02).
+    """
+    natal_gates: dict[int, list[str]] = {}
+    for label, activations in (("Personality", personality), ("Design", design)):
+        for activation in activations:
+            natal_gates.setdefault(int(activation["gate"]), []).append(
+                f"{activation['name']} ({label})"
+            )
+    mechanics = compute_hd_mechanics(personality, design)
+    defined_centers = set(mechanics["defined_centers"])
+    natal_channels = {tuple(channel["gates"]) for channel in mechanics["channels"]}
+
+    by_name = {planet["name"]: planet for planet in transit_planets}
+    bodies = [(planet["name"], float(planet["longitude"])) for planet in transit_planets]
+    for derived, source in _OPPOSITE_BODIES.items():
+        if source in by_name:
+            bodies.append((derived, (float(by_name[source]["longitude"]) + 180.0) % 360.0))
+
+    found: list[dict] = []
+    for name, longitude in bodies:
+        activation = longitude_to_gate_line(longitude)
+        gate = activation["gate"]
+        for gate_a, gate_b in HD_CHANNELS:
+            if gate not in (gate_a, gate_b) or (gate_a, gate_b) in natal_channels:
+                continue
+            partner = gate_b if gate == gate_a else gate_a
+            if partner not in natal_gates:
+                continue
+            centers = [HD_GATE_TO_CENTER[gate_a], HD_GATE_TO_CENTER[gate_b]]
+            entry = {
+                "transit_body": name,
+                "transit_gate": gate,
+                "transit_line": activation["line"],
+                "natal_gate": partner,
+                "natal_bodies": natal_gates[partner],
+                "channel": f"{gate_a}-{gate_b}",
+                "centers": centers,
+                "newly_defined_centers": [c for c in dict.fromkeys(centers) if c not in defined_centers],
+            }
+            if jd_ut is not None and name in _GATE_SCAN:
+                entry.update(transit_gate_window(name, jd_ut))
+            found.append(entry)
+    return found
 
 
 def compute_human_design_from_birth(
