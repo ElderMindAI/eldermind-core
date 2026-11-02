@@ -1094,7 +1094,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.2",
+    "engine_version": "1.0.3",
     "errors": [],
     "julian_day_ut": 2446232.02083333,
     "reference_date": "2026-07-31",
@@ -1121,7 +1121,7 @@
       "gana": "Rakshasa",
       "nadi": "Kapha",
       "nakshatra": "Krittika",
-      "varna": "Vaishya",
+      "varna": "Kshatriya",
       "yoni": "Owca"
     },
     "ayanamsa": 23.653905,

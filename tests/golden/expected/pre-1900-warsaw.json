@@ -1081,7 +1081,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.2",
+    "engine_version": "1.0.3",
     "errors": [],
     "julian_day_ut": 2415019.69166667,
     "reference_date": "2026-07-31",
@@ -1108,7 +1108,7 @@
       "gana": "Rakshasa",
       "nadi": "Vata",
       "nakshatra": "Jyeshtha",
-      "varna": "Shudra",
+      "varna": "Brahmin",
       "yoni": "Jeleń"
     },
     "ayanamsa": 22.4605,

@@ -844,7 +844,8 @@ def compute_vedic_chart(
         reference_date=reference_date,
     )
     avakahada = compute_avakahada_chakra(
-        nakshatra_name=vimshottari_dasha["moon_nakshatra"]
+        nakshatra_name=vimshottari_dasha["moon_nakshatra"],
+        moon_sign=moon_data["sign"],
     )
 
     return {

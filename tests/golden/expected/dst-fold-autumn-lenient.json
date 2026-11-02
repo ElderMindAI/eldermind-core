@@ -1140,7 +1140,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.2",
+    "engine_version": "1.0.3",
     "errors": [],
     "julian_day_ut": 2449256.52083333,
     "reference_date": "2026-07-31",
@@ -1169,7 +1169,7 @@
       "gana": "Deva",
       "nadi": "Kapha",
       "nakshatra": "Shravana",
-      "varna": "Shudra",
+      "varna": "Vaishya",
       "yoni": "Małpa"
     },
     "ayanamsa": 23.769571,

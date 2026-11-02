@@ -24,6 +24,8 @@ __version__ = "1.0.0"
 #: 1.0.2 (2026-10-29): Da Yun starts from the pillar next to the month pillar
 #: (it repeated the month pillar, shifting every decade by one) and its
 #: starting age comes from the Jie solar terms instead of a 3/4-year guess.
-ENGINE_VERSION = "1.0.2"
+#: 1.0.3 (2026-11-02): Avakahada Varna from the Moon's sidereal sign (water
+#: Brahmin, fire Kshatriya, earth Vaishya, air Shudra), not a per-Nakshatra table.
+ENGINE_VERSION = "1.0.3"
 
 __all__ = ["ENGINE_VERSION", "__version__"]

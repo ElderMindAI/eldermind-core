@@ -1125,7 +1125,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.2",
+    "engine_version": "1.0.3",
     "errors": [
       {
         "code": "HOUSE_SYSTEM_UNAVAILABLE",
@@ -1159,7 +1159,7 @@
       "gana": "Deva",
       "nadi": "Vata",
       "nakshatra": "Hasta",
-      "varna": "Brahmin",
+      "varna": "Vaishya",
       "yoni": "Bawół"
     },
     "ayanamsa": 23.584301,

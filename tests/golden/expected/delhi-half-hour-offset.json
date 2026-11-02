@@ -1145,7 +1145,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.2",
+    "engine_version": "1.0.3",
     "errors": [],
     "julian_day_ut": 2441342.66666667,
     "reference_date": "2026-07-31",
@@ -1172,7 +1172,7 @@
       "gana": "Manushya",
       "nadi": "Kapha",
       "nakshatra": "Rohini",
-      "varna": "Shudra",
+      "varna": "Vaishya",
       "yoni": "Wąż"
     },
     "ayanamsa": 23.466931,

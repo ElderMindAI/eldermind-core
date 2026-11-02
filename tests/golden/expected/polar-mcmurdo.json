@@ -1092,7 +1092,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.2",
+    "engine_version": "1.0.3",
     "errors": [
       {
         "code": "HOUSE_SYSTEM_UNAVAILABLE",
@@ -1126,7 +1126,7 @@
       "gana": "Deva",
       "nadi": "Kapha",
       "nakshatra": "Shravana",
-      "varna": "Shudra",
+      "varna": "Vaishya",
       "yoni": "Małpa"
     },
     "ayanamsa": 23.730943,

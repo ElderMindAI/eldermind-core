@@ -1108,7 +1108,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.2",
+    "engine_version": "1.0.3",
     "errors": [],
     "julian_day_ut": 2442542.13888889,
     "reference_date": "2026-07-31",
@@ -1135,7 +1135,7 @@
       "gana": "Deva",
       "nadi": "Vata",
       "nakshatra": "Ashwini",
-      "varna": "Brahmin",
+      "varna": "Kshatriya",
       "yoni": "Koń"
     },
     "ayanamsa": 23.512799,

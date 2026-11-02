@@ -276,13 +276,25 @@ def test_sade_sati_inactive_finds_next_window() -> None:
 
 
 def test_avakahada_chakra_mappings() -> None:
-    """Avakahada Chakra attributes must be derived from the Moon's Nakshatra."""
-    shatabhisha = compute_avakahada_chakra("Shatabhisha")
+    """Gana, Yoni and Nadi follow the Moon's Nakshatra; Varna its sidereal sign."""
+    shatabhisha = compute_avakahada_chakra("Shatabhisha", "Aquarius")
     assert shatabhisha["gana"] == "Rakshasa"
     assert shatabhisha["yoni"] == "Koń"
     assert shatabhisha["nadi"] == "Vata"
-    assert shatabhisha["varna"] == "Brahmin"
+    assert shatabhisha["varna"] == "Shudra"
 
-    rohini = compute_avakahada_chakra("Rohini")
+    rohini = compute_avakahada_chakra("Rohini", "Taurus")
     assert rohini["gana"] == "Manushya"
     assert rohini["nadi"] == "Kapha"
+    assert rohini["varna"] == "Vaishya"
+
+
+def test_avakahada_varna_follows_sign_not_nakshatra() -> None:
+    """The per-Nakshatra caste table gave Jyeshtha (Scorpio) Shudra; kundli software prints Brahmin."""
+    assert compute_avakahada_chakra("Jyeshtha", "Scorpio")["varna"] == "Brahmin"
+    assert compute_avakahada_chakra("Mula", "Sagittarius")["varna"] == "Kshatriya"
+    assert compute_avakahada_chakra("Uttara Ashadha", "Capricorn")["varna"] == "Vaishya"
+    # A Nakshatra straddling two signs: the varna changes with the sign.
+    assert compute_avakahada_chakra("Uttara Ashadha", "Sagittarius")["varna"] == "Kshatriya"
+    with pytest.raises(ValueError):
+        compute_avakahada_chakra("Jyeshtha", "Ophiuchus")

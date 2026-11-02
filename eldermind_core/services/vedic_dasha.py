@@ -126,53 +126,38 @@ NAKSHATRA_NADI: Final[dict[str, str]] = {
     "Revati": "Kapha",
 }
 
-NAKSHATRA_VARNA: Final[dict[str, str]] = {
-    "Ashwini": "Brahmin",
-    "Bharani": "Kshatriya",
-    "Krittika": "Vaishya",
-    "Rohini": "Shudra",
-    "Mrigashira": "Shudra",
-    "Ardra": "Shudra",
-    "Punarvasu": "Vaishya",
-    "Pushya": "Brahmin",
-    "Ashlesha": "Shudra",
-    "Magha": "Kshatriya",
-    "Purva Phalguni": "Kshatriya",
-    "Uttara Phalguni": "Vaishya",
-    "Hasta": "Brahmin",
-    "Chitra": "Vaishya",
-    "Swati": "Shudra",
-    "Vishakha": "Vaishya",
-    "Anuradha": "Brahmin",
-    "Jyeshtha": "Shudra",
-    "Mula": "Kshatriya",
-    "Purva Ashadha": "Kshatriya",
-    "Uttara Ashadha": "Shudra",
-    "Shravana": "Shudra",
-    "Dhanishta": "Shudra",
-    "Shatabhisha": "Brahmin",
-    "Purva Bhadrapada": "Brahmin",
-    "Uttara Bhadrapada": "Kshatriya",
-    "Revati": "Vaishya",
+# Varna comes from the Moon's sidereal sign, not its Nakshatra: in the
+# Avakahada Chakra the water signs are Brahmin, fire Kshatriya, earth Vaishya
+# and air Shudra (the convention Indian kundli software prints). The
+# per-Nakshatra caste table is a different, Kuta-matching attribute.
+SIGN_VARNA: Final[dict[str, str]] = {
+    "Cancer": "Brahmin", "Scorpio": "Brahmin", "Pisces": "Brahmin",
+    "Aries": "Kshatriya", "Leo": "Kshatriya", "Sagittarius": "Kshatriya",
+    "Taurus": "Vaishya", "Virgo": "Vaishya", "Capricorn": "Vaishya",
+    "Gemini": "Shudra", "Libra": "Shudra", "Aquarius": "Shudra",
 }
 
 
-def compute_avakahada_chakra(nakshatra_name: str) -> dict:
-    """Return the Avakahada Chakra attributes for a given Nakshatra.
+def compute_avakahada_chakra(nakshatra_name: str, moon_sign: str) -> dict:
+    """Return the Avakahada Chakra attributes for the natal Moon.
 
     The Avakahada Chakra is a compact Vedic fingerprint of the natal Moon's
     lunar mansion. It is used by Module 5 (Jyotish) to ground the reading in
     concrete, traditional attributes rather than letting the model guess them.
+    Gana, Yoni and Nadi follow the Nakshatra; Varna follows the sidereal
+    sign (`moon_sign`).
     """
     if nakshatra_name not in NAKSHATRA_NAMES:
         raise ValueError(f"Unknown Nakshatra: {nakshatra_name!r}")
+    if moon_sign not in SIGN_VARNA:
+        raise ValueError(f"Unknown sign: {moon_sign!r}")
 
     return {
         "nakshatra": nakshatra_name,
         "gana": NAKSHATRA_GANA[nakshatra_name],
         "yoni": NAKSHATRA_YONI[nakshatra_name],
         "nadi": NAKSHATRA_NADI[nakshatra_name],
-        "varna": NAKSHATRA_VARNA[nakshatra_name],
+        "varna": SIGN_VARNA[moon_sign],
     }
 
 
