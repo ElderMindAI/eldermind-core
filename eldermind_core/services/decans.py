@@ -23,14 +23,25 @@ from typing import Iterable, Literal
 
 from eldermind_core.core.config import DEGREES_PER_SIGN, ZODIAC_SIGNS
 from eldermind_core.core.decan_constants import (
+    COURT_CARDS,
+    COURT_RANKS,
+    COURT_SPAN_DEGREES,
+    COURT_SPAN_START_DEGREE,
     DECAN_COUNT,
     DECAN_DEGREES,
     DECANS,
     DECANS_PER_SIGN,
+    MAJOR_ARCANA,
+    MAJOR_SECOND,
+    MAJOR_TITLES_BOOK_T,
     MODERN_SIGN_RULERS,
+    PRINCESS_CHERUBIC_SIGN,
     SIGN_ELEMENTS,
+    SUIT_BY_ELEMENT,
     TRADITIONAL_SIGN_RULERS,
 )
+
+SUIT_ELEMENT = {suit: element for element, suit in SUIT_BY_ELEMENT.items()}
 
 RulerSet = Literal["traditional", "modern"]
 
@@ -122,6 +133,84 @@ def decan_table(rulers: RulerSet = "traditional") -> list[dict]:
     return [decan_by_index(i, rulers) for i in range(DECAN_COUNT)]
 
 
+def _court_entry(suit: str, rank: str, start_sign: str | None, title: str) -> dict:
+    number, part = COURT_RANKS[rank]
+    entry = {
+        "id": card_id(suit, number),
+        "suit": suit,
+        "number": number,
+        "rank_golden_dawn": rank,
+        "elemental_part": part,
+        "element": SUIT_ELEMENT[suit],
+        "title_book_t": title,
+    }
+    if start_sign is None:
+        entry.update({"span": None, "cherubic_sign": PRINCESS_CHERUBIC_SIGN[suit]})
+        return entry
+    s = ZODIAC_SIGNS.index(start_sign)
+    start = s * DEGREES_PER_SIGN + COURT_SPAN_START_DEGREE
+    entry["span"] = {
+        "start_longitude": start,
+        "end_longitude": (start + COURT_SPAN_DEGREES) % 360.0,
+        "start_sign": start_sign,
+        "end_sign": ZODIAC_SIGNS[(s + 1) % 12],
+        "start_degree_in_sign": COURT_SPAN_START_DEGREE,
+        "end_degree_in_sign": COURT_SPAN_START_DEGREE,
+    }
+    return entry
+
+
+def court_table() -> list[dict]:
+    """The 16 court cards: 12 with a 30-degree span, 4 Princesses without one."""
+    return [_court_entry(*row) for row in COURT_CARDS]
+
+
+def court_of(longitude: float) -> dict:
+    """The Knight, Queen or Prince whose span holds a tropical longitude.
+
+    Spans run from 20 deg of a sign to 20 deg of the next; 20 deg itself opens
+    the next span (as decan boundaries do). Princesses have no span.
+    """
+    lon = normalize_longitude(longitude)
+    start_sign = ZODIAC_SIGNS[int(((lon - COURT_SPAN_START_DEGREE) % 360.0) // COURT_SPAN_DEGREES) % 12]
+    for row in COURT_CARDS:
+        if row[2] == start_sign:
+            return _court_entry(*row)
+    raise RuntimeError(f"no court card starts in {start_sign}")  # the table covers all 12
+
+
+def _major_entry(number: int, name: str, kind: str, value: str) -> dict:
+    return {
+        "id": f"major_{number:02d}",
+        "number": number,
+        "name_book_t": name,
+        "title_book_t": MAJOR_TITLES_BOOK_T[number],
+        "attribution": {"kind": kind, "value": value, "second": MAJOR_SECOND.get(number)},
+    }
+
+
+def major_table() -> list[dict]:
+    """The 22 trumps with their Book T attribution (12 signs, 7 planets, 3 elements)."""
+    return [_major_entry(*row) for row in MAJOR_ARCANA]
+
+
+def sign_arcanum(sign: str) -> dict:
+    """The trump of a zodiac sign, e.g. Aries -> The Emperor."""
+    for row in MAJOR_ARCANA:
+        if row[2] == "sign" and row[3] == sign:
+            return _major_entry(*row)
+    raise ValueError(f"unknown sign {sign!r}")
+
+
+def planet_arcanum(planet: str) -> dict | None:
+    """The trump of one of the seven classical planets; None for Uranus, Neptune,
+    Pluto and the angles, which have no trump in Book T or in Crowley."""
+    for row in MAJOR_ARCANA:
+        if row[2] == "planet" and row[3] == planet:
+            return _major_entry(*row)
+    return None
+
+
 def decans_for_bodies(
     bodies: Iterable[dict], rulers: RulerSet = "traditional"
 ) -> list[dict]:
@@ -138,6 +227,11 @@ def decans_for_bodies(
 
 __all__ = [
     "card_id",
+    "court_of",
+    "court_table",
+    "major_table",
+    "planet_arcanum",
+    "sign_arcanum",
     "decan_by_index",
     "decan_index",
     "decan_of",
