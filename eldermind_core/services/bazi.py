@@ -1,8 +1,8 @@
 """BaZi (Four Pillars of Destiny).
 
-The year pillar changes at Li Chun (the Sun at 315°, Swiss Ephemeris); the
-month, day and hour pillars come from the ``cnlunar`` package on the local
-wall clock. See `four_pillars`.
+The year and month pillars change at Li Chun and the other Jie (the Sun at
+315° + 30°k, Swiss Ephemeris, to the moment in UT); the day and hour pillars
+come from the ``cnlunar`` package on the local wall clock. See `four_pillars`.
 """
 
 import math
@@ -332,10 +332,23 @@ def li_chun_julian_day(year: int) -> float:
     return jd
 
 
+def bazi_month_index(julian_day_ut: float) -> int:
+    """BaZi month in force at a moment in UT: 0 = 寅 (from Li Chun, 315°) ... 11 = 丑.
+
+    Each month opens at its Jie, the Sun at 315° + 30°k, to the moment.
+    """
+    return int(((_sun_longitude(julian_day_ut) - LI_CHUN_LONGITUDE) % 360.0) // 30.0)
+
+
 def bazi_year(julian_day_ut: float) -> int:
-    """Gregorian year whose Li Chun opened the BaZi year in force at `julian_day_ut`."""
-    year = swe.revjul(julian_day_ut)[0]
-    return year if julian_day_ut >= li_chun_julian_day(year) else year - 1
+    """Gregorian year whose Li Chun opened the BaZi year in force at `julian_day_ut`.
+
+    Read from the same Sun longitude as the month, so the year and the month
+    can never disagree: in January and February the 子 and 丑 months (k 10, 11)
+    still belong to the previous year.
+    """
+    year, month = swe.revjul(julian_day_ut)[:2]
+    return year - 1 if month <= 2 and bazi_month_index(julian_day_ut) >= 10 else year
 
 
 def year_pillar_hanzi(julian_day_ut: float) -> str:
@@ -351,20 +364,40 @@ def year_pillar_hanzi(julian_day_ut: float) -> str:
     return HEAVENLY_STEMS_HANZI[cycle % 10] + list(ZODIAC_ANIMALS)[cycle % 12]
 
 
+def month_pillar_hanzi(julian_day_ut: float) -> str:
+    """Month pillar (two hanzi) in force at a moment in UT, changing at its Jie.
+
+    The branch from the Sun (寅 from Li Chun, 卯 from Jing Zhe, ...), the stem by
+    五虎遁 from the year stem: 甲己 years open with 丙寅, 乙庚 with 戊寅, 丙辛
+    with 庚寅, 丁壬 with 壬寅, 戊癸 with 甲寅. Until 1.0.8 the month came from
+    cnlunar, which opens it at local midnight of the Beijing date of the Jie:
+    for births in Poland up to ~18 hours early or ~7 hours late, about 1% of
+    all births (owner's report, 2026-11-17).
+    """
+    k = bazi_month_index(julian_day_ut)
+    year_stem = (bazi_year(julian_day_ut) - 4) % 10
+    stem = (year_stem % 5 * 2 + 2 + k) % 10
+    return HEAVENLY_STEMS_HANZI[stem] + list(ZODIAC_ANIMALS)[(2 + k) % 12]
+
+
 def four_pillars(local: datetime, julian_day_ut: float) -> tuple[str, str, str, str]:
     """(year, month, day, hour) pillars for a birth moment, as hanzi pairs.
 
     The one place the pillars come from, for `compute_bazi` and for the
-    whole-day variants (`day_variants`). The year changes at the Li Chun
-    moment (`year_pillar_hanzi`); month, day and hour come from cnlunar on
-    the local wall clock to the minute. cnlunar opens a month on the calendar
-    date of its Jie, not at the moment of it, so on a Jie day the month can
-    run a few hours ahead of the Sun (see the 1.0.7 notes).
+    whole-day variants (`day_variants`). The year and the month follow the
+    Sun to the moment in UT (Li Chun and the other Jie, Swiss Ephemeris); the
+    day and the hour come from cnlunar on the local wall clock to the minute
+    (the day changing at 23:00 local, the owner's decision of 2026-11-10).
     """
     lunar = cnlunar.Lunar(
         datetime(local.year, local.month, local.day, local.hour, local.minute), godType="8char"
     )
-    return (year_pillar_hanzi(julian_day_ut), lunar.month8Char, lunar.day8Char, lunar.twohour8Char)
+    return (
+        year_pillar_hanzi(julian_day_ut),
+        month_pillar_hanzi(julian_day_ut),
+        lunar.day8Char,
+        lunar.twohour8Char,
+    )
 
 
 def _na_yin(day_pillar_hanzi: str) -> str:
@@ -512,11 +545,12 @@ def compute_bazi(
             the correct Da Yun direction. If omitted, forward direction is
             assumed and the response flags this.
         julian_day_ut: Birth moment in UT. It places the birth against Li
-            Chun, which opens the year pillar, and gives the Da Yun starting
-            age from the solar terms. Without it the local wall clock is read
-            as UT: the year pillar can then be wrong only for a birth within
-            the time-zone offset (at most 14 hours) of the Li Chun moment, and
-            the Da Yun starting age falls back to an approximation (flagged).
+            Chun and the other Jie, which open the year and month pillars,
+            and gives the Da Yun starting age from the solar terms. Without
+            it the local wall clock is read as UT: the year and month pillars
+            can then be wrong only for a birth within the time-zone offset
+            (at most 14 hours) of a Jie, and the Da Yun starting age falls
+            back to an approximation (flagged).
             Every engine caller (`compute_profile`) passes it.
         reference_date: Date the current Da Yun pillar (`is_current`) is
             reported for. Defaults to today (UTC).

@@ -1159,7 +1159,7 @@
     }
   },
   "meta": {
-    "engine_version": "1.0.7",
+    "engine_version": "1.0.8",
     "errors": [],
     "julian_day_ut": 2440771.96527778,
     "reference_date": "2026-07-31",

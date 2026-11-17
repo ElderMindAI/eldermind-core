@@ -307,26 +307,91 @@ def test_element_count_and_useful_god_use_the_corrected_year() -> None:
     assert result["element_count"] == expected
 
 
-def test_year_and_month_agree_away_from_the_jie() -> None:
+def test_year_and_month_agree_every_day() -> None:
     """五虎遁 for every noon from 15 January to 25 February, 1950-2030, Warsaw.
 
     The Chinese New Year always falls between 21 January and 20 February, so
-    the window holds every birth the pre-1.0.7 engine got wrong.
-
-    Days within a degree of the Sun (about a day) of a Jie are skipped: there
-    cnlunar's month changes on the calendar date, not at the moment, which is
-    a separate, known limitation (owner's report, 2026-11-17).
+    the window holds every birth the pre-1.0.7 engine got wrong. Since 1.0.8
+    the Jie days are no exception: the month follows the Sun too.
     """
     checked = 0
     for year in range(1950, 2031):
         day = date(year, 1, 15)
         while day <= date(year, 2, 25):
-            jd = _jd(day, time(12, 0))
-            if abs(_sun_longitude(jd) % 30.0 - 15.0) > 1.0:  # the Jie sit at 15° + 30°k
-                _assert_year_and_month_agree(compute_bazi(day, time(12, 0), julian_day_ut=jd))
-                checked += 1
+            _assert_year_and_month_agree(compute_bazi(day, time(12, 0), julian_day_ut=_jd(day, time(12, 0))))
+            checked += 1
             day += timedelta(days=1)
-    assert checked > 2900
+    assert checked == 81 * 42
+
+
+# --- Month pillar from the Jie moment (ENGINE_VERSION 1.0.8) ----------------
+#
+# Invented births, Warsaw. cnlunar opened the month at local midnight of the
+# Beijing date of the Jie; the values marked "cnlunar" are what 1.0.7 said.
+
+
+@pytest.mark.parametrize(
+    ("birth", "year", "month", "cnlunar_month"),
+    [
+        # Li Chun 2024: 4 Feb 09:27 Warsaw. cnlunar was already in 寅 at midnight.
+        ((date(2024, 2, 4), time(6, 0)), "癸卯", "乙丑", "丙寅"),
+        ((date(2024, 2, 4), time(9, 27)), "癸卯", "乙丑", "丙寅"),
+        ((date(2024, 2, 4), time(9, 28)), "甲辰", "丙寅", "丙寅"),
+        # Li Chun 2026: 3 Feb 21:02 Warsaw, already 4 Feb in Beijing: cnlunar late.
+        ((date(2026, 2, 3), time(21, 2)), "乙巳", "己丑", "己丑"),
+        ((date(2026, 2, 3), time(21, 3)), "丙午", "庚寅", "己丑"),
+        ((date(2026, 2, 3), time(23, 0)), "丙午", "庚寅", "己丑"),
+        # Jing Zhe 2026: 5 Mar 14:58 Warsaw.
+        ((date(2026, 3, 5), time(12, 0)), "丙午", "庚寅", "辛卯"),
+        ((date(2026, 3, 5), time(14, 59)), "丙午", "辛卯", "辛卯"),
+        # Jing Zhe 2025: 5 Mar 09:07 Warsaw.
+        ((date(2025, 3, 5), time(6, 0)), "乙巳", "戊寅", "己卯"),
+    ],
+)
+def test_month_pillar_changes_at_the_jie_moment(
+    birth: tuple, year: str, month: str, cnlunar_month: str
+) -> None:
+    import cnlunar
+
+    result = compute_bazi(*birth, julian_day_ut=_jd(*birth))
+
+    assert result["year_pillar"]["hanzi"] == year
+    assert result["month_pillar"]["hanzi"] == month
+    _assert_year_and_month_agree(result)
+    assert cnlunar.Lunar(datetime.combine(*birth), godType="8char").month8Char == cnlunar_month
+
+
+def test_month_pillar_agrees_with_cnlunar_away_from_the_jie() -> None:
+    """Away from a Jie day the new month is cnlunar's month: only the boundary moved.
+
+    Every noon of 2000-2003, Warsaw, more than a degree of the Sun (about a
+    day) from a Jie.
+    """
+    import cnlunar
+
+    checked = 0
+    day = date(2000, 1, 1)
+    while day < date(2004, 1, 1):
+        jd = _jd(day, time(12, 0))
+        if abs(_sun_longitude(jd) % 30.0 - 15.0) > 1.0:  # the Jie sit at 15° + 30°k
+            expected = cnlunar.Lunar(datetime.combine(day, time(12, 0)), godType="8char").month8Char
+            assert compute_bazi(day, time(12, 0), julian_day_ut=jd)["month_pillar"]["hanzi"] == expected, day
+            checked += 1
+        day += timedelta(days=1)
+    assert checked > 1300
+
+
+def test_da_yun_steps_from_the_corrected_month() -> None:
+    """4 Feb 2024 06:00 Warsaw, male: 癸 (Yin) year, so backward from 乙丑."""
+    birth = date(2024, 2, 4), time(6, 0)
+    result = compute_bazi(*birth, gender="male", julian_day_ut=_jd(*birth))
+
+    assert result["da_yun_direction"] == "backward"
+    assert [p["hanzi"] for p in result["da_yun"][:2]] == ["甲子", "癸亥"]
+    # Backward counts the days since the Jie that opened 乙丑 (Xiao Han, 6 Jan
+    # 2024), about 29 days, so close to 10 years.
+    assert 9.0 < result["da_yun_start_age_precise"] < 10.5
+
 
 
 def test_without_julian_day_the_wall_clock_is_read_as_ut() -> None:

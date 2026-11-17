@@ -181,6 +181,14 @@ def test_year_pillar_changes_at_the_li_chun_minute() -> None:
         if f["factor"] == "bazi" and f["from"]["year"] != f["to"]["year"]
     ]
     assert changes == [("09:28", "癸卯", "甲辰")]
+    # Since 1.0.8 the month turns with it (cnlunar had 丙寅 from midnight).
+    months = [
+        (c["time"], f["from"]["month"], f["to"]["month"])
+        for c in result["changes"]
+        for f in c["factors"]
+        if f["factor"] == "bazi" and f["from"]["month"] != f["to"]["month"]
+    ]
+    assert months == [("09:28", "乙丑", "丙寅")]
 
 
 def test_angle_grid_is_one_minute() -> None:

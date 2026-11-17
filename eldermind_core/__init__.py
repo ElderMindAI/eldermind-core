@@ -43,6 +43,11 @@ __version__ = "1.0.0"
 #: the month pillar for births between the two; the Da Yun direction, element
 #: count and Useful God follow the corrected year. The whole-day variants use
 #: the same function (`bazi.four_pillars`).
-ENGINE_VERSION = "1.0.7"
+#: 1.0.8 (2026-11-17): BaZi month pillar from the Jie to the moment in UT
+#: (the Sun at 315° + 30°k), its stem by 五虎遁 from the year stem. cnlunar
+#: opened the month at local midnight of the Beijing date of the Jie: for
+#: births in Poland up to ~18 h early or ~7 h late, about 1% of all births.
+#: The Da Yun pillars, which step from the month pillar, follow it.
+ENGINE_VERSION = "1.0.8"
 
 __all__ = ["ENGINE_VERSION", "__version__"]
