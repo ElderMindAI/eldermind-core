@@ -77,7 +77,7 @@ def _natal(jd: float, local, latitude: float, longitude: float) -> dict[str, dic
             found[f"sign_sidereal.{entry['name']}"] = {"sign": entry["sign"]}
             found[f"nakshatra.{entry['name']}"] = _nak(entry)
 
-    bazi = compute_bazi(local.date(), local.time().replace(tzinfo=None))
+    bazi = compute_bazi(local.date(), local.time().replace(tzinfo=None), julian_day_ut=jd)
     found["bazi"] = {name: bazi[f"{name}_pillar"]["hanzi"] for name in PILLARS}
     return found
 
@@ -165,6 +165,22 @@ def test_what_each_day_was_picked_for() -> None:
     assert set(polar["unavailable"]) == {"ascendant", "midheaven", "house"}
     assert not any(name.startswith(("house.", "ascendant", "midheaven")) for name in polar["factors"])
     assert "POLAR_LATITUDE" in [w["code"] for w in polar["warnings"]]
+
+
+def test_year_pillar_changes_at_the_li_chun_minute() -> None:
+    """Invented day: Li Chun 2024 falls at 09:27:08 in Warsaw (08:27:08 UT).
+
+    The year pillar follows the Sun, not the Chinese New Year (10 February),
+    and the whole-day timeline uses the same function as `compute_bazi`.
+    """
+    result = day_chart_factors(date(2024, 2, 4), "Europe/Warsaw", 52.23, 21.01)
+    changes = [
+        (c["time"], f["from"]["year"], f["to"]["year"])
+        for c in result["changes"]
+        for f in c["factors"]
+        if f["factor"] == "bazi" and f["from"]["year"] != f["to"]["year"]
+    ]
+    assert changes == [("09:28", "癸卯", "甲辰")]
 
 
 def test_angle_grid_is_one_minute() -> None:

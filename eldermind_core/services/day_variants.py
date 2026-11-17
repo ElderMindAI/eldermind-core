@@ -36,7 +36,6 @@ from datetime import date, datetime, time, timedelta, timezone
 from typing import Callable
 from zoneinfo import ZoneInfo
 
-import cnlunar
 import swisseph as swe
 
 from eldermind_core import ENGINE_VERSION
@@ -54,6 +53,7 @@ from eldermind_core.services.animal_design import (
     compute_animal_design_mechanics,
     find_animal_design_julian_day,
 )
+from eldermind_core.services.bazi import four_pillars
 from eldermind_core.services.decans import decan_index
 from eldermind_core.services.ephemeris import (
     _assert_valid_timezone,
@@ -455,7 +455,8 @@ def _value_dict(value: tuple[int, ...]) -> dict:
 # the one that moves within a day; the Sun changes sign on its ingress day),
 # the lagna with its nakshatra and pada, and the BaZi pillars (the hour pillar
 # every two hours, the day pillar at 23:00 local, the owner's decision of
-# 2026-11-10, which is what `compute_bazi` already does through cnlunar).
+# 2026-11-10, which is what `compute_bazi` already does through cnlunar; the
+# year pillar at the Li Chun moment since 1.0.7, through `bazi.four_pillars`).
 #
 # Choice of grid. The bisection is exact as long as no tracked value can leave
 # and come back between two samples. The fastest values hang on the horizon.
@@ -547,12 +548,9 @@ class _Sky:
         return (rahu + 180.0) % 360.0
 
     def bazi(self, second: int) -> tuple[str, str, str, str]:
-        local = self.ctx.local(second)
-        # As `compute_bazi`: the local wall clock to the minute, through cnlunar.
-        lunar = cnlunar.Lunar(
-            datetime(local.year, local.month, local.day, local.hour, local.minute), godType="8char"
-        )
-        return (lunar.year8Char, lunar.month8Char, lunar.day8Char, lunar.twohour8Char)
+        # The same function as `compute_bazi`: the year at the Li Chun moment,
+        # the rest from the local wall clock to the minute.
+        return four_pillars(self.ctx.local(second), self.jd(second))
 
 
 def _nakshatra_key(longitude: float) -> tuple[int, int]:

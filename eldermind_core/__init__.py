@@ -38,6 +38,11 @@ __version__ = "1.0.0"
 #: one ingress per sign entered; aspects of the transits in force on the
 #: reference day and the Jupiter/Saturn returns (`services/transits.py`);
 #: navamsa sign of every pada, natal house of every draconic point.
-ENGINE_VERSION = "1.0.6"
+#: 1.0.7 (2026-11-17): BaZi year pillar from Li Chun (the Sun at 315°, to the
+#: moment in UT) instead of the Chinese New Year, which put it out of step with
+#: the month pillar for births between the two; the Da Yun direction, element
+#: count and Useful God follow the corrected year. The whole-day variants use
+#: the same function (`bazi.four_pillars`).
+ENGINE_VERSION = "1.0.7"
 
 __all__ = ["ENGINE_VERSION", "__version__"]

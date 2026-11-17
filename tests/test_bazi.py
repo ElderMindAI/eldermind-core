@@ -7,10 +7,13 @@ import swisseph as swe
 
 from eldermind_core.services.bazi import (
     HEAVENLY_STEMS_ENGLISH,
+    HEAVENLY_STEMS_HANZI,
     TEN_GODS,
     _jie_julian_day,
     _sun_longitude,
     compute_bazi,
+    li_chun_julian_day,
+    year_pillar_hanzi,
 )
 from eldermind_core.services.ephemeris import compute_julian_day_ut
 
@@ -199,6 +202,137 @@ def test_da_yun_start_age_flagged_approximate_without_julian_day() -> None:
 
     assert result["da_yun_start_age_approximate"] is True
     assert result["da_yun_start_age_precise"] is None
+
+
+# --- Year pillar from Li Chun (ENGINE_VERSION 1.0.7) --------------------------
+#
+# Invented births only. Until 1.0.7 the year pillar changed at the Chinese New
+# Year (cnlunar's `year8Char`), the month pillar at the Jie: between the two
+# they contradicted each other.
+
+
+def _tiger_month_stem(year_stem: str) -> str:
+    """五虎遁: the stem of the 寅 month for a year stem (甲己 -> 丙寅, 乙庚 -> 戊寅, ...)."""
+    return HEAVENLY_STEMS_HANZI[(HEAVENLY_STEMS_HANZI.index(year_stem) % 5 * 2 + 2) % 10]
+
+
+_MONTH_BRANCHES = "寅卯辰巳午未申酉戌亥子丑"
+
+
+def _month_stem_from_year(year_stem: str, month_branch: str) -> str:
+    """Month stem the year stem implies, counting on from its 寅 month."""
+    offset = _MONTH_BRANCHES.index(month_branch)
+    return HEAVENLY_STEMS_HANZI[(HEAVENLY_STEMS_HANZI.index(_tiger_month_stem(year_stem)) + offset) % 10]
+
+
+def _assert_year_and_month_agree(result: dict) -> None:
+    year, month = result["year_pillar"]["hanzi"], result["month_pillar"]["hanzi"]
+    assert month[0] == _month_stem_from_year(year[0], month[1]), (year, month)
+
+
+@pytest.mark.parametrize(
+    ("birth", "year", "month", "pre_fix_year"),
+    [
+        # New Year 2013 fell on 10 Feb, after Li Chun (3 Feb 16:13 UT): a birth
+        # in between belongs to 癸巳 already.
+        ((date(2013, 2, 6), time(12, 0)), "癸巳", "甲寅", "壬辰"),
+        # New Year 2023 fell on 22 Jan, before Li Chun (4 Feb 02:42 UT): a birth
+        # in between still belongs to 壬寅.
+        ((date(2023, 1, 28), time(12, 0)), "壬寅", "癸丑", "癸卯"),
+    ],
+)
+def test_year_pillar_changes_at_li_chun_not_new_year(
+    birth: tuple, year: str, month: str, pre_fix_year: str
+) -> None:
+    result = compute_bazi(*birth, julian_day_ut=_jd(*birth))
+
+    assert result["year_pillar"]["hanzi"] == year != pre_fix_year
+    assert result["month_pillar"]["hanzi"] == month
+    _assert_year_and_month_agree(result)
+
+
+@pytest.mark.parametrize(
+    ("birth", "year"),
+    [
+        # 2013: New Year after Li Chun. Before Li Chun the old year, after it the new.
+        ((date(2013, 2, 2), time(12, 0)), "壬辰"),
+        ((date(2013, 2, 9), time(12, 0)), "癸巳"),   # the eve of the New Year
+        ((date(2013, 2, 11), time(12, 0)), "癸巳"),
+        # 2023: New Year before Li Chun. Between them still the old year.
+        ((date(2023, 1, 21), time(12, 0)), "壬寅"),
+        ((date(2023, 1, 23), time(12, 0)), "壬寅"),  # the day after the New Year
+        ((date(2023, 2, 5), time(12, 0)), "癸卯"),
+    ],
+)
+def test_year_pillar_on_both_sides_of_new_year(birth: tuple, year: str) -> None:
+    result = compute_bazi(*birth, julian_day_ut=_jd(*birth))
+
+    assert result["year_pillar"]["hanzi"] == year
+    _assert_year_and_month_agree(result)
+
+
+def test_year_pillar_turns_at_the_li_chun_minute() -> None:
+    """Li Chun 2024: 4 Feb 08:27:08 UT, 09:27:08 in Warsaw."""
+    li_chun = li_chun_julian_day(2024)
+    year, month, day, hour = swe.revjul(li_chun)
+    assert (year, month, day) == (2024, 2, 4)
+    assert int(hour * 60) == 8 * 60 + 27
+    assert _sun_longitude(li_chun) == pytest.approx(315.0, abs=1e-6)
+
+    minute = 1 / 1440
+    assert year_pillar_hanzi(li_chun - minute) == "癸卯"
+    assert year_pillar_hanzi(li_chun + minute) == "甲辰"
+
+    before = compute_bazi(date(2024, 2, 4), time(9, 26), gender="male", julian_day_ut=_jd(date(2024, 2, 4), time(9, 26)))
+    after = compute_bazi(date(2024, 2, 4), time(9, 28), gender="male", julian_day_ut=_jd(date(2024, 2, 4), time(9, 28)))
+    assert before["year_pillar"]["hanzi"] == "癸卯"
+    assert after["year_pillar"]["hanzi"] == "甲辰"
+    # The Da Yun direction follows the corrected year stem: male + Yin 癸 runs
+    # backward, male + Yang 甲 forward.
+    assert before["da_yun_direction"] == "backward"
+    assert after["da_yun_direction"] == "forward"
+
+
+def test_element_count_and_useful_god_use_the_corrected_year() -> None:
+    birth = date(2013, 2, 6), time(12, 0)
+    result = compute_bazi(*birth, julian_day_ut=_jd(*birth))
+
+    pillars = [result[f"{name}_pillar"] for name in ("year", "month", "day", "hour")]
+    expected: dict[str, int] = {"Wood": 0, "Fire": 0, "Earth": 0, "Metal": 0, "Water": 0}
+    for pillar in pillars:
+        expected[pillar["stem"]["element"]] += 1
+        expected[pillar["branch"]["element"]] += 1
+    assert result["year_pillar"]["stem"]["element"] == "Water"  # 癸
+    assert result["year_pillar"]["branch"]["element"] == "Fire"  # 巳
+    assert result["element_count"] == expected
+
+
+def test_year_and_month_agree_away_from_the_jie() -> None:
+    """五虎遁 for every noon from 15 January to 25 February, 1950-2030, Warsaw.
+
+    The Chinese New Year always falls between 21 January and 20 February, so
+    the window holds every birth the pre-1.0.7 engine got wrong.
+
+    Days within a degree of the Sun (about a day) of a Jie are skipped: there
+    cnlunar's month changes on the calendar date, not at the moment, which is
+    a separate, known limitation (owner's report, 2026-11-17).
+    """
+    checked = 0
+    for year in range(1950, 2031):
+        day = date(year, 1, 15)
+        while day <= date(year, 2, 25):
+            jd = _jd(day, time(12, 0))
+            if abs(_sun_longitude(jd) % 30.0 - 15.0) > 1.0:  # the Jie sit at 15° + 30°k
+                _assert_year_and_month_agree(compute_bazi(day, time(12, 0), julian_day_ut=jd))
+                checked += 1
+            day += timedelta(days=1)
+    assert checked > 2900
+
+
+def test_without_julian_day_the_wall_clock_is_read_as_ut() -> None:
+    """Documented fallback: only a birth within the zone offset of Li Chun can differ."""
+    assert compute_bazi(date(2013, 2, 6), time(12, 0))["year_pillar"]["hanzi"] == "癸巳"
+    assert compute_bazi(date(2023, 1, 28), time(12, 0))["year_pillar"]["hanzi"] == "壬寅"
 
 
 def test_da_yun_pillars_contain_ten_gods() -> None:

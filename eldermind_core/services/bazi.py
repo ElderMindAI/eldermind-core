@@ -1,8 +1,8 @@
-"""BaZi (Four Pillars of Destiny) MVP module.
+"""BaZi (Four Pillars of Destiny).
 
-Provides a minimal BaZi reading using the ``cnlunar`` package:
-- Heavenly Stem and Earthly Branch of the day pillar (Day Master).
-- Earthly Branch / zodiac animal of the year pillar.
+The year pillar changes at Li Chun (the Sun at 315°, Swiss Ephemeris); the
+month, day and hour pillars come from the ``cnlunar`` package on the local
+wall clock. See `four_pillars`.
 """
 
 import math
@@ -11,6 +11,7 @@ from typing import Final
 
 import cnlunar
 import swisseph as swe
+from cnlunar.config import the60HeavenlyEarth, theHalf60HeavenlyEarth5ElementsList
 
 from eldermind_core.core.reference import resolve_reference_date
 
@@ -316,6 +317,61 @@ def _jie_julian_day(jd_ut: float, forward: bool) -> float:
     return jd
 
 
+#: Sun longitude of Li Chun (立春), the solar term that opens the BaZi year.
+LI_CHUN_LONGITUDE: Final[float] = 315.0
+
+
+def li_chun_julian_day(year: int) -> float:
+    """Julian Day UT of Li Chun in Gregorian `year`: the Sun at 315° (3-5 February)."""
+    jd = swe.julday(year, 2, 4, 12.0)
+    for _ in range(30):
+        delta = (_sun_longitude(jd) - LI_CHUN_LONGITUDE + 180.0) % 360.0 - 180.0
+        if abs(delta) < 1e-7:  # ~0.01 s of the Sun's motion
+            break
+        jd -= delta / 0.9856
+    return jd
+
+
+def bazi_year(julian_day_ut: float) -> int:
+    """Gregorian year whose Li Chun opened the BaZi year in force at `julian_day_ut`."""
+    year = swe.revjul(julian_day_ut)[0]
+    return year if julian_day_ut >= li_chun_julian_day(year) else year - 1
+
+
+def year_pillar_hanzi(julian_day_ut: float) -> str:
+    """Year pillar (two hanzi) in force at a moment in UT, changing at Li Chun.
+
+    Not at the Chinese New Year: cnlunar's `year8Char` changes with the lunar
+    year, which put the year pillar out of step with the month pillar for
+    births between Li Chun and the New Year (6 Feb 2013 came out 壬辰 with a
+    甲寅 month instead of 癸巳; 28 Jan 2023 癸卯 with a 癸丑 month instead of
+    壬寅). Fixed in ENGINE_VERSION 1.0.7.
+    """
+    cycle = bazi_year(julian_day_ut) - 4  # 4 CE was a 甲子 year
+    return HEAVENLY_STEMS_HANZI[cycle % 10] + list(ZODIAC_ANIMALS)[cycle % 12]
+
+
+def four_pillars(local: datetime, julian_day_ut: float) -> tuple[str, str, str, str]:
+    """(year, month, day, hour) pillars for a birth moment, as hanzi pairs.
+
+    The one place the pillars come from, for `compute_bazi` and for the
+    whole-day variants (`day_variants`). The year changes at the Li Chun
+    moment (`year_pillar_hanzi`); month, day and hour come from cnlunar on
+    the local wall clock to the minute. cnlunar opens a month on the calendar
+    date of its Jie, not at the moment of it, so on a Jie day the month can
+    run a few hours ahead of the Sun (see the 1.0.7 notes).
+    """
+    lunar = cnlunar.Lunar(
+        datetime(local.year, local.month, local.day, local.hour, local.minute), godType="8char"
+    )
+    return (year_pillar_hanzi(julian_day_ut), lunar.month8Char, lunar.day8Char, lunar.twohour8Char)
+
+
+def _na_yin(day_pillar_hanzi: str) -> str:
+    """Na Yin of the day pillar, as cnlunar's `get_nayin` gives it."""
+    return theHalf60HeavenlyEarth5ElementsList[the60HeavenlyEarth.index(day_pillar_hanzi) // 2]
+
+
 def _start_age_from_jie(jd_ut: float, forward: bool) -> float:
     """Da Yun starting age in years: days to the next Jie (forward) or since the
     previous one (backward), at the classical three days to one year."""
@@ -455,8 +511,13 @@ def compute_bazi(
         gender: Optional biological gender ('male' or 'female') used to pick
             the correct Da Yun direction. If omitted, forward direction is
             assumed and the response flags this.
-        julian_day_ut: Birth moment in UT. Needed for the Da Yun starting
-            age from the solar terms; without it the age is approximate.
+        julian_day_ut: Birth moment in UT. It places the birth against Li
+            Chun, which opens the year pillar, and gives the Da Yun starting
+            age from the solar terms. Without it the local wall clock is read
+            as UT: the year pillar can then be wrong only for a birth within
+            the time-zone offset (at most 14 hours) of the Li Chun moment, and
+            the Da Yun starting age falls back to an approximation (flagged).
+            Every engine caller (`compute_profile`) passes it.
         reference_date: Date the current Da Yun pillar (`is_current`) is
             reported for. Defaults to today (UTC).
 
@@ -470,13 +531,17 @@ def compute_bazi(
         hour=birth_time.hour,
         minute=birth_time.minute,
     )
-    lunar = cnlunar.Lunar(dt, godType="8char")
+    if julian_day_ut is None:
+        moment_jd = swe.julday(dt.year, dt.month, dt.day, dt.hour + dt.minute / 60.0)
+    else:
+        moment_jd = julian_day_ut
+    year_hanzi, month_hanzi, day_hanzi, hour_hanzi = four_pillars(dt, moment_jd)
 
-    day_master_hanzi = lunar.day8Char[0]
-    year_pillar = _pillar_info(lunar.year8Char, day_master_hanzi)
-    month_pillar = _pillar_info(lunar.month8Char, day_master_hanzi)
-    day_pillar = _pillar_info(lunar.day8Char, day_master_hanzi)
-    hour_pillar = _pillar_info(lunar.twohour8Char, day_master_hanzi)
+    day_master_hanzi = day_hanzi[0]
+    year_pillar = _pillar_info(year_hanzi, day_master_hanzi)
+    month_pillar = _pillar_info(month_hanzi, day_master_hanzi)
+    day_pillar = _pillar_info(day_hanzi, day_master_hanzi)
+    hour_pillar = _pillar_info(hour_hanzi, day_master_hanzi)
 
     pillars = [year_pillar, month_pillar, day_pillar, hour_pillar]
     element_count = _element_count(pillars)
@@ -484,7 +549,7 @@ def compute_bazi(
     useful_god = _useful_god(element_count, day_master["element"])
 
     da_yun = _compute_da_yun(
-        month_pillar_hanzi=lunar.month8Char,
+        month_pillar_hanzi=month_hanzi,
         year_stem_english=year_pillar["stem"]["english"],
         day_master_hanzi=day_master_hanzi,
         gender=gender,
@@ -507,7 +572,7 @@ def compute_bazi(
         "day_master": day_master,
         "element_count": element_count,
         "useful_god": useful_god,
-        "na_yin": lunar.get_nayin(),
+        "na_yin": _na_yin(day_hanzi),
         "da_yun": da_yun["pillars"],
         "da_yun_direction": da_yun["direction"],
         "da_yun_direction_assumed": da_yun["direction_assumed"],
