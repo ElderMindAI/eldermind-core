@@ -193,6 +193,34 @@ def _compute_age_timeline(
     }
 
 
+def compute_karmic_points(birth_date: date) -> dict:
+    """The karmic points of the Matrix (plan „Kundalini i Karma”, session SE).
+
+    Nothing new is calculated: both values are read from
+    `compute_matrix_of_destiny`, so they always match the full chart.
+
+    * ``karmic_tail`` — the line ``lines.karmic_tail``: bottom vertex (D),
+      center-bottom point, and their sum reduced to 1-22.
+    * ``external_karma`` — vertex B (``core.left``, the reduced birth day),
+      described in the chart as "Portrait / External karma".
+
+    Returns:
+        ``{"karmic_tail": [{"position", "arcana_number", "arcana_name"} x3],
+        "external_karma": {"vertex": "B", "arcana_number", "arcana_name"}}``.
+    """
+    chart = compute_matrix_of_destiny(birth_date)
+    positions = ("bottom", "center_bottom", "bottom_plus_center_bottom")
+    tail = [
+        {"position": position, "arcana_number": number, "arcana_name": TAROT_ARCANA[number]}
+        for position, number in zip(positions, chart["lines"]["karmic_tail"])
+    ]
+    left = chart["core"]["left"]
+    return {
+        "karmic_tail": tail,
+        "external_karma": {"vertex": "B", "arcana_number": left, "arcana_name": TAROT_ARCANA[left]},
+    }
+
+
 def arcana_name(arcana_number: int) -> str:
     """Return the Tarot arcana name for a Matrix number (1-22)."""
     if not _MATRIX_MIN <= arcana_number <= _MATRIX_MAX:

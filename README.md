@@ -20,7 +20,8 @@ własność sprawia, że wyniki da się cache'ować i objąć kontraktem publicz
 | `services/gene_keys.py` | Profil hologenetyczny: sekwencje Activation, Venus, Pearl |
 | `services/matrix_destiny.py` | Matryca Losu: wierzchołki, linie, Personal Destiny 40, oś dekad |
 | `services/bazi.py` | Cztery Filary (rok i miesiąc od momentu Jie, Słońce na 315° + 30°k; dzień i godzina z cnlunar), Day Master, Dziesięciu Bogów, bilans elementów, Na Yin, Da Yun (z latami kalendarzowymi i filarem bieżącym) |
-| `services/numerology.py` | Numerologia pitagorejska (liczby mistrzowskie zachowane) |
+| `services/numerology.py` | Numerologia pitagorejska (liczby mistrzowskie zachowane), długi karmiczne 13/14/16/19 i lekcje karmiczne |
+| `services/karmic_indicators.py` | Wskaźniki karmiczne dla panelu MT: długi i lekcje karmiczne, ogon karmiczny i wierzchołek B matrycy, znak węzłów księżycowych (prawdziwy węzeł, tropikalnie i Lahiri) |
 | `services/animal_design.py` | Animal Design — autorski system 15 bram ssaczych |
 | `services/geocoder.py` | Nazwa miejsca → lat/lon/IANA tz |
 

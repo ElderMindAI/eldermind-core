@@ -472,6 +472,77 @@ def compute_draconic_chart(jd_ut: float, house_cusps: list[dict] | None = None) 
     }
 
 
+#: Hours of UT around a calendar date in which that date is "today" somewhere
+#: on Earth: from 00:00 at UTC+14 to 24:00 at UTC-12.
+_DATE_WINDOW_HOURS = (-14.0, 36.0)
+
+
+def _node_longitude(jd_ut: float, *, sidereal: bool) -> float:
+    flags = 0
+    if sidereal:
+        _apply_ayanamsa_mode()
+        flags |= swe.FLG_SIDEREAL
+    result, err = swe.calc_ut(jd_ut, PLANET_IDS["TrueNode"], flags)
+    if err and not result:
+        raise RuntimeError(f"Ephemeris calculation failed for TrueNode: {err}")
+    return float(result[0]) % 360.0
+
+
+def _node_pair(longitude: float, north: str, south: str) -> dict:
+    north_sign, north_degree = _longitude_to_zodiac(longitude)
+    south_longitude = (longitude + 180.0) % 360.0
+    south_sign, south_degree = _longitude_to_zodiac(south_longitude)
+    return {
+        north: {"sign": north_sign, "longitude": round(longitude, 6), "degree_in_sign": round(north_degree, 6)},
+        south: {"sign": south_sign, "longitude": round(south_longitude, 6), "degree_in_sign": round(south_degree, 6)},
+    }
+
+
+def compute_lunar_node_signs(birth_date: date) -> dict:
+    """Signs of the lunar nodes for a birth date without an hour or place.
+
+    Definition agreed with the owner on 2026-11-19 (plan „Kundalini i Karma”,
+    session SE): the **true** node (``TrueNode``, as everywhere else in the
+    engine), in the tropical zodiac (North / South Node) and in the sidereal
+    zodiac with the Lahiri ayanamsa (Rahu / Ketu). The south node is always
+    exactly opposite.
+
+    The node moves about 3' a day, so without the hour the sign is read at
+    12:00 UT of the date. The date is checked hour by hour across every moment
+    at which it is the local date somewhere on Earth (UT -14 h to +36 h); if
+    the north node's sign changes inside that window, ``certain`` is false and
+    ``possible_signs`` lists every sign it takes (in time order).
+
+    Returns:
+        ``{"node": "true", "reference_moment", "tropical": {"north_node",
+        "south_node", "certain", "possible_signs"}, "sidereal": {"ayanamsa",
+        "rahu", "ketu", "certain", "possible_signs"}}``.
+    """
+    noon = swe.julday(birth_date.year, birth_date.month, birth_date.day, 12.0)
+    start = swe.julday(birth_date.year, birth_date.month, birth_date.day, 0.0)
+    first, last = _DATE_WINDOW_HOURS
+    hours = [first + h for h in range(int(last - first) + 1)]
+
+    def reading(sidereal: bool, north: str, south: str) -> dict:
+        signs: list[str] = []
+        for hour in hours:
+            sign, _ = _longitude_to_zodiac(_node_longitude(start + hour / 24.0, sidereal=sidereal))
+            if sign not in signs:
+                signs.append(sign)
+        return {
+            **_node_pair(_node_longitude(noon, sidereal=sidereal), north, south),
+            "certain": len(signs) == 1,
+            "possible_signs": signs,
+        }
+
+    return {
+        "node": "true",
+        "reference_moment": f"{birth_date.isoformat()}T12:00Z",
+        "tropical": reading(False, "north_node", "south_node"),
+        "sidereal": {"ayanamsa": "lahiri", **reading(True, "rahu", "ketu")},
+    }
+
+
 def compute_western_aspects(planets: list[dict], orb: float = DEFAULT_ORB_DEGREES) -> list[dict]:
     """Detect Ptolemaic aspects between all pairs of planets.
 

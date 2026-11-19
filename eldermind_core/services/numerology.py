@@ -124,6 +124,158 @@ def compute_maturity_number(life_path: int, expression_number: int) -> int:
     return _digit_sum(life_path + expression_number)
 
 
+# ---------------------------------------------------------------------------
+# Karmic indicators (plan „Kundalini i Karma”, session SE, definitions agreed
+# with the owner on 2026-11-19). They are separate functions on purpose: the
+# existing `compute_numerology` output does not change.
+# ---------------------------------------------------------------------------
+
+#: Karmic debt numbers (13/4, 14/5, 16/7, 19/1).
+KARMIC_DEBT_NUMBERS: frozenset[int] = frozenset({13, 14, 16, 19})
+
+
+def reduction_chain(raw: int) -> list[int]:
+    """Every stage of the engine's reduction, from the raw sum to the result.
+
+    Uses exactly the rule of `_digit_sum`: digits are summed until the value
+    is 1-9 or a master number (11, 22, 33), so the last element always equals
+    `_digit_sum(raw)`. Examples: ``31 -> [31, 4]``, ``169 -> [169, 16, 7]``,
+    ``199 -> [199, 19, 10, 1]``, ``29 -> [29, 11]``.
+    """
+    chain = [raw]
+    while raw > 9 and raw not in MASTER_NUMBERS:
+        raw = sum(int(d) for d in str(raw))
+        chain.append(raw)
+    return chain
+
+
+def _debts_in_chain(chain: list[int]) -> list[int]:
+    """Karmic debt numbers found at any stage before the final value.
+
+    Definition (owner, 2026-11-19): a number carries a karmic debt when 13,
+    14, 16 or 19 appears at **any** stage of its reduction chain except the
+    final one — ``169 -> 16 -> 7`` is debt 16, ``199 -> 19 -> 10 -> 1`` is
+    debt 19. A master number stops the reduction, so nothing after it is
+    looked for. Order of first appearance, no duplicates.
+    """
+    found: list[int] = []
+    for value in chain[:-1]:
+        if value in KARMIC_DEBT_NUMBERS and value not in found:
+            found.append(value)
+    return found
+
+
+def _chain_entry(raw: int) -> dict:
+    chain = reduction_chain(raw)
+    return {"value": chain[-1], "chain": chain, "debts": _debts_in_chain(chain)}
+
+
+def _name_sums(full_name: str) -> tuple[int, int, int]:
+    """Raw letter sums (all letters, vowels, consonants) of a normalized name.
+
+    The same letters and the same vowel rule (Y is a vowel) as
+    `compute_expression_number`, `compute_soul_urge_number` and
+    `compute_personality_number`, so the reduced values always match them.
+    """
+    clean = _normalize_name(full_name)
+    total = sum(_letter_value(ch) for ch in clean)
+    vowels = sum(_letter_value(ch) for ch in clean if ch in VOWELS)
+    return total, vowels, total - vowels
+
+
+def compute_karmic_debts(birth_date: date, full_name: str | None = None) -> dict:
+    """Karmic debt numbers 13, 14, 16 and 19 in the core numbers.
+
+    Definitions agreed with the owner on 2026-11-19:
+
+    * **Life Path, engine method** (``life_path``): all digits of the date
+      summed at once, as `compute_life_path` does; the chain ends in the same
+      Life Path number the engine reports elsewhere.
+    * **Life Path, classic method** (``life_path_classic``): day, month and
+      year (sum of the year's digits) each reduced first (master numbers kept),
+      then added and reduced. Returned separately and labelled, because its
+      final value can differ from the engine's Life Path (1940-01-07: engine
+      22, classic 13 -> 4). The operator confirms by reading which one works.
+    * **Birth day** (``birth_day``): the day of the month itself is 13, 14, 16
+      or 19.
+    * **Expression, Soul Urge, Personality** (from the full birth name): the
+      raw letter sum (all letters / vowels with Y / consonants) reduced.
+    * In every chain the debt is looked for at any stage except the final
+      value (see `_debts_in_chain`).
+
+    Args:
+        birth_date: The local birth date.
+        full_name: Full name from birth. Optional; without it the three name
+            numbers are ``None``.
+
+    Returns:
+        ``{"life_path", "life_path_classic", "birth_day", "expression",
+        "soul_urge", "personality", "all"}``. Each number is ``{"value",
+        "chain", "debts"}`` (the classic Life Path also has ``components``);
+        ``all`` lists every debt found in any number, ascending.
+    """
+    life_raw = sum(int(d) for d in birth_date.isoformat().replace("-", ""))
+    life_path = _chain_entry(life_raw)
+
+    components = {
+        "day": _digit_sum(birth_date.day),
+        "month": _digit_sum(birth_date.month),
+        "year": _digit_sum(sum(int(d) for d in str(birth_date.year))),
+    }
+    life_path_classic = {"components": components, **_chain_entry(sum(components.values()))}
+
+    day = birth_date.day
+    birth_day = {
+        "value": day,
+        "debts": [day] if day in KARMIC_DEBT_NUMBERS else [],
+    }
+
+    expression = soul_urge = personality = None
+    if full_name and full_name.strip():
+        total, vowels, consonants = _name_sums(full_name)
+        expression = _chain_entry(total) if total else None
+        soul_urge = _chain_entry(vowels) if vowels else None
+        personality = _chain_entry(consonants) if consonants else None
+
+    entries = [life_path, life_path_classic, birth_day, expression, soul_urge, personality]
+    found = sorted({d for entry in entries if entry for d in entry["debts"]})
+
+    return {
+        "life_path": life_path,
+        "life_path_classic": life_path_classic,
+        "birth_day": birth_day,
+        "expression": expression,
+        "soul_urge": soul_urge,
+        "personality": personality,
+        "all": found,
+    }
+
+
+def compute_karmic_lessons(full_name: str | None) -> dict | None:
+    """Karmic lessons: digits 1-9 absent from the full birth name.
+
+    Definition agreed with the owner on 2026-11-19: every letter of every
+    given name and the birth surname counts (diacritics flattened as in the
+    rest of this module, Y = 7). A digit with no letter is a karmic lesson.
+    ``counts`` is the inclusion table: how many letters carry each digit.
+
+    Returns:
+        ``{"missing": [...], "counts": {"1": n, ..., "9": n}}``, or ``None``
+        when no name (or no Latin letter) was supplied.
+    """
+    if not (full_name and full_name.strip()):
+        return None
+    values = [_letter_value(ch) for ch in _normalize_name(full_name)]
+    values = [v for v in values if v]
+    if not values:
+        return None
+    counts = {str(k): values.count(k) for k in range(1, 10)}
+    return {
+        "missing": [k for k in range(1, 10) if counts[str(k)] == 0],
+        "counts": counts,
+    }
+
+
 def compute_numerology(
     birth_date: date,
     current_date: date | None = None,
