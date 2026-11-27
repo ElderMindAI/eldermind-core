@@ -72,11 +72,11 @@ def test_venus_sequence_sources(sample_hd_data: dict) -> None:
     assert venus["IQ"]["body"] == "Venus"
     assert venus["IQ"]["variant"] == "Personality"
     assert venus["EQ"]["body"] == "Mars"
-    assert venus["EQ"]["variant"] == "Design"
+    assert venus["EQ"]["variant"] == "Personality"
     assert venus["SQ"]["body"] == "Venus"
     assert venus["SQ"]["variant"] == "Design"
     assert venus["Core Wound"]["body"] == "Mars"
-    assert venus["Core Wound"]["variant"] == "Personality"
+    assert venus["Core Wound"]["variant"] == "Design"
 
 
 def test_pearl_sequence_sources(sample_hd_data: dict) -> None:
@@ -85,7 +85,7 @@ def test_pearl_sequence_sources(sample_hd_data: dict) -> None:
     pearl = gk["pearl_sequence"]
 
     assert pearl["Vocation"]["body"] == "Mars"
-    assert pearl["Vocation"]["variant"] == "Personality"
+    assert pearl["Vocation"]["variant"] == "Design"
     assert pearl["Culture"]["body"] == "Jupiter"
     assert pearl["Culture"]["variant"] == "Design"
     assert pearl["Brand"]["body"] == "Sun"
@@ -110,3 +110,59 @@ def test_gene_keys_consistency_with_human_design(sample_hd_data: dict) -> None:
     assert radiance["gate"] == design["Sun"]["gate"]
     assert radiance["line"] == design["Sun"]["line"]
     assert radiance["longitude"] == pytest.approx(design["Sun"]["longitude"])
+
+    eq = gk["venus_sequence"]["EQ"]
+    assert (eq["gate"], eq["line"]) == (personality["Mars"]["gate"], personality["Mars"]["line"])
+    core = gk["venus_sequence"]["Core Wound"]
+    assert (core["gate"], core["line"]) == (design["Mars"]["gate"], design["Mars"]["line"])
+    assert gk["pearl_sequence"]["Vocation"] == {**core, "sphere": "Vocation", "sequence": "Pearl"}
+
+
+# Every sphere's source as listed by the Gene Keys FAQ "What planets does each
+# Sphere of the Golden Path Profile correlate to?" (genekeys.com, 2024-12-15):
+# natal = Personality, pre-natal = Design.
+STANDARD_SOURCES = {
+    "Life's Work": ("Personality", "Sun"),
+    "Evolution": ("Personality", "Earth"),
+    "Radiance": ("Design", "Sun"),
+    "Purpose": ("Design", "Earth"),
+    "Attraction": ("Design", "Moon"),
+    "IQ": ("Personality", "Venus"),
+    "EQ": ("Personality", "Mars"),
+    "SQ": ("Design", "Venus"),
+    "Core Wound": ("Design", "Mars"),
+    "Vocation": ("Design", "Mars"),
+    "Culture": ("Design", "Jupiter"),
+    "Brand": ("Personality", "Sun"),
+    "Pearl": ("Personality", "Jupiter"),
+}
+
+
+def test_every_sphere_matches_the_standard(sample_hd_data: dict) -> None:
+    """All 13 sphere slots (11 distinct spheres) follow the published mapping."""
+    gk = compute_gene_keys(sample_hd_data)
+    seen = {}
+    for seq in ("activation_sequence", "venus_sequence", "pearl_sequence"):
+        for name, sphere in gk[seq].items():
+            seen[name] = (sphere["variant"], sphere["body"])
+    assert seen == STANDARD_SOURCES
+
+
+# Two reference profiles read off published Hologenetic Profile charts
+# (gene key.line). Bare dates, a synthetic place (49.7497 N, 18.6354 E).
+@pytest.mark.parametrize(
+    ("birth_date", "birth_time", "eq", "core"),
+    [
+        (date(1999, 7, 24), time(18, 10), (44, 1), (28, 3)),
+        (date(1993, 10, 13), time(10, 0), (44, 4), (64, 2)),
+    ],
+)
+def test_eq_and_core_against_reference_charts(birth_date, birth_time, eq, core) -> None:
+    jd_birth, _ = compute_julian_day_ut(birth_date, birth_time, "Europe/Warsaw")
+    gk = compute_gene_keys(compute_human_design(jd_birth))
+    got_eq = gk["venus_sequence"]["EQ"]
+    got_core = gk["venus_sequence"]["Core Wound"]
+    got_vocation = gk["pearl_sequence"]["Vocation"]
+    assert (got_eq["gene_key"], got_eq["line"]) == eq
+    assert (got_core["gene_key"], got_core["line"]) == core
+    assert (got_vocation["gene_key"], got_vocation["line"]) == core
