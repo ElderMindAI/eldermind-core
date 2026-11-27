@@ -5,7 +5,7 @@ without external API calls.
 """
 
 from datetime import date, datetime, timedelta, time, tzinfo
-from typing import Tuple
+from typing import Final, Tuple
 from zoneinfo import ZoneInfo, available_timezones
 
 import swisseph as swe
@@ -560,25 +560,82 @@ def compute_western_aspects(planets: list[dict], orb: float = DEFAULT_ORB_DEGREE
 
     for i in range(count):
         for j in range(i + 1, count):
-            lon_a = float(planet_list[i]["longitude"])
-            lon_b = float(planet_list[j]["longitude"])
-            distance = min((lon_a - lon_b) % 360.0, (lon_b - lon_a) % 360.0)
+            found = _aspect_between(
+                float(planet_list[i]["longitude"]), float(planet_list[j]["longitude"]), orb
+            )
+            if found is not None:
+                aspects.append(
+                    {
+                        "planet_1": planet_list[i]["name"],
+                        "planet_2": planet_list[j]["name"],
+                        "aspect": found[0],
+                        "orb_variance": round(found[1], 3),
+                    }
+                )
 
-            for aspect in ASPECT_DEFINITIONS:
-                exact = float(aspect["angle"])
-                variance = abs(distance - exact)
-                if variance <= orb:
-                    aspects.append(
-                        {
-                            "planet_1": planet_list[i]["name"],
-                            "planet_2": planet_list[j]["name"],
-                            "aspect": aspect["name"],
-                            "orb_variance": round(variance, 3),
-                        }
-                    )
-                    # A given pair can only match one aspect in this simple model.
-                    break
+    return sorted(aspects, key=lambda a: abs(a["orb_variance"]))
 
+
+def _aspect_between(lon_a: float, lon_b: float, orb: float) -> tuple[str, float] | None:
+    """First Ptolemaic aspect within `orb` between two longitudes, or None.
+
+    Returns ``(aspect name, absolute deviation from the exact angle)``. A pair
+    can only match one aspect in this simple model (the aspects are 60° apart
+    and the orb is below 30°).
+    """
+    distance = min((lon_a - lon_b) % 360.0, (lon_b - lon_a) % 360.0)
+    for aspect in ASPECT_DEFINITIONS:
+        variance = abs(distance - float(aspect["angle"]))
+        if variance <= orb:
+            return aspect["name"], variance
+    return None
+
+
+#: The two chart angles aspected by `compute_angle_aspects`, in output order.
+ANGLE_NAMES: Final[tuple[str, str]] = ("Ascendant", "Midheaven")
+
+
+def compute_angle_aspects(
+    planets: list[dict],
+    ascendant: dict,
+    midheaven: dict,
+    orb: float = DEFAULT_ORB_DEGREES,
+) -> list[dict]:
+    """Ptolemaic aspects from each body to the Ascendant and the Midheaven.
+
+    The same eleven bodies as `compute_western_aspects` (`PLANET_IDS`: ten
+    planets and the True Node), the same five aspects and the same orb. The
+    Ascendant and the Midheaven are not aspected to each other: their angle is
+    the geometry of the houses, not an aspect.
+
+    Args:
+        planets: Tropical planet dictionaries with ``name`` and ``longitude``.
+        ascendant: The Ascendant dictionary (``longitude``) from `compute_houses`.
+        midheaven: The Midheaven dictionary (``longitude``) from `compute_houses`.
+        orb: Maximum deviation from the exact aspect angle, in degrees.
+
+    Returns:
+        Aspects in the `compute_western_aspects` format, with the body as
+        ``planet_1`` and ``"Ascendant"`` / ``"Midheaven"`` as ``planet_2``,
+        sorted by the absolute orb (ties keep body order, Ascendant first).
+    """
+    angles = ((ANGLE_NAMES[0], float(ascendant["longitude"])), (ANGLE_NAMES[1], float(midheaven["longitude"])))
+    aspects: list[dict] = []
+    for planet in planets:
+        if planet["name"] not in PLANET_IDS:
+            continue
+        lon = float(planet["longitude"])
+        for angle_name, angle_lon in angles:
+            found = _aspect_between(lon, angle_lon, orb)
+            if found is not None:
+                aspects.append(
+                    {
+                        "planet_1": planet["name"],
+                        "planet_2": angle_name,
+                        "aspect": found[0],
+                        "orb_variance": round(found[1], 3),
+                    }
+                )
     return sorted(aspects, key=lambda a: abs(a["orb_variance"]))
 
 
