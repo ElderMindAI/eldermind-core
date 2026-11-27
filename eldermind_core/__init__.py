@@ -56,6 +56,11 @@ __version__ = "1.0.0"
 #: to map right/bottom/left/center/top, which no standard chart does — every
 #: decade value moves. `lines.relationship` is kept unchanged but deprecated
 #: in favour of `love_money` (listed under `matrix.deprecated`).
+#: Also in 1.1.0 (2026-11-28, before any deploy): Gene Keys EQ comes from the
+#: Personality (natal) Mars and Core Wound/Vocation from the Design
+#: (pre-natal) Mars, as the Gene Keys FAQ lists them; the two sources were
+#: swapped, so EQ and Core/Vocation exchange their key.line for everyone
+#: whose two Mars differ. The other nine spheres are unchanged.
 ENGINE_VERSION = "1.1.0"
 
 __all__ = ["ENGINE_VERSION", "__version__"]

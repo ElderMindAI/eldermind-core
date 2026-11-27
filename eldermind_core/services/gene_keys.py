@@ -7,8 +7,11 @@ the Personality and Design activations computed by the Human Design service.
 
 from typing import Final
 
-# Mapping of Gene Keys spheres to their Human Design source.
-# Sources verified against Richard Rudd's Golden Path Hologenetic Profile.
+# Mapping of Gene Keys spheres to their Human Design source, as listed by the
+# Gene Keys FAQ "What planets does each Sphere of the Golden Path Profile
+# correlate to?" (genekeys.com): natal = personality, pre-natal = design.
+# EQ is the natal Mars, Core/Vocation the pre-natal Mars (swapped before
+# 1.1.0, see ENGINE_VERSION notes).
 ACTIVATION_SEQUENCE: Final[dict[str, tuple[str, str]]] = {
     "Life's Work": ("personality", "Sun"),
     "Evolution": ("personality", "Earth"),
@@ -20,13 +23,13 @@ VENUS_SEQUENCE: Final[dict[str, tuple[str, str]]] = {
     "Purpose": ("design", "Earth"),
     "Attraction": ("design", "Moon"),
     "IQ": ("personality", "Venus"),
-    "EQ": ("design", "Mars"),
+    "EQ": ("personality", "Mars"),
     "SQ": ("design", "Venus"),
-    "Core Wound": ("personality", "Mars"),
+    "Core Wound": ("design", "Mars"),
 }
 
 PEARL_SEQUENCE: Final[dict[str, tuple[str, str]]] = {
-    "Vocation": ("personality", "Mars"),
+    "Vocation": ("design", "Mars"),
     "Culture": ("design", "Jupiter"),
     "Brand": ("personality", "Sun"),
     "Pearl": ("personality", "Jupiter"),

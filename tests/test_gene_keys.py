@@ -139,7 +139,7 @@ STANDARD_SOURCES = {
 
 
 def test_every_sphere_matches_the_standard(sample_hd_data: dict) -> None:
-    """All 13 sphere slots (11 distinct spheres) follow the published mapping."""
+    """All 13 sphere names (14 slots, 11 distinct spheres) follow the published mapping."""
     gk = compute_gene_keys(sample_hd_data)
     seen = {}
     for seq in ("activation_sequence", "venus_sequence", "pearl_sequence"):
