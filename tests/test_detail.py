@@ -116,6 +116,26 @@ def test_standard_drops_history_but_keeps_positions(payload: dict) -> None:
     assert standard["human_design"]["mechanics"]["type"] == "Manifesting Generator"
 
 
+def test_matrix_levels(payload: dict) -> None:
+    """Engine 1.1.0: summary names the ring segment, standard the octagram, full the ring."""
+    summary = apply_detail(payload, "summary")["matrix"]
+    # 2026-07-31 is 32.9 years after 1993-09-01: the segment opened at 32.5.
+    assert summary["current_point"] == {
+        "age": 32.5, "label": "32–33", "arcana": 12, "name": "Wisielec",
+        "start_date": "2026-03-01",
+    }
+    assert summary["next_point"]["start_date"] == "2027-06-01"
+    assert "age_ring" not in summary and "octagram" not in summary
+
+    standard = apply_detail(payload, "standard")["matrix"]
+    assert standard["octagram"]["top_right"]["value"] == 4
+    assert standard["love_money"] == {"love": 8, "mid": 20, "money": 7}
+    assert standard["current_point"]["arcana"] == 12
+    assert "age_ring" not in standard
+
+    assert len(apply_detail(payload, "full")["matrix"]["age_ring"]) == 64
+
+
 def test_projection_does_not_mutate_the_source(payload: dict) -> None:
     """One computed profile must serve every level — that is what makes it cacheable."""
     before = _size(payload)

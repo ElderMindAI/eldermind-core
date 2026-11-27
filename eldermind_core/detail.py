@@ -149,6 +149,13 @@ def _summarize_gene_keys(data: dict[str, Any]) -> dict[str, Any]:
     return {"activation_sequence": spheres}
 
 
+def _ring_point(point: Any) -> dict[str, Any] | None:
+    """An age-ring point without its drawing hints (level, calendar year)."""
+    if not isinstance(point, dict):
+        return None
+    return {key: point.get(key) for key in ("age", "label", "arcana", "name", "start_date")}
+
+
 def _summarize_matrix(data: dict[str, Any]) -> dict[str, Any]:
     timeline = data.get("timeline") or {}
     return {
@@ -157,6 +164,10 @@ def _summarize_matrix(data: dict[str, Any]) -> dict[str, Any]:
         "personal_destiny_40_name": data.get("personal_destiny_40_name"),
         "current_age": timeline.get("current_age"),
         "highlighted_decade": timeline.get("highlighted_decade"),
+        # Engine 1.1.0: the 1.25-year segment of the age ring in force now,
+        # and the one that follows (its `start_date` says when it changes).
+        "current_point": _ring_point(data.get("current_point")),
+        "next_point": _ring_point(data.get("next_point")),
     }
 
 
@@ -238,10 +249,13 @@ _SUMMARIZERS = {
 #: pillars — together most of the payload, and useful to almost no caller who
 #: is not building their own chart software. `cycles` is every Sade-Sati window
 #: of the life; the current or next one stays in the top-level fields.
+#: `age_ring` is the 64-point Matrix ring (~10 KB); `current_point` and
+#: `next_point` stay.
 _STANDARD_DROPS = {
     "vedic": ("timeline", "cycles"),
     "bazi": ("da_yun",),
     "human_design": ("personality", "design"),
+    "matrix": ("age_ring",),
 }
 
 
