@@ -5,6 +5,7 @@ than 22 is reduced by summing its digits until the value is <= 22.
 Zero is not a valid value in this system.
 """
 
+import calendar
 from datetime import date
 from typing import Final
 
@@ -41,15 +42,11 @@ TAROT_ARCANA: Final[dict[int, str]] = {
     22: "Głupiec",
 }
 
-# Age-to-vertex mapping for the Matrix life timeline.
-# Each decade is governed by one of the five core vertices.
-_AGE_VERTEX_ORDER: Final[list[str]] = [
-    "right",    # 20s
-    "bottom",   # 30s
-    "left",     # 40s
-    "center",   # 50s
-    "top",      # 60s
-]
+# Decades reported in `timeline` — the keys callers have always read. Since
+# 1.1.0 each one is the octagram vertex the age ring reaches at that age
+# (20 top, 30 top-right, 40 right, 50 bottom-right, 60 bottom). Up to 1.0.8 they
+# were mapped right/bottom/left/center/top, which matches no standard chart.
+_TIMELINE_DECADES: Final[tuple[int, ...]] = (20, 30, 40, 50, 60)
 
 
 def _reduce_to_matrix_range(value: int) -> int:
@@ -112,6 +109,9 @@ def compute_matrix_of_destiny(
 
     # Derived line sequences (each read from outer vertex toward the base).
     wealth = [right, center_right, _reduce_to_matrix_range(right + center_right)]
+    # Deprecated in 1.1.0: summed the wrong points (right+bottom, center-right +
+    # center-bottom, bottom + center-bottom). The standard love line is
+    # `love_money`. Kept unchanged so existing callers do not break.
     relationship = [
         _reduce_to_matrix_range(right + bottom),
         _reduce_to_matrix_range(center_right + center_bottom),
@@ -138,6 +138,12 @@ def compute_matrix_of_destiny(
 
     arcana_names = {key: TAROT_ARCANA[value] for key, value in core.items()}
 
+    octagram = _compute_octagram(core)
+    ring = _compute_age_ring(octagram, birth_date)
+    current, following, age_exact = _locate_on_ring(
+        ring, birth_date, resolve_reference_date(reference_date)
+    )
+
     return {
         "core": core,
         "core_names": arcana_names,
@@ -154,19 +160,191 @@ def compute_matrix_of_destiny(
         },
         "personal_destiny_40": personal_destiny_40,
         "personal_destiny_40_name": TAROT_ARCANA[personal_destiny_40],
-        "timeline": _compute_age_timeline(core, birth_date, reference_date),
+        "timeline": _compute_age_timeline(octagram, birth_date, reference_date),
+        "octagram": octagram,
+        "heart_points": _compute_heart_points(octagram),
+        "love_money": _compute_love_money(octagram),
+        "age_ring": ring,
+        "age_exact": age_exact,
+        "current_point": current,
+        "next_point": following,
+        "deprecated": dict(DEPRECATED_FIELDS),
     }
 
 
+#: Fields kept for compatibility, with what replaces them. Shipped in the
+#: payload so an API client sees the notice next to the data.
+DEPRECATED_FIELDS: Final[dict[str, str]] = {
+    "lines.relationship": "since engine 1.1.0; use love_money (love, mid, money)",
+}
+
+
+# --- Full octagram (engine 1.1.0) -----------------------------------------
+#
+# The standard chart: two squares turned 45° to each other. The straight
+# square is the old `core` (left = day, top = month, right = year, bottom =
+# their sum); each diagonal vertex is the sum of its two neighbours. On every
+# one of the 8 rays sit two inner points: `in2` = vertex + center (nearer the
+# middle), `in1` = vertex + in2 (next to the vertex).
+
+#: Clockwise from the left vertex — also the order of the age ring, which
+#: starts at the left vertex at birth and reaches each next one 10 years on.
+OCTAGRAM_ORDER: Final[tuple[str, ...]] = (
+    "left",
+    "top_left",
+    "top",
+    "top_right",
+    "right",
+    "bottom_right",
+    "bottom",
+    "bottom_left",
+)
+
+_RING_STEP_MONTHS: Final[int] = 15  # 1.25 years
+_RING_POINTS_PER_SIDE: Final[int] = 8  # the vertex + 7 points before the next one
+_RING_YEARS: Final[int] = 80
+_DAYS_PER_YEAR: Final[float] = 365.2425
+
+
+def _arcana(value: int) -> dict:
+    return {"value": value, "name": TAROT_ARCANA[value]}
+
+
+def _compute_octagram(core: dict[str, int]) -> dict:
+    r = _reduce_to_matrix_range
+    values = {
+        "left": core["left"],
+        "top_left": r(core["left"] + core["top"]),
+        "top": core["top"],
+        "top_right": r(core["top"] + core["right"]),
+        "right": core["right"],
+        "bottom_right": r(core["right"] + core["bottom"]),
+        "bottom": core["bottom"],
+        "bottom_left": r(core["bottom"] + core["left"]),
+    }
+    center = core["center"]
+    octagram: dict = {}
+    for key in OCTAGRAM_ORDER:
+        vertex = values[key]
+        in2 = r(vertex + center)
+        octagram[key] = {**_arcana(vertex), "in1": r(vertex + in2), "in2": in2}
+    octagram["center"] = _arcana(center)
+    return octagram
+
+
+def _compute_heart_points(octagram: dict) -> dict[str, int]:
+    """The two points between `in2` and the center on the left and top rays."""
+    center = octagram["center"]["value"]
+    return {
+        "left": _reduce_to_matrix_range(octagram["left"]["in2"] + center),
+        "top": _reduce_to_matrix_range(octagram["top"]["in2"] + center),
+    }
+
+
+def _compute_love_money(octagram: dict) -> dict[str, int]:
+    """The line from `in2` of the bottom ray to `in2` of the right ray.
+
+    `mid` halves it; `love` sits on the bottom side, `money` on the right.
+    """
+    r = _reduce_to_matrix_range
+    bottom = octagram["bottom"]["in2"]
+    right = octagram["right"]["in2"]
+    mid = r(bottom + right)
+    return {"love": r(bottom + mid), "mid": mid, "money": r(right + mid)}
+
+
+def _side_points(a: int, b: int) -> list[int]:
+    """The 7 points between two vertices 10 years apart, by recursive midpoint.
+
+    Returned in age order: +1.25, +2.5, +3.75, +5, +6.25, +7.5, +8.75.
+    """
+    r = _reduce_to_matrix_range
+    p5 = r(a + b)
+    p2_5 = r(a + p5)
+    p7_5 = r(p5 + b)
+    return [r(a + p2_5), p2_5, r(p2_5 + p5), p5, r(p5 + p7_5), p7_5, r(p7_5 + b)]
+
+
+#: Position on a side (0 = vertex) -> (level, label offsets). Level 0 is the
+#: vertex, 1 the 5-year point, 2 the 2.5-year points, 3 the 1.25-year points.
+#: Labels follow the reference charts: "1–2" at +1.25, "5" at +5.
+_SIDE_SLOTS: Final[tuple[tuple[int, tuple[int, ...]], ...]] = (
+    (0, (0,)),
+    (3, (1, 2)),
+    (2, (2, 3)),
+    (3, (3, 4)),
+    (1, (5,)),
+    (3, (6, 7)),
+    (2, (7, 8)),
+    (3, (8, 9)),
+)
+
+
+def _add_months(start: date, months: int) -> date:
+    """`start` moved by whole months; a day past the month's end is clamped."""
+    total = start.month - 1 + months
+    year, month = start.year + total // 12, total % 12 + 1
+    return date(year, month, min(start.day, calendar.monthrange(year, month)[1]))
+
+
+def _compute_age_ring(octagram: dict, birth_date: date) -> list[dict]:
+    """64 points from birth (0) to just before 80, one every 1.25 years."""
+    ring: list[dict] = []
+    for side, key in enumerate(OCTAGRAM_ORDER):
+        a = octagram[key]["value"]
+        b = octagram[OCTAGRAM_ORDER[(side + 1) % len(OCTAGRAM_ORDER)]]["value"]
+        arcanas = [a, *_side_points(a, b)]
+        decade = side * 10
+        for slot, (arcana, (level, offsets)) in enumerate(zip(arcanas, _SIDE_SLOTS)):
+            months = (side * _RING_POINTS_PER_SIDE + slot) * _RING_STEP_MONTHS
+            start = _add_months(birth_date, months)
+            ring.append(
+                {
+                    "age": months / 12,
+                    "label": "–".join(str(decade + o) for o in offsets),
+                    "arcana": arcana,
+                    "name": TAROT_ARCANA[arcana],
+                    "level": level,
+                    "start_date": start.isoformat(),
+                    "calendar_year": start.year,
+                }
+            )
+    return ring
+
+
+def _locate_on_ring(
+    ring: list[dict], birth_date: date, today: date
+) -> tuple[dict | None, dict | None, float]:
+    """The ring point whose segment holds `today`, the one after it, exact age.
+
+    A segment runs from its point's start date up to the next point's. Before
+    birth there is no current point (the next one is birth itself); from 80
+    on, neither — the ring ends there.
+    """
+    age_exact = round((today - birth_date).days / _DAYS_PER_YEAR, 2)
+    index = -1
+    for position, point in enumerate(ring):
+        if date.fromisoformat(point["start_date"]) <= today:
+            index = position
+        else:
+            break
+    if index == len(ring) - 1 and today >= _add_months(birth_date, _RING_YEARS * 12):
+        return None, None, age_exact
+    current = ring[index] if index >= 0 else None
+    following = ring[index + 1] if index + 1 < len(ring) else None
+    return current, following, age_exact
+
+
 def _compute_age_timeline(
-    core: dict[str, int],
+    octagram: dict,
     birth_date: date,
     reference_date: date | None = None,
 ) -> dict:
     """Build the decade timeline and highlight the client's current decade.
 
-    The Matrix maps each decade of adult life to one of the core vertices:
-    20s -> right, 30s -> bottom, 40s -> left, 50s -> center, 60s -> top.
+    Each decade is the octagram vertex the age ring reaches at its start:
+    20s -> top, 30s -> top_right, 40s -> right, 50s -> bottom_right,
+    60s -> bottom (the ring opens at the left vertex at birth, 10 years a side).
     """
     today = resolve_reference_date(reference_date)
     age = today.year - birth_date.year
@@ -175,9 +353,9 @@ def _compute_age_timeline(
 
     decades = {}
     highlighted_decade = None
-    for index, vertex in enumerate(_AGE_VERTEX_ORDER, start=2):
-        decade = index * 10
-        arcana_number = core[vertex]
+    for decade in _TIMELINE_DECADES:
+        vertex = OCTAGRAM_ORDER[decade // 10]
+        arcana_number = octagram[vertex]["value"]
         decades[str(decade)] = {
             "vertex": vertex,
             "arcana_number": arcana_number,

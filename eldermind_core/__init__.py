@@ -48,6 +48,14 @@ __version__ = "1.0.0"
 #: opened the month at local midnight of the Beijing date of the Jie: for
 #: births in Poland up to ~18 h early or ~7 h late, about 1% of all births.
 #: The Da Yun pillars, which step from the month pillar, follow it.
-ENGINE_VERSION = "1.0.8"
+#: 1.1.0 (2026-11-27): the full Matrix of Destiny — `octagram` (8 vertices,
+#: two inner points per ray), `heart_points`, `love_money`, the 0-80 `age_ring`
+#: (64 points every 1.25 years by recursive midpoint), `current_point` and
+#: `next_point`. `timeline.decades` now reads the ring vertex reached at each
+#: age (20 top, 30 top-right, 40 right, 50 bottom-right, 60 bottom); it used
+#: to map right/bottom/left/center/top, which no standard chart does — every
+#: decade value moves. `lines.relationship` is kept unchanged but deprecated
+#: in favour of `love_money` (listed under `matrix.deprecated`).
+ENGINE_VERSION = "1.1.0"
 
 __all__ = ["ENGINE_VERSION", "__version__"]

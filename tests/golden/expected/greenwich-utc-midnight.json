@@ -1049,6 +1049,585 @@
     ]
   },
   "matrix": {
+    "age_exact": 16.58,
+    "age_ring": [
+      {
+        "age": 0.0,
+        "arcana": 1,
+        "calendar_year": 2010,
+        "label": "0",
+        "level": 0,
+        "name": "Mag",
+        "start_date": "2010-01-01"
+      },
+      {
+        "age": 1.25,
+        "arcana": 5,
+        "calendar_year": 2011,
+        "label": "1–2",
+        "level": 3,
+        "name": "Hierofant",
+        "start_date": "2011-04-01"
+      },
+      {
+        "age": 2.5,
+        "arcana": 4,
+        "calendar_year": 2012,
+        "label": "2–3",
+        "level": 2,
+        "name": "Cesarz",
+        "start_date": "2012-07-01"
+      },
+      {
+        "age": 3.75,
+        "arcana": 7,
+        "calendar_year": 2013,
+        "label": "3–4",
+        "level": 3,
+        "name": "Rydwan",
+        "start_date": "2013-10-01"
+      },
+      {
+        "age": 5.0,
+        "arcana": 3,
+        "calendar_year": 2015,
+        "label": "5",
+        "level": 1,
+        "name": "Cesarzowa",
+        "start_date": "2015-01-01"
+      },
+      {
+        "age": 6.25,
+        "arcana": 8,
+        "calendar_year": 2016,
+        "label": "6–7",
+        "level": 3,
+        "name": "Siła",
+        "start_date": "2016-04-01"
+      },
+      {
+        "age": 7.5,
+        "arcana": 5,
+        "calendar_year": 2017,
+        "label": "7–8",
+        "level": 2,
+        "name": "Hierofant",
+        "start_date": "2017-07-01"
+      },
+      {
+        "age": 8.75,
+        "arcana": 7,
+        "calendar_year": 2018,
+        "label": "8–9",
+        "level": 3,
+        "name": "Rydwan",
+        "start_date": "2018-10-01"
+      },
+      {
+        "age": 10.0,
+        "arcana": 2,
+        "calendar_year": 2020,
+        "label": "10",
+        "level": 0,
+        "name": "Kapłanka",
+        "start_date": "2020-01-01"
+      },
+      {
+        "age": 11.25,
+        "arcana": 7,
+        "calendar_year": 2021,
+        "label": "11–12",
+        "level": 3,
+        "name": "Rydwan",
+        "start_date": "2021-04-01"
+      },
+      {
+        "age": 12.5,
+        "arcana": 5,
+        "calendar_year": 2022,
+        "label": "12–13",
+        "level": 2,
+        "name": "Hierofant",
+        "start_date": "2022-07-01"
+      },
+      {
+        "age": 13.75,
+        "arcana": 8,
+        "calendar_year": 2023,
+        "label": "13–14",
+        "level": 3,
+        "name": "Siła",
+        "start_date": "2023-10-01"
+      },
+      {
+        "age": 15.0,
+        "arcana": 3,
+        "calendar_year": 2025,
+        "label": "15",
+        "level": 1,
+        "name": "Cesarzowa",
+        "start_date": "2025-01-01"
+      },
+      {
+        "age": 16.25,
+        "arcana": 7,
+        "calendar_year": 2026,
+        "label": "16–17",
+        "level": 3,
+        "name": "Rydwan",
+        "start_date": "2026-04-01"
+      },
+      {
+        "age": 17.5,
+        "arcana": 4,
+        "calendar_year": 2027,
+        "label": "17–18",
+        "level": 2,
+        "name": "Cesarz",
+        "start_date": "2027-07-01"
+      },
+      {
+        "age": 18.75,
+        "arcana": 5,
+        "calendar_year": 2028,
+        "label": "18–19",
+        "level": 3,
+        "name": "Hierofant",
+        "start_date": "2028-10-01"
+      },
+      {
+        "age": 20.0,
+        "arcana": 1,
+        "calendar_year": 2030,
+        "label": "20",
+        "level": 0,
+        "name": "Mag",
+        "start_date": "2030-01-01"
+      },
+      {
+        "age": 21.25,
+        "arcana": 7,
+        "calendar_year": 2031,
+        "label": "21–22",
+        "level": 3,
+        "name": "Rydwan",
+        "start_date": "2031-04-01"
+      },
+      {
+        "age": 22.5,
+        "arcana": 6,
+        "calendar_year": 2032,
+        "label": "22–23",
+        "level": 2,
+        "name": "Kochankowie",
+        "start_date": "2032-07-01"
+      },
+      {
+        "age": 23.75,
+        "arcana": 11,
+        "calendar_year": 2033,
+        "label": "23–24",
+        "level": 3,
+        "name": "Sprawiedliwość",
+        "start_date": "2033-10-01"
+      },
+      {
+        "age": 25.0,
+        "arcana": 5,
+        "calendar_year": 2035,
+        "label": "25",
+        "level": 1,
+        "name": "Hierofant",
+        "start_date": "2035-01-01"
+      },
+      {
+        "age": 26.25,
+        "arcana": 14,
+        "calendar_year": 2036,
+        "label": "26–27",
+        "level": 3,
+        "name": "Umiar",
+        "start_date": "2036-04-01"
+      },
+      {
+        "age": 27.5,
+        "arcana": 9,
+        "calendar_year": 2037,
+        "label": "27–28",
+        "level": 2,
+        "name": "Pustelnik",
+        "start_date": "2037-07-01"
+      },
+      {
+        "age": 28.75,
+        "arcana": 13,
+        "calendar_year": 2038,
+        "label": "28–29",
+        "level": 3,
+        "name": "Śmierć",
+        "start_date": "2038-10-01"
+      },
+      {
+        "age": 30.0,
+        "arcana": 4,
+        "calendar_year": 2040,
+        "label": "30",
+        "level": 0,
+        "name": "Cesarz",
+        "start_date": "2040-01-01"
+      },
+      {
+        "age": 31.25,
+        "arcana": 15,
+        "calendar_year": 2041,
+        "label": "31–32",
+        "level": 3,
+        "name": "Diabeł",
+        "start_date": "2041-04-01"
+      },
+      {
+        "age": 32.5,
+        "arcana": 11,
+        "calendar_year": 2042,
+        "label": "32–33",
+        "level": 2,
+        "name": "Sprawiedliwość",
+        "start_date": "2042-07-01"
+      },
+      {
+        "age": 33.75,
+        "arcana": 18,
+        "calendar_year": 2043,
+        "label": "33–34",
+        "level": 3,
+        "name": "Księżyc",
+        "start_date": "2043-10-01"
+      },
+      {
+        "age": 35.0,
+        "arcana": 7,
+        "calendar_year": 2045,
+        "label": "35",
+        "level": 1,
+        "name": "Rydwan",
+        "start_date": "2045-01-01"
+      },
+      {
+        "age": 36.25,
+        "arcana": 17,
+        "calendar_year": 2046,
+        "label": "36–37",
+        "level": 3,
+        "name": "Gwiazda",
+        "start_date": "2046-04-01"
+      },
+      {
+        "age": 37.5,
+        "arcana": 10,
+        "calendar_year": 2047,
+        "label": "37–38",
+        "level": 2,
+        "name": "Koło Fortuny",
+        "start_date": "2047-07-01"
+      },
+      {
+        "age": 38.75,
+        "arcana": 13,
+        "calendar_year": 2048,
+        "label": "38–39",
+        "level": 3,
+        "name": "Śmierć",
+        "start_date": "2048-10-01"
+      },
+      {
+        "age": 40.0,
+        "arcana": 3,
+        "calendar_year": 2050,
+        "label": "40",
+        "level": 0,
+        "name": "Cesarzowa",
+        "start_date": "2050-01-01"
+      },
+      {
+        "age": 41.25,
+        "arcana": 17,
+        "calendar_year": 2051,
+        "label": "41–42",
+        "level": 3,
+        "name": "Gwiazda",
+        "start_date": "2051-04-01"
+      },
+      {
+        "age": 42.5,
+        "arcana": 14,
+        "calendar_year": 2052,
+        "label": "42–43",
+        "level": 2,
+        "name": "Umiar",
+        "start_date": "2052-07-01"
+      },
+      {
+        "age": 43.75,
+        "arcana": 7,
+        "calendar_year": 2053,
+        "label": "43–44",
+        "level": 3,
+        "name": "Rydwan",
+        "start_date": "2053-10-01"
+      },
+      {
+        "age": 45.0,
+        "arcana": 11,
+        "calendar_year": 2055,
+        "label": "45",
+        "level": 1,
+        "name": "Sprawiedliwość",
+        "start_date": "2055-01-01"
+      },
+      {
+        "age": 46.25,
+        "arcana": 3,
+        "calendar_year": 2056,
+        "label": "46–47",
+        "level": 3,
+        "name": "Cesarzowa",
+        "start_date": "2056-04-01"
+      },
+      {
+        "age": 47.5,
+        "arcana": 19,
+        "calendar_year": 2057,
+        "label": "47–48",
+        "level": 2,
+        "name": "Słońce",
+        "start_date": "2057-07-01"
+      },
+      {
+        "age": 48.75,
+        "arcana": 9,
+        "calendar_year": 2058,
+        "label": "48–49",
+        "level": 3,
+        "name": "Pustelnik",
+        "start_date": "2058-10-01"
+      },
+      {
+        "age": 50.0,
+        "arcana": 8,
+        "calendar_year": 2060,
+        "label": "50",
+        "level": 0,
+        "name": "Siła",
+        "start_date": "2060-01-01"
+      },
+      {
+        "age": 51.25,
+        "arcana": 11,
+        "calendar_year": 2061,
+        "label": "51–52",
+        "level": 3,
+        "name": "Sprawiedliwość",
+        "start_date": "2061-04-01"
+      },
+      {
+        "age": 52.5,
+        "arcana": 21,
+        "calendar_year": 2062,
+        "label": "52–53",
+        "level": 2,
+        "name": "Świat",
+        "start_date": "2062-07-01"
+      },
+      {
+        "age": 53.75,
+        "arcana": 7,
+        "calendar_year": 2063,
+        "label": "53–54",
+        "level": 3,
+        "name": "Rydwan",
+        "start_date": "2063-10-01"
+      },
+      {
+        "age": 55.0,
+        "arcana": 13,
+        "calendar_year": 2065,
+        "label": "55",
+        "level": 1,
+        "name": "Śmierć",
+        "start_date": "2065-01-01"
+      },
+      {
+        "age": 56.25,
+        "arcana": 4,
+        "calendar_year": 2066,
+        "label": "56–57",
+        "level": 3,
+        "name": "Cesarz",
+        "start_date": "2066-04-01"
+      },
+      {
+        "age": 57.5,
+        "arcana": 18,
+        "calendar_year": 2067,
+        "label": "57–58",
+        "level": 2,
+        "name": "Księżyc",
+        "start_date": "2067-07-01"
+      },
+      {
+        "age": 58.75,
+        "arcana": 5,
+        "calendar_year": 2068,
+        "label": "58–59",
+        "level": 3,
+        "name": "Hierofant",
+        "start_date": "2068-10-01"
+      },
+      {
+        "age": 60.0,
+        "arcana": 5,
+        "calendar_year": 2070,
+        "label": "60",
+        "level": 0,
+        "name": "Hierofant",
+        "start_date": "2070-01-01"
+      },
+      {
+        "age": 61.25,
+        "arcana": 21,
+        "calendar_year": 2071,
+        "label": "61–62",
+        "level": 3,
+        "name": "Świat",
+        "start_date": "2071-04-01"
+      },
+      {
+        "age": 62.5,
+        "arcana": 16,
+        "calendar_year": 2072,
+        "label": "62–63",
+        "level": 2,
+        "name": "Wieża",
+        "start_date": "2072-07-01"
+      },
+      {
+        "age": 63.75,
+        "arcana": 9,
+        "calendar_year": 2073,
+        "label": "63–64",
+        "level": 3,
+        "name": "Pustelnik",
+        "start_date": "2073-10-01"
+      },
+      {
+        "age": 65.0,
+        "arcana": 11,
+        "calendar_year": 2075,
+        "label": "65",
+        "level": 1,
+        "name": "Sprawiedliwość",
+        "start_date": "2075-01-01"
+      },
+      {
+        "age": 66.25,
+        "arcana": 10,
+        "calendar_year": 2076,
+        "label": "66–67",
+        "level": 3,
+        "name": "Koło Fortuny",
+        "start_date": "2076-04-01"
+      },
+      {
+        "age": 67.5,
+        "arcana": 17,
+        "calendar_year": 2077,
+        "label": "67–68",
+        "level": 2,
+        "name": "Gwiazda",
+        "start_date": "2077-07-01"
+      },
+      {
+        "age": 68.75,
+        "arcana": 5,
+        "calendar_year": 2078,
+        "label": "68–69",
+        "level": 3,
+        "name": "Hierofant",
+        "start_date": "2078-10-01"
+      },
+      {
+        "age": 70.0,
+        "arcana": 6,
+        "calendar_year": 2080,
+        "label": "70",
+        "level": 0,
+        "name": "Kochankowie",
+        "start_date": "2080-01-01"
+      },
+      {
+        "age": 71.25,
+        "arcana": 19,
+        "calendar_year": 2081,
+        "label": "71–72",
+        "level": 3,
+        "name": "Słońce",
+        "start_date": "2081-04-01"
+      },
+      {
+        "age": 72.5,
+        "arcana": 13,
+        "calendar_year": 2082,
+        "label": "72–73",
+        "level": 2,
+        "name": "Śmierć",
+        "start_date": "2082-07-01"
+      },
+      {
+        "age": 73.75,
+        "arcana": 20,
+        "calendar_year": 2083,
+        "label": "73–74",
+        "level": 3,
+        "name": "Sąd Ostateczny",
+        "start_date": "2083-10-01"
+      },
+      {
+        "age": 75.0,
+        "arcana": 7,
+        "calendar_year": 2085,
+        "label": "75",
+        "level": 1,
+        "name": "Rydwan",
+        "start_date": "2085-01-01"
+      },
+      {
+        "age": 76.25,
+        "arcana": 15,
+        "calendar_year": 2086,
+        "label": "76–77",
+        "level": 3,
+        "name": "Diabeł",
+        "start_date": "2086-04-01"
+      },
+      {
+        "age": 77.5,
+        "arcana": 8,
+        "calendar_year": 2087,
+        "label": "77–78",
+        "level": 2,
+        "name": "Siła",
+        "start_date": "2087-07-01"
+      },
+      {
+        "age": 78.75,
+        "arcana": 9,
+        "calendar_year": 2088,
+        "label": "78–79",
+        "level": 3,
+        "name": "Pustelnik",
+        "start_date": "2088-10-01"
+      }
+    ],
     "core": {
       "bottom": 5,
       "center": 10,
@@ -1062,6 +1641,22 @@
       "left": "Mag",
       "right": "Cesarzowa",
       "top": "Mag"
+    },
+    "current_point": {
+      "age": 16.25,
+      "arcana": 7,
+      "calendar_year": 2026,
+      "label": "16–17",
+      "level": 3,
+      "name": "Rydwan",
+      "start_date": "2026-04-01"
+    },
+    "deprecated": {
+      "lines.relationship": "since engine 1.1.0; use love_money (love, mid, money)"
+    },
+    "heart_points": {
+      "left": 21,
+      "top": 21
     },
     "intermediate": {
       "center_bottom": 15,
@@ -1086,42 +1681,110 @@
         16
       ]
     },
+    "love_money": {
+      "love": 7,
+      "mid": 10,
+      "money": 5
+    },
+    "next_point": {
+      "age": 17.5,
+      "arcana": 4,
+      "calendar_year": 2027,
+      "label": "17–18",
+      "level": 2,
+      "name": "Cesarz",
+      "start_date": "2027-07-01"
+    },
+    "octagram": {
+      "bottom": {
+        "in1": 20,
+        "in2": 15,
+        "name": "Hierofant",
+        "value": 5
+      },
+      "bottom_left": {
+        "in1": 22,
+        "in2": 16,
+        "name": "Kochankowie",
+        "value": 6
+      },
+      "bottom_right": {
+        "in1": 8,
+        "in2": 18,
+        "name": "Siła",
+        "value": 8
+      },
+      "center": {
+        "name": "Koło Fortuny",
+        "value": 10
+      },
+      "left": {
+        "in1": 12,
+        "in2": 11,
+        "name": "Mag",
+        "value": 1
+      },
+      "right": {
+        "in1": 16,
+        "in2": 13,
+        "name": "Cesarzowa",
+        "value": 3
+      },
+      "top": {
+        "in1": 12,
+        "in2": 11,
+        "name": "Mag",
+        "value": 1
+      },
+      "top_left": {
+        "in1": 14,
+        "in2": 12,
+        "name": "Kapłanka",
+        "value": 2
+      },
+      "top_right": {
+        "in1": 18,
+        "in2": 14,
+        "name": "Cesarz",
+        "value": 4
+      }
+    },
     "personal_destiny_40": 10,
     "personal_destiny_40_name": "Koło Fortuny",
     "timeline": {
       "current_age": 16,
       "decades": {
         "20": {
+          "arcana_name": "Mag",
+          "arcana_number": 1,
+          "vertex": "top"
+        },
+        "30": {
+          "arcana_name": "Cesarz",
+          "arcana_number": 4,
+          "vertex": "top_right"
+        },
+        "40": {
           "arcana_name": "Cesarzowa",
           "arcana_number": 3,
           "vertex": "right"
         },
-        "30": {
+        "50": {
+          "arcana_name": "Siła",
+          "arcana_number": 8,
+          "vertex": "bottom_right"
+        },
+        "60": {
           "arcana_name": "Hierofant",
           "arcana_number": 5,
           "vertex": "bottom"
-        },
-        "40": {
-          "arcana_name": "Mag",
-          "arcana_number": 1,
-          "vertex": "left"
-        },
-        "50": {
-          "arcana_name": "Koło Fortuny",
-          "arcana_number": 10,
-          "vertex": "center"
-        },
-        "60": {
-          "arcana_name": "Mag",
-          "arcana_number": 1,
-          "vertex": "top"
         }
       },
       "highlighted_decade": null
     }
   },
   "meta": {
-    "engine_version": "1.0.8",
+    "engine_version": "1.1.0",
     "errors": [],
     "julian_day_ut": 2455197.5,
     "reference_date": "2026-07-31",

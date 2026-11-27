@@ -1058,6 +1058,585 @@
     ]
   },
   "matrix": {
+    "age_exact": 60.98,
+    "age_ring": [
+      {
+        "age": 0.0,
+        "arcana": 8,
+        "calendar_year": 1965,
+        "label": "0",
+        "level": 0,
+        "name": "Siła",
+        "start_date": "1965-08-08"
+      },
+      {
+        "age": 1.25,
+        "arcana": 22,
+        "calendar_year": 1966,
+        "label": "1–2",
+        "level": 3,
+        "name": "Głupiec",
+        "start_date": "1966-11-08"
+      },
+      {
+        "age": 2.5,
+        "arcana": 14,
+        "calendar_year": 1968,
+        "label": "2–3",
+        "level": 2,
+        "name": "Umiar",
+        "start_date": "1968-02-08"
+      },
+      {
+        "age": 3.75,
+        "arcana": 20,
+        "calendar_year": 1969,
+        "label": "3–4",
+        "level": 3,
+        "name": "Sąd Ostateczny",
+        "start_date": "1969-05-08"
+      },
+      {
+        "age": 5.0,
+        "arcana": 6,
+        "calendar_year": 1970,
+        "label": "5",
+        "level": 1,
+        "name": "Kochankowie",
+        "start_date": "1970-08-08"
+      },
+      {
+        "age": 6.25,
+        "arcana": 10,
+        "calendar_year": 1971,
+        "label": "6–7",
+        "level": 3,
+        "name": "Koło Fortuny",
+        "start_date": "1971-11-08"
+      },
+      {
+        "age": 7.5,
+        "arcana": 22,
+        "calendar_year": 1973,
+        "label": "7–8",
+        "level": 2,
+        "name": "Głupiec",
+        "start_date": "1973-02-08"
+      },
+      {
+        "age": 8.75,
+        "arcana": 11,
+        "calendar_year": 1974,
+        "label": "8–9",
+        "level": 3,
+        "name": "Sprawiedliwość",
+        "start_date": "1974-05-08"
+      },
+      {
+        "age": 10.0,
+        "arcana": 16,
+        "calendar_year": 1975,
+        "label": "10",
+        "level": 0,
+        "name": "Wieża",
+        "start_date": "1975-08-08"
+      },
+      {
+        "age": 11.25,
+        "arcana": 11,
+        "calendar_year": 1976,
+        "label": "11–12",
+        "level": 3,
+        "name": "Sprawiedliwość",
+        "start_date": "1976-11-08"
+      },
+      {
+        "age": 12.5,
+        "arcana": 22,
+        "calendar_year": 1978,
+        "label": "12–13",
+        "level": 2,
+        "name": "Głupiec",
+        "start_date": "1978-02-08"
+      },
+      {
+        "age": 13.75,
+        "arcana": 10,
+        "calendar_year": 1979,
+        "label": "13–14",
+        "level": 3,
+        "name": "Koło Fortuny",
+        "start_date": "1979-05-08"
+      },
+      {
+        "age": 15.0,
+        "arcana": 6,
+        "calendar_year": 1980,
+        "label": "15",
+        "level": 1,
+        "name": "Kochankowie",
+        "start_date": "1980-08-08"
+      },
+      {
+        "age": 16.25,
+        "arcana": 20,
+        "calendar_year": 1981,
+        "label": "16–17",
+        "level": 3,
+        "name": "Sąd Ostateczny",
+        "start_date": "1981-11-08"
+      },
+      {
+        "age": 17.5,
+        "arcana": 14,
+        "calendar_year": 1983,
+        "label": "17–18",
+        "level": 2,
+        "name": "Umiar",
+        "start_date": "1983-02-08"
+      },
+      {
+        "age": 18.75,
+        "arcana": 22,
+        "calendar_year": 1984,
+        "label": "18–19",
+        "level": 3,
+        "name": "Głupiec",
+        "start_date": "1984-05-08"
+      },
+      {
+        "age": 20.0,
+        "arcana": 8,
+        "calendar_year": 1985,
+        "label": "20",
+        "level": 0,
+        "name": "Siła",
+        "start_date": "1985-08-08"
+      },
+      {
+        "age": 21.25,
+        "arcana": 17,
+        "calendar_year": 1986,
+        "label": "21–22",
+        "level": 3,
+        "name": "Gwiazda",
+        "start_date": "1986-11-08"
+      },
+      {
+        "age": 22.5,
+        "arcana": 9,
+        "calendar_year": 1988,
+        "label": "22–23",
+        "level": 2,
+        "name": "Pustelnik",
+        "start_date": "1988-02-08"
+      },
+      {
+        "age": 23.75,
+        "arcana": 10,
+        "calendar_year": 1989,
+        "label": "23–24",
+        "level": 3,
+        "name": "Koło Fortuny",
+        "start_date": "1989-05-08"
+      },
+      {
+        "age": 25.0,
+        "arcana": 19,
+        "calendar_year": 1990,
+        "label": "25",
+        "level": 1,
+        "name": "Słońce",
+        "start_date": "1990-08-08"
+      },
+      {
+        "age": 26.25,
+        "arcana": 22,
+        "calendar_year": 1991,
+        "label": "26–27",
+        "level": 3,
+        "name": "Głupiec",
+        "start_date": "1991-11-08"
+      },
+      {
+        "age": 27.5,
+        "arcana": 3,
+        "calendar_year": 1993,
+        "label": "27–28",
+        "level": 2,
+        "name": "Cesarzowa",
+        "start_date": "1993-02-08"
+      },
+      {
+        "age": 28.75,
+        "arcana": 14,
+        "calendar_year": 1994,
+        "label": "28–29",
+        "level": 3,
+        "name": "Umiar",
+        "start_date": "1994-05-08"
+      },
+      {
+        "age": 30.0,
+        "arcana": 11,
+        "calendar_year": 1995,
+        "label": "30",
+        "level": 0,
+        "name": "Sprawiedliwość",
+        "start_date": "1995-08-08"
+      },
+      {
+        "age": 31.25,
+        "arcana": 9,
+        "calendar_year": 1996,
+        "label": "31–32",
+        "level": 3,
+        "name": "Pustelnik",
+        "start_date": "1996-11-08"
+      },
+      {
+        "age": 32.5,
+        "arcana": 16,
+        "calendar_year": 1998,
+        "label": "32–33",
+        "level": 2,
+        "name": "Wieża",
+        "start_date": "1998-02-08"
+      },
+      {
+        "age": 33.75,
+        "arcana": 21,
+        "calendar_year": 1999,
+        "label": "33–34",
+        "level": 3,
+        "name": "Świat",
+        "start_date": "1999-05-08"
+      },
+      {
+        "age": 35.0,
+        "arcana": 5,
+        "calendar_year": 2000,
+        "label": "35",
+        "level": 1,
+        "name": "Hierofant",
+        "start_date": "2000-08-08"
+      },
+      {
+        "age": 36.25,
+        "arcana": 13,
+        "calendar_year": 2001,
+        "label": "36–37",
+        "level": 3,
+        "name": "Śmierć",
+        "start_date": "2001-11-08"
+      },
+      {
+        "age": 37.5,
+        "arcana": 8,
+        "calendar_year": 2003,
+        "label": "37–38",
+        "level": 2,
+        "name": "Siła",
+        "start_date": "2003-02-08"
+      },
+      {
+        "age": 38.75,
+        "arcana": 11,
+        "calendar_year": 2004,
+        "label": "38–39",
+        "level": 3,
+        "name": "Sprawiedliwość",
+        "start_date": "2004-05-08"
+      },
+      {
+        "age": 40.0,
+        "arcana": 21,
+        "calendar_year": 2005,
+        "label": "40",
+        "level": 0,
+        "name": "Świat",
+        "start_date": "2005-08-08"
+      },
+      {
+        "age": 41.25,
+        "arcana": 4,
+        "calendar_year": 2006,
+        "label": "41–42",
+        "level": 3,
+        "name": "Cesarz",
+        "start_date": "2006-11-08"
+      },
+      {
+        "age": 42.5,
+        "arcana": 10,
+        "calendar_year": 2008,
+        "label": "42–43",
+        "level": 2,
+        "name": "Koło Fortuny",
+        "start_date": "2008-02-08"
+      },
+      {
+        "age": 43.75,
+        "arcana": 17,
+        "calendar_year": 2009,
+        "label": "43–44",
+        "level": 3,
+        "name": "Gwiazda",
+        "start_date": "2009-05-08"
+      },
+      {
+        "age": 45.0,
+        "arcana": 7,
+        "calendar_year": 2010,
+        "label": "45",
+        "level": 1,
+        "name": "Rydwan",
+        "start_date": "2010-08-08"
+      },
+      {
+        "age": 46.25,
+        "arcana": 18,
+        "calendar_year": 2011,
+        "label": "46–47",
+        "level": 3,
+        "name": "Księżyc",
+        "start_date": "2011-11-08"
+      },
+      {
+        "age": 47.5,
+        "arcana": 11,
+        "calendar_year": 2013,
+        "label": "47–48",
+        "level": 2,
+        "name": "Sprawiedliwość",
+        "start_date": "2013-02-08"
+      },
+      {
+        "age": 48.75,
+        "arcana": 15,
+        "calendar_year": 2014,
+        "label": "48–49",
+        "level": 3,
+        "name": "Diabeł",
+        "start_date": "2014-05-08"
+      },
+      {
+        "age": 50.0,
+        "arcana": 4,
+        "calendar_year": 2015,
+        "label": "50",
+        "level": 0,
+        "name": "Cesarz",
+        "start_date": "2015-08-08"
+      },
+      {
+        "age": 51.25,
+        "arcana": 22,
+        "calendar_year": 2016,
+        "label": "51–52",
+        "level": 3,
+        "name": "Głupiec",
+        "start_date": "2016-11-08"
+      },
+      {
+        "age": 52.5,
+        "arcana": 18,
+        "calendar_year": 2018,
+        "label": "52–53",
+        "level": 2,
+        "name": "Księżyc",
+        "start_date": "2018-02-08"
+      },
+      {
+        "age": 53.75,
+        "arcana": 5,
+        "calendar_year": 2019,
+        "label": "53–54",
+        "level": 3,
+        "name": "Hierofant",
+        "start_date": "2019-05-08"
+      },
+      {
+        "age": 55.0,
+        "arcana": 14,
+        "calendar_year": 2020,
+        "label": "55",
+        "level": 1,
+        "name": "Umiar",
+        "start_date": "2020-08-08"
+      },
+      {
+        "age": 56.25,
+        "arcana": 20,
+        "calendar_year": 2021,
+        "label": "56–57",
+        "level": 3,
+        "name": "Sąd Ostateczny",
+        "start_date": "2021-11-08"
+      },
+      {
+        "age": 57.5,
+        "arcana": 6,
+        "calendar_year": 2023,
+        "label": "57–58",
+        "level": 2,
+        "name": "Kochankowie",
+        "start_date": "2023-02-08"
+      },
+      {
+        "age": 58.75,
+        "arcana": 16,
+        "calendar_year": 2024,
+        "label": "58–59",
+        "level": 3,
+        "name": "Wieża",
+        "start_date": "2024-05-08"
+      },
+      {
+        "age": 60.0,
+        "arcana": 10,
+        "calendar_year": 2025,
+        "label": "60",
+        "level": 0,
+        "name": "Koło Fortuny",
+        "start_date": "2025-08-08"
+      },
+      {
+        "age": 61.25,
+        "arcana": 3,
+        "calendar_year": 2026,
+        "label": "61–62",
+        "level": 3,
+        "name": "Cesarzowa",
+        "start_date": "2026-11-08"
+      },
+      {
+        "age": 62.5,
+        "arcana": 20,
+        "calendar_year": 2028,
+        "label": "62–63",
+        "level": 2,
+        "name": "Sąd Ostateczny",
+        "start_date": "2028-02-08"
+      },
+      {
+        "age": 63.75,
+        "arcana": 3,
+        "calendar_year": 2029,
+        "label": "63–64",
+        "level": 3,
+        "name": "Cesarzowa",
+        "start_date": "2029-05-08"
+      },
+      {
+        "age": 65.0,
+        "arcana": 10,
+        "calendar_year": 2030,
+        "label": "65",
+        "level": 1,
+        "name": "Koło Fortuny",
+        "start_date": "2030-08-08"
+      },
+      {
+        "age": 66.25,
+        "arcana": 20,
+        "calendar_year": 2031,
+        "label": "66–67",
+        "level": 3,
+        "name": "Sąd Ostateczny",
+        "start_date": "2031-11-08"
+      },
+      {
+        "age": 67.5,
+        "arcana": 10,
+        "calendar_year": 2033,
+        "label": "67–68",
+        "level": 2,
+        "name": "Koło Fortuny",
+        "start_date": "2033-02-08"
+      },
+      {
+        "age": 68.75,
+        "arcana": 10,
+        "calendar_year": 2034,
+        "label": "68–69",
+        "level": 3,
+        "name": "Koło Fortuny",
+        "start_date": "2034-05-08"
+      },
+      {
+        "age": 70.0,
+        "arcana": 18,
+        "calendar_year": 2035,
+        "label": "70",
+        "level": 0,
+        "name": "Księżyc",
+        "start_date": "2035-08-08"
+      },
+      {
+        "age": 71.25,
+        "arcana": 8,
+        "calendar_year": 2036,
+        "label": "71–72",
+        "level": 3,
+        "name": "Siła",
+        "start_date": "2036-11-08"
+      },
+      {
+        "age": 72.5,
+        "arcana": 8,
+        "calendar_year": 2038,
+        "label": "72–73",
+        "level": 2,
+        "name": "Siła",
+        "start_date": "2038-02-08"
+      },
+      {
+        "age": 73.75,
+        "arcana": 16,
+        "calendar_year": 2039,
+        "label": "73–74",
+        "level": 3,
+        "name": "Wieża",
+        "start_date": "2039-05-08"
+      },
+      {
+        "age": 75.0,
+        "arcana": 8,
+        "calendar_year": 2040,
+        "label": "75",
+        "level": 1,
+        "name": "Siła",
+        "start_date": "2040-08-08"
+      },
+      {
+        "age": 76.25,
+        "arcana": 6,
+        "calendar_year": 2041,
+        "label": "76–77",
+        "level": 3,
+        "name": "Kochankowie",
+        "start_date": "2041-11-08"
+      },
+      {
+        "age": 77.5,
+        "arcana": 16,
+        "calendar_year": 2043,
+        "label": "77–78",
+        "level": 2,
+        "name": "Wieża",
+        "start_date": "2043-02-08"
+      },
+      {
+        "age": 78.75,
+        "arcana": 6,
+        "calendar_year": 2044,
+        "label": "78–79",
+        "level": 3,
+        "name": "Kochankowie",
+        "start_date": "2044-05-08"
+      }
+    ],
     "core": {
       "bottom": 10,
       "center": 11,
@@ -1071,6 +1650,22 @@
       "left": "Siła",
       "right": "Świat",
       "top": "Siła"
+    },
+    "current_point": {
+      "age": 60.0,
+      "arcana": 10,
+      "calendar_year": 2025,
+      "label": "60",
+      "level": 0,
+      "name": "Koło Fortuny",
+      "start_date": "2025-08-08"
+    },
+    "deprecated": {
+      "lines.relationship": "since engine 1.1.0; use love_money (love, mid, money)"
+    },
+    "heart_points": {
+      "left": 3,
+      "top": 3
     },
     "intermediate": {
       "center_bottom": 21,
@@ -1095,42 +1690,110 @@
         8
       ]
     },
+    "love_money": {
+      "love": 11,
+      "mid": 8,
+      "money": 13
+    },
+    "next_point": {
+      "age": 61.25,
+      "arcana": 3,
+      "calendar_year": 2026,
+      "label": "61–62",
+      "level": 3,
+      "name": "Cesarzowa",
+      "start_date": "2026-11-08"
+    },
+    "octagram": {
+      "bottom": {
+        "in1": 4,
+        "in2": 21,
+        "name": "Koło Fortuny",
+        "value": 10
+      },
+      "bottom_left": {
+        "in1": 11,
+        "in2": 11,
+        "name": "Księżyc",
+        "value": 18
+      },
+      "bottom_right": {
+        "in1": 19,
+        "in2": 15,
+        "name": "Cesarz",
+        "value": 4
+      },
+      "center": {
+        "name": "Sprawiedliwość",
+        "value": 11
+      },
+      "left": {
+        "in1": 9,
+        "in2": 19,
+        "name": "Siła",
+        "value": 8
+      },
+      "right": {
+        "in1": 8,
+        "in2": 5,
+        "name": "Świat",
+        "value": 21
+      },
+      "top": {
+        "in1": 9,
+        "in2": 19,
+        "name": "Siła",
+        "value": 8
+      },
+      "top_left": {
+        "in1": 7,
+        "in2": 9,
+        "name": "Wieża",
+        "value": 16
+      },
+      "top_right": {
+        "in1": 6,
+        "in2": 22,
+        "name": "Sprawiedliwość",
+        "value": 11
+      }
+    },
     "personal_destiny_40": 11,
     "personal_destiny_40_name": "Sprawiedliwość",
     "timeline": {
       "current_age": 60,
       "decades": {
         "20": {
+          "arcana_name": "Siła",
+          "arcana_number": 8,
+          "vertex": "top"
+        },
+        "30": {
+          "arcana_name": "Sprawiedliwość",
+          "arcana_number": 11,
+          "vertex": "top_right"
+        },
+        "40": {
           "arcana_name": "Świat",
           "arcana_number": 21,
           "vertex": "right"
         },
-        "30": {
+        "50": {
+          "arcana_name": "Cesarz",
+          "arcana_number": 4,
+          "vertex": "bottom_right"
+        },
+        "60": {
           "arcana_name": "Koło Fortuny",
           "arcana_number": 10,
           "vertex": "bottom"
-        },
-        "40": {
-          "arcana_name": "Siła",
-          "arcana_number": 8,
-          "vertex": "left"
-        },
-        "50": {
-          "arcana_name": "Sprawiedliwość",
-          "arcana_number": 11,
-          "vertex": "center"
-        },
-        "60": {
-          "arcana_name": "Siła",
-          "arcana_number": 8,
-          "vertex": "top"
         }
       },
       "highlighted_decade": "60"
     }
   },
   "meta": {
-    "engine_version": "1.0.8",
+    "engine_version": "1.1.0",
     "errors": [],
     "julian_day_ut": 2438980.81944444,
     "reference_date": "2026-07-31",
