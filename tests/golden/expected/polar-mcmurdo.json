@@ -563,14 +563,14 @@
     "north_node_longitude": 298.181392,
     "planets": [
       {
-        "degree_in_sign": 1,
+        "degree_in_sign": 0,
         "draconic_longitude": 330.625332,
         "name": "Sun",
         "sign": "Pisces",
         "tropical_longitude": 268.806724
       },
       {
-        "degree_in_sign": 12,
+        "degree_in_sign": 11,
         "draconic_longitude": 11.905386,
         "name": "Moon",
         "sign": "Aries",
@@ -584,7 +584,7 @@
         "tropical_longitude": 276.544134
       },
       {
-        "degree_in_sign": 13,
+        "degree_in_sign": 12,
         "draconic_longitude": 342.685858,
         "name": "Venus",
         "sign": "Pisces",
@@ -598,7 +598,7 @@
         "tropical_longitude": 58.656825
       },
       {
-        "degree_in_sign": 15,
+        "degree_in_sign": 14,
         "draconic_longitude": 194.711534,
         "name": "Jupiter",
         "sign": "Libra",
@@ -612,14 +612,14 @@
         "tropical_longitude": 294.406319
       },
       {
-        "degree_in_sign": 11,
+        "degree_in_sign": 10,
         "draconic_longitude": 340.88905,
         "name": "Uranus",
         "sign": "Pisces",
         "tropical_longitude": 279.070442
       },
       {
-        "degree_in_sign": 16,
+        "degree_in_sign": 15,
         "draconic_longitude": 345.521988,
         "name": "Neptune",
         "sign": "Pisces",

@@ -562,7 +562,7 @@
         "tropical_longitude": 280.326443
       },
       {
-        "degree_in_sign": 9,
+        "degree_in_sign": 8,
         "draconic_longitude": 98.867609,
         "house_number": 7,
         "name": "Moon",
@@ -570,7 +570,7 @@
         "tropical_longitude": 222.822762
       },
       {
-        "degree_in_sign": 28,
+        "degree_in_sign": 27,
         "draconic_longitude": 147.869283,
         "house_number": 9,
         "name": "Mercury",
@@ -578,7 +578,7 @@
         "tropical_longitude": 271.824436
       },
       {
-        "degree_in_sign": 28,
+        "degree_in_sign": 27,
         "draconic_longitude": 117.56027,
         "house_number": 7,
         "name": "Venus",
@@ -586,7 +586,7 @@
         "tropical_longitude": 241.515423
       },
       {
-        "degree_in_sign": 24,
+        "degree_in_sign": 23,
         "draconic_longitude": 203.975841,
         "house_number": 11,
         "name": "Mars",
@@ -610,7 +610,7 @@
         "tropical_longitude": 40.396472
       },
       {
-        "degree_in_sign": 11,
+        "degree_in_sign": 10,
         "draconic_longitude": 190.851973,
         "house_number": 11,
         "name": "Uranus",

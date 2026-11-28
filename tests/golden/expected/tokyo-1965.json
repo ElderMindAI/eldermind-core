@@ -581,7 +581,7 @@
     "north_node_longitude": 71.962656,
     "planets": [
       {
-        "degree_in_sign": 4,
+        "degree_in_sign": 3,
         "draconic_longitude": 63.580044,
         "house_number": 7,
         "name": "Sun",
@@ -589,7 +589,7 @@
         "tropical_longitude": 135.5427
       },
       {
-        "degree_in_sign": 20,
+        "degree_in_sign": 19,
         "draconic_longitude": 199.671732,
         "house_number": 12,
         "name": "Moon",
@@ -605,7 +605,7 @@
         "tropical_longitude": 148.308884
       },
       {
-        "degree_in_sign": 5,
+        "degree_in_sign": 4,
         "draconic_longitude": 94.57036,
         "house_number": 8,
         "name": "Venus",
@@ -621,7 +621,7 @@
         "tropical_longitude": 202.450338
       },
       {
-        "degree_in_sign": 12,
+        "degree_in_sign": 11,
         "draconic_longitude": 11.865557,
         "house_number": 6,
         "name": "Jupiter",
@@ -629,7 +629,7 @@
         "tropical_longitude": 83.828213
       },
       {
-        "degree_in_sign": 4,
+        "degree_in_sign": 3,
         "draconic_longitude": 273.939552,
         "house_number": 2,
         "name": "Saturn",

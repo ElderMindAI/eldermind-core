@@ -431,7 +431,8 @@ def compute_draconic_chart(jd_ut: float, house_cusps: list[dict] | None = None) 
     the North Node. For every planet/point we subtract the Node's longitude and
     wrap to [0, 360).
 
-    The output rounds positional data to whole degrees so prompts never contain
+    ``degree_in_sign`` is a whole degree, truncated like every other whole
+    degree the report prints (29°40' -> 29°), so prompts never contain
     misleading ``X°YY'`` values where YY > 59 (e.g. 8°91').
 
     Args:
@@ -458,8 +459,10 @@ def compute_draconic_chart(jd_ut: float, house_cusps: list[dict] | None = None) 
             "name": name,
             "draconic_longitude": round(draconic_longitude, 6),
             "sign": sign,
-            # Round to whole degrees to prevent LLM hallucinations like 8°91'.
-            "degree_in_sign": int(round(degree_in_sign)) % 30,
+            # Whole degrees, truncated (29°40' -> 29°), from the same unrounded
+            # value the sign comes from. Rounding gave 29°40' Capricorn as
+            # "Capricorn 0°" until 1.1.0.
+            "degree_in_sign": int(degree_in_sign),
             "tropical_longitude": round(tropical["longitude"], 6),
         }
         if house_cusps:

@@ -572,7 +572,7 @@
     "north_node_longitude": 141.594394,
     "planets": [
       {
-        "degree_in_sign": 9,
+        "degree_in_sign": 8,
         "draconic_longitude": 308.573218,
         "name": "Sun",
         "sign": "Aquarius",
@@ -586,7 +586,7 @@
         "tropical_longitude": 189.909803
       },
       {
-        "degree_in_sign": 2,
+        "degree_in_sign": 1,
         "draconic_longitude": 331.638889,
         "name": "Mercury",
         "sign": "Pisces",
@@ -607,7 +607,7 @@
         "tropical_longitude": 169.705992
       },
       {
-        "degree_in_sign": 13,
+        "degree_in_sign": 12,
         "draconic_longitude": 12.997923,
         "name": "Jupiter",
         "sign": "Aries",
@@ -621,7 +621,7 @@
         "tropical_longitude": 170.947803
       },
       {
-        "degree_in_sign": 1,
+        "degree_in_sign": 0,
         "draconic_longitude": 90.520831,
         "name": "Uranus",
         "sign": "Cancer",
