@@ -1,0 +1,2513 @@
+{
+ "_meta": {
+  "what": "Names of the 192 Human Design incarnation crosses (Polish and English). Names, gates and source address only — no descriptions.",
+  "gates": "[Personality Sun, Personality Earth, Design Sun, Design Earth] — the order of human_design.mechanics.incarnation_cross_gates",
+  "angle": "as human_design.mechanics.incarnation_cross_angle: Right Angle (4 variants), Left Angle (2 variants), Juxtaposition (1)",
+  "key": "(angle, Personality Sun gate) is unique; Left Angle and Juxtaposition share the same 4 gates",
+  "source_pl": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia",
+  "source_en_confirmation": "https://github.com/CReizner/SharpAstrology.HumanDesign/blob/main/Enums/IncarnationCross.cs",
+  "rules": [
+   "name_en: wording confirmed by the second source; 'The' dropped; variant number for Right Angle (1-4) and Left Angle (1-2), none for Juxtaposition",
+   "name_pl: wording of the Polish source; variants of one cross unified to the majority form (tie: variant 1); typos normalised"
+  ],
+  "built_by": "Backend Calculator Engine tools/gfx/s8b_build_crosses.py (S8b, 28.11.2026)"
+ },
+ "crosses": [
+  {
+   "angle": "Right Angle",
+   "gates": [
+    1,
+    2,
+    7,
+    13
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Sfinksa 4",
+   "name_en": "Right Angle Cross of the Sphinx 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-the-sphinx-4-prawy-krzyz-sfinksa-4-1-2-or-7-13"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    2,
+    1,
+    13,
+    7
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Sfinksa 2",
+   "name_en": "Right Angle Cross of the Sphinx 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-sphinx-2-prawy-krzyz-sfinksa-2-2-1-or-13-7"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    3,
+    50,
+    60,
+    56
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Praw 1",
+   "name_en": "Right Angle Cross of Laws 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-laws-prawy-krzyz-praw-3-50-or-60-56"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    4,
+    49,
+    23,
+    43
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Wyjaśnienia 3",
+   "name_en": "Right Angle Cross of Explanation 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-explanation-3-prawy-krzyz-wyjasnien-3-4-49-or-23-43"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    5,
+    35,
+    64,
+    63
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Świadomości 4",
+   "name_en": "Right Angle Cross of Consciousness 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-consciousness-4-prawy-krzyz-swiadomosci-4-5-35-or-64-63"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    6,
+    36,
+    12,
+    11
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Edenu 3",
+   "name_en": "Right Angle Cross of Eden 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-eden-3-prawy-krzyz-raju-3-6-36-or-12-11"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    7,
+    13,
+    2,
+    1
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Sfinksa 3",
+   "name_en": "Right Angle Cross of the Sphinx 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-sphinx-3-prawy-krzyz-sfinksa-3-7-13-or-2-1"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    8,
+    14,
+    30,
+    29
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Zarażania 2",
+   "name_en": "Right Angle Cross of Contagion 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-inspiration-2-prawy-krzyz-inspiracji-2-8-14-or-30-29"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    9,
+    16,
+    40,
+    37
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Planowania 4",
+   "name_en": "Right Angle Cross of Planning 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-planning-4-prawy-krzyz-planowania-4-9-16-or-40-37"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    10,
+    15,
+    46,
+    25
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Naczynia Miłości 4",
+   "name_en": "Right Angle Cross of the Vessel of Love 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/right-cross-of-the-vessel-of-love-4-prawy-krzyz-milosci-4-10-15-or-46-25"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    11,
+    12,
+    6,
+    36
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Edenu 4",
+   "name_en": "Right Angle Cross of Eden 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/right-cross-of-eden-4-prawy-krzyz-raju-4-11-12-or-6-36"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    12,
+    11,
+    36,
+    6
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Edenu 2",
+   "name_en": "Right Angle Cross of Eden 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-eden-2-prawy-krzyz-raju-2-12-11-or-36-6"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    13,
+    7,
+    1,
+    2
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Sfinksa 1",
+   "name_en": "Right Angle Cross of the Sphinx 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-the-sphinx-prawy-krzyz-sfinksa-13-7-or-1-2"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    14,
+    8,
+    29,
+    30
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Zarażania 4",
+   "name_en": "Right Angle Cross of Contagion 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-inspiration-4-prawy-krzyz-inspiracji-4-14-8-or-29-30"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    15,
+    10,
+    25,
+    46
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Naczynia Miłości 2",
+   "name_en": "Right Angle Cross of the Vessel of Love 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-love-2-prawy-krzyz-naczynia-milosci-2-15-10-or-25-46"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    16,
+    9,
+    37,
+    40
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Planowania 2",
+   "name_en": "Right Angle Cross of Planning 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-planning-2-prawy-krzyz-planowania-2-16-9-or-37-40"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    17,
+    18,
+    58,
+    52
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Służby 1",
+   "name_en": "Right Angle Cross of Service 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-service-prawy-krzyz-sluzby-17-18-or-58-52"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    18,
+    17,
+    52,
+    58
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Służby 3",
+   "name_en": "Right Angle Cross of Service 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-service-3-prawy-krzyz-sluzby-3-18-17-or-52-58"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    19,
+    33,
+    44,
+    24
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Czterech Dróg 4",
+   "name_en": "Right Angle Cross of the Four Ways 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-four-ways-4-prawy-krzyz-czterech-drog-4-19-33-or-44-24"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    20,
+    34,
+    55,
+    59
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Śpiącego Feniksa 2",
+   "name_en": "Right Angle Cross of the Sleeping Phoenix 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-sleeping-sphinx-2-prawy-krzyz-spiacego-feniksa-2-20-34-or-55-59"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    21,
+    48,
+    38,
+    39
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Napięcia 1",
+   "name_en": "Right Angle Cross of Tension 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-tension-prawy-krzyz-napiec-21-48-or-38-39"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    22,
+    47,
+    26,
+    45
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Władzy 1",
+   "name_en": "Right Angle Cross of Rulership 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-control-prawy-krzyz-kontroli-22-47-or-26-45"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    23,
+    43,
+    49,
+    4
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Wyjaśnienia 2",
+   "name_en": "Right Angle Cross of Explanation 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-explanation-2-prostokatny-krzyz-wyjasnienia-2-23-43-or-49-4"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    24,
+    44,
+    19,
+    33
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Czterech Dróg 1",
+   "name_en": "Right Angle Cross of the Four Ways 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-four-ways-prawy-krzyz-czterech-drog-24-44-or-19-33"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    25,
+    46,
+    10,
+    15
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Naczynia Miłości 1",
+   "name_en": "Right Angle Cross of the Vessel of Love 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-the-vessel-of-love-prawy-krzyz-naczynia-milosci-25-46-or-10-15"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    26,
+    45,
+    47,
+    22
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Władzy 4",
+   "name_en": "Right Angle Cross of Rulership 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-control-4-prawy-krzyz-wladzy-4-26-45-or-47-22"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    27,
+    28,
+    41,
+    31
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Niespodziewanego 1",
+   "name_en": "Right Angle Cross of the Unexpected 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-unexpected-prawy-krzyz-niespodziewanego-27-28-or-41-31"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    28,
+    27,
+    31,
+    41
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Niespodziewanego 3",
+   "name_en": "Right Angle Cross of the Unexpected 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-unexpected-prawy-krzyz-niespodziewanego-3-28-27-or-31-41"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    29,
+    30,
+    8,
+    14
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Zarażania 3",
+   "name_en": "Right Angle Cross of Contagion 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-infection-prawy-krzyz-zarazania-3-29-30-or-8-14"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    30,
+    29,
+    14,
+    8
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Zarażania 1",
+   "name_en": "Right Angle Cross of Contagion 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-infection-prawy-krzyz-zarazenia-30-29-or-14-8"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    31,
+    41,
+    27,
+    28
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Niespodziewanego 2",
+   "name_en": "Right Angle Cross of the Unexpected 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-unexpected-2-prawy-krzyz-nieoczekiwanego-2-31-41-or-27-28"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    32,
+    42,
+    62,
+    61
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Mai 3",
+   "name_en": "Right Angle Cross of Maya 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-maya-3-prawy-krzyz-maji-3-32-42-or-62-61"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    33,
+    19,
+    24,
+    44
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Czterech Dróg 2",
+   "name_en": "Right Angle Cross of the Four Ways 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-four-ways-prawy-krzyz-czterech-drog-2-33-19-or-24-44"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    34,
+    20,
+    59,
+    55
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Śpiącego Feniksa 4",
+   "name_en": "Right Angle Cross of the Sleeping Phoenix 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-sleeping-fenix-4-prawy-krzyz-spiacego-feniksa-4-34-20-or-59-55"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    35,
+    5,
+    63,
+    64
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Świadomości 2",
+   "name_en": "Right Angle Cross of Consciousness 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-cross-of-consciousness-prawy-krzyz-swiadomosci-2-35-5-or-63-64"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    36,
+    6,
+    11,
+    12
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Edenu 1",
+   "name_en": "Right Angle Cross of Eden 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-if-eden-prawy-krzyz-edenu-36-6-or-11-12"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    37,
+    40,
+    9,
+    16
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Planowania 1",
+   "name_en": "Right Angle Cross of Planning 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-planning-prawy-krzyz-planowania-37-40-or-9-16"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    38,
+    39,
+    48,
+    21
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Napięcia 4",
+   "name_en": "Right Angle Cross of Tension 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-tension-prawy-krzyz-napiecia-4-38-39-or-48-21"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    39,
+    38,
+    21,
+    48
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Napięcia 2",
+   "name_en": "Right Angle Cross of Tension 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-tension-prawy-krzyz-napiecia-2-39-38-or-21-48"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    40,
+    37,
+    16,
+    9
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Planowania 3",
+   "name_en": "Right Angle Cross of Planning 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-planning-3-prawy-krzyz-planowania-3-40-37-or-16-9"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    41,
+    31,
+    28,
+    27
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Niespodziewanego 4",
+   "name_en": "Right Angle Cross of the Unexpected 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-unexpected-prawy-krzyz-niespodziewanego-4-41-31-or-28-27"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    42,
+    32,
+    61,
+    62
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Mai 1",
+   "name_en": "Right Angle Cross of Maya 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-cross-of-maya-prawy-krzyz-maji-42-32-or-61-62"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    43,
+    23,
+    4,
+    49
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Wyjaśnienia 4",
+   "name_en": "Right Angle Cross of Explanation 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-cross-of-explanation-prawy-krzyz-wyjasnienia-4-43-23-or-4-49"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    44,
+    24,
+    33,
+    19
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Czterech Dróg 3",
+   "name_en": "Right Angle Cross of the Four Ways 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-four-ways-3-prawy-krzyz-czterech-drog-3-44-24-or-33-19"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    45,
+    26,
+    22,
+    47
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Władzy 2",
+   "name_en": "Right Angle Cross of Rulership 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-power-2-prawy-krzyz-wladzy-2-45-26-or-22-47"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    46,
+    25,
+    15,
+    10
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Naczynia Miłości 3",
+   "name_en": "Right Angle Cross of the Vessel of Love 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-the-vessel-of-love-prawy-krzyz-naczynia-milosci-3-46-25-or-15-10"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    47,
+    22,
+    45,
+    26
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Władzy 3",
+   "name_en": "Right Angle Cross of Rulership 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-rulership-prawy-krzyz-wladzy-3-47-22-or-45-26"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    48,
+    21,
+    39,
+    38
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Napięcia 3",
+   "name_en": "Right Angle Cross of Tension 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-tension-prawy-krzyz-napiecia-3-48-21-or-39-38"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    49,
+    4,
+    43,
+    23
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Wyjaśnienia 1",
+   "name_en": "Right Angle Cross of Explanation 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-explanation-prawy-krzyz-wyjasnienia-49-4-or-43-23"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    50,
+    3,
+    56,
+    60
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Praw 3",
+   "name_en": "Right Angle Cross of Laws 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-laws-prawy-krzyz-praw-3-50-3-or-56-60"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    51,
+    57,
+    54,
+    53
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Penetracji 1",
+   "name_en": "Right Angle Cross of Penetration 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-penetration-prawy-krzyz-penetracji-51-57-or-54-53"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    52,
+    58,
+    17,
+    18
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Służby 2",
+   "name_en": "Right Angle Cross of Service 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-service-2-prawy-krzyz-sluzenia-2-52-58-or-17-18"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    53,
+    54,
+    51,
+    57
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Penetracji 2",
+   "name_en": "Right Angle Cross of Penetration 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-penetration-prawy-krzyz-penetracji-2-53-54-or-51-57"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    54,
+    53,
+    57,
+    51
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Penetracji 4",
+   "name_en": "Right Angle Cross of Penetration 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-cross-of-penetration-4-prawy-krzyz-penetracji-4-54-53-or-57-51"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    55,
+    59,
+    34,
+    20
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Śpiącego Feniksa 1",
+   "name_en": "Right Angle Cross of the Sleeping Phoenix 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-sleeping-feniks-prawy-krzyz-spiacego-feniksa-55-59-or-34-20"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    56,
+    60,
+    3,
+    50
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Praw 2",
+   "name_en": "Right Angle Cross of Laws 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-laws-2-prawy-krzyz-praw-2-56-60-or-3-50"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    57,
+    51,
+    53,
+    54
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Penetracji 3",
+   "name_en": "Right Angle Cross of Penetration 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-penetration-3-prawy-krzyz-penetracji-3-57-51-or-53-54"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    58,
+    52,
+    18,
+    17
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Służby 4",
+   "name_en": "Right Angle Cross of Service 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-service-4-prawy-krzyz-sluzby-4-58-52-or-18-17"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    59,
+    55,
+    20,
+    34
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Śpiącego Feniksa 3",
+   "name_en": "Right Angle Cross of the Sleeping Phoenix 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/prawy-krzyz-spiacego-feniksa-3-59-55-or-20-34"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    60,
+    56,
+    50,
+    3
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Praw 4",
+   "name_en": "Right Angle Cross of Laws 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-laws-4-prawy-krzyz-praw-4-60-56-or-50-3"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    61,
+    62,
+    32,
+    42
+   ],
+   "variant": 4,
+   "name_pl": "Prawy Krzyż Mai 4",
+   "name_en": "Right Angle Cross of Maya 4",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-maya-4-prawy-krzyz-maji-4-61-62-or-32-42"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    62,
+    61,
+    42,
+    32
+   ],
+   "variant": 2,
+   "name_pl": "Prawy Krzyż Mai 2",
+   "name_en": "Right Angle Cross of Maya 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-maya-2-prawy-krzyz-maji-2-62-61-or-42-32"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    63,
+    64,
+    5,
+    35
+   ],
+   "variant": 1,
+   "name_pl": "Prawy Krzyż Świadomości 1",
+   "name_en": "Right Angle Cross of Consciousness 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-consciousness-prawy-krzyz-swiadomosci-63-64-or-5-35"
+  },
+  {
+   "angle": "Right Angle",
+   "gates": [
+    64,
+    63,
+    35,
+    5
+   ],
+   "variant": 3,
+   "name_pl": "Prawy Krzyż Świadomości 3",
+   "name_en": "Right Angle Cross of Consciousness 3",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-right-angle-cross-of-consciousness-3-prawy-krzyz-swiadomosci-3-64-63-or-35-5"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    1,
+    2,
+    4,
+    49
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Oporu 2",
+   "name_en": "Left Angle Cross of Defiance 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-defiance-2-lewy-krzyz-oporu-2-1-2-or-4-49"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    2,
+    1,
+    49,
+    4
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Oporu 1",
+   "name_en": "Left Angle Cross of Defiance 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-defiance-lewy-krzyz-oporu-2-1-or-49-4"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    3,
+    50,
+    41,
+    31
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Pragnień 1",
+   "name_en": "Left Angle Cross of Wishes 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-desires-lewy-krzyz-pragnien-3-50-or-41-31"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    4,
+    49,
+    8,
+    14
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Rewolucji 2",
+   "name_en": "Left Angle Cross of Revolution 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/lewy-krzyz-rewolucji-2-the-left-angle-cross-of-revolution-2-4-49-or-8-14"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    5,
+    35,
+    47,
+    22
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Separacji 2",
+   "name_en": "Left Angle Cross of Separation 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-separation-2-lewy-krzyz-separacji-2-5-35-or-47-22"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    6,
+    36,
+    15,
+    10
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Równi 2",
+   "name_en": "Left Angle Cross of the Plane 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-plane-2-lewy-krzyz-planu-2-6-36-or-15-10"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    7,
+    13,
+    23,
+    43
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Masek 2",
+   "name_en": "Left Angle Cross of Masks 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-masks-lewy-krzyz-masek-2-7-13-or-23-43"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    8,
+    14,
+    55,
+    59
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Niepewności 1",
+   "name_en": "Left Angle Cross of Uncertainty 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-contribution-lewy-krzyz-wkladu-8-14-or-55-59"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    9,
+    16,
+    64,
+    63
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Identyfikacji 2",
+   "name_en": "Left Angle Cross of Identification 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-identification-2-lewy-krzyz-utozsamienia-2-9-16-or-64-63"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    10,
+    15,
+    18,
+    17
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Prewencji 2",
+   "name_en": "Left Angle Cross of Prevention 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-prevention-2-lewy-krzyz-prewencji-2-10-15-or-18-17"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    11,
+    12,
+    46,
+    25
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Edukacji 2",
+   "name_en": "Left Angle Cross of Education 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-education-2-lewy-krzyz-edukacji-2-11-12-or-46-25"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    12,
+    11,
+    25,
+    46
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Edukacji 1",
+   "name_en": "Left Angle Cross of Education 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-education-lewy-krzyz-edukacji-12-11-or-25-46"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    13,
+    7,
+    43,
+    23
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Masek 1",
+   "name_en": "Left Angle Cross of Masks 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-masks-lewy-krzyz-masek-13-7-or-43-23"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    14,
+    8,
+    59,
+    55
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Niepewności 2",
+   "name_en": "Left Angle Cross of Uncertainty 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-uncertainty-2-lewy-krzyz-niepewnosci-2-14-8-or-59-55"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    15,
+    10,
+    17,
+    18
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Prewencji 1",
+   "name_en": "Left Angle Cross of Prevention 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-prevention-lewy-krzyz-prewencji-15-10-or-17-18"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    16,
+    9,
+    63,
+    64
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Identyfikacji 1",
+   "name_en": "Left Angle Cross of Identification 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-identification-lewy-krzyz-identyfikacji-16-9-or-63-64"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    17,
+    18,
+    38,
+    39
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Przewrotu 1",
+   "name_en": "Left Angle Cross of Upheaval 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-upheaval-lewy-krzyz-przewrotu-17-18-or-38-39"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    18,
+    17,
+    39,
+    38
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Przewrotu 2",
+   "name_en": "Left Angle Cross of Upheaval 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-upheaval-2-lewy-krzyz-przewrotu-2-18-17-or-39-38"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    19,
+    33,
+    1,
+    2
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Doskonalenia 2",
+   "name_en": "Left Angle Cross of Refinement 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-perfection-2-lewy-krzyz-doskonalenia-2-19-33-or-1-2"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    20,
+    34,
+    37,
+    40
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Dwoistości 1",
+   "name_en": "Left Angle Cross of Duality 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-duality-lewy-krzyz-dwoistosci-20-34-or-37-40"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    21,
+    48,
+    54,
+    53
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Dążenia 1",
+   "name_en": "Left Angle Cross of Endeavour 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-aspiration-lewy-krzyz-dazenia-21-48-or-54-53"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    22,
+    47,
+    11,
+    12
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Informowania 1",
+   "name_en": "Left Angle Cross of Informing 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-informing-lewy-krzyz-informowania-22-47-or-11-12"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    23,
+    43,
+    30,
+    29
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Poświęcenia 1",
+   "name_en": "Left Angle Cross of Dedication 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-devotion-lewy-krzyz-poswiecenia-23-43-or-30-29-ed"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    24,
+    44,
+    13,
+    7
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Wcielenia 1",
+   "name_en": "Left Angle Cross of Incarnation 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-incarnation-lewy-krzyz-wcielenia-24-44-or-13-7"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    25,
+    46,
+    58,
+    52
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Uzdrawiania 1",
+   "name_en": "Left Angle Cross of Healing 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-healing-lewy-krzyz-uzdrawiania-25-46-or-58-52"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    26,
+    45,
+    6,
+    36
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Konfrontacji 2",
+   "name_en": "Left Angle Cross of Confrontation 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-confrontation-2-lewy-krzyz-konfrontacji-2-26-45-or-6-36"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    27,
+    28,
+    19,
+    33
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Ześrodkowania 1",
+   "name_en": "Left Angle Cross of Alignment 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-distraction-lewy-krzyz-rozproszenia-27-28-or-19-33"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    28,
+    27,
+    33,
+    19
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Ześrodkowania 2",
+   "name_en": "Left Angle Cross of Alignment 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-distraction-2-lewy-krzyz-rozproszenia-2-28-27-or-33-19"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    29,
+    30,
+    20,
+    34
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Branży 2",
+   "name_en": "Left Angle Cross of Industry 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-industry-2-lewy-krzyz-przemyslu-2-29-30-or-20-34"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    30,
+    29,
+    34,
+    20
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Branży 1",
+   "name_en": "Left Angle Cross of Industry 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-industry-lewy-krzyz-przemyslu-30-29-or-34-20"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    31,
+    41,
+    24,
+    44
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Alfa 1",
+   "name_en": "Left Angle Cross of the Alpha 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-alpha-lewy-krzyz-alfa-31-41-or-24-44"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    32,
+    42,
+    56,
+    60
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Ograniczenia 2",
+   "name_en": "Left Angle Cross of Limitation 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-limitation-2-lewy-krzyz-ograniczenia-2-32-42-or-56-60"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    33,
+    19,
+    2,
+    1
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Doskonalenia 1",
+   "name_en": "Left Angle Cross of Refinement 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/left-cross-of-retreat-lewy-krzyz-wycofania-sie-33-19-or-2-1"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    34,
+    20,
+    40,
+    37
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Dwoistości 2",
+   "name_en": "Left Angle Cross of Duality 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/left-cross-of-duality-2-lewy-krzyz-dwoistosci-2-34-20-or-40-37"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    35,
+    5,
+    22,
+    47
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Separacji 1",
+   "name_en": "Left Angle Cross of Separation 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/left-cross-of-separation-lewy-krzyz-separacji-35-5-or-22-47"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    36,
+    6,
+    10,
+    15
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Równi 1",
+   "name_en": "Left Angle Cross of the Plane 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-plane-lewy-krzyz-planu-36-6-or-10-15"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    37,
+    40,
+    5,
+    35
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Migracji 1",
+   "name_en": "Left Angle Cross of Migration 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-migration-lewy-krzyz-migracji-37-40-or-5-35"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    38,
+    39,
+    57,
+    51
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Indywidualizmu 2",
+   "name_en": "Left Angle Cross of Individualism 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/left-cross-of-individualism-2-lewy-krzyz-indywidualizmu-2-38-39-or-57-51"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    39,
+    38,
+    51,
+    57
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Indywidualizmu 1",
+   "name_en": "Left Angle Cross of Individualism 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/left-cross-of-individualism-lewy-krzyz-indywidualizmu-39-38-or-51-57"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    40,
+    37,
+    35,
+    5
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Migracji 2",
+   "name_en": "Left Angle Cross of Migration 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-migration-2-lewy-krzyz-migracji-2-40-37-or-35-5"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    41,
+    31,
+    44,
+    24
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Alfa 2",
+   "name_en": "Left Angle Cross of the Alpha 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-alpha-2-lewy-krzyz-alpha-2-41-31-or-44-24"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    42,
+    32,
+    60,
+    56
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Ograniczenia 1",
+   "name_en": "Left Angle Cross of Limitation 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-limitation-lewy-krzyz-ograniczenia-42-32-or-60-56"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    43,
+    23,
+    29,
+    30
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Poświęcenia 2",
+   "name_en": "Left Angle Cross of Dedication 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-illumination-2-lewy-krzyz-poswiecenia-2-43-23-or-29-30"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    44,
+    24,
+    7,
+    13
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Wcielenia 2",
+   "name_en": "Left Angle Cross of Incarnation 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-incarnation-2-lewy-krzyz-wcielenia-2-44-24-or-7-13"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    45,
+    26,
+    36,
+    6
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Konfrontacji 1",
+   "name_en": "Left Angle Cross of Confrontation 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-confrontation-lewy-krzyz-konfrontacji-45-26-or-36-6"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    46,
+    25,
+    52,
+    58
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Uzdrawiania 2",
+   "name_en": "Left Angle Cross of Healing 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/left-cross-of-healing-2-lewy-krzyz-uzdrawiania-2-46-25-or-52-58"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    47,
+    22,
+    12,
+    11
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Informowania 2",
+   "name_en": "Left Angle Cross of Informing 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-informing-2-lewy-krzyz-informowania-2-47-22-or-12-11"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    48,
+    21,
+    53,
+    54
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Dążenia 2",
+   "name_en": "Left Angle Cross of Endeavour 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-endeavour-2-lewy-krzyz-aspiracji-2-48-21-or-53-54"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    49,
+    4,
+    14,
+    8
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Rewolucji 1",
+   "name_en": "Left Angle Cross of Revolution 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-revolution-lewy-krzyz-rewolucji-49-4-or-14-8"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    50,
+    3,
+    31,
+    41
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Pragnień 2",
+   "name_en": "Left Angle Cross of Wishes 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-desires-2-lewy-krzyz-pragnien-2-50-3-or-31-41"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    51,
+    57,
+    61,
+    62
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Clarion 1",
+   "name_en": "Left Angle Cross of the Clarion 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-clarion-lewy-krzyz-clarion-51-57-or-61-62"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    52,
+    58,
+    21,
+    48
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Zażądania 1",
+   "name_en": "Left Angle Cross of Demands 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-stillness-lewy-krzyz-bezruchu-52-58-or-21-48"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    53,
+    54,
+    42,
+    32
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Cykli 1",
+   "name_en": "Left Angle Cross of Cycles 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-beginnings-lewy-krzyz-poczatkow-53-54-or-42-32"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    54,
+    53,
+    32,
+    42
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Cykli 2",
+   "name_en": "Left Angle Cross of Cycles 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-beginnings-2-lewy-krzyz-skrzyzowania-cykli-2-54-53-or-32-42"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    55,
+    59,
+    9,
+    16
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Ducha 1",
+   "name_en": "Left Angle Cross of Spirit 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-spirit-lewy-krzyz-ducha-55-59-or-9-16"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    56,
+    60,
+    27,
+    28
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Rozproszenia 1",
+   "name_en": "Left Angle Cross of Distraction 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-distraction-lewy-krzyz-rozproszenia-56-60-or-27-28"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    57,
+    51,
+    62,
+    61
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Clarion 2",
+   "name_en": "Left Angle Cross of the Clarion 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-clarion-2-lewy-krzyz-rogu-2-57-51-or-62-61"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    58,
+    52,
+    48,
+    21
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Zażądania 2",
+   "name_en": "Left Angle Cross of Demands 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-vitality-2-lewy-krzyz-witalnosci-2-58-52-or-48-21"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    59,
+    55,
+    16,
+    9
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Ducha 2",
+   "name_en": "Left Angle Cross of Spirit 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-spirit-2-lewy-krzyz-ducha-2-59-55-or-16-9"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    60,
+    56,
+    28,
+    27
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Rozproszenia 2",
+   "name_en": "Left Angle Cross of Distraction 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-distraction-2-lewy-krzyz-rozproszenia-2-60-56-or-28-27"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    61,
+    62,
+    50,
+    3
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Zaciemnienia 2",
+   "name_en": "Left Angle Cross of Obscuration 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-eclipse-2-lewy-krzyz-zaciemnienia-2-61-62-or-50-3"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    62,
+    61,
+    3,
+    50
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Zaciemnienia 1",
+   "name_en": "Left Angle Cross of Obscuration 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-eclipse-2-lewy-krzyz-zaciemnienia-62-61-or-3-50"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    63,
+    64,
+    26,
+    45
+   ],
+   "variant": 1,
+   "name_pl": "Lewy Krzyż Zwierzchnictwa 1",
+   "name_en": "Left Angle Cross of Dominion 1",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-doubts-lewy-krzyz-watpliwosci-63-64-or-26-45"
+  },
+  {
+   "angle": "Left Angle",
+   "gates": [
+    64,
+    63,
+    45,
+    26
+   ],
+   "variant": 2,
+   "name_pl": "Lewy Krzyż Zwierzchnictwa 2",
+   "name_en": "Left Angle Cross of Dominion 2",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-domination-2-lewy-krzyz-dominacji-2-64-63-or-45-26"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    1,
+    2,
+    4,
+    49
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Autoekspresji",
+   "name_en": "Juxtaposition Cross of Self-Expression",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-self-expression-centralny-krzyz-autoekspresji-1-2-or-4-49"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    2,
+    1,
+    49,
+    4
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Kierowcy",
+   "name_en": "Juxtaposition Cross of the Driver",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-driver-centralny-krzyz-kierowcy-2-1-or-49-4"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    3,
+    50,
+    41,
+    31
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Mutacji",
+   "name_en": "Juxtaposition Cross of Mutation",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-mutation-centralny-krzyz-mutacji-3-50-or-41-31"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    4,
+    49,
+    8,
+    14
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Formułowania",
+   "name_en": "Juxtaposition Cross of Formulization",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-revolution-centralny-krzyz-rewolucji-4-49-or-8-14"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    5,
+    35,
+    47,
+    22
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Nawyków",
+   "name_en": "Juxtaposition Cross of Habits",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-habits-centralny-krzyz-nawykow-5-35-or-47-22"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    6,
+    36,
+    15,
+    10
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Konfliktów",
+   "name_en": "Juxtaposition Cross of Conflict",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-conflict-centralny-krzyz-konfliktow-6-36-or-15-10"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    7,
+    13,
+    23,
+    43
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Przywództwa",
+   "name_en": "Juxtaposition Cross of Interaction",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-interaction-centralny-krzyz-przywodztwa-7-13-or-23-43"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    8,
+    14,
+    55,
+    59
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Wkładu",
+   "name_en": "Juxtaposition Cross of Contribution",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-contribution-centralny-krzyz-wkladu-8-14-or-55-59"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    9,
+    16,
+    64,
+    63
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Skupienia",
+   "name_en": "Juxtaposition Cross of Focus",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-focus-centralny-krzyz-fokusu-9-16-or-64-63"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    10,
+    15,
+    18,
+    17
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Zachowań",
+   "name_en": "Juxtaposition Cross of Behavior",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-behavior-centralny-krzyz-zachowan-10-15-or-18-17"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    11,
+    12,
+    46,
+    25
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Idei",
+   "name_en": "Juxtaposition Cross of Ideas",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-ideas-centralny-krzyz-idei-11-12-or-46-25"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    12,
+    11,
+    25,
+    46
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Artykulacji",
+   "name_en": "Juxtaposition Cross of Articulation",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-articulation-centralny-krzyz-artykulacji-12-11-or-25-46"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    13,
+    7,
+    43,
+    23
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Słuchania",
+   "name_en": "Juxtaposition Cross of Listening",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-listening-centralny-krzyz-sluchania-13-7-or-43-23"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    14,
+    8,
+    59,
+    55
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Wzmocnienia",
+   "name_en": "Juxtaposition Cross of Empowering",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-principles-centralny-krzyz-zasad-14-8-or-59-55"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    15,
+    10,
+    17,
+    18
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Skrajności",
+   "name_en": "Juxtaposition Cross of Extremes",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-extremes-centralny-krzyz-skrajnosci-15-10-or-17-18"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    16,
+    9,
+    63,
+    64
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Eksperymentów",
+   "name_en": "Juxtaposition Cross of Experimentation",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-experimentation-centralny-krzyz-eksperymentow-16-9-or-63-64"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    17,
+    18,
+    38,
+    39
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Opinii",
+   "name_en": "Juxtaposition Cross of Opinions",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-opinion-centralny-krzyz-opinii-17-18-or-38-39"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    18,
+    17,
+    39,
+    38
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Korekty",
+   "name_en": "Juxtaposition Cross of Correction",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-correction-centralny-krzyz-korekty-18-17-or-39-38"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    19,
+    33,
+    1,
+    2
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Potrzeb",
+   "name_en": "Juxtaposition Cross of Need",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-needs-centralny-krzyz-potrzeb-19-33-or-1-2"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    20,
+    34,
+    37,
+    40
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Teraźniejszości",
+   "name_en": "Juxtaposition Cross of the Now",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-now-centralny-krzyz-terazniejszosci-20-34-or-37-40"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    21,
+    48,
+    54,
+    53
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Kontroli",
+   "name_en": "Juxtaposition Cross of Control",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-control-centralny-krzyz-kontroli-21-48-or-54-53"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    22,
+    47,
+    11,
+    12
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Gracji",
+   "name_en": "Juxtaposition Cross of Grace",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/the-left-angle-cross-of-grace-lewy-krzyz-laski-22-47-or-11-12"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    23,
+    43,
+    30,
+    29
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Asymilacji",
+   "name_en": "Juxtaposition Cross of Assimilation",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-assimilation-centralny-krzyz-asymilacji-23-43-or-30-29"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    24,
+    44,
+    13,
+    7
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Racjonalizacji",
+   "name_en": "Juxtaposition Cross of Rationalization",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-rationalization-centralny-krzyz-racjonalizacji-24-44-or-13-7"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    25,
+    46,
+    58,
+    52
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Niewinności",
+   "name_en": "Juxtaposition Cross of Innocence",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-innocence-centralny-krzyz-niewinnosci-w-25-46-or-58-52"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    26,
+    45,
+    6,
+    36
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Naciągacza",
+   "name_en": "Juxtaposition Cross of the Trickster",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-confrontation-2-centralny-krzyz-konfrontacji-2-26-45-or-6-36"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    27,
+    28,
+    19,
+    33
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Troski",
+   "name_en": "Juxtaposition Cross of Caring",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-concern-centralny-krzyz-troski-27-28-or-19-33"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    28,
+    27,
+    33,
+    19
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Ryzyka",
+   "name_en": "Juxtaposition Cross of Risks",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-risks-centralny-krzyz-ryzyka-28-27-or-33-19"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    29,
+    30,
+    20,
+    34
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Zaangażowania",
+   "name_en": "Juxtaposition Cross of Commitment",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-commitment-centralny-krzyz-zaangazowania-29-30-or-20-34"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    30,
+    29,
+    34,
+    20
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Losu",
+   "name_en": "Juxtaposition Cross of Fates",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-faith-centralny-krzyz-losu-30-29-or-34-20"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    31,
+    41,
+    24,
+    44
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Wpływu",
+   "name_en": "Juxtaposition Cross of Influence",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-influence-centralny-krzyz-wplywu-31-41-or-24-44"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    32,
+    42,
+    56,
+    60
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Konserwacji",
+   "name_en": "Juxtaposition Cross of Conservation",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-conservation-centralny-krzyz-konserwacji-32-42-or-56-60"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    33,
+    19,
+    2,
+    1
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Wycofania Się",
+   "name_en": "Juxtaposition Cross of Retreat",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-retreat-centralny-krzyz-wycofania-sie-33-19-or-2-1"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    34,
+    20,
+    40,
+    37
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Siły",
+   "name_en": "Juxtaposition Cross of Power",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-power-centralny-krzyz-sily-34-20-or-40-37"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    35,
+    5,
+    22,
+    47
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Doświadczenia",
+   "name_en": "Juxtaposition Cross of Experience",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-experience-centralny-krzyz-doswiadczenia-35-5-or-22-47"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    36,
+    6,
+    10,
+    15
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Kryzysu",
+   "name_en": "Juxtaposition Cross of Crisis",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-crisis-centralny-krzyz-kryzysu-36-6-or-10-15"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    37,
+    40,
+    5,
+    35
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Okazji",
+   "name_en": "Juxtaposition Cross of Bargains",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-opportunity-centralny-krzyz-okazji-37-40-or-5-35"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    38,
+    39,
+    57,
+    51
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Opozycji",
+   "name_en": "Juxtaposition Cross of Opposition",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-opposition-centralny-krzyz-opozycji-38-39-or-57-51"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    39,
+    38,
+    51,
+    57
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Prowokacji",
+   "name_en": "Juxtaposition Cross of Provocation",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-provocation-centralny-krzyz-prowokacji-39-38-or-51-57"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    40,
+    37,
+    35,
+    5
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Zaprzeczenia",
+   "name_en": "Juxtaposition Cross of Denial",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-denial-centralny-krzyz-zaprzeczenia-40-37-or-35-5"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    41,
+    31,
+    44,
+    24
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Fantazji",
+   "name_en": "Juxtaposition Cross of Fantasy",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-fantasy-centralny-krzyz-fantazji-41-31-or-44-24"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    42,
+    32,
+    60,
+    56
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Ukończenia",
+   "name_en": "Juxtaposition Cross of Completion",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-limitation-centralny-krzyz-ograniczenia-42-32-or-60-56"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    43,
+    23,
+    29,
+    30
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Wglądu",
+   "name_en": "Juxtaposition Cross of Insight",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-insight-centralny-krzyz-wgladu-43-23-or-29-30"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    44,
+    24,
+    7,
+    13
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Czujności",
+   "name_en": "Juxtaposition Cross of Alertness",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-alertness-centralny-krzyz-czujnosci-w-44-24-or-7-13"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    45,
+    26,
+    36,
+    6
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Posiadania",
+   "name_en": "Juxtaposition Cross of Possession",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-possession-centralny-krzyz-posiadania-45-26-or-36-6"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    46,
+    25,
+    52,
+    58
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Szczęśliwości",
+   "name_en": "Juxtaposition Cross of Serendipity",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-intuitive-serendipity-centralny-krzyz-szczesliwosci-46-25-or-52-58"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    47,
+    22,
+    12,
+    11
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Ucisku",
+   "name_en": "Juxtaposition Cross of Oppression",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-oppression-centralny-krzyz-ucisku-47-22-or-12-11"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    48,
+    21,
+    53,
+    54
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Głębi",
+   "name_en": "Juxtaposition Cross of Depth",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-depth-centralny-krzyz-glebi-48-21-or-53-54"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    49,
+    4,
+    14,
+    8
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Zasad",
+   "name_en": "Juxtaposition Cross of Principles",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-principles-centralny-krzyz-zasad-49-4-or-14-8"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    50,
+    3,
+    31,
+    41
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Wartości",
+   "name_en": "Juxtaposition Cross of Values",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-value-centralny-krzyz-wartosci-50-3-or-31-41"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    51,
+    57,
+    61,
+    62
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Szoku",
+   "name_en": "Juxtaposition Cross of Shock",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-shock-centralny-krzyz-szoku-51-57-or-61-62"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    52,
+    58,
+    21,
+    48
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Bezruchu",
+   "name_en": "Juxtaposition Cross of Stillness",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-silence-centralny-krzyz-ciszy-52-58-or-21-48"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    53,
+    54,
+    42,
+    32
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Początków",
+   "name_en": "Juxtaposition Cross of Beginnings",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-beginnings-centralny-krzyz-poczatkow-53-54-or-42-32"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    54,
+    53,
+    32,
+    42
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Ambicji",
+   "name_en": "Juxtaposition Cross of Ambition",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/untitled"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    55,
+    59,
+    9,
+    16
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Nastrojów",
+   "name_en": "Juxtaposition Cross of Moods",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-moods-centralny-krzyz-nastrojow-55-59-or-9-16"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    56,
+    60,
+    27,
+    28
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Stymulacji",
+   "name_en": "Juxtaposition Cross of Stimulation",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-stimulation-centralny-krzyz-stymulacji-56-60-or-27-28"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    57,
+    51,
+    62,
+    61
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Intuicji",
+   "name_en": "Juxtaposition Cross of Intuition",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-intuition-centralny-krzyz-intuicji-57-51-or-62-61"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    58,
+    52,
+    48,
+    21
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Witalności",
+   "name_en": "Juxtaposition Cross of Vitality",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-vitality-centralny-krzyz-witalnosci-58-52-or-48-21"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    59,
+    55,
+    16,
+    9
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Strategii",
+   "name_en": "Juxtaposition Cross of Strategy",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-strategy-centralny-krzyz-strategii-59-55-or-16-9"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    60,
+    56,
+    28,
+    27
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Ograniczenia",
+   "name_en": "Juxtaposition Cross of Limitation",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-limitation-centralny-krzyz-ograniczenia-60-56-or-28-27"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    61,
+    62,
+    50,
+    3
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Myślenia",
+   "name_en": "Juxtaposition Cross of Thinking",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-thinking-centralny-krzyz-myslenia-61-62-or-50-3"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    62,
+    61,
+    3,
+    50
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Detalu",
+   "name_en": "Juxtaposition Cross of Detail",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-obscuration-centralny-krzyz-zaciemnienia-62-61-or-3-50"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    63,
+    64,
+    26,
+    45
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Wątpliwości",
+   "name_en": "Juxtaposition Cross of Doubts",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-doubts-centralny-krzyz-watpliwosci-63-64-or-26-45"
+  },
+  {
+   "angle": "Juxtaposition",
+   "gates": [
+    64,
+    63,
+    45,
+    26
+   ],
+   "variant": 1,
+   "name_pl": "Naprzeciwległy Krzyż Pomieszania",
+   "name_en": "Juxtaposition Cross of Confusion",
+   "source_url": "https://www.humandesignpopolsku.pl/incarnation-crosses-krzyze-wcielenia-przeznaczenia/juxtaposition-cross-of-domination-centralny-krzyz-dominacji-64-63-or-45-26"
+  }
+ ]
+}
