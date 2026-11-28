@@ -728,13 +728,13 @@
       },
       "Vocation": {
         "body": "Mars",
-        "gate": 59,
-        "gene_key": 59,
-        "line": 3,
-        "longitude": 152.629807,
+        "gate": 56,
+        "gene_key": 56,
+        "line": 5,
+        "longitude": 120.175306,
         "sequence": "Pearl",
         "sphere": "Vocation",
-        "variant": "Personality"
+        "variant": "Design"
       }
     },
     "venus_sequence": {
@@ -750,23 +750,23 @@
       },
       "Core Wound": {
         "body": "Mars",
-        "gate": 59,
-        "gene_key": 59,
-        "line": 3,
-        "longitude": 152.629807,
-        "sequence": "Venus",
-        "sphere": "Core Wound",
-        "variant": "Personality"
-      },
-      "EQ": {
-        "body": "Mars",
         "gate": 56,
         "gene_key": 56,
         "line": 5,
         "longitude": 120.175306,
         "sequence": "Venus",
-        "sphere": "EQ",
+        "sphere": "Core Wound",
         "variant": "Design"
+      },
+      "EQ": {
+        "body": "Mars",
+        "gate": 59,
+        "gene_key": 59,
+        "line": 3,
+        "longitude": 152.629807,
+        "sequence": "Venus",
+        "sphere": "EQ",
+        "variant": "Personality"
       },
       "IQ": {
         "body": "Venus",
