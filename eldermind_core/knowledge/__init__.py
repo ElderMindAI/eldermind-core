@@ -13,7 +13,7 @@ from __future__ import annotations
 import json
 from functools import lru_cache
 from pathlib import Path
-from typing import Any
+from typing import Any, Sequence
 
 #: Directory holding the JSON files. Prefer :func:`load` over touching this.
 KNOWLEDGE_DIR: Path = Path(__file__).resolve().parent
@@ -51,4 +51,33 @@ def load(name: str) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-__all__ = ["AVAILABLE", "KNOWLEDGE_DIR", "load"]
+#: Incarnation cross names (PL/EN). Deliberately NOT in :data:`AVAILABLE`, which the public API
+#: serves as `/v1/knowledge/{system}` — the report uses it first; exposing it is a separate decision.
+INCARNATION_CROSSES_FILE = "hd_incarnation_crosses.json"
+
+
+@lru_cache(maxsize=1)
+def _crosses_by_key() -> dict[tuple[str, int], dict[str, Any]]:
+    data = load(INCARNATION_CROSSES_FILE)
+    return {(c["angle"], c["gates"][0]): c for c in data.get("crosses", [])}
+
+
+def incarnation_cross(angle: str, gates: Sequence[int]) -> dict[str, Any] | None:
+    """Look up the name of an incarnation cross.
+
+    ``angle`` and ``gates`` are the engine's ``mechanics.incarnation_cross_angle`` ("Right Angle",
+    "Left Angle", "Juxtaposition") and ``mechanics.incarnation_cross_gates`` ([Personality Sun,
+    Personality Earth, Design Sun, Design Earth]). Returns the entry (``name_pl``, ``name_en``,
+    ``variant``, ``gates``, ``source_url``) or ``None`` when the cross is unknown or its four gates
+    differ from the table — never a name for a different cross.
+    """
+    gates = [int(g) for g in gates]
+    if len(gates) != 4:
+        return None
+    entry = _crosses_by_key().get((angle, gates[0]))
+    if entry is None or list(entry["gates"]) != gates:
+        return None
+    return dict(entry)
+
+
+__all__ = ["AVAILABLE", "INCARNATION_CROSSES_FILE", "KNOWLEDGE_DIR", "incarnation_cross", "load"]
