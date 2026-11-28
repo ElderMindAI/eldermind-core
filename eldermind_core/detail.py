@@ -19,6 +19,8 @@ more can ask for `standard`.
 
 from __future__ import annotations
 
+import math
+
 from typing import Any
 
 #: Ordered from cheapest to richest.
@@ -224,12 +226,29 @@ def _pillar(pillar: Any) -> dict[str, Any] | None:
     }
 
 
+def _draconic_placement(planets: Any, name: str) -> str | None:
+    """Render a draconic body as `Capricorn 29.67°` — the real position in the sign.
+
+    `degree_in_sign` is the whole degree (truncated, 1.1.0), so formatting it
+    with two decimals ("29.00°") would only look exact; the position comes
+    from `draconic_longitude` instead, the value the sign is computed from.
+    """
+    body = _body(planets, name)
+    if not body:
+        return None
+    longitude = body.get("draconic_longitude")
+    if body.get("sign") is None or longitude is None:
+        return _placement(planets, name)
+    # Truncated to hundredths, like the whole degree: 29.996 must not print "30.00°".
+    return f"{body['sign']} {math.floor((longitude % 30) * 100) / 100:.2f}°"
+
+
 def _summarize_draconic(data: dict[str, Any]) -> dict[str, Any]:
     planets = data.get("planets")
     return {
         "north_node_longitude": _first(data, "north_node_longitude", "node_longitude"),
-        "sun": _placement(planets, "Sun"),
-        "moon": _placement(planets, "Moon"),
+        "sun": _draconic_placement(planets, "Sun"),
+        "moon": _draconic_placement(planets, "Moon"),
     }
 
 

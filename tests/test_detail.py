@@ -9,6 +9,7 @@ then that the payload got smaller.
 from __future__ import annotations
 
 import json
+import math
 from datetime import date, time
 
 import pytest
@@ -102,6 +103,25 @@ def test_summary_keeps_the_conclusions_a_reader_asks_for(payload: dict) -> None:
     assert summary["gene_keys"]["activation_sequence"]["Life's Work"] == "40.4"
     assert summary["western"]["sun"].startswith("Virgo")
     assert summary["numerology"]["life_path"] == payload["numerology"]["life_path"]
+
+
+def test_summary_draconic_degree_is_the_real_position(payload: dict) -> None:
+    """`degree_in_sign` is the whole degree (truncated); the summary shows the real position in the sign,
+    two decimals, from `draconic_longitude` — not "29.00°" that only looks exact."""
+    summary = apply_detail(payload, "summary")
+    for name, key in (("Sun", "sun"), ("Moon", "moon")):
+        body = next(p for p in payload["draconic"]["planets"] if p["name"] == name)
+        real = body["draconic_longitude"] % 30
+        assert summary["draconic"][key] == f"{body['sign']} {math.floor(real * 100) / 100:.2f}°"
+        assert int(real) == body["degree_in_sign"]
+
+
+@pytest.mark.parametrize(("longitude", "shown"), [(299.996, "Capricorn 29.99°"), (270.0, "Capricorn 0.00°"),
+                                                   (279.678, "Capricorn 9.67°")])
+def test_summary_draconic_degree_never_rounds_into_the_next_degree(longitude: float, shown: str) -> None:
+    data = {"draconic": {"planets": [{"name": "Sun", "sign": "Capricorn", "degree_in_sign": int(longitude % 30),
+                                      "draconic_longitude": longitude}]}}
+    assert apply_detail(data, "summary")["draconic"]["sun"] == shown
 
 
 def test_standard_drops_history_but_keeps_positions(payload: dict) -> None:

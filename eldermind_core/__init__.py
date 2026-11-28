@@ -64,7 +64,10 @@ __version__ = "1.0.0"
 #: Also in 1.1.0 (2026-11-28, before any deploy): the draconic
 #: `degree_in_sign` is truncated instead of rounded, so 29°40' Capricorn is
 #: "Capricorn 29°" (it was "Capricorn 0°") and 8°40' is 8° (it was 9°);
-#: the sign and `draconic_longitude` are unchanged.
+#: the sign and `draconic_longitude` are unchanged. The `detail="summary"`
+#: projection shows the draconic Sun and Moon at their real position in the
+#: sign, from `draconic_longitude`, truncated to hundredths ("Capricorn
+#: 29.67°"); it used to print the whole degree as "29.00°".
 ENGINE_VERSION = "1.1.0"
 
 __all__ = ["ENGINE_VERSION", "__version__"]
