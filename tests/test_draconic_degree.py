@@ -71,4 +71,6 @@ def test_draconic_degree_matches_longitude_over_two_months() -> None:
             assert point["sign"] == signs[int(longitude // 30)]
             checked += 1
         day += timedelta(days=1)
-    assert checked > 600
+    # 10 bodies x 60 days; the Node itself is skipped (it is 0° Aries by
+    # construction, exactly on the cusp).
+    assert checked == 600

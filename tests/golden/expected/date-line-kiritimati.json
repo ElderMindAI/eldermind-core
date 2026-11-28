@@ -571,7 +571,7 @@
         "tropical_longitude": 279.495776
       },
       {
-        "degree_in_sign": 12,
+        "degree_in_sign": 11,
         "draconic_longitude": 41.691923,
         "house_number": 3,
         "name": "Moon",
@@ -587,7 +587,7 @@
         "tropical_longitude": 289.485801
       },
       {
-        "degree_in_sign": 10,
+        "degree_in_sign": 9,
         "draconic_longitude": 9.9732,
         "house_number": 2,
         "name": "Venus",
@@ -611,7 +611,7 @@
         "tropical_longitude": 244.614727
       },
       {
-        "degree_in_sign": 25,
+        "degree_in_sign": 24,
         "draconic_longitude": 114.588887,
         "house_number": 6,
         "name": "Saturn",

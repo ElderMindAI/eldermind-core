@@ -56,6 +56,10 @@ __version__ = "1.0.0"
 #: to map right/bottom/left/center/top, which no standard chart does — every
 #: decade value moves. `lines.relationship` is kept unchanged but deprecated
 #: in favour of `love_money` (listed under `matrix.deprecated`).
+#: Also in 1.1.0 (2026-11-28, before any deploy): the draconic
+#: `degree_in_sign` is truncated instead of rounded, so 29°40' Capricorn is
+#: "Capricorn 29°" (it was "Capricorn 0°") and 8°40' is 8° (it was 9°);
+#: the sign and `draconic_longitude` are unchanged.
 ENGINE_VERSION = "1.1.0"
 
 __all__ = ["ENGINE_VERSION", "__version__"]
